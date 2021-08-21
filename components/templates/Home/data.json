@@ -1,0 +1,32 @@
+{
+    "experience": [
+        {
+            "startYear": "01/2021",
+            "endYear": "present",
+            "title": "Front-End Developer",
+            "company": "Gleads - Quận 7, HCM",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo"
+        },
+        {
+            "startYear": "07/2020",
+            "endYear": "12/2020",
+            "title": "Front-End Developer",
+            "company": "3FORCOM - Quận 10, HCM",
+            "description": "Build interactive and responsive websites like Novaland, Gumac, Adco websites, based on Javascript style technology, like React Js"
+        },
+        {
+            "startYear": "05/2018 ",
+            "endYear": "07/2020",
+            "title": "Data Warehoues",
+            "company": "Mirae Asset-Q.3, HCM",
+            "description": "Responsible for handling errors arising in running, re-running Data Warehouse batch jobs system."
+        },
+        {
+            "startYear": "09/2014",
+            "endYear": "03/2019",
+            "title": "ĐH GTVT HCM",
+            "company": "450 Lê Văn Việt-Q.9, HCM",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque  commodo"
+        }
+    ]
+}
