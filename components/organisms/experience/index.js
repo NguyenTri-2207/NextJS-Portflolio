@@ -19,10 +19,11 @@ const Card = ({startYear,endYear,title,company, description}) => {
 export default function Experience({ data }) {
   const dataExperience = data.experience
   return (
-    <div className="experience">
-      <div className="container">
+    <div className="container">
+      <div className="experience">
         <div className="row">
           <div className="col-md-12">
+            <h2 className="title">Experience</h2>
             <div className="main-timeline">
               {dataExperience.map((item, index) => {
                 return <Card key={index} startYear={item.startYear} endYear={item.endYear} company={item.company} description={item.description} title={item.title}/>;

@@ -1,0 +1,101 @@
+import React from "react";
+import { FaBirthdayCake } from "react-icons/fa";
+import { BiMale } from "react-icons/bi";
+import { BsBookmarksFill } from "react-icons/bs";
+import { MdLocationOn } from "react-icons/md";
+import { HiOutlineMail } from "react-icons/hi";
+import { ImPhone } from "react-icons/im";
+
+const About = () => {
+  return (
+    <div className="container">
+      <div className="about" id="about">
+        <div className="about-name">About Me</div>
+        <div className="about-content">
+          <div className="about-img"></div>
+          <div className="about-text">
+            <div className="about-text1">Who am i?</div>
+            <div className="about-text2">
+              I'm NguyenNgocTri and{" "}
+              <span className="about-text3"> Front-End Developer</span>
+            </div>
+            <div className="about-text4">
+              {" "}
+              I'm a Web Developer, I am passionate and dedicated to my work.
+              With the knowledge I learned in college and self-study at home, I
+              gained the skills and knowledge needed to create a website
+              interface. I am trying every day to improve my skills to become a
+              senior front end developer
+            </div>
+            <div className="about-icon">
+              <div className="about-icon-left">
+                <div className="info-item">
+                  <i>
+                    <FaBirthdayCake />
+                  </i>
+                  <label for="">Birth day:</label>
+                  <span className="pl-2">22/07/1996</span>
+                </div>
+                <div className="info-item">
+                  <i>
+                    <BiMale />
+                  </i>
+                  <label>Age:</label>
+                  <span className="pl-2">25</span>
+                </div>
+                <div className="info-item">
+                  <i>
+                    <MdLocationOn />
+                  </i>
+                  <label>Location:</label>
+                  <span className="pl-2">3/2 St, 10Dist,HCM</span>
+                </div>
+              </div>
+              <div className="about-icon-reight">
+                <div className="info-item">
+                  <i>
+                    <BsBookmarksFill />
+                  </i>
+                  <label>Degree:</label>
+                  <span className="pl-2">Junior</span>
+                </div>
+                <div className="info-item">
+                  <i>
+                    <HiOutlineMail />
+                  </i>
+                  <label>Mail:</label>
+                  <span className="pl-2">ngoctri2207@gmail.com</span>
+                </div>
+                <div className="info-item">
+                  <i>
+                    <ImPhone />
+                  </i>
+                  <label>Phone:</label>
+
+                  <a className="pl-2" href="tel:(+84)337.368.371">
+                    (+84)337.368.371
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="about-button">
+              <a
+                href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
+                target="_blank"
+              >
+                <button>Download CV</button>
+              </a>
+              <a
+                href="https://www.facebook.com/messages/t/100008894625672"
+                target="_blank"
+              >
+                <button>Send Messenger</button>{" "}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default About;
