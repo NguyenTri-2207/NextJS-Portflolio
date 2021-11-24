@@ -19,8 +19,8 @@ const Card = ({startYear,endYear,title,company, description}) => {
 export default function Experience({ data }) {
   const dataExperience = data.experience
   return (
-    <div className="container">
-      <div className="experience">
+    <div className="experience">
+      <div className="container" id="resum">
         <div className="row">
           <div className="col-md-12">
             <h2 className="title">Experience</h2>

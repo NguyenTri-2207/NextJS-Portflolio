@@ -10,18 +10,17 @@ const About = () => {
   return (
     <div className="container">
       <div className="about" id="about">
-        <div className="about-name">About Me</div>
+        <h2 className="about-name">About Us</h2>
         <div className="about-content">
-          <div className="about-img"></div>
-          <div className="about-text">
+          <div className="about-img col-md-3 col-12"></div>
+          <div className="about-text col-md-9 col-12 pl-md-5 pl-2">
             <div className="about-text1">Who am i?</div>
             <div className="about-text2">
-              I'm NguyenNgocTri and{" "}
+              I{`'`}m Tri and
               <span className="about-text3"> Front-End Developer</span>
             </div>
             <div className="about-text4">
-              {" "}
-              I'm a Web Developer, I am passionate and dedicated to my work.
+              I{`'`}m a Web Developer, I am passionate and dedicated to my work.
               With the knowledge I learned in college and self-study at home, I
               gained the skills and knowledge needed to create a website
               interface. I am trying every day to improve my skills to become a
@@ -33,7 +32,7 @@ const About = () => {
                   <i>
                     <FaBirthdayCake />
                   </i>
-                  <label for="">Birth day:</label>
+                  <label>Birth day:</label>
                   <span className="pl-2">22/07/1996</span>
                 </div>
                 <div className="info-item">
@@ -51,7 +50,7 @@ const About = () => {
                   <span className="pl-2">3/2 St, 10Dist,HCM</span>
                 </div>
               </div>
-              <div className="about-icon-reight">
+              <div className="about-icon-reight pl-0 pl-md-5 mr-0 mr-md-3">
                 <div className="info-item">
                   <i>
                     <BsBookmarksFill />
@@ -64,7 +63,9 @@ const About = () => {
                     <HiOutlineMail />
                   </i>
                   <label>Mail:</label>
-                  <span className="pl-2">ngoctri2207@gmail.com</span>
+                  <a className="pl-2" href="mailto:ngoctri2207@gmail.com">
+                    ngoctri2207@gmail.com
+                  </a>
                 </div>
                 <div className="info-item">
                   <i>
@@ -78,16 +79,18 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div class="about-button">
+            <div className="about-button">
               <a
                 href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
                 target="_blank"
+                rel="noreferrer"
               >
                 <button>Download CV</button>
               </a>
               <a
                 href="https://www.facebook.com/messages/t/100008894625672"
                 target="_blank"
+                rel="noreferrer"
               >
                 <button>Send Messenger</button>{" "}
               </a>

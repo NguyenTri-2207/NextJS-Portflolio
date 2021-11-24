@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700;800;900&display=swap");
+@import "components/templates/Layout/Header/index.scss";
+@import "components/templates/Layout/Footer/index.scss";
 @import "components/organisms/Experience/index.scss";
 @import "components/organisms/About/index.scss";
-@import "components/templates/Layout/Header/index.scss";
+@import "components/organisms/Skill/index.scss";
+@import "components/organisms/Project/index.scss";
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   padding: 0;

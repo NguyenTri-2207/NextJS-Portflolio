@@ -1,8 +1,9 @@
 .experience {
   
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   padding: 8px 24px;
-  border-radius: 10px;
+  // background: rgb(99, 110, 89);
+  // border-radius: 10px;
   margin-top: 40px;
   .title{
     text-align: center;
@@ -22,7 +23,7 @@
 
     &:before {
       content: "";
-      height: 95%;
+      height: 70%;
       width: 2px;
       border: 2px dashed #a3a3ad;
       transform: translateX(-50%);
@@ -41,7 +42,7 @@
     .timeline-content {
       background: linear-gradient(#d9d9d9, #e7e7e7);
       text-align: center;
-      padding: 15px 115px 15px 40px;
+      padding: 24px 115px 24px 40px;
       border-radius: 5px;
       box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.6);
       display: block;
@@ -53,7 +54,7 @@
 
       &:before {
         content: "";
-        background: linear-gradient(to bottom, #647cde, #78b0fa);
+        background: linear-gradient(to bottom, #8adfdc, #78b0fa);
         width: 45px;
         height: 45px;
         transform: rotate(-45deg);
@@ -65,7 +66,7 @@
 
       &:after {
         content: "";
-        background: linear-gradient(to bottom, #647cde, #78b0fa);
+        background: linear-gradient(to bottom, #8adfdc, #78b0fa);
         width: 45px;
         height: 45px;
         transform: rotate(-45deg);
@@ -80,7 +81,7 @@
 
     .timeline-icon {
       color: #fff;
-      background: linear-gradient(to right, #617de0, #78b1f8);
+      background: linear-gradient(to right, #8adfdc, #78b1f8);
       font-size: 23px;
       text-align: center;
       line-height: 40px;
@@ -98,7 +99,7 @@
 
     .timeline-year {
       color: #fff;
-      background: linear-gradient(to bottom, #617de0, #617de0, #78b1f8);
+      background: linear-gradient(to bottom, #8adfdc, #549ca8, #78b1f8);
       font-size: 16px;
       font-weight: 900;
       text-align: center;
@@ -121,7 +122,7 @@
         content: "";
         background: linear-gradient(
           to right bottom,
-          #617de0 49%,
+          #8adfdc 49%,
           transparent 50%
         );
         height: 33px;
@@ -135,10 +136,11 @@
     .title {
       color: #000;
       font-size: 18px;
-      font-weight: 900;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin: 0 0 7px 0;
+      padding: 8px;
+      margin: 8px 0 4px 0;
     }
     .company{
       color: #333;
@@ -155,16 +157,20 @@
       letter-spacing: 0.5px;
       padding-top: 10px;
       margin: 0;
+      display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     }
 
     .timeline {
       &:nth-child(even) {
         padding: 0 27px 0 35px;
-        margin: 0 0 20px 10px;
+        margin: -80px 0 20px 10px;
         float: right;
 
         .timeline-content {
-          padding: 15px 40px 15px 115px;
+          padding: 24px 40px 24px 115px;
 
           &:before,
           &:after {
@@ -191,62 +197,63 @@
         }
       }
 
-      &:nth-child(4n + 2) {
-        .timeline-content:before,
-        .timeline-icon {
-          background: linear-gradient(to left, #f53b57, #ef5777);
-        }
+      // &:nth-child(4n + 2) {
+      //   .timeline-content:before,
+      //   .timeline-icon {
+      //     background: linear-gradient(to left, #8adfdc, #8adfdc);
+      //   }
 
-        .timeline-year {
-          background: linear-gradient(to bottom, #f53b57, #f53b57, #ef5777);
+      //   .timeline-year {
+      //     background: linear-gradient(to bottom, #8adfdc, #8adfdc, #8adfdc);
 
-          &:after {
-            background: linear-gradient(
-              to right bottom,
-              #f53b57 49%,
-              transparent 50%
-            );
-          }
-        }
-      }
+      //     &:after {
+      //       background: linear-gradient(
+      //         to right bottom,
+      //         #8adfdc 49%,
+      //         transparent 50%
+      //       );
+      //     }
+      //   }
+      // }
 
       &:nth-child(4n + 3) {
+        margin-top: -80px;
         .timeline-content:before,
-        .timeline-icon {
-          background: linear-gradient(to bottom, #227e22, #63a211);
-        }
+        // .timeline-icon {
+        //   background: linear-gradient(to bottom, #227e22, #63a211);
+        // }
 
         .timeline-year {
-          background: linear-gradient(to bottom, #227e22, #227e22, #63a211);
+          // background: linear-gradient(to bottom, #227e22, #227e22, #63a211);
 
           &:after {
             background: linear-gradient(
               to right bottom,
-              #227e22 49%,
+              // #227e22 49%,
               transparent 50%
             );
           }
         }
       }
 
-      &:nth-child(4n + 4) {
-        .timeline-content:before,
-        .timeline-icon {
-          background: linear-gradient(to left, #7d5ac2, #b493fe);
-        }
+      // &:nth-child(4n + 4) {
+      //   .timeline-content:before,
+      //   .timeline-icon {
+      //     background: linear-gradient(to left, #8adfdc, #8adfdc);
+      //   }
 
-        .timeline-year {
-          background: linear-gradient(to bottom, #7d5ac2, #7d5ac2, #b493fe);
+      //   .timeline-year {
+      //     // background: linear-gradient(to bottom, #7d5ac2, #7d5ac2, #b493fe);
 
-          &:after {
-            background: linear-gradient(
-              to right bottom,
-              #7d5ac2 49%,
-              transparent 50%
-            );
-          }
-        }
-      }
+      //     &:after {
+      //       background: linear-gradient(
+      //         to right bottom,
+      //         #8adfdc 49%,
+      //         transparent 50%
+      //       );
+      //     }
+      //   }
+      // }
     }
   }
 

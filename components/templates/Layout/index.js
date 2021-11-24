@@ -1,8 +1,11 @@
 import Header from "./Header";
-export default function Home() {
+import Footer from "./Footer/index";
+export default function Home({children}) {
   return (
     <div>
       <Header/>
+      <main>{children}</main>
+      <Footer/>
     </div>
   );
 }
