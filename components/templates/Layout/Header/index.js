@@ -89,7 +89,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="main-container  ">
+        <div className="main-container  bg-dark">
           <div className="main">
             <header className={`bg ${!theme ? "bg-dark" : "bg-light"}`}>
               <div className="overlay container">
