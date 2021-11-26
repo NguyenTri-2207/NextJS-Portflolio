@@ -9,7 +9,6 @@
     // transform-style: preserve-3d;
     overflow: hidden;
     position: relative;
-    // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     @media (max-width: 767px) {
       height: 600px;
       background: #343a40;
@@ -85,6 +84,7 @@
     height: 1.5px;
     border-radius: 2px;
     background-color: #feb633;
+
     transition: 0.5s;
     position: relative;
   }
@@ -120,16 +120,17 @@
     transform-origin: left;
     transform-style: preserve-3d;
     transition: 0.5s;
-    background: red;
+    // background: red;
   }
 
   .bg {
     min-height: 100vh;
+    border-bottom: 1px dashed #feb633;
+
+    border-radius: 0 0 10px 10px;
+    // box-shadow: 0 19px 38px #feb633, 0 15px 12px #feb633;
+
     width: 100%;
-    // background: url("../../../../public/banner.jpg") no-repeat top center /
-    // cover;
-    // background: black;
-    // background: width;
     position: relative;
   }
   .main-container {
@@ -137,21 +138,25 @@
   }
   .overlay {
     position: absolute;
-    width: 100%;
     height: 100vh;
-    top: 0;
     left: 0;
-    // background-color: rgba(0, 0, 0, 0.712);
-    // background: white;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     @media (max-width: 767px) {
       height: 600px;
+      flex-direction: column;
+      text-align: center;
     }
     &_left {
       width: 50%;
       margin: auto;
+      @media (max-width: 767px) {
+        width: 90%;
+      }
       .title {
         font-size: 3rem;
         @media (max-width: 767px) {
@@ -165,7 +170,8 @@
         font-size: 1.5rem;
         @media (max-width: 767px) {
           font-size: 1.2rem;
-          width: 70%;
+          text-align: center;
+          // width: 70%;
         }
       }
     }
@@ -182,6 +188,9 @@
         border-radius: 50%;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
           0 15px 12px rgba(0, 0, 0, 0.22);
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
   }
@@ -441,20 +450,19 @@
 }
 
 .ToggleSwitch {
-  background: linear-gradient(#ccc, #eee);
-  border: 1px solid purple;
+  background: #fff;
+  border: 1px solid #000;
   height: 20px;
   width: 40px;
   border-radius: 1em;
   cursor: pointer;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-
+  margin-top: 4px;
   .knob {
     position: relative;
     width: 15px;
     height: 15px;
-    background: #666;
-    border: 1px solid #ddd;
+    background: #343a40;
+    border: 1px solid #fff;
     border-radius: 50%;
     left: 3px;
     top: 1px;

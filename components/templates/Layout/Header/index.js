@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Form } from "react-bootstrap";
 import { FiChevronsDown } from "react-icons/fi";
 import logo from "../../../../public/logo.png";
+import { ThemContext } from "../../../../common/context";
 export default function Header() {
   const menu = [
     { name: "Home", id: "header" },
@@ -23,7 +24,7 @@ export default function Header() {
   const dark = "#333";
   const light = "#fff";
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState(false);
+  const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(false);
   const onSwitchAction = () => {
     setTheme(!theme);
@@ -78,7 +79,7 @@ export default function Header() {
             <div className="d-flex align-items-center">
               <div onClick={onSwitchAction} className="ToggleSwitch">
                 <div className={isToggleOn ? "knob active" : "knob"} />
-                <div className="text">{!isToggleOn ? "Dark" : "Light"} </div>
+                {/* <div className="text">{!isToggleOn ? "Dark" : "Light"} </div> */}
               </div>
               <div
                 className="hamburger-menu ml-3"

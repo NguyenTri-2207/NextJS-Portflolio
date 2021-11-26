@@ -19,7 +19,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border-radius: 10px;
     @media (max-width: 991px) {
-      margin: 0 8px;
+      margin: 8px;
     }
     &_title {
       font-size: 20px;
@@ -50,14 +50,17 @@
   background: transparent;
   top: 40%;
   cursor: pointer;
+  @media (max-width: 500px) {
+    right: -25px;
+  }
   &:focus {
     outline: none;
   }
   svg {
-    color: #333;
+    // color: #333;
     font-size: 25px;
     &:hover {
-      color: red;
+      color: rgb(232, 243, 20);
     }
   }
   @media (min-width: 768px) {
@@ -66,6 +69,9 @@
 }
 .prevArrow {
   left: -30px;
+  @media (max-width: 500px) {
+    left: -25px;
+  }
 }
 .slick {
   margin: auto;

@@ -3,7 +3,10 @@
   margin: 20px 0;
   padding: 8px 0px;
   border-radius: 10px;
-  margin-top: 40px;
+  margin-top: 16px;
+  @media (max-width: 991px) {
+    margin-top: 0px;
+  }
   .about-name {
     font-size: 32px;
     font-weight: 600;
@@ -14,12 +17,15 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
+    @media (max-width: 991px) {
+      display: block;
+    }
   }
 }
 .about-text {
   width: 70%;
   font-weight: 500;
-  color: #333;
+  // color: #333;
 }
 .about-text1 {
   color: #feb633;
@@ -36,17 +42,46 @@
   padding-bottom: 10px;
 }
 .about-img {
-  background-image: url("../../../public/avt2.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 50%;
-  height: 300px;
-  border-radius: 20px;
-  // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   img {
-    width: 100%;
     height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      border-radius: 70px;
+      transform: scale(1.2);
+    }
+  }
+}
+.about-button {
+  a {
+    button {
+      padding: 8px 16px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-left: 10px;
+      font-weight: 500;
+      outline: none;
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 45px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      &:hover {
+        background-color: #feb633;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        // color: #fff;
+        transform: translateY(-2px);
+      }
+    }
   }
 }
 .about-icon {
@@ -68,37 +103,11 @@
   }
   label,
   a {
-    color: #0f0f0f;
+    // color: #0f0f0f;
     margin: 0;
   }
 }
 
-.about-button {
-  a {
-    button {
-      padding: 8px 16px;
-      margin-bottom: 12px;
-      border-radius: 5px;
-      border: none;
-      color: #000;
-      margin-left: 10px;
-      font-weight: 500;
-      outline: none;
-      font-size: 14px;
-      background-color: #fff;
-      border-radius: 45px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      transition: all 0.3s ease 0s;
-      cursor: pointer;
-      &:hover {
-        background-color: #feb633;
-        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-        color: #fff;
-        transform: translateY(-2px);
-      }
-    }
-  }
-}
 @media only screen and (max-width: 767px) {
   .about {
     padding: 20px;
@@ -106,22 +115,17 @@
       margin-bottom: 20px;
       font-size: 30px;
     }
-    .about-content {
-      display: block;
-      margin: auto;
-      width: 100%;
-    }
   }
   .about-img {
     width: 100%;
-    height: 420px;
+    // height: 420px;
     border-radius: 5px;
   }
   .about-text {
     margin: 20px 0;
     width: 100%;
     font-weight: 400;
-    color: #363333;
+    // color: #363333;
   }
   .about-icon {
     display: block;
