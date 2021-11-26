@@ -19,14 +19,14 @@ const About = () => {
             <Image src={img} alt="avt" />
             <div className="about-button d-none d-lg-block mt-4">
               <a
-                href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
+                // href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
                 target="_blank"
                 rel="noreferrer"
               >
                 <button>Download CV</button>
               </a>
               <a
-                href="https://www.facebook.com/messages/t/100008894625672"
+                // href="https://www.facebook.com/messages/t/100008894625672"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -110,14 +110,14 @@ const About = () => {
             </div>
             <div className="about-button d-block d-lg-none">
               <a
-                href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
+                // href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
                 target="_blank"
                 rel="noreferrer"
               >
                 <button>Download CV</button>
               </a>
               <a
-                href="https://www.facebook.com/messages/t/100008894625672"
+                // href="https://www.facebook.com/messages/t/100008894625672"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
 import { FaCss3Alt, FaHtml5, FaReact, FaGithub, FaFigma } from "react-icons/fa";
 import { DiJavascript, DiPhotoshop } from "react-icons/di";
-import { SiNextDotJs } from "react-icons/si";
+// import * as { SiNextDotJs } from "react-icons/si";
 import Slider from "react-slick";
-import { ThemContext } from "../../../common/context";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const dataSkill = [
@@ -30,7 +30,7 @@ const dataSkill = [
   },
   {
     title: "nextjs",
-    img: <SiNextDotJs />,
+    img: <DiJavascript />,
     color: "#111111",
   },
   {
@@ -60,25 +60,23 @@ const Card = ({ img, title, color }) => {
     </div>
   );
 };
-
+const SampleNextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button className="nextArrow" onClick={onClick}>
+      <IoIosArrowForward />
+    </button>
+  );
+};
+const SamplePrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button className="prevArrow" onClick={onClick}>
+      <IoIosArrowBack />
+    </button>
+  );
+};
 const Skill = () => {
-  const { theme } = useContext(ThemContext);
-  const SampleNextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <button className="nextArrow" onClick={onClick}>
-        <IoIosArrowForward style={{ color: `${!theme ? "#fff" : "#333"}` }} />
-      </button>
-    );
-  };
-  const SamplePrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <button className="prevArrow" onClick={onClick}>
-        <IoIosArrowBack style={{ color: `${!theme ? "#fff" : "#333"}` }} />
-      </button>
-    );
-  };
   var settings = {
     autoplay: false,
     autoplaySpeed: 2000,
