@@ -9,7 +9,7 @@ import pro3 from "../../../public/pro3.jpg";
 const Card = ({ startYear, title, src, description }) => {
   return (
     <article className="postcard dark yellow ">
-      <a className="postcard__img_link" href="#">
+      <a className="postcard__img_link" href="">
         <Image className="postcard__img" src={src} alt="Image Title" />
       </a>
       <div className="postcard__text">
