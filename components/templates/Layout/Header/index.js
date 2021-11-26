@@ -50,7 +50,6 @@ export default function Header() {
       window.removeEventListener("scroll", () => handleScroll);
     };
   }, []);
-  console.log(theme);
   return (
     <div
       className="headerLayout"
