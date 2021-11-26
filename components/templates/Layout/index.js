@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Footer from "./Footer/index";
+import Footer from "./Footer";
 
 export default function Home({ children }) {
   return (
