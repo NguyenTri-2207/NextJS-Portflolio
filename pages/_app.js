@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SSRProvider from "react-bootstrap/SSRProvider";
 import "styles/globals.scss";
-import "styles/bootstrap/bootstrap.scss";
+// import "styles/bootstrap/bootstrap.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemContext } from "../common/context";
 const dark = "#343a40";
 const light = "#f8f9fa";
