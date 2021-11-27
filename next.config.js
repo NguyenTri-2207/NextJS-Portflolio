@@ -6,7 +6,8 @@ module.exports = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["assets.acme.com"],
+    loader: "imgix",
+    path: "https://noop/",
   },
   exportPathMap: async function (
     defaultPathMap,
