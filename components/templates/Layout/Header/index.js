@@ -63,9 +63,7 @@ export default function Header() {
         <div className={`navbar ${isSticky ? "sticky" : "no"}`}>
           <div className="menu">
             <div className="d-flex justify-content-center align-items-center pt-2">
-              <div className="logo">
-                <img src={logo} alt="logo" />
-              </div>
+              <div className="logo">{/* <img src={logo} alt="logo" /> */}</div>
 
               <h3
                 className={`logoText ${

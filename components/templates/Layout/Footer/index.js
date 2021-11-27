@@ -25,14 +25,14 @@ const Footer = () => {
           <div className="col-12 col-md-4">
             <div className="info">
               <div href="index.html" className="footer-logo">
-                <img
+                {/* <img
                   // priority
                   src={logo}
                   width={100}
                   height={100}
                   alt="footer_logo"
                   className="img-fluid"
-                />
+                /> */}
               </div>
               <p className="footer-info-text">
                 A winner never stops trying. a winner never stops trying.

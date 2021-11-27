@@ -47,15 +47,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  img {
+  height: 300px;
+  .img {
+    background: url(../../../public/working-at-night.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
-    width: 100%;
+    width: 300px;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
     &:hover {
-      border-radius: 70px;
-      transform: scale(1.2);
+      border-radius: 10px;
+      transform: scale(1.1);
     }
   }
 }

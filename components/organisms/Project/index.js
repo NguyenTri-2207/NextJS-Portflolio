@@ -10,7 +10,11 @@ const Card = ({ startYear, title, src, description }) => {
   return (
     <article className="postcard dark yellow ">
       <a className="postcard__img_link" href="">
-        <img className="postcard__img" src={src} alt="Image Title" />
+        <div
+          className="postcard__img"
+          style={{ backgroundImage: `url(${src})` }}
+        ></div>
+        {/* <img className="postcard__img" src={src} alt="Image Title" /> */}
       </a>
       <div className="postcard__text">
         <h1 className="postcard__title yellow">
@@ -71,27 +75,28 @@ export default function Experience({ data }) {
                     <Tab.Content>
                       <Tab.Pane eventKey="first">
                         <Card
-                          src={pro3}
-                          // src="https://themewagon.com/wp-content/uploads/2020/12/eflyer.jpg"
+                          // src={pro3}
+                          src="https://themewagon.com/wp-content/uploads/2020/12/eflyer.jpg"
                           title="eCommerce Website"
                           description="Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
                         />
                         <Card
                           title="Portfolio Website"
-                          src={pro4}
+                          // src={pro4}
+                          src="https://cdn.vietnambiz.vn/thumb_w/685/2019/12/18/photo-1-1576662924387140450795-crop-1576663100041737725104.jpg"
                           description="Technology Used : NextJS, Atomic Design, React Bootstrap"
                         />
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         <Card
-                          src={pro2}
-                          // src="https://cdn.vietnambiz.vn/thumb_w/685/2019/12/18/photo-1-1576662924387140450795-crop-1576663100041737725104.jpg"
+                          // src={pro2}
+                          src="https://cdn.vietnambiz.vn/thumb_w/685/2019/12/18/photo-1-1576662924387140450795-crop-1576663100041737725104.jpg"
                           title="BBCincorp"
                           description="Technology Used : NextJS, Atomic Design, React Bootstrap"
                         />
                         <Card
-                          src={pro1}
-                          // src="https://abcland.vn/wp-content/uploads/2020/05/tap-doan-novaland.jpg"
+                          // src={pro1}
+                          src="https://abcland.vn/wp-content/uploads/2020/05/tap-doan-novaland.jpg"
                           title="NovaGroup"
                           description="Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
                         />
