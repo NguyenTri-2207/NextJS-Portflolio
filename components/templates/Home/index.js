@@ -3,7 +3,7 @@ import Experience from "components/organisms/experience";
 import Skill from "components/organisms/Skill";
 import Project from "components/organisms/Project";
 import data from "./data.json";
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <About />
@@ -12,4 +12,5 @@ export default function Home() {
       <Project />
     </div>
   );
-}
+};
+export default Home;

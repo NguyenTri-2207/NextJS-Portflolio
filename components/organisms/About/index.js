@@ -17,7 +17,7 @@ const About = () => {
         <h2 className="about-name">About Us</h2>
         <div className="about-content">
           <div className="about-img col-lg-4  col-12">
-            <Image priority src={img} alt="avt" />
+            <img src={img} alt="avt" />
             <div className="about-button d-none d-lg-block mt-4">
               <a
                 // href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"

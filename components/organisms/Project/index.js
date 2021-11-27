@@ -10,7 +10,7 @@ const Card = ({ startYear, title, src, description }) => {
   return (
     <article className="postcard dark yellow ">
       <a className="postcard__img_link" href="">
-        <Image priority className="postcard__img" src={src} alt="Image Title" />
+        <img className="postcard__img" src={src} alt="Image Title" />
       </a>
       <div className="postcard__text">
         <h1 className="postcard__title yellow">

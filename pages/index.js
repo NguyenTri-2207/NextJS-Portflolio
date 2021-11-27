@@ -1,11 +1,10 @@
 import Homepage from "components/templates/Home";
 import Layout from "components/templates/Layout";
 import Head from "next/head";
-import SSRProvider from "react-bootstrap/SSRProvider";
 
-export default function Home() {
+const Home = () => {
   return (
-    <SSRProvider>
+    <>
       <Head>
         <title>Nguyễn Ngọc Trí</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -18,6 +17,7 @@ export default function Home() {
       <Layout>
         <Homepage />
       </Layout>
-    </SSRProvider>
+    </>
   );
-}
+};
+export default Home;

@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Home({ children }) {
+function Home({ children }) {
   return (
     <>
       <Header />
@@ -10,3 +10,4 @@ export default function Home({ children }) {
     </>
   );
 }
+export default Home;
