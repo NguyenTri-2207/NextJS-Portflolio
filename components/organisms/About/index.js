@@ -6,8 +6,8 @@ import { MdLocationOn } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
 import { ImPhone } from "react-icons/im";
 import { ThemContext } from "../../../common/context";
-import Image from "next/image";
 import img from "../../../public/working-at-night.jpg";
+import Image from "next/image";
 
 const About = () => {
   const { theme } = useContext(ThemContext);
@@ -17,7 +17,11 @@ const About = () => {
         <h2 className="about-name">About Us</h2>
         <div className="about-content">
           <div className="about-img col-lg-4  col-12">
-            <img src={img} alt="avt" />
+            <Image
+              loading="eager"
+              src="/public/working-at-night.jpg"
+              alt="avt"
+            />
             <div className="about-button d-none d-lg-block mt-4">
               <a
                 // href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
