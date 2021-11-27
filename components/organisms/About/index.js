@@ -19,8 +19,10 @@ const About = () => {
           <div className="about-img col-lg-4  col-12">
             <Image
               loading="eager"
-              src="/public/working-at-night.jpg"
+              src="./public/working-at-night.jpg"
               alt="avt"
+              width="300px"
+              height="300px"
             />
             <div className="about-button d-none d-lg-block mt-4">
               <a
