@@ -26,6 +26,7 @@ const Footer = () => {
             <div className="info">
               <div href="index.html" className="footer-logo">
                 <Image
+                  priority
                   src={logo}
                   width={100}
                   height={100}

@@ -64,7 +64,7 @@ export default function Header() {
           <div className="menu">
             <div className="d-flex justify-content-center align-items-center pt-2">
               <div className="logo">
-                <Image src={logo} alt="logo" />
+                <Image priority src={logo} alt="logo" />
               </div>
 
               <h3
