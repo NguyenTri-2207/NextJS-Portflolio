@@ -107,7 +107,7 @@ const Skill = () => {
       {
         breakpoint: 550,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           arrows: true,
         },
       },
@@ -115,7 +115,7 @@ const Skill = () => {
   };
   return (
     <div className="container">
-      <div className="skill">
+      <div className="skill" id="skill">
         <h2 className="skill_title">My Skills</h2>
         <Slider {...settings}>
           {dataSkill.map((item, index) => {

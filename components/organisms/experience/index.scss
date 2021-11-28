@@ -1,12 +1,13 @@
 .experience {
   // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  padding: 8px 24px;
+  padding: 0;
   // background: rgb(99, 110, 89);
   // border-radius: 10px;
   margin-top: 40px;
   .title {
     text-align: center;
-    padding: 12px 0 24px 0;
+    // padding: 12px 0 24px 0;
+    margin-bottom: 24px;
     font-size: 32px;
     font-weight: 600;
   }

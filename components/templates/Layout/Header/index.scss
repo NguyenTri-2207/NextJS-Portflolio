@@ -226,8 +226,8 @@
   .linkHoverBanner {
     display: flex;
     align-items: center;
-    background: rgb(218, 147, 15);
-    border: 2px solid rgb(218, 147, 15);
+    background: #feb633;
+    border: 2px solid #feb633;
     border-radius: 15px;
     color: #fff;
     font-size: 16px;
@@ -236,7 +236,7 @@
     cursor: pointer;
     outline: none;
     &:hover {
-      color: #fff;
+      color: #feb633;
       background: initial;
       .discover {
         -webkit-animation: discoverHover;

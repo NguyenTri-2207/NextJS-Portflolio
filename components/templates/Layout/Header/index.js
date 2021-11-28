@@ -10,8 +10,8 @@ export default function Header() {
     { name: "Home", id: "header" },
     { name: "About", id: "about" },
     { name: "Resum", id: "resum" },
+    { name: "Skill", id: "skill" },
     { name: "Project", id: "project" },
-    { name: "My Blog", id: "blog" },
   ];
   const [active, setActive] = useState(0);
   const goToAbout = () => {

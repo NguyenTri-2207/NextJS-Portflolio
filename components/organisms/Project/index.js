@@ -52,7 +52,7 @@ export default function Experience({ data }) {
   // const dataExperience = data.experience;
   return (
     <div className="projects mb-5">
-      <div className="container" id="resum">
+      <div className="container" id="project">
         <div className="row">
           <div className="col-md-12">
             <h2 className="title mb-4">My Projects</h2>

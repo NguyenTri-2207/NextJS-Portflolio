@@ -1,15 +1,14 @@
-import Image from "next/image";
-import { FaFacebookF } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
-import { FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaPhoneVolume,
+  FaArrowUp,
+} from "react-icons/fa";
 import { MdMap } from "react-icons/md";
-import { FaPhoneVolume } from "react-icons/fa";
-import { FaArrowUp } from "react-icons/fa";
 import { RiSendPlaneFill } from "react-icons/ri";
-import logo from "../../../../public/logo.png";
-import { Form } from "react-bootstrap";
 const Footer = () => {
   const goToTop = () => {
     const scrollToTable = document.querySelector('[id ^= "header"]');
@@ -24,34 +23,12 @@ const Footer = () => {
         <div className="row">
           <div className="col-12 col-md-4">
             <div className="info">
-              <div href="index.html" className="footer-logo">
-                {/* <img
-                  // priority
-                  src={logo}
-                  width={100}
-                  height={100}
-                  alt="footer_logo"
-                  className="img-fluid"
-                /> */}
-              </div>
+              <div href="index.html" className="footer-logo"></div>
               <p className="footer-info-text">
                 A winner never stops trying. a winner never stops trying.
               </p>
               <div className="footer-social-link">
                 <h3>Follow us</h3>
-                <Form>
-                  <Form.Check
-                    type="switch"
-                    id="custom-switch"
-                    label="Check this switch"
-                  />
-                  <Form.Check
-                    disabled
-                    type="switch"
-                    label="disabled switch"
-                    id="disabled-custom-switch"
-                  />
-                </Form>
                 <ul>
                   <li>
                     <a href="#">
@@ -133,14 +110,14 @@ const Footer = () => {
                       <a href="#">About us</a>
                     </li>
                     <li>
-                      <a href="#">Services</a>
+                      <a href="#">Experience</a>
                     </li>
 
                     <li>
-                      <a href="#">Contact us</a>
+                      <a href="#">Skill</a>
                     </li>
                     <li>
-                      <a href="#">Blog</a>
+                      <a href="#">Project</a>
                     </li>
                   </ul>
                 </div>
@@ -190,16 +167,19 @@ const Footer = () => {
               <div className="copyright-menu">
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                    <a href="#header">Home</a>
                   </li>
                   <li>
-                    <a href="#">Terms</a>
+                    <a href="#about">About</a>
                   </li>
                   <li>
-                    <a href="#">Privacy Policy</a>
+                    <a href="#resum">Experience</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="#skill">Skill</a>
+                  </li>
+                  <li>
+                    <a href="#project">Project</a>
                   </li>
                 </ul>
               </div>
