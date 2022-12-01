@@ -1,21 +1,21 @@
 import { SiWebmoney } from "react-icons/si";
-import { Nav, Tab } from "react-bootstrap";
 import Image from "next/image";
-import pro4 from "../../../public/pro41.PNG";
-import pro1 from "../../../public/pro1.jpg";
-import pro2 from "../../../public/pro2.webp";
-import pro3 from "../../../public/pro3.jpg";
+import { useState } from "react";
 // const pro4 = require("../../../public/avt2.png");
-const Card = ({ startYear, title, src, description }) => {
+const Card = ({ startYear, title, src, description, href }) => {
   return (
     <article className="postcard dark yellow ">
-      <a className="postcard__img_link" href="">
-        <div
-          className="postcard__img"
-          style={{ backgroundImage: `url(${src})` }}
-        ></div>
-        {/* <img className="postcard__img" src={src} alt="Image Title" /> */}
-      </a>
+      <div className=" contents ">
+        <div className="postcard__img w-full h-[300px] ">
+          <Image
+            alt="img"
+            className="w-full h-full"
+            src={src}
+            width={420}
+            height={300}
+          />
+        </div>
+      </div>
       <div className="postcard__text">
         <h1 className="postcard__title yellow">
           <a href="#">{title}</a>
@@ -29,16 +29,22 @@ const Card = ({ startYear, title, src, description }) => {
         <div className="postcard__bar" />
         <div className="postcard__preview-txt">{description}</div>
         <ul className="postcard__tagbox">
-          <li className="tag__item">
-            <i className="fas fa-tag mr-2" />
-            Website
+          <li className="tag__item yellow">
+            <a
+              className="fas fa-tag mr-2 cursor-pointer  "
+              target="_blank"
+              href={href}
+              rel="noreferrer"
+            >
+              Website
+            </a>
           </li>
           <li className="tag__item">
             <i className="fas fa-clock mr-2" />
             55 mins.
           </li>
-          <li className="tag__item play yellow">
-            <a href="#">
+          <li className="tag__item play">
+            <a>
               <i className="fas fa-play mr-2" />
               Front-End
             </a>
@@ -49,65 +55,84 @@ const Card = ({ startYear, title, src, description }) => {
   );
 };
 export default function Experience({ data }) {
-  // const dataExperience = data.experience;
+  const [tab, setTab] = useState(0);
+  const handClickCompany = () => {
+    setTab(0);
+  };
+  const handClickPersonal = () => {
+    setTab(1);
+  };
+
   return (
     <div className="projects mb-5">
       <div className="container" id="project">
         <div className="row">
           <div className="col-md-12">
-            <h2 className="title mb-4">My Projects</h2>
+            <h2>My Projects</h2>
             <div className="tab">
-              {/* {dataExperience.map((item, index) => { */}
-              {/* return ( */}
-              <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                <div>
-                  <div className="mb-4">
-                    <Nav variant="pills" className="nav">
-                      <Nav.Item className="navItem">
-                        <Nav.Link eventKey="first">Personal Project</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item className="navItem">
-                        <Nav.Link eventKey="second">Company Project</Nav.Link>
-                      </Nav.Item>
-                    </Nav>
-                  </div>
-                  <div>
-                    <Tab.Content>
-                      <Tab.Pane eventKey="first">
-                        <Card
-                          // src={pro3}
-                          src="https://themewagon.com/wp-content/uploads/2020/12/eflyer.jpg"
-                          title="eCommerce Website"
-                          description="Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
-                        />
-                        <Card
-                          title="Portfolio Website"
-                          // src={pro4}
-                          src="https://cdn.vietnambiz.vn/thumb_w/685/2019/12/18/photo-1-1576662924387140450795-crop-1576663100041737725104.jpg"
-                          description="Technology Used : NextJS, Atomic Design, React Bootstrap"
-                        />
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <Card
-                          // src={pro2}
-                          src="https://cdn.vietnambiz.vn/thumb_w/685/2019/12/18/photo-1-1576662924387140450795-crop-1576663100041737725104.jpg"
-                          title="BBCincorp"
-                          description="Technology Used : NextJS, Atomic Design, React Bootstrap"
-                        />
-                        <Card
-                          // src={pro1}
-                          src="https://abcland.vn/wp-content/uploads/2020/05/tap-doan-novaland.jpg"
-                          title="NovaGroup"
-                          description="Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
-                        />
-                      </Tab.Pane>
-                    </Tab.Content>
+              <div>
+                <div className="flex justify-center mb-10">
+                  <div className="inline-block bg-white rounded-full">
+                    <button
+                      onClick={handClickCompany}
+                      className={`${
+                        tab === 0 && "bg-main"
+                      } " py-3 px-6 rounded-full text-black font-medium`}
+                    >
+                      Company
+                    </button>
+                    <button
+                      onClick={handClickPersonal}
+                      className={`${
+                        tab === 1 && "bg-main"
+                      } " py-3 px-6 rounded-full text-black font-medium`}
+                    >
+                      Personal
+                    </button>
                   </div>
                 </div>
-              </Tab.Container>
 
-              {/* );
-              })} */}
+                <div>
+                  {tab === 0 && (
+                    <div eventKey="second">
+                      <Card
+                        src="/assets/bbc.jpg"
+                        title="BBCincorp"
+                        href="https://bbcincorp.com/hk"
+                        description="Technology Used : NextJS, Atomic Design, React Bootstrap"
+                      />
+                      <Card
+                        src="/assets/nova.jpg"
+                        title="NovaGroup"
+                        href="https://www.novagroup.vn/"
+                        description="Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
+                      />
+                      <Card
+                        src="/assets/g.png"
+                        title="Gleads"
+                        href="https://gleads.vn/vi"
+                        description="Technology Used : NextJS, Atomic Design, React Bootstrap"
+                      />
+                    </div>
+                  )}
+                  {tab === 1 && (
+                    <div eventKey="first">
+                      <Card
+                        href="https://tringuyen.vercel.app/"
+                        src="/assets/ecommerce-website-design.png"
+                        title="eCommerce Website"
+                        description="Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
+                      />
+                      <Card
+                        href="https://tringuyen.vercel.app/"
+                        title="Portfolio Website"
+                        src="/assets/a.jpg.webp"
+                        description="Technology Used : NextJS, Atomic Design, React Bootstrap"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,54 +1,65 @@
 /* about */
 .about {
-  margin: 20px 0;
   padding: 8px 0px;
   border-radius: 10px;
-  margin-top: 16px;
+
   @media (max-width: 991px) {
     margin-top: 0px;
   }
+
   .about-name {
     font-size: 32px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 24px;
+
     @media (max-width: 767px) {
       margin-bottom: 20px;
       font-size: 30px;
     }
   }
+
   .about-content {
     display: flex;
     justify-content: space-between;
+
     margin: auto;
+
     @media (max-width: 991px) {
       display: block;
     }
   }
 }
+
 .about-text {
   width: 70%;
   font-weight: 500;
+
   @media (max-width: 767px) {
     margin: 20px 0;
     width: 100%;
     font-weight: 400;
   }
 }
+
 .about-text1 {
   color: #feb633;
   font-size: 20px;
 }
+
 .about-text2 {
   font-size: 30px;
 }
+
 .about-text3 {
   color: #feb633;
 }
+
 .about-text4 {
   border-bottom: 1px solid #837f7f;
   padding-bottom: 10px;
 }
+
 .about-img {
   border-radius: 10px;
   display: flex;
@@ -56,12 +67,14 @@
   justify-content: center;
   align-items: center;
   height: 300px;
+
   @media (max-width: 767px) {
     width: 100%;
     border-radius: 5px;
   }
+
   .img {
-    background: url(../../../public/working-at-night.jpg);
+    // background: url(../../../public/working-at-night.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,33 +82,36 @@
     width: 300px;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
+
     &:hover {
       border-radius: 10px;
       transform: scale(1.1);
     }
+
     @media (max-width: 767px) {
       width: 100%;
     }
   }
 }
+
 .about-button {
   a {
     button {
+      @apply text-main border border-main;
       padding: 8px 16px;
       margin-bottom: 8px;
       border-radius: 5px;
-      border: none;
       margin-left: 10px;
       font-weight: 500;
       outline: none;
       font-size: 14px;
-      background-color: #fff;
+
       border-radius: 45px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       transition: all 0.3s ease 0s;
       cursor: pointer;
+
       &:hover {
-        background-color: #feb633;
         // box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
         // color: #fff;
         transform: translateY(-2px);
@@ -103,27 +119,32 @@
     }
   }
 }
+
 .about-icon {
   display: flex;
   justify-content: flex-start;
   margin: auto;
   padding-top: 16px;
   padding-bottom: 20px;
+
   @media (max-width: 767px) {
     display: block;
     padding-top: 10px;
   }
 }
+
 .info-item {
   display: flex;
   align-items: center;
   margin: 8px 0px;
+
   i {
     font-size: 20px;
     margin-right: 8px;
     text-align: center;
     color: #feb633;
   }
+
   label,
   a {
     // color: #0f0f0f;

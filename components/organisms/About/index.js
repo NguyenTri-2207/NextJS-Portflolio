@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useContext } from "react";
 import { FaBirthdayCake } from "react-icons/fa";
 import { BiMale } from "react-icons/bi";
@@ -5,43 +6,49 @@ import { BsBookmarksFill } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
 import { ImPhone } from "react-icons/im";
-import { ThemContext } from "../../../common/context";
-import img from "../../../public/working-at-night.jpg";
+import Image from "next/image";
 
 const About = () => {
-  const { theme } = useContext(ThemContext);
   return (
     <div className="container ">
       <div className="about" id="about">
-        <h2 className="about-name">About Us</h2>
+        <h2>About Us</h2>
         <div className="row">
           <div className="about-content">
-            <div className="about-img col-lg-4  col-12">
-              <div className="img"></div>
-              <div className="about-button d-none d-lg-block mt-4">
-                <a
-                  // href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button>Download CV</button>
-                </a>
-                <a
-                  // href="https://www.facebook.com/messages/t/100008894625672"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button>Send Messenger</button>{" "}
-                </a>
+            <div className=" lg:col-4 col-12">
+              <div className="w-full h-full">
+                <Image
+                  className="rounded-lg w-full h-full"
+                  src="/assets/working-at-night.jpg"
+                  width={300}
+                  height={231}
+                  alt="a"
+                  sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) "
+                />
+              </div>
+              <div className="lg:flex justify-center hidden ">
+                <div className="b animate-pulse w-[140px]  h-10 mr-4  flex justify-center items-center">
+                  <div className="i h-10  w-[140px]  bg-[#3b3f5a]  items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+                  <a className="text-center  text-yellow font-medium text-sm z-10 pointer-events-none">
+                    Download CV
+                  </a>
+                </div>
+                <div className="b animate-pulse  h-10 w-[140px] flex justify-center items-center">
+                  <div className="i h-10 w-[140px] bg-[#3b3f5a] items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+                  <a className="text-center text-yellow font-medium text-sm z-10 pointer-events-none">
+                    Send Messenger
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="about-text col-lg-8 col-12">
-              <div className="about-text1 mt-4 mt-lg-0">Who am i?</div>
+            <div className="about-text lg:col-8 col-12 lg:ml-10">
+              <div className="about-text1  mt-lg-0">Who am i?</div>
               <div className="about-text2">
                 I{`'`}m Tri and
-                <span className="about-text3"> Front-End Developer</span>
+                <span className="text-yellow"> Front-End Developer</span>
               </div>
-              <div className="about-text4">
+              <div className="about-text4 ">
                 I{`'`}m a Web Developer, I am passionate and dedicated to my
                 work. With the knowledge I learned in college and self-study at
                 home, I gained the skills and knowledge needed to create a
@@ -72,7 +79,7 @@ const About = () => {
                     <span className="pl-2">3/2 St, 10Dist,HCM</span>
                   </div>
                 </div>
-                <div className="about-icon-reight pl-0 pl-md-5 mr-0 mr-md-3">
+                <div className="about-icon-reight pl-0 lg:pl-10  mr-0 mr-md-3">
                   <div className="info-item">
                     <i>
                       <BsBookmarksFill />
@@ -85,11 +92,7 @@ const About = () => {
                       <HiOutlineMail />
                     </i>
                     <label>Mail:</label>
-                    <a
-                      className="pl-2"
-                      href="mailto:ngoctri2207@gmail.com"
-                      style={{ color: `${!theme ? "#fff" : "#333"}` }}
-                    >
+                    <a className="pl-2" href="mailto:ngoctri2207@gmail.com">
                       ngoctri2207@gmail.com
                     </a>
                   </div>
@@ -99,36 +102,45 @@ const About = () => {
                     </i>
                     <label>Phone:</label>
 
-                    <a
-                      className="pl-2"
-                      href="tel:(+84)337.368.371"
-                      style={{ color: `${!theme ? "#fff" : "#333"}` }}
-                    >
+                    <a className="pl-2" href="tel:(+84)337.368.371">
                       (+84)337.368.371
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="about-button d-block d-lg-none">
-                <a
-                  // href="https://www.topcv.vn/xem-cv/e8e3b19ebe45fcd1b26130dedc009ad5"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button>Download CV</button>
-                </a>
-                <a
-                  // href="https://www.facebook.com/messages/t/100008894625672"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button>Send Messenger</button>{" "}
-                </a>
+
+              <div className="flex lg:hidden mt-10">
+                <div className="b animate-pulse mr-2 lg:mr-10 h-10 w-[130px]  lg:w-40 flex justify-center items-center">
+                  <div className="i h-10 lg:w-40 w-[130px] bg-yellow items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+                  <a className="text-center text-white font-medium text-sm z-10 pointer-events-none">
+                    Download CV
+                  </a>
+                </div>
+                <div className="b animate-pulse  h-10 w-[130px]  lg:w-40 flex justify-center items-center">
+                  <div className="i h-10  w-[130px]  lg:w-40 bg-yellow items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+                  <a className="text-center text-white font-medium text-sm z-10 pointer-events-none">
+                    Send Messenger
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <img
+        className="absolute left-20 top-20 z-0 lg:block hidden animate-pulse"
+        src="/assets/bg-about-tl.png"
+        width={130}
+        height={163}
+        alt="a"
+      />
+      <img
+        className="absolute right-0 top-0 z-0 lg:block hidden  "
+        src="/assets/bg-about-tr.png"
+        width={206}
+        height={313}
+        alt="a"
+      />
     </div>
   );
 };

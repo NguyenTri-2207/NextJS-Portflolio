@@ -1,45 +1,88 @@
-.skill {
-  // padding: 100px 0;
-
-  margin: 60px 0;
-  @media (max-width: 767px) {
-    margin: 40px 0;
-  }
-  &_title {
-    font-size: 32px;
-    line-height: 30px;
-    font-family: 700;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-  .cardSkill {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 10px;
-    @media (max-width: 991px) {
-      margin: 8px;
-    }
-    &_title {
-      font-size: 20px;
-      font-family: 600;
-      text-transform: uppercase;
-      @media (max-width: 991px) {
-        font-size: 14px;
-      }
-    }
-    &_icon {
-      font-size: 50px;
-    }
-  }
-  .slick-track {
-    // height: 300px;
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+
+@mixin items($left, $top, $color, $padding) {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  left: $left;
+  top: $top;
+  background-color: $color;
+}
+
+.skill {
+  &__item0 {
+    width: 150px;
+    height: 150px;
+
+    @media (max-width: 1024px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @include items(8%, 2%, white, 30px);
+  }
+
+  &__item1 {
+    width: 100px;
+    height: 100px;
+
+    @media (max-width: 1024px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include items(78%, 35%, #ffcc00, 28px);
+  }
+
+  &__item2 {
+    width: 80px;
+    height: 80px;
+
+    @media (max-width: 1024px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include items(4%, 75%, #ffe8db, 15px);
+  }
+
+  &__item3 {
+    width: 80px;
+    height: 80px;
+
+    @media (max-width: 1024px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include items(48%, 85%, #b0d7f1, 20px);
+  }
+
+  &_img {
+    position: relative;
+
+    div {
+      overflow: initial !important;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      -webkit-animation: spin 2s linear infinite;
+      -moz-animation: spin 2s linear infinite;
+      animation: spin 30s linear infinite;
+    }
+  }
+}
+
 .nextArrow,
 .prevArrow {
   height: 40px;
@@ -53,29 +96,37 @@
   background: transparent;
   top: 40%;
   cursor: pointer;
+
   @media (max-width: 500px) {
     right: -25px;
   }
+
   &:focus {
     outline: none;
   }
+
   svg {
     // color: #333;
     font-size: 25px;
+
     &:hover {
       color: rgb(232, 243, 20);
     }
   }
+
   @media (min-width: 768px) {
     top: 45%;
   }
 }
+
 .prevArrow {
   left: -30px;
+
   @media (max-width: 500px) {
     left: -25px;
   }
 }
+
 .slick {
   margin: auto;
   max-width: 840px !important;

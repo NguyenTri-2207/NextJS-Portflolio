@@ -25,7 +25,7 @@ const Experience = ({ data }) => {
       <div className="container" id="resum">
         <div className="row">
           <div className="col-md-12">
-            <h2 className="title">Experience</h2>
+            <h2>Experience</h2>
             <div className="main-timeline">
               {dataExperience.map((item, index) => {
                 return (

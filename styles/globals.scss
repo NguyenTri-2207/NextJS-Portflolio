@@ -5,22 +5,17 @@
 @import "components/organisms/About/index.scss";
 @import "components/organisms/Skill/index.scss";
 @import "components/organisms/Project/index.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   scroll-behavior: smooth;
 }
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
+h2 {
+  @apply text-3xl lg:text-4xl text-main font-Playfair font-bold mb-6  lg:mb-16 text-center;
 }
-
-* {
-  box-sizing: border-box;
+.hover {
+  @apply relative before:content-[''] before:h-0.5 before:w-1/2 before:bg-main before:absolute before:bottom-0 before:left-0;
 }

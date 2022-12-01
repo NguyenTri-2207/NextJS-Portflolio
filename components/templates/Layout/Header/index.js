@@ -1,12 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Form } from "react-bootstrap";
 import { FiChevronsDown } from "react-icons/fi";
 import logo from "../../../../public/logo.png";
 import { ThemContext } from "../../../../common/context";
 export default function Header() {
-  const menu = [
+  const dataMenu = [
     { name: "Home", id: "header" },
     { name: "About", id: "about" },
     { name: "Resum", id: "resum" },
@@ -21,8 +20,7 @@ export default function Header() {
       behavior: "smooth",
     });
   };
-  const dark = "#333";
-  const light = "#fff";
+
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(false);
@@ -51,93 +49,43 @@ export default function Header() {
     };
   }, []);
   return (
-    <div
-      className="headerLayout"
-      id="header"
-      style={{ color: `${!theme ? light : dark}` }}
-    >
-      <div
-        className={`header ${open ? "active" : ""}`}
-        // style={{ background: "#333" }}
-      >
-        <div className={`navbar ${isSticky ? "sticky" : "no"}`}>
-          <div className="menu">
-            <div className="d-flex justify-content-center align-items-center pt-2">
-              <div className="logo">{/* <img src={logo} alt="logo" /> */}</div>
+    <header className="headerLayout" id="header">
+      <nav className="flex items-center h-20 bg-[#272b44]">
+        <div className="p-4 shadow-2xl border-r-2 border-b-2 border-[#1f2336]">
+          <Image
+            className="m-4"
+            src="/assets/logo.png"
+            alt="logo"
+            width={50}
+            height={50}
+          />
+        </div>
+        <div className=" flex justify-between items-center col-11 h-full px-10">
+          <div className="col-5 ">
+            {" "}
+            <ul className="flex">
+              {dataMenu.map((item, index) => {
+                return (
+                  <li className="uppercase mr-10" key={index}>
+                    {item.name}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="flex ">
+            <div className=" border-r-2 mr-10  border-[#1f2336]">
+              <a>0337 368 371</a>
+            </div>
 
-              <h3
-                className={`logoText ${
-                  !open && theme ? " text-dark" : " text-white"
-                }`}
-              >
-                Front-End<span>Developer</span>
-              </h3>
-            </div>
-            <div className="d-flex align-items-center">
-              <div onClick={onSwitchAction} className="ToggleSwitch">
-                <div className={isToggleOn ? "knob active" : "knob"} />
-                {/* <div className="text">{!isToggleOn ? "Dark" : "Light"} </div> */}
-              </div>
-              <div
-                className="hamburger-menu ml-3"
-                onClick={() => setOpen(!open)}
-              >
-                <div className="bar"></div>
-              </div>
+            <div>
+              <div className="h-0.5 bg-white w-8 my-1"></div>
+              <div className="h-0.5 bg-white w-8 my-1"></div>
+              <div className="h-0.5 bg-white w-8 my-1"></div>
             </div>
           </div>
         </div>
-        <div className="main-container  bg-dark">
-          <div className="main">
-            <header className={`bg ${!theme ? "bg-dark" : "bg-light"}`}>
-              <div className="overlay container">
-                <div className="overlay_left">
-                  {" "}
-                  <h2 className="title ">Trí Nguyễn</h2>
-                  <p className="description">
-                    All our dreams can come true, if we have the courage to
-                    pursue them.
-                  </p>
-                  <div className="btn p-0">
-                    <button
-                      id="buttonBanner"
-                      className="linkHoverBanner"
-                      onClick={goToAbout}
-                    >
-                      Let{`'`}s Go
-                      <FiChevronsDown
-                        width={12}
-                        height={12}
-                        className="discover"
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div className="overlay_right">
-                  <div className="overlay_right__img"></div>
-                </div>
-              </div>
-            </header>
-          </div>
-          <div className="shadow one"></div>
-          <div className="shadow two"></div>
-        </div>
-        <div className={`links ${open ? "activeLink" : ""}`}>
-          <ul>
-            {menu.map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  className={index === active ? "active" : null}
-                  onClick={() => setActive(index)}
-                >
-                  <Link href={`#${item.id}`}>{item.name}</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }

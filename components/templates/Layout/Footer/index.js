@@ -7,6 +7,7 @@ import {
   FaPhoneVolume,
   FaArrowUp,
 } from "react-icons/fa";
+import Image from "next/image";
 import { MdMap } from "react-icons/md";
 import { RiSendPlaneFill } from "react-icons/ri";
 const Footer = () => {
@@ -18,73 +19,83 @@ const Footer = () => {
     });
   };
   return (
-    <footer id="dk-footer" className="dk-footer position-relative">
+    <footer id="dk-footer" className="relative">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-4">
-            <div className="info">
-              <div href="index.html" className="footer-logo"></div>
-              <p className="footer-info-text">
+          <div className="col-12 lg:col-3 absolute top-[-50px] bg-[#202020] px-6 py-10 rounded-2xl shadow-md z-20">
+            <div>
+              <div className=" text-center mb-6 ">
+                <Image
+                  src="/assets/logo.png"
+                  width={100}
+                  height={100}
+                  alt="a"
+                />
+              </div>
+              <p className="text-sm mb-6">
                 A winner never stops trying. a winner never stops trying.
               </p>
-              <div className="footer-social-link">
-                <h3>Follow us</h3>
-                <ul>
+              <div className="mt-4">
+                <h3 className="mb-4 font-semibold text-base">Follow us</h3>
+                <ul className="flex">
                   <li>
-                    <a href="#">
-                      <i style={{ background: "#3b5998" }}>
-                        <FaFacebookF />
-                      </i>
+                    <a
+                      href="#"
+                      className="inline-block bg-[#3b5998] p-3 rounded-full mr-2"
+                    >
+                      <FaFacebookF />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i style={{ background: "rgb(228 14 14)" }}>
-                        <FaYoutube />
-                      </i>
+                    <a
+                      style={{ background: "rgb(228 14 14)" }}
+                      href="#"
+                      className="inline-block  p-3 rounded-full mr-2"
+                    >
+                      <FaYoutube />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i style={{ background: "rgb(58 57 105)" }}>
-                        <AiFillGithub />
-                      </i>
+                    <a
+                      className="inline-block  p-3 rounded-full mr-2"
+                      href="#"
+                      style={{ background: "rgb(58 57 105)" }}
+                    >
+                      <AiFillGithub />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i style={{ background: "rgb(22 132 210)" }}>
-                        <FaTwitter />
-                      </i>
+                    <a
+                      className="inline-block  p-3 rounded-full mr-2 "
+                      style={{ background: "rgb(22 132 210)" }}
+                      href="#"
+                    >
+                      <FaTwitter />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i style={{ background: "rgb(255 73 73 / 71%)" }}>
-                        <FaInstagram />
-                      </i>
+                    <a
+                      className="inline-block  p-3 rounded-full mr-2"
+                      href="#"
+                      style={{ background: "rgb(255 73 73 / 71%)" }}
+                    >
+                      <FaInstagram />
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-8 d-none d-md-block">
+          <div className="col-12 lg:col-9 ">
             <div className="row">
-              <div className="col-md-6">
+              <div className="lg:col-6">
                 <div className="contact-us pl-5">
-                  <div className="contact-icon">
-                    <i>
-                      <MdMap />
-                    </i>
-                  </div>
-                  <div className="contact-info ">
-                    <h3>Việt Nam</h3>
-                    <p>Quận 10 - HCM</p>
+                  <div className="flex">
+                    <MdMap /> <div className=" ">Việt Nam Quận 10 - HCM</div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="lg:col-6">
                 <div className="contact-us contact-us-last">
                   <div className="contact-icon">
                     <i>
@@ -99,7 +110,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-12 col-lg-6">
+              <div className="col-12 lg:col-6">
                 <div className="footer-widget pl-5">
                   <div className="section-heading ">
                     <h3>Useful Links</h3>
@@ -124,7 +135,7 @@ const Footer = () => {
                 {/* End Footer Widget */}
               </div>
 
-              <div className="col-md-12 col-lg-6 ml-md-5 ml-lg-0">
+              <div className="col-12 lg:col-6 ml-md-5 ml-lg-0">
                 <div className="footer-widget">
                   <div className="section-heading">
                     <h3>Subscribe</h3>
@@ -156,14 +167,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className="copyright">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="lg:col-6">
               <span>Copyright © 2021 NNT</span>
             </div>
             {/* End Col */}
-            <div className="col-md-6">
+            <div className="lg:col-6">
               <div className="copyright-menu">
                 <ul>
                   <li>
