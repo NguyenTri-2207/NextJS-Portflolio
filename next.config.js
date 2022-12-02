@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   trailingSlash: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
+    // includePaths: [path.join(__dirname, "styles")],
   },
 
   exportPathMap: async function (
