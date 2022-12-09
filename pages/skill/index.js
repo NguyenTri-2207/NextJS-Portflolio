@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "components/templates/Layout/Header";
+import Layout from "components/templates/Layout";
 import Skill from "components/organisms/Skill";
 function About() {
   return (
-    <>
-      <Header />
+    <Layout>
       <section className="bg-[#272b44]  relative  flex justify-center items-center pt-10">
         <Skill />
       </section>
-    </>
+    </Layout>
   );
 }
 

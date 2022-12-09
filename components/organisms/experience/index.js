@@ -4,7 +4,7 @@ import { SiWebmoney } from "react-icons/si";
 const Card = ({ startYear, endYear, title, company, description }) => {
   return (
     <div className="timeline">
-      <a href="" className="timeline-content">
+      <div className="timeline-content">
         <div className="timeline-icon">
           <SiWebmoney />
         </div>
@@ -15,7 +15,7 @@ const Card = ({ startYear, endYear, title, company, description }) => {
         <h3 className="title">{title}</h3>
         <p className="company">{company}</p>
         <p className="description">{description}</p>
-      </a>
+      </div>
     </div>
   );
 };

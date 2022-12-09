@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "components/templates/Layout/Header";
+import Layout from "components/templates/Layout";
 import AboutUS from "components/organisms/About";
 function About() {
   return (
-    <>
-      <Header />
-      <section className="bg-[#272b44]  relative h-[calc(100vh-80px)] flex justify-center items-center">
+    <Layout>
+      <section className="bg-[#272b44]  relative lg:h-[calc(100vh-80px)] flex justify-center items-center">
         <AboutUS />
       </section>
-    </>
+    </Layout>
   );
 }
 

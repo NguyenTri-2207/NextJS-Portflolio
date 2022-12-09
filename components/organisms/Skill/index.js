@@ -290,7 +290,7 @@ const Skill = () => {
         alt="a"
       />
       <img
-        className="absolute right-10 -top-10 z-0 animate-pulse "
+        className="absolute right-10 top-10 z-0 animate-pulse "
         src="/assets/bg-top-skill.png"
         width={32}
         height={103}
