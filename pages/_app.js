@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemContext.Provider value={{ theme, setTheme }}>
       <div
-        className="font-poppinss"
+        className="font-poppinss overflow-hidden"
         style={{
           color: `${!theme ? light : dark}`,
           background: `${theme ? light : dark}`,

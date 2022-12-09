@@ -67,7 +67,7 @@ export default function Experience({ data }) {
     <div className="projects mb-5">
       <div className="container" id="project">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-12">
             <h2>My Projects</h2>
             <div className="tab">
               <div>

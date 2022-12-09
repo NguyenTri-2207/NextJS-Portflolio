@@ -1,7 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiChevronsDown } from "react-icons/fi";
+import { FiPhone } from "react-icons/fi";
+import { GoLocation } from "react-icons/go";
+import { MdEmail, MdLocationPin } from "react-icons/md";
 import logo from "../../../../public/logo.png";
 import { ThemContext } from "../../../../common/context";
 import { data } from "browserslist";
@@ -107,7 +109,7 @@ export default function Header() {
           <div className="flex ">
             <div className=" border-r-2 mr-10  border-[#1f2336]  relative font-poppins font-semibold  before:content-[''] before:h-0.5 before:w-3 before:bg-main before:absolute before:bottom-[11.5px] before:-left-6">
               <a
-                className="text-main font-medium cursor-pointer0"
+                className="text-main font-medium cursor-pointer"
                 href="tel:0337 368 371"
               >
                 0337 368 371
@@ -146,6 +148,41 @@ export default function Header() {
               />
             );
           })}
+        </div>
+      </div>{" "}
+      <div
+        className={`${
+          open ? "right-0" : "-right-[1000px]"
+        } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2 `}
+      >
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <ul className="flex-col justify-center border-b border-dashed mb-4 pb-2 lg:hidden block">
+            {dataMenu.map((item, index) => {
+              return (
+                <Link href={item.href} key={index}>
+                  <a className="  cursor-pointer text-lg font-medium block mb-4">
+                    {item.name}
+                  </a>
+                </Link>
+              );
+            })}
+          </ul>
+          <h3 className="text-3xl  text-main font-Playfair font-bold mb-6   text-center">
+            Contact
+          </h3>
+          <p className="mb-10">
+            Please see the information below for more details about me
+          </p>
+          <a href="tel:0337368371" className="inline-flex items-center mb-2">
+            <FiPhone className="mr-4" color="#08D565" />
+            0337368371
+          </a>
+          <a className="inline-flex items-center mb-2">
+            <MdEmail className="mr-4" color="#08D565" /> ngoctri2207@gmail.com
+          </a>
+          <a className="inline-flex items-center mb-2">
+            <GoLocation className="mr-4" color="#08D565" /> Ho Chi Minh City
+          </a>
         </div>
       </div>
     </header>
