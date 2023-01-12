@@ -1,7 +1,5 @@
-import { SiWebmoney } from "react-icons/si";
 import Image from "next/image";
 import { useState } from "react";
-// const pro4 = require("../../../public/avt2.png");
 const Card = ({ startYear, title, src, description, href }) => {
   return (
     <article className="postcard dark yellow ">

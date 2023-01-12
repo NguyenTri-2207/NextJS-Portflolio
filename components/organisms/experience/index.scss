@@ -1,5 +1,4 @@
 .experience {
-  // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   padding: 0;
 
   .main-timeline {
@@ -97,13 +96,13 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      // line-height: 100px;
       height: 100%;
       width: 100px;
       border-radius: 0 0 5px 0;
       position: absolute;
       right: 0;
       top: 0;
+
       p {
         margin: 0;
         letter-spacing: 1px;
@@ -133,6 +132,7 @@
       padding: 8px;
       margin: 8px 0 4px 0;
     }
+
     .company {
       color: #333;
       font-size: 14px;
@@ -141,6 +141,7 @@
       font-weight: 600;
       font-style: italic;
     }
+
     .description {
       color: #333;
       text-align: left;
@@ -188,35 +189,9 @@
         }
       }
 
-      // &:nth-child(4n + 2) {
-      //   .timeline-content:before,
-      //   .timeline-icon {
-      //     background: linear-gradient(to left, #8adfdc, #8adfdc);
-      //   }
-
-      //   .timeline-year {
-      //     background: linear-gradient(to bottom, #8adfdc, #8adfdc, #8adfdc);
-
-      //     &:after {
-      //       background: linear-gradient(
-      //         to right bottom,
-      //         #8adfdc 49%,
-      //         transparent 50%
-      //       );
-      //     }
-      //   }
-      // }
-
       &:nth-child(4n + 3) {
-        // margin-top: -80px;
         .timeline-content:before,
-        // .timeline-icon {
-        //   background: linear-gradient(to bottom, #227e22, #63a211);
-        // }
-
         .timeline-year {
-          // background: linear-gradient(to bottom, #227e22, #227e22, #63a211);
-
           &:after {
             background: linear-gradient(
               to right bottom,
@@ -226,25 +201,6 @@
           }
         }
       }
-
-      // &:nth-child(4n + 4) {
-      //   .timeline-content:before,
-      //   .timeline-icon {
-      //     background: linear-gradient(to left, #8adfdc, #8adfdc);
-      //   }
-
-      //   .timeline-year {
-      //     // background: linear-gradient(to bottom, #7d5ac2, #7d5ac2, #b493fe);
-
-      //     &:after {
-      //       background: linear-gradient(
-      //         to right bottom,
-      //         #8adfdc 49%,
-      //         transparent 50%
-      //       );
-      //     }
-      //   }
-      // }
     }
   }
 
@@ -313,6 +269,7 @@
         left: 0;
         display: flex;
         flex-direction: row;
+
         p {
           padding: 0 8px;
         }
