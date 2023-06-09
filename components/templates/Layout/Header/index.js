@@ -2,11 +2,27 @@ import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiPhone } from "react-icons/fi";
+import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { MdEmail, MdLocationPin } from "react-icons/md";
 import logo from "../../../../public/logo.png";
 import { ThemContext } from "../../../../common/context";
 import { data } from "browserslist";
+import { Children } from "node_modules/react/cjs/react.production.min";
+
+const styleInsta = {
+  background: "#f09433",
+  background:
+    " -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+  background:
+    "-webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
+  background:
+    "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
+  filter:
+    "progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 )",
+};
+const styleFb = { background: "#036ce4" };
+const styleGh = { background: "#000000" };
 export default function Header() {
   const dataMenu = [
     { name: "Home", id: "header", href: "/" },
@@ -16,10 +32,13 @@ export default function Header() {
     { name: "Project", id: "project", href: "/project" },
   ];
   const dataSocial = [
-    { src: "fb", width: "8", height: "16" },
-    { src: "inta", width: "16", height: "16" },
-    { src: "sky", width: "16", height: "16" },
-    { src: "tw", width: "18", height: "14" },
+    {
+      icon: <FaFacebookF size={22} />,
+      src: "/fb",
+      style: styleFb,
+    },
+    { icon: <FaInstagram size={22} />, src: "/fb", style: styleInsta },
+    { icon: <FaGithub size={22} />, src: "/fb", style: styleGh },
   ];
   const [active, setActive] = useState(0);
   const goToAbout = () => {
@@ -60,22 +79,16 @@ export default function Header() {
   const handClickMenu = () => {
     setOpen(!open);
   };
-  const CardSocial = ({ src, height, width }) => {
+  const CardSocial = ({ src, children, style }) => {
     return (
       <a
-        href="https://www.facebook.com/"
+        style={style}
+        href={src}
         target="_blank"
         rel="noreferrer"
-        className="border border-[#bec1d1]  w-10 h-10 flex justify-center items-center rounded mb-4"
+        className="shadow-2xl  w-10 h-10 flex justify-center items-center rounded-xl mb-4"
       >
-        <Image
-          src={`/assets/icons/${src}.svg`}
-          className="w-full h-full"
-          loading="lazy"
-          width={width}
-          height={height}
-          alt="Icon"
-        />
+        {children}
       </a>
     );
   };
@@ -143,9 +156,12 @@ export default function Header() {
               <CardSocial
                 key={index}
                 src={item.src}
+                style={item.style}
                 width={item.width}
                 height={item.height}
-              />
+              >
+                {item.icon}
+              </CardSocial>
             );
           })}
         </div>

@@ -1,28 +1,73 @@
-import React from "react";
-import PropTypes from "prop-types";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
+
+const TypeWriter = (props) => {
+  const { textName } = props;
+  const first_text = textName || " Web Developer";
+  const [text, settext] = useState("");
+  const textState = ["istyping", "isdeleting"];
+  const [typing, setTyping] = useState(textState[0]);
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  const sliceText = () => {
+    settext(first_text.slice(0, text.length + 1));
+  };
+  useEffect(() => {
+    const timeout = setTimeout(sliceText, 100);
+    //clear
+    return () => clearTimeout(timeout);
+  }, [text]);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (typing === "istyping" && text !== first_text) {
+        sliceText();
+      } else if (text === first_text && typing === "istyping") {
+        sleep(1000).then(() => {
+          setTyping(textState[1]);
+        });
+      } else if (
+        (text === first_text && typing === "isdeleting") ||
+        typing === "isdeleting"
+      ) {
+        settext(first_text.slice(0, text.length - 1));
+        if (text.length <= 2) {
+          setTyping(textState[0]);
+        }
+      }
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, [text, typing]);
+
+  return <div className="blinkingcursor">{text}</div>;
+};
+
 const Banner = (props) => {
   return (
     <div className="w-full lg:h-[calc(100vh-80px)] lg:pl-[84px]  relative">
       <div className="container lg:h-full">
         <div className="row items-center lg:h-full">
           <div className="lg:col-6 pl-10 mt-[160px] lg:mt-0">
-            <p className="text-main lg:text-lg  relative font-poppins font-semibold  before:content-[''] before:h-0.5 lg:before:w-6 before:w-2 before:bg-main before:absolute before:bottom-[14px] before:-left-4 lg:before:-left-10">
+            <div></div>
+            <p className=" text-main lg:text-lg  relative font-poppins font-semibold  before:content-[''] before:h-0.5 lg:before:w-6 before:w-2 before:bg-main before:absolute before:bottom-[14px] before:-left-4 lg:before:-left-10">
               HELLO DEAR
             </p>
-            <h1 className="text-white text-4xl leading-[80px] lg:leading-[120px] lg:text-[60px] font-Playfair font-bold">
+            <h1 className="text-white text-3xl leading-[80px] lg:leading-[120px] xl:text-[60px] font-Playfair font-bold">
               I’m Tri Nguyen
             </h1>
-            <h1 className="text-main text-4xl leading-[30px] lg:leading-[50px] lg:text-[60px] font-Playfair font-bold">
-              Web Developer
+            <h1 className="text-main text-3xl leading-[30px] lg:leading-[50px] xl:text-[60px] font-Playfair font-bold">
+              <TypeWriter textName="Web Developer" />
             </h1>
             <button></button>
           </div>
           <div className="lg:col-6 lg:m-auto text-center relative mt-6 mb-16 lg:my-0">
             <Image
-              src="/assets/banner/avt2.png"
-              width={243}
-              height={243}
+              src="/assets/banner/avt4.png"
+              width={400}
+              height={400}
               alt="bg"
             />
             <div className="absolute -top-20 -left-20 animate-pulse hidden lg:block">

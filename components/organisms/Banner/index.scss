@@ -1,0 +1,19 @@
+.bg-code {
+  background-color: rgb(40, 42, 54);
+}
+.blinkingcursor {
+  //   color: red;
+}
+.blinkingcursor::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
