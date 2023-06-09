@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { FiPhone } from "react-icons/fi";
@@ -34,11 +35,19 @@ export default function Header() {
   const dataSocial = [
     {
       icon: <FaFacebookF size={22} />,
-      src: "/fb",
+      src: "https://www.facebook.com/nguyenngoctri2207/",
       style: styleFb,
     },
-    { icon: <FaInstagram size={22} />, src: "/fb", style: styleInsta },
-    { icon: <FaGithub size={22} />, src: "/fb", style: styleGh },
+    {
+      icon: <FaInstagram size={22} />,
+      src: "https://www.instagram.com/tri_nguyen2207/",
+      style: styleInsta,
+    },
+    {
+      icon: <FaGithub size={22} />,
+      src: "https://github.com/NguyenTri-2207",
+      style: styleGh,
+    },
   ];
   const [active, setActive] = useState(0);
   const goToAbout = () => {
@@ -52,6 +61,18 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(false);
+  const router = useRouter();
+
+  // slice '/' url
+  const routerAsPath = () => {
+    let result;
+    if (router.asPath.length > 2 && router.asPath.endsWith("/")) {
+      result = router.asPath.slice(0, -1);
+    } else {
+      result = router.asPath;
+    }
+    return result;
+  };
   const onSwitchAction = () => {
     setTheme(!theme);
     setIsToggleOn(!isToggleOn);
@@ -111,7 +132,13 @@ export default function Header() {
               {dataMenu.map((item, index) => {
                 return (
                   <Link href={item.href} key={index}>
-                    <a className="uppercase font-Playfair cursor-pointer font-semibold mr-14">
+                    <a
+                      className={`${
+                        routerAsPath() === item.href
+                          ? "text-main "
+                          : "text-white hover:text-main"
+                      }  font-Playfair cursor-pointer font-bold mr-14  text-xl`}
+                    >
                       {item.name}
                     </a>
                   </Link>
