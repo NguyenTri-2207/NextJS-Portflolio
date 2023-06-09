@@ -4,7 +4,7 @@ import Skill from "components/organisms/Skill";
 function About() {
   return (
     <Layout>
-      <section className="bg-[#272b44]  relative  flex justify-center items-center pt-10">
+      <section className="bg-[#1f2336]  relative  flex justify-center items-center pt-10">
         <Skill />
       </section>
     </Layout>
