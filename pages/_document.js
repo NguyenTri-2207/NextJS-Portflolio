@@ -9,9 +9,23 @@ class MyDocument extends Document {
     return (
       <Html lang="en" prefix="og: http://ogp.me/ns#">
         <Head>
-          <link rel="profile" href="https://gmpg.org/xfn/11" />
+          <link rel="icon" type="image/ico" href="/favicon.ico" />
+          <link
+            rel="icon"
+            href="/favicon.ico"
+            type="image/x-icon"
+            sizes="16x16"
+          />
+
+          <link rel="apple-touch-icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon-precomposed" href="/favicon.ico" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+          <meta name="geo.region" content="VN-SG" />
+          <meta name="geo.placename" content="Ho Chi minh" />
+          <meta name="geo.position" content="10.7441158;106.6971911" />
+          <meta name="ICBM" content="10.7441158;106.6971911" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"

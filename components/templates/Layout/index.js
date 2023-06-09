@@ -1,13 +1,13 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-function Home({ children }) {
+function Layout({ children, footer }) {
   return (
     <>
       <Header />
       <main>{children}</main>
-      <Footer />
+      {footer ? "" : <Footer />}
     </>
   );
 }
-export default Home;
+export default Layout;
