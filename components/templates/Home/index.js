@@ -3,6 +3,7 @@ import Experience from "components/organisms/experience";
 import Skill from "components/organisms/Skill";
 import Project from "components/organisms/Project";
 import data from "./data.json";
+import dataproject from '../../../pages/project/data.json'
 import Banner from "components/organisms/Banner";
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
         <Skill />
       </section>
       <section className="bg-[#1f2336] py-10 lg:py-20 relative">
-        <Project />
+        <Project data={dataproject} />
       </section>
     </div>
   );

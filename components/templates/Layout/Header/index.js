@@ -134,7 +134,7 @@ export default function Header() {
                         <Link href={item.href} >
                           <a
                             className={`${routerAsPath() === item.href
-                              ? "text-main "
+                              ? "!text-main "
                               : "text-white "
                               }  font-Playfair cursor-pointer font-bold   text-xl`}
                           >
@@ -144,7 +144,10 @@ export default function Header() {
                       </span>
 
                       <span
-                        className={`
+                        className={`${routerAsPath() === item.href
+                          ? "!text-main "
+                          : "text-white "
+                          }
                            font-Playfair cursor-pointer font-bold  text-xl`}
                       >
                         {item.name}
@@ -234,6 +237,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </header >
   );
 }

@@ -1,0 +1,55 @@
+{
+    "project": [
+        {
+            "name": "personal",
+            "personal": [
+                {
+                    "startYear": "2021",
+                    "src": "/assets/ecommerce-website-design.png",
+                    "title": "eCommerce Website",
+                    "href": "https://tringuyen.vercel.app/",
+                    "description": [
+                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    ]
+                },
+                {
+                    "startYear": "2022",
+                    "src": "/assets/ecommerce-website-design.png",
+                    "href": "https://tringuyen.vercel.app/",
+                    "title": "Portfolio Website",
+                    "description": "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                }
+            ]
+        },
+        {
+            "name": "company",
+            "company": [
+                {
+                    "startYear": "2020 - 2021",
+                    "src": "/assets/bbc.jpg",
+                    "title": "BBCincorp",
+                    "href": "https://bbcincorp.com/hk",
+                    "description": [
+                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    ]
+                },
+                {
+                    "startYear": "2019 - 2020",
+                    "src": "/assets/nova.jpg",
+                    "title": "NovaGroup",
+                    "href": "https://www.novagroup.vn/",
+                    "description": "Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
+                },
+                {
+                    "startYear": "2022 - 2023",
+                    "src": "/assets/g.png",
+                    "title": "Gleads",
+                    "href": "https://gleads.vn/vi",
+                    "description": "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                }
+            ]
+        }
+    ]
+}
