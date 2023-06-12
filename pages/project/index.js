@@ -1,7 +1,8 @@
 import React from "react";
-import Layout from "components/templates/Layout";
-import Project from "components/organisms/Project";
+import Layout from "components/templates/layout";
+import ProjectTemplate from "components/templates/project";
 import Head from "next/head";
+import data from './data.json'
 function About() {
   return (
     <>
@@ -10,7 +11,7 @@ function About() {
       </Head>
       <Layout>
         <section className="bg-[#1f2336]   relative  flex justify-center items-center pt-10">
-          <Project />
+          <ProjectTemplate data={data} />
         </section>
       </Layout>
     </>

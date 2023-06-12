@@ -5,11 +5,8 @@ import Link from "next/link";
 import { FiPhone } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
-import { MdEmail, MdLocationPin } from "react-icons/md";
-import logo from "../../../../public/logo.png";
+import { MdEmail } from "react-icons/md";
 import { ThemContext } from "../../../../common/context";
-import { data } from "browserslist";
-import { Children } from "node_modules/react/cjs/react.production.min";
 
 const styleInsta = {
   background: "#f09433",
@@ -128,20 +125,36 @@ export default function Header() {
         <div className=" flex justify-between items-center lg:col-11 h-full lg:pl-20">
           <div className="lg:col-5 hidden lg:block">
             {" "}
-            <ul className="flex">
+            <ul className="flex fancy-list">
               {dataMenu.map((item, index) => {
                 return (
-                  <Link href={item.href} key={index}>
-                    <a
-                      className={`${
-                        routerAsPath() === item.href
-                          ? "text-main "
-                          : "text-white hover:text-main"
-                      }  font-Playfair cursor-pointer font-bold mr-14  text-xl`}
-                    >
-                      {item.name}
-                    </a>
-                  </Link>
+                  <li key={index} className="mr-14">
+                    <div className="fancytexthover" >
+                      <span className="textwrapper">
+                        <Link href={item.href} >
+                          <a
+                            className={`${routerAsPath() === item.href
+                              ? "!text-main "
+                              : "text-white "
+                              }  font-Playfair cursor-pointer font-bold   text-xl`}
+                          >
+                            {item.name}
+                          </a>
+                        </Link>
+                      </span>
+
+                      <span
+                        className={`${routerAsPath() === item.href
+                          ? "!text-main "
+                          : "text-white "
+                          }
+                           font-Playfair cursor-pointer font-bold  text-xl`}
+                      >
+                        {item.name}
+                      </span>
+
+                    </div>
+                  </li>
                 );
               })}
             </ul>
@@ -158,19 +171,16 @@ export default function Header() {
 
             <button className="w-8 h-18 relative" onClick={handClickMenu}>
               <div
-                className={`${
-                  open ? "rotate-45 mb-0 h-1" : "mb-2"
-                } h-0.5 bg-white w-full  transition-all duration-200 ease-in-out`}
+                className={`${open ? "rotate-45 mb-0 h-1" : "mb-2"
+                  } h-0.5 bg-white w-full  transition-all duration-200 ease-in-out`}
               ></div>
               <div
-                className={`${
-                  open ? "hidden" : "block mb-2"
-                } h-0.5 bg-white w-full   transition-all duration-200 ease-in-out`}
+                className={`${open ? "hidden" : "block mb-2"
+                  } h-0.5 bg-white w-full   transition-all duration-200 ease-in-out`}
               ></div>
               <div
-                className={`${
-                  open ? "-rotate-45 h-1 absolute top-[10px]" : ""
-                } h-0.5 bg-white w-full transition-all duration-200 ease-in-out`}
+                className={`${open ? "-rotate-45 h-1 absolute top-[10px]" : ""
+                  } h-0.5 bg-white w-full transition-all duration-200 ease-in-out`}
               ></div>
             </button>
           </div>
@@ -194,9 +204,8 @@ export default function Header() {
         </div>
       </div>{" "}
       <div
-        className={`${
-          open ? "right-0" : "-right-[1000px]"
-        } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2 `}
+        className={`${open ? "right-0" : "-right-[1000px]"
+          } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2 `}
       >
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <ul className="flex-col justify-center border-b border-dashed mb-4 pb-2 lg:hidden block">
@@ -228,6 +237,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </header >
   );
 }
