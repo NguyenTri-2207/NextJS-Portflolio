@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+// import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
 import { FaCss3Alt, FaHtml5, FaReact, FaGithub, FaFigma } from "react-icons/fa";
 import { DiJavascript, DiPhotoshop } from "react-icons/di";
@@ -185,7 +185,7 @@ const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
     <button className="nextArrow" onClick={onClick}>
-      <IoIosArrowForward />
+      {/* <IoIosArrowForward /> */}
     </button>
   );
 };
@@ -193,7 +193,7 @@ const SamplePrevArrow = (props) => {
   const { onClick } = props;
   return (
     <button className="prevArrow" onClick={onClick}>
-      <IoIosArrowBack />
+      {/* <IoIosArrowBack /> */}
     </button>
   );
 };
