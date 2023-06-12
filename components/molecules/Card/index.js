@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import { AiOutlineEye } from "react-icons/ai";
-import { IoLocationSharp } from "react-icons/Io";
 import { FaLocationArrow, FaGithub } from "react-icons/fa";
 const Card = ({ startYear, title, src, description, href, even, github }) => {
   console.log(even);
