@@ -111,10 +111,10 @@ const CardYear = ({ props, index }) => {
       >
         <div className="flex">
           {" "}
-          <p className="font-bold lg:text-2xl text-[#08d565] mr-6 lg:mr-10 mt-1">
+          <p className="font-bold lg:text-xl text-[#08d565] mr-6 lg:mr-10 mt-1">
             {year}
           </p>{" "}
-          <h5 className="lg:text-3xl mb-2 font-Playfair font-medium">
+          <h5 className="lg:text-2xl mb-2 font-Playfair font-medium">
             {title}
           </h5>
         </div>

@@ -45,12 +45,12 @@ const TypeWriter = (props) => {
   return <div className="blinkingcursor">{text}</div>;
 };
 
-const Banner = (props) => {
+const Banner = () => {
   return (
-    <div className="w-full lg:h-[calc(100vh-80px)] lg:pl-[84px]  relative">
+    <div className="w-full lg:h-screen lg:pl-[84px]  relative">
       <div className="container lg:h-full">
         <div className="row items-center lg:h-full">
-          <div className="lg:col-6 pl-10 mt-[160px] lg:mt-0">
+          <div className="lg:col-6 pl-10 mt-[160px] lg:mt-0 z-10">
             <div></div>
             <p className=" text-main lg:text-lg  relative font-poppins font-semibold  before:content-[''] before:h-0.5 lg:before:w-6 before:w-2 before:bg-main before:absolute before:bottom-[14px] before:-left-4 lg:before:-left-10">
               HELLO DEAR
@@ -63,14 +63,15 @@ const Banner = (props) => {
             </h1>
             <button></button>
           </div>
-          <div className="lg:col-6 lg:m-auto text-center relative mt-6 mb-16 lg:my-0">
+          <div className="lg:col-6 lg:m-auto text-center relative mt-6 mb-16 lg:my-0 z-10 ">
             <Image
               src="/assets/banner/avt4.png"
+              className="shadow-2xl"
               width={400}
               height={400}
               alt="bg"
             />
-            <div className="absolute -top-20 -left-20 animate-pulse hidden lg:block">
+            <div className="absolute -top-20 -left-20 animate-pulse hidden lg:block z-0">
               <Image
                 src="/assets/banner/bg-mt.png"
                 width={128}
@@ -78,7 +79,7 @@ const Banner = (props) => {
                 alt="bg"
               />
             </div>
-            <div className="absolute -bottom-20 -left-6 animate-pulse hidden lg:block">
+            <div className="absolute -bottom-20 -left-6 animate-pulse hidden lg:block z-0">
               <Image
                 src="/assets/banner/bg-m.png"
                 width={88}
@@ -90,7 +91,7 @@ const Banner = (props) => {
         </div>
       </div>
 
-      <div className="absolute -bottom-2  left-16 hidden lg:block">
+      <div className="absolute -bottom-2  left-16 hidden lg:block z-0">
         <Image
           src="/assets/banner/bg-lb.png"
           width={320}
@@ -98,7 +99,7 @@ const Banner = (props) => {
           alt="bg"
         />
       </div>
-      <div className="absolute top-0 lg:right-20 right-1 ">
+      <div className="absolute top-0 lg:right-20 right-1 z-00">
         <Image
           src="/assets/banner/bg-t.png"
           width={384}

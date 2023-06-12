@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from "react";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { MdEmail } from "react-icons/md";
 import { ThemContext } from "../../../../common/context";
@@ -87,6 +87,7 @@ export default function Header() {
       }
     }
   };
+  console.log(isSticky);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -111,9 +112,12 @@ export default function Header() {
     );
   };
   return (
-    <header className="headerLayout relative" id="header">
+    <header
+      className="fixed top-0 left-0 z-50 w-full bg-[#272b44] text-gleads-oxfordBlue-900 h-20 shadow-2xl"
+      id="header"
+    >
       <nav className="flex items-center justify-between w-full pr-4 h-20 bg-[#272b44]">
-        <div className="p-4 shadow-2xl border-r-2 border-b-2 border-[#1f2336]">
+        <div className="p-4  shadow-2xl ">
           <Image
             className="m-4"
             src="/assets/logo.png"
@@ -123,44 +127,33 @@ export default function Header() {
           />
         </div>
         <div className=" flex justify-between items-center lg:col-11 h-full lg:pl-20">
-          <div className="lg:col-5 hidden lg:block">
-            {" "}
-            <ul className="flex fancy-list">
+          <div className="lg:col-8 hidden lg:block">
+            <ul className="flex">
               {dataMenu.map((item, index) => {
                 return (
-                  <li key={index} className="mr-14">
-                    <div className="fancytexthover" >
-                      <span className="textwrapper">
-                        <Link href={item.href} >
-                          <a
-                            className={`${routerAsPath() === item.href
-                              ? "!text-main "
-                              : "text-white "
-                              }  font-Playfair cursor-pointer font-bold   text-xl`}
-                          >
-                            {item.name}
-                          </a>
-                        </Link>
-                      </span>
-
-                      <span
-                        className={`${routerAsPath() === item.href
-                          ? "!text-main "
-                          : "text-white "
-                          }
-                           font-Playfair cursor-pointer font-bold  text-xl`}
+                  <li key={index} className="mr-14 last:mr-0">
+                    <Link href={item.href}>
+                      <a
+                        className={`${
+                          routerAsPath() === item.href
+                            ? "text-main "
+                            : "text-white "
+                        }   font-Playfair   block cursor-pointer font-bold hover:text-main text-xl before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                         relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                       >
                         {item.name}
-                      </span>
-
-                    </div>
+                      </a>
+                    </Link>
                   </li>
                 );
               })}
             </ul>
           </div>
           <div className="flex ">
-            <div className=" border-r-2 mr-10  border-[#1f2336]  relative font-poppins font-semibold  before:content-[''] before:h-0.5 before:w-3 before:bg-main before:absolute before:bottom-[11.5px] before:-left-6">
+            <div
+              className="  mr-10  relative font-poppins font-semibold  before:content-[''] before:h-0.5 before:w-3
+             before:bg-main before:absolute before:bottom-[11.5px] before:-left-6"
+            >
               <a
                 className="text-main font-medium cursor-pointer"
                 href="tel:0337 368 371"
@@ -171,22 +164,25 @@ export default function Header() {
 
             <button className="w-8 h-18 relative" onClick={handClickMenu}>
               <div
-                className={`${open ? "rotate-45 mb-0 h-1" : "mb-2"
-                  } h-0.5 bg-white w-full  transition-all duration-200 ease-in-out`}
+                className={`${
+                  open ? "rotate-45 mb-0 h-1" : "mb-2"
+                } h-0.5 bg-white w-full  transition-all duration-200 ease-in-out`}
               ></div>
               <div
-                className={`${open ? "hidden" : "block mb-2"
-                  } h-0.5 bg-white w-full   transition-all duration-200 ease-in-out`}
+                className={`${
+                  open ? "hidden" : "block mb-2"
+                } h-0.5 bg-white w-full   transition-all duration-200 ease-in-out`}
               ></div>
               <div
-                className={`${open ? "-rotate-45 h-1 absolute top-[10px]" : ""
-                  } h-0.5 bg-white w-full transition-all duration-200 ease-in-out`}
+                className={`${
+                  open ? "-rotate-45 h-1 absolute top-[10px]" : ""
+                } h-0.5 bg-white w-full transition-all duration-200 ease-in-out`}
               ></div>
             </button>
           </div>
         </div>
       </nav>
-      <div className="absolute w-[84px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2 hidden lg:block">
+      <div className="absolute w-[84px] bg-[#272b44] shadow-2xl  h-[calc(100vh-80px)] z-20  hidden lg:block">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           {dataSocial.map((item, index) => {
             return (
@@ -204,10 +200,11 @@ export default function Header() {
         </div>
       </div>{" "}
       <div
-        className={`${open ? "right-0" : "-right-[1000px]"
-          } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2 `}
+        className={`${
+          open ? "right-0" : "-right-[1000px]"
+        } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2  `}
       >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <ul className="flex-col justify-center border-b border-dashed mb-4 pb-2 lg:hidden block">
             {dataMenu.map((item, index) => {
               return (
@@ -237,6 +234,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header >
+    </header>
   );
 }

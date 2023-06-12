@@ -1,28 +1,6 @@
 {
     "project": [
         {
-            "name": "personal",
-            "personal": [
-                {
-                    "startYear": "2021",
-                    "src": "/assets/ecommerce-website-design.png",
-                    "title": "eCommerce Website",
-                    "href": "https://tringuyen.vercel.app/",
-                    "description": [
-                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
-                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
-                    ]
-                },
-                {
-                    "startYear": "2022",
-                    "src": "/assets/ecommerce-website-design.png",
-                    "href": "https://tringuyen.vercel.app/",
-                    "title": "Portfolio Website",
-                    "description": "Technology Used : NextJS, Atomic Design, React Bootstrap"
-                }
-            ]
-        },
-        {
             "name": "company",
             "company": [
                 {
@@ -32,22 +10,58 @@
                     "href": "https://bbcincorp.com/hk",
                     "description": [
                         "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         "Technology Used : NextJS, Atomic Design, React Bootstrap"
                     ]
                 },
                 {
                     "startYear": "2019 - 2020",
-                    "src": "/assets/nova.jpg",
+                    "src": "/assets/nova.png",
                     "title": "NovaGroup",
                     "href": "https://www.novagroup.vn/",
-                    "description": "Technology Used : ReactJS, Redux Toolkit, React Bootstrap"
+                    "description": [
+                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    ]
                 },
                 {
                     "startYear": "2022 - 2023",
-                    "src": "/assets/g.png",
+                    "src": "/assets/gleads.jpg",
                     "title": "Gleads",
                     "href": "https://gleads.vn/vi",
-                    "description": "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    "description": [
+                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "personal",
+            "personal": [
+                {
+                    "startYear": "2021",
+                    "src": "/assets/images.jpg",
+                    "title": "eCommerce Website",
+                    "href": "https://triapple.vercel.app/",
+                    "description": [
+                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    ]
+                },
+                {
+                    "startYear": "2022",
+                    "src": "/assets/maxresdefault.jpg",
+                    "href": "https://tringuyen.vercel.app/",
+                    "title": "Portfolio Website",
+                    "description": [
+                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                    ]
                 }
             ]
         }

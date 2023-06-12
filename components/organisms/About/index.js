@@ -41,7 +41,7 @@ const About = () => {
       <div className="" id="about">
         <h2>About me</h2>
         <div className="row ">
-          <div className=" lg:col-4 col-12 mt-4 mb-10 lg:mb-0">
+          <div className=" lg:col-4 md:col-8 mx-auto mt-4 mb-10 lg:mb-0">
             <Image
               className="rounded-lg w-full h-full"
               src="/assets/working-at-night.jpg"
@@ -109,7 +109,6 @@ const About = () => {
             <div className="flex lg:hidden mt-10">
               {/* <Button title="Download CV" href="https://www.topcv.vn/xem-cv/AQwAUlFQWwcEAQIABVoGAgMLAQgHAQdTAVsBUg9ad5" />
               <Button title=" Send Messenger" /> */}
-
             </div>
           </div>
         </div>

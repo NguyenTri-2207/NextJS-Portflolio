@@ -1,14 +1,13 @@
 @import "components/organisms/experience/index.scss";
 @import "components/organisms/Skill/index.scss";
 @import "components/organisms/Banner/index.scss";
-@import "components/templates/layout/Header/index.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
 h2 {
   @apply text-3xl lg:text-4xl text-main font-Playfair font-bold mb-6  lg:mb-16 text-center;

@@ -10,7 +10,7 @@ function About() {
         <title>Resum-Nguyễn Ngọc Trí</title>
       </Head>
       <Layout>
-        <section className="bg-[#1f2336]   relative  flex justify-center items-center pt-10">
+        <section className="bg-[#1f2336]  h-full pt-28 relative  lg:pl-[84px] flex justify-center items-center ">
           <Experience data={data} />
         </section>
       </Layout>

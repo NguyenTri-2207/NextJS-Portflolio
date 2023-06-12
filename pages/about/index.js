@@ -9,7 +9,7 @@ function About() {
         <title>About-Nguyễn Ngọc Trí</title>
       </Head>
       <Layout footer={true}>
-        <section className="bg-[#1f2336]  relative lg:h-[calc(100vh-80px)] flex justify-center items-center">
+        <section className="bg-[#1f2336] pt-28 lg:pt-0  relative lg:h-screen  lg:pl-[84px] flex justify-center items-center">
           <AboutUS />
         </section>
       </Layout>

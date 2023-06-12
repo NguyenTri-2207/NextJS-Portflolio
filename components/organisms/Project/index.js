@@ -34,9 +34,11 @@ export default function Experience({ data }) {
           {tab === 0 && (
             <div eventKey="second">
               <div>
-                {data.project[0].personal.map((item, index) => {
+                {data.project[0].company.map((item, index) => {
+                  console.log(index % 2 == 0);
                   return (
                     <Card
+                      even={index % 2 == 0}
                       key={index}
                       startYear={item.startYear}
                       src={item.src}
@@ -52,9 +54,10 @@ export default function Experience({ data }) {
           {tab === 1 && (
             <div eventKey="first">
               <div>
-                {data.project[1].company.map((item, index) => {
+                {data.project[1].personal.map((item, index) => {
                   return (
                     <Card
+                      even={index % 2 == 0}
                       key={index}
                       startYear={item.startYear}
                       src={item.src}
