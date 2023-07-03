@@ -5,7 +5,6 @@ import Image from "next/image";
 import { AiOutlineEye } from "react-icons/ai";
 import { FaLocationArrow, FaGithub } from "react-icons/fa";
 const Card = ({ startYear, title, src, description, href, even, github }) => {
-  console.log(even);
   return (
     <div className="mb-10">
       <div
@@ -16,7 +15,6 @@ const Card = ({ startYear, title, src, description, href, even, github }) => {
         <div className="  lg:col-5 overflow-hidden">
           <img
             alt="img"
-            fill
             className="w-full h-full group-hover:scale-110 transition delay-150 duration-300 ease-in-out"
             src={src}
             width={420}

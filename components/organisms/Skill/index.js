@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
+import { ThemContext } from "common/context";
+
 import { FaCss3Alt, FaHtml5, FaReact, FaGithub, FaFigma } from "react-icons/fa";
 import { DiJavascript, DiPhotoshop } from "react-icons/di";
 import Slider from "react-slick";
@@ -114,7 +116,7 @@ const CardYear = ({ props, index }) => {
           <p className="font-bold lg:text-xl text-[#08d565] mr-6 lg:mr-10 mt-1">
             {year}
           </p>{" "}
-          <h5 className="lg:text-2xl mb-2 font-Playfair font-medium">
+          <h5 className="lg:text-2xl mb-2 font-Playfair font-medium dark:text-white">
             {title}
           </h5>
         </div>
@@ -140,7 +142,7 @@ const CardYear = ({ props, index }) => {
           {des.map((item, index) => {
             return (
               <li
-                className="text-sm  leading-6"
+                className="text-sm  leading-6 dark:text-white"
                 key={index}
                 dangerouslySetInnerHTML={{ __html: item }}
               />
@@ -234,9 +236,10 @@ var settings = {
   ],
 };
 const Skill = () => {
+  const { theme } = useContext(ThemContext);
   return (
     <div className="container">
-      <div className="mb-10 lg:mb-20" id="skill">
+      <div className="pb-10 lg:pb-20" id="skill">
         <h2>My Skills</h2>
         <div className="row items-start justify-center lg:justify-between mb-10">
           <div className="lg:col-5 md:col-8 col-12 skill_img">
@@ -282,20 +285,24 @@ const Skill = () => {
           </Slider>
         </div>
       </div>
-      <img
-        className="absolute left-0 bottom-0 z-0 lg:block hidden"
-        src="/assets/bg-bot-skill.png"
-        width={300}
-        height={200}
-        alt="a"
-      />
-      <img
-        className="absolute right-10 top-10 z-0 animate-pulse "
-        src="/assets/bg-top-skill.png"
-        width={32}
-        height={103}
-        alt="a"
-      />
+      {theme && (
+        <>
+          <img
+            className="absolute left-0 bottom-0 z-0 lg:block hidden"
+            src="/assets/bg-bot-skill.png"
+            width={300}
+            height={200}
+            alt="a"
+          />
+          <img
+            className="absolute right-10 top-10 z-0 animate-pulse "
+            src="/assets/bg-top-skill.png"
+            width={32}
+            height={103}
+            alt="a"
+          />
+        </>
+      )}
     </div>
   );
 };

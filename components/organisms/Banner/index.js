@@ -42,7 +42,7 @@ const TypeWriter = (props) => {
     return () => clearTimeout(timeout);
   }, [text, typing]);
 
-  return <div className="blinkingcursor">{text}</div>;
+  return <div className="animate-pulse">{text}</div>;
 };
 
 const Banner = () => {

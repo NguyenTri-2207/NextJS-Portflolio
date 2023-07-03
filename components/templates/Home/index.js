@@ -1,9 +1,9 @@
 import About from "components/organisms/About";
-import Experience from "components/organisms/experience";
+import Experience from "components/templates/resum";
 import Skill from "components/organisms/Skill";
 import Project from "components/organisms/Project";
 import data from "./data.json";
-import dataproject from '../../../pages/project/data.json'
+import dataproject from "../../../pages/project/data.json";
 import Banner from "components/organisms/Banner";
 const Home = () => {
   return (

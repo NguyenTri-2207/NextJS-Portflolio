@@ -2,26 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
-import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
+import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import { MdEmail } from "react-icons/md";
 import { ThemContext } from "../../../../common/context";
+import Social from "components/atoms/Social";
 
-const styleInsta = {
-  background: "#f09433",
-  background:
-    " -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
-  background:
-    "-webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
-  background:
-    "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
-  filter:
-    "progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 )",
-};
-const styleFb = { background: "#036ce4" };
-const styleGh = { background: "#000000" };
-export default function Header() {
+export default function Header({ socialLayoutLeft }) {
   const dataMenu = [
     { name: "Home", id: "header", href: "/" },
     { name: "About", id: "about", href: "/about" },
@@ -29,35 +17,10 @@ export default function Header() {
     { name: "Skill", id: "skill", href: "/skill" },
     { name: "Project", id: "project", href: "/project" },
   ];
-  const dataSocial = [
-    {
-      icon: <FaFacebookF size={22} />,
-      src: "https://www.facebook.com/nguyenngoctri2207/",
-      style: styleFb,
-    },
-    {
-      icon: <FaInstagram size={22} />,
-      src: "https://www.instagram.com/tri_nguyen2207/",
-      style: styleInsta,
-    },
-    {
-      icon: <FaGithub size={22} />,
-      src: "https://github.com/NguyenTri-2207",
-      style: styleGh,
-    },
-  ];
-  const [active, setActive] = useState(0);
-  const goToAbout = () => {
-    const scrollToTable = document.querySelector('[id ^= "about"]');
-    window.scrollTo({
-      top: scrollToTable.offsetTop - 40,
-      behavior: "smooth",
-    });
-  };
 
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
-  const [isToggleOn, setIsToggleOn] = useState(false);
+  const [isToggleOn, setIsToggleOn] = useState(true);
   const router = useRouter();
 
   // slice '/' url
@@ -87,7 +50,7 @@ export default function Header() {
       }
     }
   };
-  console.log(isSticky);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -98,19 +61,7 @@ export default function Header() {
   const handClickMenu = () => {
     setOpen(!open);
   };
-  const CardSocial = ({ src, children, style }) => {
-    return (
-      <a
-        style={style}
-        href={src}
-        target="_blank"
-        rel="noreferrer"
-        className="shadow-2xl  w-10 h-10 flex justify-center items-center rounded-xl mb-4"
-      >
-        {children}
-      </a>
-    );
-  };
+
   return (
     <header
       className="fixed top-0 left-0 z-50 w-full bg-[#272b44] text-gleads-oxfordBlue-900 h-20 shadow-2xl"
@@ -138,7 +89,7 @@ export default function Header() {
                           routerAsPath() === item.href
                             ? "text-main "
                             : "text-white "
-                        }   font-Playfair   block cursor-pointer font-bold hover:text-main text-xl before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                        }    block cursor-pointer font-semibold hover:text-main text-lg  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                       >
                         {item.name}
@@ -149,7 +100,21 @@ export default function Header() {
               })}
             </ul>
           </div>
+          {/* <!-- dark and light mode toggle --> */}
+          <button
+            onClick={() => onSwitchAction()}
+            type="button"
+            className=" bg-white rounded-full p-2 mr-4 shadow-xl text-black hover:bg-main  transition-all hover:duration-150 delay-200 ease-in-out"
+          >
+            {isToggleOn ? (
+              <MdDarkMode className=" transition ease-in-out" />
+            ) : (
+              <MdOutlineLightMode className=" transition ease-in-out" />
+            )}
+          </button>
           <div className="flex ">
+            {/* dark mode */}
+            <div className="flex items-center"></div>
             <div
               className="  mr-10  relative font-poppins font-semibold  before:content-[''] before:h-0.5 before:w-3
              before:bg-main before:absolute before:bottom-[11.5px] before:-left-6"
@@ -182,23 +147,13 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <div className="absolute w-[84px] bg-[#272b44] shadow-2xl  h-[calc(100vh-80px)] z-20  hidden lg:block">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          {dataSocial.map((item, index) => {
-            return (
-              <CardSocial
-                key={index}
-                src={item.src}
-                style={item.style}
-                width={item.width}
-                height={item.height}
-              >
-                {item.icon}
-              </CardSocial>
-            );
-          })}
+      {/* nav left */}
+      {socialLayoutLeft && (
+        <div className="absolute w-[84px] bg-[#272b44] shadow-2xl  h-[calc(100vh-80px)] z-20  hidden lg:block">
+          <Social className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
         </div>
-      </div>{" "}
+      )}
+      {/* mobile */}
       <div
         className={`${
           open ? "right-0" : "-right-[1000px]"

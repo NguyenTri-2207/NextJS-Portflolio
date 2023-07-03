@@ -32,42 +32,37 @@ export default function Experience({ data }) {
           </div>
 
           {tab === 0 && (
-            <div eventKey="second">
-              <div>
-                {data.project[0].company.map((item, index) => {
-                  console.log(index % 2 == 0);
-                  return (
-                    <Card
-                      even={index % 2 == 0}
-                      key={index}
-                      startYear={item.startYear}
-                      src={item.src}
-                      title={item.title}
-                      href={item.href}
-                      description={item.description}
-                    />
-                  );
-                })}
-              </div>
+            <div>
+              {data.project[0].company.map((item, index) => {
+                return (
+                  <Card
+                    even={index % 2 == 0}
+                    key={index}
+                    startYear={item.startYear}
+                    src={item.src}
+                    title={item.title}
+                    href={item.href}
+                    description={item.description}
+                  />
+                );
+              })}
             </div>
           )}
           {tab === 1 && (
-            <div eventKey="first">
-              <div>
-                {data.project[1].personal.map((item, index) => {
-                  return (
-                    <Card
-                      even={index % 2 == 0}
-                      key={index}
-                      startYear={item.startYear}
-                      src={item.src}
-                      title={item.title}
-                      href={item.href}
-                      description={item.description}
-                    />
-                  );
-                })}
-              </div>
+            <div>
+              {data.project[1].personal.map((item, index) => {
+                return (
+                  <Card
+                    even={index % 2 == 0}
+                    key={index}
+                    startYear={item.startYear}
+                    src={item.src}
+                    title={item.title}
+                    href={item.href}
+                    description={item.description}
+                  />
+                );
+              })}
             </div>
           )}
         </div>

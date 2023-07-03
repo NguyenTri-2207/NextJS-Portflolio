@@ -23,7 +23,7 @@ const Experience = ({ data }) => {
   const dataExperience = data.experience;
   return (
     <div className="experience">
-      <div className="container">
+      <div className="containers">
         <div className="row">
           <div className="col-12">
             <h2>Experience</h2>

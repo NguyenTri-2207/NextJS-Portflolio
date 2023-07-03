@@ -68,33 +68,46 @@ const About = () => {
             </div>
           </div>
           <div className="about-text lg:col-8 col-12  ">
-            <div className="text-yellow text-lg lg:font-medium">Who am i?</div>
-            <div className=" text-2xl leading-10 lg:font-medium">
+            <div className="text-yellow text-xl leading-9 lg:font-medium">
+              Who am i?
+            </div>
+            <div className=" text-2xl leading-10 lg:font-medium text-gray-300">
               I{`'`}m Tri and
               <span className="text-yellow lg:font-medium">
                 {" "}
                 Front-End Developer
               </span>
             </div>
-            <div className=" pb-4 border-b border-gray-50 ">
-              I{`'`}m a Web Developer, I am passionate and dedicated to my work.
-              With the knowledge I learned in college and self-study at home, I
-              gained the skills and knowledge needed to create a website
-              interface. I am trying every day to improve my skills to become a
-              senior front end developer
+            <div className=" pb-7 border-b border-gray-50 text-gray-300">
+              <p className="mb-3 leading-7 ">
+                I{`'`}m a Web Developer, I am passionate and dedicated to my
+                work. With the knowledge I learned in college and self-study at
+                home.
+              </p>
+              <p className="leading-7 ">
+                I gained the skills and knowledge needed to create a website
+                interface. I am trying every day to improve my skills to become
+                a senior front end developer
+              </p>
             </div>
-            <div className="block lg:flex justify-start m-auto pt-2 lg:pt-4 pb-5">
+            <h3 className="text-xl font-medium mt-7 text-yellow">
+              Personal Info
+            </h3>
+            <div className="block md:flex justify-start m-auto pt-2 lg:pt-4 pb-5 text-gray-300">
               {new Array(2).fill(2).map((_, idx) => {
                 const count = data.length / 2;
                 return (
-                  <div key={idx} className="lg:col-6">
+                  <div key={idx} className="md:col-6">
                     {data
                       .filter(
                         (_, index) =>
                           index < (idx + 1) * count && index >= idx * count
                       )
                       .map((item, index) => (
-                        <div key={index} className="flex items-center mb-2">
+                        <div
+                          key={index}
+                          className="flex items-center mb-2 leading-8"
+                        >
                           <div className="block text-lg text-yellow  mr-2">
                             {item.icon}
                           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "components/templates/Layout";
-import AboutUS from "components/organisms/About";
+import AboutUS from "components/templates/About";
 import Head from "next/head";
 function About() {
   return (
@@ -9,7 +9,7 @@ function About() {
         <title>About-Nguyễn Ngọc Trí</title>
       </Head>
       <Layout footer={true}>
-        <section className="bg-[#1f2336] pt-28 lg:pt-0  relative lg:h-screen  lg:pl-[84px] flex justify-center items-center">
+        <section className="dark:bg-bgHome-dark h-full lg:pt-[230px] pt-10  bg-bgHome-white min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full ">
           <AboutUS />
         </section>
       </Layout>

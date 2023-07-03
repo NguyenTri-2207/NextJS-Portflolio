@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "styles/globals.scss";
 import Head from "next/head";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemContext } from "../common/context";
-const dark = "#343a40";
-const light = "#f8f9fa";
+import "styles/globals.scss";
+
+/*----------- app ----------- */
+
 function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
   return (
     <>
       <Head>
@@ -18,11 +18,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <ThemContext.Provider value={{ theme, setTheme }}>
         <div
-          className="font-poppinss overflow-hidden"
-          style={{
-            color: `${!theme ? light : dark}`,
-            background: `${theme ? light : dark}`,
-          }}
+          className={`"font-poppinss overflow-hidden   ${theme ? "dark" : ""}`}
         >
           <Component {...pageProps} />
         </div>

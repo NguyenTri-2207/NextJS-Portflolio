@@ -2,7 +2,7 @@
     "experience": [
         {
             "startYear": "06/2020",
-            "endYear": "present",
+            "endYear": "2023",
             "title": "Front-End Developer",
             "company": "Gleads - Quận 7, HCM",
             "description": "Convert website bbcincorp.com from GulpJs to NextJs , Configure and build source NextJS, Visually Breaking Down UI Components using Atomic Design"
@@ -26,7 +26,7 @@
             "endYear": "05/2019",
             "title": "ĐH GTVT HCM",
             "company": "450 Lê Văn Việt-Q.9, HCM",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque  commodo"
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada "
         }
     ]
 }
