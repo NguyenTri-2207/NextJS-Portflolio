@@ -28,6 +28,7 @@ export default function Header() {
     { name: "Resum", id: "resum", href: "/resum" },
     { name: "Skill", id: "skill", href: "/skill" },
     { name: "Project", id: "project", href: "/project" },
+    { name: "Blog", id: "blog", href: "/blog" },
   ];
   const dataSocial = [
     {
@@ -87,7 +88,6 @@ export default function Header() {
       }
     }
   };
-  console.log(isSticky);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -134,11 +134,10 @@ export default function Header() {
                   <li key={index} className="mr-14 last:mr-0">
                     <Link href={item.href}>
                       <a
-                        className={`${
-                          routerAsPath() === item.href
-                            ? "text-main "
-                            : "text-white "
-                        }   font-Playfair   block cursor-pointer font-bold hover:text-main text-xl before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                        className={`${routerAsPath() === item.href
+                          ? "text-main "
+                          : "text-white "
+                          }   font-Playfair   block cursor-pointer font-bold hover:text-main text-xl before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                       >
                         {item.name}
@@ -164,19 +163,16 @@ export default function Header() {
 
             <button className="w-8 h-18 relative" onClick={handClickMenu}>
               <div
-                className={`${
-                  open ? "rotate-45 mb-0 h-1" : "mb-2"
-                } h-0.5 bg-white w-full  transition-all duration-200 ease-in-out`}
+                className={`${open ? "rotate-45 mb-0 h-1" : "mb-2"
+                  } h-0.5 bg-white w-full  transition-all duration-200 ease-in-out`}
               ></div>
               <div
-                className={`${
-                  open ? "hidden" : "block mb-2"
-                } h-0.5 bg-white w-full   transition-all duration-200 ease-in-out`}
+                className={`${open ? "hidden" : "block mb-2"
+                  } h-0.5 bg-white w-full   transition-all duration-200 ease-in-out`}
               ></div>
               <div
-                className={`${
-                  open ? "-rotate-45 h-1 absolute top-[10px]" : ""
-                } h-0.5 bg-white w-full transition-all duration-200 ease-in-out`}
+                className={`${open ? "-rotate-45 h-1 absolute top-[10px]" : ""
+                  } h-0.5 bg-white w-full transition-all duration-200 ease-in-out`}
               ></div>
             </button>
           </div>
@@ -200,9 +196,8 @@ export default function Header() {
         </div>
       </div>{" "}
       <div
-        className={`${
-          open ? "right-0" : "-right-[1000px]"
-        } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2  `}
+        className={`${open ? "right-0" : "-right-[1000px]"
+          } absolute transition-all duration-200 w-[300px] bg-[#272b44]  h-[calc(100vh-80px)] z-20 pr-2  `}
       >
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <ul className="flex-col justify-center border-b border-dashed mb-4 pb-2 lg:hidden block">

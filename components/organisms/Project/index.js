@@ -20,9 +20,8 @@ export default function Experience({ data }) {
                   <button
                     key={index}
                     onClick={() => handClickProject(index)}
-                    className={`${
-                      tab === index && "bg-main"
-                    } " py-3 px-6 rounded-full text-black font-medium`}
+                    className={`${tab === index && "bg-main"
+                      } " py-3 px-6 rounded-full text-black font-medium`}
                   >
                     {item.name}
                   </button>
@@ -35,7 +34,7 @@ export default function Experience({ data }) {
             <div eventKey="second">
               <div>
                 {data.project[0].company.map((item, index) => {
-                  console.log(index % 2 == 0);
+
                   return (
                     <Card
                       even={index % 2 == 0}

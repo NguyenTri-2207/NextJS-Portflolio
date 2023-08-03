@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "styles/globals.scss";
 import Head from "next/head";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemContext } from "../common/context";
 const dark = "#343a40";
 const light = "#f8f9fa";

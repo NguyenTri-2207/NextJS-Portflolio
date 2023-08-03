@@ -5,7 +5,7 @@ function Layout({ children, footer }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className=" bg-white pt-[80px]">{children}</main>
       {footer ? "" : <Footer />}
     </>
   );
