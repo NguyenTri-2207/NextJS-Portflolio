@@ -9,7 +9,6 @@ import { ImPhone } from "react-icons/im";
 import Image from "next/image";
 import { ThemContext } from "common/context";
 import CardMe from "components/molecules/CardMe";
-import Button from "components/atoms/Button";
 import data1 from "components/templates/Home/data.json";
 
 const data = [
@@ -58,8 +57,7 @@ const About = () => {
     <div className="container ">
       <div className="row ">
         <CardMe />
-        <div className="about-text lg:col-8 col-12  ">
-          <h2>About me</h2>
+        <div className="about-text lg:col-8 col-12 lg:-mt-4 ">
           <div className="dark:text-yellow  text-xl leading-9 lg:font-medium">
             Who am i?
           </div>
@@ -85,7 +83,7 @@ const About = () => {
             {" "}
             What I do!
           </h3>
-          <div className="lg:grid grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-6 mt-[30px]">
+          <div className="lg:grid grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-2 mt-[30px]">
             {data1.experience.map((item, index) => {
               return (
                 <Card

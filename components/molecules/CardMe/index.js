@@ -36,10 +36,10 @@ function index(props) {
       <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-8 lg:px-3 xl:px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
         <img
           src="/assets/banner/avt4.png"
-          className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[130px]"
+          className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-24"
           alt="about avatar"
         />
-        <div className="pt-28 pb-6">
+        <div className="pt-36 pb-6">
           <h1 className="mt-6 mb-1 text-2xl font-semibold text-gray-500">
             Tri Nguyen
           </h1>

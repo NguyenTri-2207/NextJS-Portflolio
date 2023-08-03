@@ -9,7 +9,7 @@ function About() {
         <title>Skill-Nguyễn Ngọc Trí</title>
       </Head>
       <Layout>
-        <section className="dark:bg-bgHome-dark h-full lg:pt-[120px] pt-10  bg-bgHome-white min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full ">
+        <section className="dark:bg-bgHome-dark lg:h-screen lg:pt-[150px] pt-10  bg-bgHome-white min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full ">
           <Skill />
         </section>
       </Layout>

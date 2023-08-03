@@ -7,7 +7,7 @@ const Home = () => {
       <Head>
         <title>Nguyễn Ngọc Trí</title>
       </Head>
-      <Layout socialLayoutLeft={true}>
+      <Layout socialLayoutLeft={true} footer={false}>
         <Homepage />
       </Layout>
     </>

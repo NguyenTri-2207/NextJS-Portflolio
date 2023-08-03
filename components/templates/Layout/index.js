@@ -6,7 +6,7 @@ function Layout({ children, footer, socialLayoutLeft }) {
     <>
       <Header socialLayoutLeft={socialLayoutLeft} />
       <main>{children}</main>
-      {footer ? "" : <Footer />}
+      {footer ? <Footer /> : ""}
     </>
   );
 }

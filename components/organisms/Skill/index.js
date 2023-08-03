@@ -179,7 +179,9 @@ const Card = ({ img, title, color }) => {
       <div className="text-4xl" style={{ color: `${color}` }}>
         {img}
       </div>
-      <h5 className="font-semibold uppercase mt-6 tracking-[2px]">{title}</h5>
+      <h5 className="font-semibold uppercase mt-6 tracking-[2px] dark:text-white">
+        {title}
+      </h5>
     </div>
   );
 };
@@ -239,8 +241,7 @@ const Skill = () => {
   const { theme } = useContext(ThemContext);
   return (
     <div className="container">
-      <div className="pb-10 lg:pb-20" id="skill">
-        <h2>My Skills</h2>
+      <div className=" " id="skill">
         <div className="row items-start justify-center lg:justify-between mb-10">
           <div className="lg:col-5 md:col-8 col-12 skill_img">
             <div className="skill__item0">
@@ -270,7 +271,7 @@ const Skill = () => {
             })}
           </div>
         </div>
-        <div className="mt-[150px] relative z-10 lg:block hidden">
+        <div className="mt-20 relative z-10 lg:block hidden">
           <Slider {...settings}>
             {dataSkill.map((item, index) => {
               return (

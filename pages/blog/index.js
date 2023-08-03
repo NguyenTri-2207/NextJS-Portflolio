@@ -10,7 +10,7 @@ function Blog({ repo }) {
       </Head>
       <Layout>
         {" "}
-        <section className="bg-[#1f2336] pt-[128px]">
+        <section className="dark:bg-[#1f2336] pt-[128px] bg-white">
           <div className=" container lg:pl-[80px] ">
             <div className="row items-stretch">
               {repo
