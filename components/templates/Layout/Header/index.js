@@ -16,6 +16,7 @@ export default function Header({ socialLayoutLeft }) {
     { name: "Resum", id: "resum", href: "/resum" },
     { name: "Skill", id: "skill", href: "/skill" },
     { name: "Project", id: "project", href: "/project" },
+    { name: "Blog", id: "blog", href: "/blog" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -50,7 +51,6 @@ export default function Header({ socialLayoutLeft }) {
       }
     }
   };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
