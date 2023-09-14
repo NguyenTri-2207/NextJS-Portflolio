@@ -4,18 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-// html {
-//   scroll-behavior: smooth;
-// }
-
-h2 {
-  @apply text-3xl lg:text-4xl text-main font-Playfair font-bold mb-6  lg:mb-16 text-center;
-}
 .hover {
   @apply relative before:content-[''] before:h-0.5 before:w-1/2 before:bg-main before:absolute before:bottom-0 before:left-0;
 }
 @layer base {
   body {
-    @apply dark:bg-gray-800 bg-white;
+    @apply dark:bg-gray-800 bg-white relative;
   }
 }

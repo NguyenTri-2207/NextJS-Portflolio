@@ -2,7 +2,6 @@ import Layout from "components/templates/Layout";
 import React from "react";
 import Head from "next/head";
 function Blog({ repo }) {
-  console.log(repo);
   return (
     <>
       <Head>

@@ -17,9 +17,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <ThemContext.Provider value={{ theme, setTheme }}>
-        <div
-          className={`"font-poppinss overflow-hidden   ${theme ? "dark" : ""}`}
-        >
+        <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>
           <Component {...pageProps} />
         </div>
       </ThemContext.Provider>

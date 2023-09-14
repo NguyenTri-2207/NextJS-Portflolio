@@ -1,0 +1,99 @@
+{
+    "dataComment": {
+        "post_id": "1234567890",
+        "comments": [
+            {
+                "comment_id": "comment1",
+                "image": "https://flowbite.com/docs/images/people/profile-picture-2.jpg",
+                "user_id": "user123",
+                "author": "John Doe",
+                "content": "Great post!",
+                "timestamp": 1677649428,
+                "replies": []
+            },
+            {
+                "comment_id": "comment2",
+                "image": "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
+                "user_id": "user456",
+                "author": "Jane Smith",
+                "content": "I totally agree with you!",
+                "timestamp": 1657649500,
+                "replies": []
+            },
+            {
+                "comment_id": "comment3",
+                "image": "https://flowbite.com/docs/images/people/profile-picture-4.jpg",
+                "user_id": "user789",
+                "author": "David Johnson",
+                "content": "Can you share more details on this topic?",
+                "timestamp": 1675649600,
+                "replies": [
+                    {
+                        "comment_id": "reply1",
+                        "image": "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+                        "user_id": "user123",
+                        "author": "John Doe",
+                        "content": "Sure, I'd be happy to!",
+                        "timestamp": 1677650000
+                    }
+                ]
+            },
+            {
+                "comment_id": "comment4",
+                "user_id": "user101",
+                "author": "Sarah Brown",
+                "content": "This is really informative. Thanks!",
+                "timestamp": 1677659100,
+                "replies": []
+            },
+            {
+                "comment_id": "comment5",
+                "user_id": "user202",
+                "author": "Michael Lee",
+                "content": "I have a question about the third point...",
+                "timestamp": 1677650200,
+                "replies": []
+            },
+            {
+                "comment_id": "comment6",
+                "user_id": "user303",
+                "author": "Emily White",
+                "content": "I love your posts. Keep it up!",
+                "timestamp": 1677650300,
+                "replies": []
+            },
+            {
+                "comment_id": "comment7",
+                "user_id": "user404",
+                "author": "Mark Davis",
+                "content": "I disagree with your viewpoint on this.",
+                "timestamp": 1677680400,
+                "replies": []
+            },
+            {
+                "comment_id": "comment8",
+                "user_id": "user505",
+                "author": "Lisa Green",
+                "content": "Looking forward to more content from you.",
+                "timestamp": 1677850500,
+                "replies": []
+            },
+            {
+                "comment_id": "comment9",
+                "user_id": "user606",
+                "author": "Chris Wilson",
+                "content": "Can you recommend any related articles?",
+                "timestamp": 1678650600,
+                "replies": []
+            },
+            {
+                "comment_id": "comment10",
+                "user_id": "user707",
+                "author": "Karen Taylor",
+                "content": "I found this very helpful for my project. Thank you!",
+                "timestamp": 1677650700,
+                "replies": []
+            }
+        ]
+    }
+}

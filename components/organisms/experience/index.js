@@ -26,7 +26,9 @@ const Experience = ({ data }) => {
       <div className="containers">
         <div className="row">
           <div className="col-12">
-            <h2>Experience</h2>
+            <h2 className="text-3xl lg:text-4xl text-main font-Playfair font-bold mb-6  lg:mb-16 text-center">
+              Experience
+            </h2>
             <div className="main-timeline">
               {dataExperience.map((item, index) => {
                 return (
