@@ -39,7 +39,9 @@ const About = () => {
   return (
     <div className="container ">
       <div className="" id="about">
-        <h2>About me</h2>
+        <h2 className="text-3xl lg:text-4xl text-main font-Playfair font-bold mb-6  lg:mb-16 text-center">
+          About me
+        </h2>
         <div className="row ">
           <div className=" lg:col-4 md:col-8 mx-auto mt-4 mb-10 lg:mb-0">
             <Image
