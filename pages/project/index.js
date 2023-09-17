@@ -3,7 +3,7 @@ import Layout from "components/templates/Layout";
 import ProjectTemplate from "components/templates/Project";
 import Head from "next/head";
 import data from "./data.json";
-function About() {
+function Project() {
   return (
     <>
       <Head>
@@ -18,4 +18,4 @@ function About() {
   );
 }
 
-export default About;
+export default Project;
