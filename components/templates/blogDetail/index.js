@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import Footer from "components/templates/layout/Footer";
+// import Footer from "components/templates/layout/Footer";
 
 import { ThemContext } from "common/context";
 import "slick-carousel/slick/slick.css";
@@ -306,7 +306,7 @@ function BlogDetailComponent({ data, repoPost }) {
           </div>
         </section>
         {/* Related */}
-        <section className="my-10 lg:mb-20 overflow-hidden">
+        <section className="mt-10 pb-10 lg:mb-20 overflow-hidden">
           <Title>Related</Title>
           <div className=" relative z-10 ">
             <Slider {...settings}>
@@ -348,7 +348,7 @@ function BlogDetailComponent({ data, repoPost }) {
         </section>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

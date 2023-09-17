@@ -1,4 +1,4 @@
-import Layout from "components/templates/Layout";
+import Layout from "components/templates/layout";
 import React from "react";
 import Head from "next/head";
 function Blog({ repo }) {
@@ -7,7 +7,7 @@ function Blog({ repo }) {
       <Head>
         <title>Blog-Nguyễn Ngọc Trí</title>
       </Head>
-      <Layout>
+      <Layout footer={true}>
         {" "}
         <section className="dark:bg-[#1f2336] pt-[128px] bg-white">
           <div className=" container lg:pl-[80px] ">

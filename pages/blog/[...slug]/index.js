@@ -1,4 +1,4 @@
-import Layout from "components/templates/Layout";
+import Layout from "components/templates/layout";
 import BlogDetailComponent from "components/templates/blogDetail";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -7,7 +7,7 @@ const Slug = ({ repo, repoPost }) => {
   const router = useRouter();
 
   return (
-    <Layout>
+    <Layout footer={true}>
       <div className="bg-white text-black min-h-screen">
         <BlogDetailComponent data={repo} repoPost={repoPost} />
       </div>
