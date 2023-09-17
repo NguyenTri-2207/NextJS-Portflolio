@@ -1,4 +1,4 @@
-import Layout from "components/templates/Layout";
+import Layout from "components/templates/Layout/index";
 import BlogDetailComponent from "components/templates/BlogDetail/index";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";

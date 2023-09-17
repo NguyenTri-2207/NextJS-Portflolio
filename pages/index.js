@@ -1,5 +1,5 @@
-import Homepage from "components/templates/Home";
-import Layout from "components/templates/Layout";
+import Homepage from "components/templates/Home/index";
+import Layout from "components/templates/Layout/index";
 import Head from "next/head";
 const Home = () => {
   return (

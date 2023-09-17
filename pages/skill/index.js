@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "components/templates/Layout";
-import Skill from "components/organisms/Skill";
+import Layout from "components/templates/Layout/index";
+import Skill from "components/organisms/Skill/index";
 import Head from "next/head";
 function About() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "components/templates/Layout";
-import AboutUS from "components/templates/About";
+import Layout from "components/templates/Layout/index";
+import AboutUS from "components/templates/About/index";
 import Head from "next/head";
 function About() {
   return (
