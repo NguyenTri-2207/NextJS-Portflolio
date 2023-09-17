@@ -1,4 +1,4 @@
-import Homepage from "components/templates/home";
+import Homepage from "components/templates/home/index";
 import Layout from "components/templates/layout";
 import Head from "next/head";
 const Home = () => {
