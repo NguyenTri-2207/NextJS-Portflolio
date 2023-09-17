@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Footer from "components/templates/Layout/Footer";
-import Image from "next/image";
+
+import Footer from "components/templates/layout/Footer";
+
 import { ThemContext } from "common/context";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -45,8 +46,8 @@ var settings = {
   slidesToShow: 3,
   slidesToScroll: 3,
   pauseOnHover: true,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
+  // nextArrow: <SampleNextArrow />,
+  // prevArrow: <SamplePrevArrow />,
   responsive: [
     {
       breakpoint: 1300,
@@ -101,7 +102,6 @@ function BlogDetailComponent({ data, repoPost }) {
             className=" w-full h-full "
             src="/assets/banner/blog-detail-light.png"
             layout="fill"
-            objectFit="contain"
             alt="bg"
           />
         ) : (
@@ -109,7 +109,6 @@ function BlogDetailComponent({ data, repoPost }) {
             className=" w-full h-full"
             src="/assets/banner/blog-detail-dark.png"
             layout="fill"
-            objectFit="contain"
             alt="bg"
           />
         )}
@@ -121,15 +120,15 @@ function BlogDetailComponent({ data, repoPost }) {
             <Title> {data.title}</Title>
 
             <div className="mb-10 text-xs">
-              <div className={"mr-6 hidden items-center lg:inline-flex"}>
-                <FiUser size={20} className="mr-2 p-0.5" />
+              <div className={"lg:mr-6 mr-2 items-center inline-flex"}>
+                <FiUser size={20} className="lg:mr-2 p-0.5" />
                 <i className="font-medium">Tri Nguyen</i>
               </div>
-              <div className={"mr-6 hidden items-center lg:inline-flex"}>
+              <div className={"lg:mr-6 mr-2 items-center inline-flex"}>
                 <FaRegClock size={20} className="mr-2 p-0.5" />{" "}
                 <i className="font-medium">6 minutes read</i>
               </div>
-              <div className={"inline-flex items-center lg:mr-6"}>
+              <div className={"inline-flex items-center lg:mr-6 mr-2"}>
                 <FiCalendar size={20} className="mr-2 p-0.5" />
                 <i className="font-medium">22/07/2023</i>
               </div>
@@ -307,7 +306,7 @@ function BlogDetailComponent({ data, repoPost }) {
           </div>
         </section>
         {/* Related */}
-        <section className="my-10 lg:mb-20">
+        <section className="my-10 lg:mb-20 overflow-hidden">
           <Title>Related</Title>
           <div className=" relative z-10 ">
             <Slider {...settings}>

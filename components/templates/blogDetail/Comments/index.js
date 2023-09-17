@@ -13,7 +13,6 @@ function formatTimestamp(timestamp) {
 const timestamp = 1677649428;
 const formattedDate = formatTimestamp(timestamp);
 
-console.log(formattedDate); // Output: "Feb. 8, 2022"
 
 /*** ========== ***/
 const Card = ({ data }) => {
@@ -34,7 +33,7 @@ const Card = ({ data }) => {
             {data.author}
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            <time pubdate dateTime="2022-02-08" title="February 8th, 2022">
+            <time  dateTime="2022-02-08" title="February 8th, 2022">
               {formatTimestamp(data.timestamp)}
             </time>
           </p>
