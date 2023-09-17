@@ -18,7 +18,7 @@ function Login(props) {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    const endpoint = `${process.env.NEXT_PUBLIC_API_URL}/v1/auth/register`;
+    const endpoint = `https://crm-nodejs.vercel.app/v1/auth/register`;
     setError("");
     setLoading(true);
     try {
