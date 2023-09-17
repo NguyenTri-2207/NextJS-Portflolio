@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from 'next/router'
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 /*** Vendors ***/
@@ -77,11 +78,13 @@ const Card = ({ data }) => {
   );
 };
 export default function Comments({ data }) {
+  const router = useRouter()
+  console.log(router.asPath)
   const [login, setLogin] = useState(false);
 
   return (
     <div>
-      <section className="py-8 lg:py-16 antialiased">
+      <section className="py-8 lg:py-16 antialiased" id="comment">
         <div className=" ">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
@@ -115,9 +118,7 @@ export default function Comments({ data }) {
               <div className="text-center border border-white dark:border-[#2a2d46] p-4 rounded-lg shadow">
                 <a
                   className="text-center mb-1 cursor-pointer"
-                  href={`/auth/login?url=${
-                    typeof window !== "undefined" && window.location.pathname
-                  }`}
+                  href={`/auth/login?url=${router.asPath }#comment`}
                 >
                   <div className="flex items-center hover:text-blue-500">
                     <FaRegComments className="mr-2" />

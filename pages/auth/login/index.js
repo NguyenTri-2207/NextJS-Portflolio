@@ -14,7 +14,7 @@ function Login(props) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+console.log(router.query.url)
   const {
     register,
     handleSubmit,
@@ -38,7 +38,7 @@ function Login(props) {
         setResponse(response.data);
         const userString = JSON.stringify(response.data);
         localStorage.setItem("tokenAndUser", userString);
-        router.push("/a");
+        router.push(`/${router.query.url}#comment`)
       } else {
         console.log("Error");
       }
