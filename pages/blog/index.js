@@ -1,4 +1,4 @@
-import Layout from "components/templates/Layout/index";
+import Layout from "components/templates/Layout";
 import React from "react";
 import Head from "next/head";
 function Blog({ repo }) {

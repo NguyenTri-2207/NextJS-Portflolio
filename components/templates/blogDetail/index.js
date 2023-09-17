@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// import Footer from "components/templates/layout/Footer";
+// import Footer from "components/templates/Layout/Footer";
 
 import { ThemContext } from "common/context";
 import "slick-carousel/slick/slick.css";
@@ -13,7 +13,7 @@ import Slider from "react-slick";
 import Social from "components/atoms/Social";
 import SocialShare from "./SocialShare/SocialShare";
 import Title from "components/atoms/Title";
-import Comments from "./Comments/index";
+import Comments from "./Comments";
 import dataJson from "./data.json";
 const listTable = [
   { name: "Singapore e-commerce", id: "Singapore-e-commerce" },
