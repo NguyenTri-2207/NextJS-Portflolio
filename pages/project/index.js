@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "components/templates/layout";
-import ProjectTemplate from "components/templates/project";
+import Layout from "components/templates/Layout";
+import ProjectTemplate from "components/templates/Project";
 import Head from "next/head";
 import data from "./data.json";
 function About() {
