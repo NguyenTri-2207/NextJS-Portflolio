@@ -9,7 +9,7 @@ import { ImPhone } from "react-icons/im";
 import Image from "next/image";
 import { ThemContext } from "common/context";
 import CardMe from "components/molecules/CardMe";
-import data1 from "components/templates/Home/data.json";
+import data1 from "components/templates/HomeTemplate/data.json";
 
 const data = [
   {

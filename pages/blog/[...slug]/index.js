@@ -1,5 +1,5 @@
-import Layout from "components/templates/Layout";
-import BlogDetailComponent from "components/templates/BlogDetail";
+import Layout from "components/templates/LayoutTemplate";
+import BlogDetailComponent from "components/templates/BlogDetailTemplate";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "components/templates/Layout";
+import Layout from "components/templates/LayoutTemplate";
 import Skill from "components/organisms/Skill";
 import Head from "next/head";
 function About() {
