@@ -56,7 +56,7 @@ export default function Header({ socialLayoutLeft }) {
 
   return (
     <header
-      className="fixed top-0 left-0 z-50 w-full dark:bg-[#272b44] bg-white text-gleads-oxfordBlue-900  shadow-2xl  "
+      className="fixed top-0 left-0 z-50 w-full dark:bg-[#272b44] bg-white text-gleads-oxfordBlue-900 shadow-md  "
       id="header"
     >
       <nav className="container">

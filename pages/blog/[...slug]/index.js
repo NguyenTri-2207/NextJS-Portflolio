@@ -2,6 +2,7 @@ import Layout from "components/templates/Layout";
 import BlogDetailComponent from "components/templates/blogDetail";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import dataStatic from "../data.json";
 
 const Slug = ({ repo, repoPost }) => {
   const router = useRouter();
@@ -9,7 +10,11 @@ const Slug = ({ repo, repoPost }) => {
   return (
     <Layout>
       <div className="bg-white text-black min-h-screen">
-        <BlogDetailComponent data={repo} repoPost={repoPost} />
+        <BlogDetailComponent
+          // data={repo}
+          data={dataStatic}
+          repoPost={repoPost}
+        />
       </div>
     </Layout>
   );
