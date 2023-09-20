@@ -53,46 +53,6 @@
                 "content": "I have a question about the third point...",
                 "timestamp": 1677650200,
                 "replies": []
-            },
-            {
-                "comment_id": "comment6",
-                "user_id": "user303",
-                "author": "Emily White",
-                "content": "I love your posts. Keep it up!",
-                "timestamp": 1677650300,
-                "replies": []
-            },
-            {
-                "comment_id": "comment7",
-                "user_id": "user404",
-                "author": "Mark Davis",
-                "content": "I disagree with your viewpoint on this.",
-                "timestamp": 1677680400,
-                "replies": []
-            },
-            {
-                "comment_id": "comment8",
-                "user_id": "user505",
-                "author": "Lisa Green",
-                "content": "Looking forward to more content from you.",
-                "timestamp": 1677850500,
-                "replies": []
-            },
-            {
-                "comment_id": "comment9",
-                "user_id": "user606",
-                "author": "Chris Wilson",
-                "content": "Can you recommend any related articles?",
-                "timestamp": 1678650600,
-                "replies": []
-            },
-            {
-                "comment_id": "comment10",
-                "user_id": "user707",
-                "author": "Karen Taylor",
-                "content": "I found this very helpful for my project. Thank you!",
-                "timestamp": 1677650700,
-                "replies": []
             }
         ]
     }

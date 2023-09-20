@@ -9,7 +9,7 @@ import Link from "next/link";
 const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
-    <button className="nextArrow" onClick={onClick}>
+    <button className="nextArrows" onClick={onClick}>
       <IoIosArrowForward />
     </button>
   );
@@ -23,14 +23,15 @@ const SamplePrevArrow = (props) => {
   );
 };
 var settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToScroll: 1,
   pauseOnHover: true,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 2000,
   responsive: [
     {
       breakpoint: 1300,
@@ -57,8 +58,8 @@ var settings = {
 };
 function RelatedPost({ repoPost }) {
   return (
-    <section className="my-10 lg:mb-20">
-      <Title>Related</Title>
+    <section className="py-10 lg:pb-20 overflow-hidden lg:overflow-auto">
+      <Title className="text-center text-xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-10"> Related</Title>
       <div className=" relative z-10 ">
         <Slider {...settings}>
           {repoPost
