@@ -8,8 +8,8 @@ function About() {
       <Head>
         <title>Skill-Nguyễn Ngọc Trí</title>
       </Head>
-      <Layout>
-        <section className="dark:bg-bgHome-dark lg:h-screen lg:pt-[150px] pt-10  bg-bgHome-white min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full ">
+      <Layout >
+        <section className="dark:bg-bgHome-dark   lg:pt-[150px] py-[100px] bg-bgHome-white ">
           <Skill />
         </section>
       </Layout>

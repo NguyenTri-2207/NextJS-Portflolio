@@ -92,6 +92,7 @@ function BlogDetailComponent({ data, repoPost }) {
     e.preventDefault();
   };
   const { theme } = useContext(ThemContext);
+
   return (
     <div className="dark:bg-gray-900 dark:text-white  mt-20">
       <div className=" w-full h-full">
@@ -267,9 +268,8 @@ function BlogDetailComponent({ data, repoPost }) {
                 </div>
                 <div
                   id="post"
-                  className={`${
-                    scrollbarHeight ? "h-0" : "h-[300px] "
-                  } mt-2 group-hover:h-[300px]  transition-all duration-300 ease-in-out overflow-hidden`}
+                  className={`${scrollbarHeight ? "h-0" : "h-[300px] "
+                    } mt-2 group-hover:h-[300px]  transition-all duration-300 ease-in-out overflow-hidden`}
                 >
                   {listTable.map((item, index) => {
                     return (

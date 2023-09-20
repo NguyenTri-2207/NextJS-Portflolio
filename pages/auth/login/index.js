@@ -14,7 +14,7 @@ function Login(props) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-console.log(router.query.url)
+
   const {
     register,
     handleSubmit,
@@ -36,6 +36,8 @@ console.log(router.query.url)
       });
       if (response.status === 200) {
         setResponse(response.data);
+        localStorage.setItem("login", true)
+        // setLogin(true)
         const userString = JSON.stringify(response.data);
         localStorage.setItem("tokenAndUser", userString);
         router.push(`/${router.query.url}#comment`)
@@ -44,7 +46,7 @@ console.log(router.query.url)
       }
     } catch (error) {
       console.log(error.response);
-      // setError(error?.response?.data);
+      setError(error?.response?.data);
       console.error(error);
     }
     setLoading(false);
