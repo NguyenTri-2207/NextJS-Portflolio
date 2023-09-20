@@ -28,7 +28,6 @@ const Content = ({ data, index }) => {
 };
 function BlogDetailComponent({ data, repoPost }) {
   const { theme } = useContext(ThemContext);
-  console.log(data);
   return (
     <div className="dark:bg-gray-900 dark:text-gray-100  mt-20">
       <Banner title={data.page.title} described={data.page.description} />

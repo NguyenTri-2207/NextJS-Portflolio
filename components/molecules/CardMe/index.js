@@ -36,10 +36,10 @@ function index(props) {
       <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-8 lg:px-3 xl:px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
         <img
           src="/assets/banner/avt4.png"
-          className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-24"
+          className="w-[200px] absolute left-[50%] transform -translate-x-[50%] h-[200px] drop-shadow-xl mx-auto rounded-[20px] -mt-24"
           alt="about avatar"
         />
-        <div className="pt-36 pb-6">
+        <div className="pt-28 pb-6">
           <h1 className="mt-6 mb-1 text-2xl font-semibold text-gray-500">
             Tri Nguyen
           </h1>
@@ -49,7 +49,7 @@ function index(props) {
 
           <Social className="flex justify-center space-x-3" />
 
-          <div className="p-7 rounded-2xl mt-7 bg-[#F3F6F6] dark:bg-[#1D1D1D]">
+          <div className="p-5 rounded-2xl mt-6 bg-[#F3F6F6] dark:bg-[#1D1D1D]">
             {dataSocial.map((item, index) => {
               return (
                 <div
@@ -72,8 +72,8 @@ function index(props) {
             })}
           </div>
 
-          <div className="flex justify-center items-center">
-            <button className="flex justify-center items-center text-sm text-white  py-2 px-4 rounded-3xl  bg-gradient-main mt-6">
+          <div className="flex justify-center items-center pb-6">
+            <button className="flex justify-center items-center text-sm text-white  py-2 px-4 rounded-3xl  bg-gradient-main mt-8">
               <FaAngleDoubleDown className="mr-2 animate-bounce" />
               Download CV
             </button>

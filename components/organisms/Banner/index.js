@@ -47,7 +47,7 @@ const TypeWriter = (props) => {
 
 const Banner = () => {
   return (
-    <div className="w-full h-screen lg:pl-[84px]  relative">
+    <div className="w-screen h-screen  relative overflow-hidden ">
       <div className="container lg:h-full">
         <div className="row items-center justify-center lg:h-full">
           <div className="lg:col-6 pl-10 mt-[160px] lg:mt-0 z-10">
@@ -61,7 +61,7 @@ const Banner = () => {
             <h1 className="text-main text-3xl leading-[30px] lg:leading-[50px] xl:text-[60px] font-Playfair font-bold">
               <TypeWriter textName="Web Developer" />
             </h1>
-            <button></button>
+
           </div>
           <div className="lg:col-6 w-[300px] md:w-full lg:m-auto text-center relative mt-6 mb-16 lg:my-0 z-10 ">
             <Image
@@ -71,7 +71,7 @@ const Banner = () => {
               height={400}
               alt="bg"
             />
-            <div className="absolute -top-20 -left-20 animate-pulse hidden lg:block z-0">
+            <div className="absolute -top-20 -left-20 dark:animate-pulse hidden lg:block z-0 dark:opacity-100 opacity-0 ">
               <Image
                 src="/assets/banner/bg-mt.png"
                 width={128}
@@ -79,7 +79,7 @@ const Banner = () => {
                 alt="bg"
               />
             </div>
-            <div className="absolute -bottom-20 -left-6 animate-pulse hidden lg:block z-0">
+            <div className="absolute -bottom-20 -left-6 dark:animate-pulse hidden lg:block z-0 dark:opacity-100 opacity-0">
               <Image
                 src="/assets/banner/bg-m.png"
                 width={88}

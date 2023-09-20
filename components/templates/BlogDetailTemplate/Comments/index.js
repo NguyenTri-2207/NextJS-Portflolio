@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
@@ -34,7 +34,7 @@ const Card = ({ data }) => {
             {data.author}
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            <time  dateTime="2022-02-08" title="February 8th, 2022">
+            <time dateTime="2022-02-08" title="February 8th, 2022">
               {formatTimestamp(data.timestamp)}
             </time>
           </p>
@@ -81,7 +81,9 @@ export default function Comments({ data }) {
   const router = useRouter()
   console.log(router.asPath)
   const [login, setLogin] = useState(false);
-
+  useEffect(() => {
+    setLogin(localStorage.getItem('login'))
+  })
   return (
     <div>
       <section className="py-8 lg:py-16 antialiased" id="comment">
@@ -93,7 +95,7 @@ export default function Comments({ data }) {
           </div>
           <div className="mb-10">
             {" "}
-            {login ? (
+            {login === "true" ? (
               <form className="mb-6">
                 <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                   <label htmlFor="comment" className="sr-only">
@@ -118,7 +120,7 @@ export default function Comments({ data }) {
               <div className="text-center border border-white dark:border-[#2a2d46] p-4 rounded-lg shadow">
                 <a
                   className="text-center mb-1 cursor-pointer"
-                  href={`/auth/login?url=${router.asPath }#comment`}
+                  href={`/auth/login?url=${router.asPath}#comment`}
                 >
                   <div className="flex items-center hover:text-blue-500">
                     <FaRegComments className="mr-2" />

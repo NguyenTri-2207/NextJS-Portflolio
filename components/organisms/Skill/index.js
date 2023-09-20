@@ -106,37 +106,34 @@ const CardYear = ({ props, index }) => {
   const { year, title, des, company, companyLink } = props;
 
   return (
-    <div className=" mt-5">
+    <div className="lg:mb-10 mb-6 overflow-hidden last:mb-0">
       <button
-        className="flex justify-between items-center w-full"
+        className="flex justify-between  w-full"
         onClick={() => setOpen(!open)}
       >
-        <div className="flex">
-          {" "}
-          <p className="font-bold lg:text-xl text-[#08d565] mr-6 lg:mr-10 mt-1">
+        <div className="flex items-center mb-2 lg:mb-3">
+
+          <p className="font-bold lg:text-xl text-[#08d565] mr-6 lg:mr-8 ">
             {year}
-          </p>{" "}
-          <h5 className="lg:text-2xl mb-2 font-Playfair font-medium dark:text-white">
+          </p>
+          <p className="lg:text-2xl  font-medium dark:text-white">
             {title}
-          </h5>
+          </p>
         </div>
 
         <div
-          className={`ml-5 transition-all duration-200 ease-in-out ${
-            open ? "rotate-0 " : "rotate-180"
-          }`}
+          className={`ml-5 transition-all duration-200 ease-in-out ${open ? "rotate-0 " : "rotate-180"
+            }`}
         >
-          {" "}
           <RiArrowUpSLine size={30} color="#08d565" />
         </div>
       </button>
 
       <div
-        className={`overflow-hidden ml-[60px] lg:ml-[96px]  ${
-          !open
-            ? "  -translate-y-10 opacity-0 h-0"
-            : "translate-y-2 opacity-1 block max-h-40"
-        } transition-all duration-700 ease-in-out `}
+        className={`overflow-hidden ml-[60px] lg:ml-[90px]  ${!open
+          ? "  -translate-y-10 opacity-0 h-0"
+          : "translate-y-2 opacity-1 block max-h-40"
+          } transition-all duration-700 ease-in-out `}
       >
         <ul className="mb-3 ">
           {des.map((item, index) => {
@@ -153,23 +150,25 @@ const CardYear = ({ props, index }) => {
           href={companyLink}
           target="_blank"
           rel="noreferrer"
-          className="text-[#a0a0a0] cursor-pointer "
+          className="text-[#a0a0a0] cursor-pointer  "
         >
           {company}
         </a>
       </div>
-      <a
-        href={companyLink}
-        target="_blank"
-        rel="noreferrer"
-        className={`ml-[60px] lg:ml-[96px] ${
-          open
-            ? " -translate-y-10 opacity-0 "
+      <div>
+        <a
+          href={companyLink}
+          target="_blank"
+          rel="noreferrer"
+          className={`ml-[60px] lg:ml-[90px] text-sm  ${open
+            ? " opacity-0 "
             : "text-[#a0a0a0]  opacity-1  block"
-        } transition-all duration-100 ease-in-out cursor-pointer translate-y-3`}
-      >
-        {company}
-      </a>
+            } transition-all duration-300 ease-in-out cursor-pointer `}
+        >
+          {company}
+        </a>
+      </div>
+
     </div>
   );
 };
@@ -204,7 +203,7 @@ const SamplePrevArrow = (props) => {
 var settings = {
   autoplay: false,
   autoplaySpeed: 2000,
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 6,
@@ -241,51 +240,51 @@ const Skill = () => {
   const { theme } = useContext(ThemContext);
   return (
     <div className="container">
-      <div className=" " id="skill">
-        <div className="row items-start justify-center lg:justify-between mb-10">
-          <div className="lg:col-5 md:col-8 col-12 skill_img">
-            <div className="skill__item0">
-              <FaReact className="text-3xl lg:text-[60px] " color="#61dafb" />
-            </div>
-            <div className="skill__item1">
-              <DiJavascript className="text-2xl lg:text-[50px]" color="white" />
-              ,
-            </div>
-            <div className="skill__item2">
-              <FaHtml5 size={40} color="#FF6600" />,
-            </div>
-            <div className="skill__item3">
-              <FaCss3Alt className="text-xl lg:text-[40px]" color="#FF3333" />
-            </div>
-            <img
-              className="skill_img"
-              src="/assets/bg-skill.png"
-              width={414}
-              height={415}
-              alt="a"
-            />
+
+      <div className="row items-center justify-center lg:justify-between overflow-hidden py-10">
+        <div className="lg:col-5 md:col-8 col-12 skill_img overflow-hidden p-4 ">
+          <div className="skill__item0">
+            <FaReact className="text-3xl lg:text-[60px] " color="#61dafb" />
           </div>
-          <div className="lg:col-7 mt-10 lg:mt-0 lg:pl-20">
-            {dataCardYear.map((item, index) => {
-              return <CardYear key={index} props={item} index={index} />;
-            })}
+          <div className="skill__item1">
+            <DiJavascript className="text-2xl lg:text-[50px]" color="white" />
+
           </div>
+          <div className="skill__item2">
+            <FaHtml5 size={30} color="#FF6600" />
+          </div>
+          <div className="skill__item3">
+            <FaCss3Alt size={30} color="#FF3333" />
+          </div>
+          <img
+            className="skill_img"
+            src="/assets/bg-skill.png"
+            width={414}
+            height={415}
+            alt="a"
+          />
         </div>
-        <div className="mt-20 relative z-10 lg:block hidden">
-          <Slider {...settings}>
-            {dataSkill.map((item, index) => {
-              return (
-                <Card
-                  key={index}
-                  img={item.img}
-                  color={item.color}
-                  title={item.title}
-                />
-              );
-            })}
-          </Slider>
+        <div className="lg:col-6">
+          {dataCardYear.map((item, index) => {
+            return <CardYear key={index} props={item} index={index} />;
+          })}
         </div>
       </div>
+      <div className="mt-10 relative z-10 lg:block hidden">
+        <Slider {...settings}>
+          {dataSkill.map((item, index) => {
+            return (
+              <Card
+                key={index}
+                img={item.img}
+                color={item.color}
+                title={item.title}
+              />
+            );
+          })}
+        </Slider>
+      </div>
+
       {theme && (
         <>
           <img

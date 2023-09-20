@@ -101,13 +101,7 @@ const About = () => {
       </div>
       {theme && (
         <>
-          <img
-            className="absolute left-20 top-20 z-0 lg:block hidden animate-pulse"
-            src="/assets/bg-about-tl.png"
-            width={130}
-            height={163}
-            alt="a"
-          />
+
           <img
             className="absolute right-0 top-0 z-0 lg:block hidden  "
             src="/assets/bg-about-tr.png"

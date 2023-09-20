@@ -2,12 +2,12 @@
 import Banner from "components/organisms/Banner";
 const Home = () => {
   return (
-    <div>
-      <section className="dark:bg-bgHome-dark bg-bgHome-white  bg-white  relative">
-        <Banner />
-      </section>
-    
-    </div>
+
+    <section className="dark:bg-bgHome-dark bg-bgHome-white h-screen  bg-white  relative">
+      <Banner />
+    </section>
+
+
   );
 };
 export default Home;
