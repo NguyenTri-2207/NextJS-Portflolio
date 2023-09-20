@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+
 import axios from "axios";
 import { LiaEyeSolid, LiaEyeSlash } from "react-icons/lia";
 import { AiOutlineReload } from "react-icons/ai";
@@ -13,7 +14,7 @@ function Login(props) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+console.log(router.query.url)
   const {
     register,
     handleSubmit,
@@ -26,7 +27,7 @@ function Login(props) {
   const onSubmit = async (data) => {
     setLoading(true);
     setError("");
-    const endpoint = `${process.env.NEXT_PUBLIC_API_URL}/v1/auth/login`;
+    const endpoint = `https://crm-nodejs.vercel.app/v1/auth/login`;
     try {
       const response = await axios.post(endpoint, data, {
         headers: {
@@ -37,7 +38,7 @@ function Login(props) {
         setResponse(response.data);
         const userString = JSON.stringify(response.data);
         localStorage.setItem("tokenAndUser", userString);
-        router.push("/a");
+        router.push(`/${router.query.url}#comment`)
       } else {
         console.log("Error");
       }

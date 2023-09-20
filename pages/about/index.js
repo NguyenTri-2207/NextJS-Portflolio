@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "components/templates/Layout";
-import AboutUS from "components/templates/About";
+import Layout from "components/templates/LayoutTemplate";
+import AboutTempalte from "components/templates/AboutTemplate";
 import Head from "next/head";
 function About() {
   return (
@@ -10,7 +10,7 @@ function About() {
       </Head>
       <Layout footer={false}>
         <section className="dark:bg-bgHome-dark xl:h-screen lg:pt-[230px] pt-10  bg-bgHome-white min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full ">
-          <AboutUS />
+          <AboutTempalte />
         </section>
       </Layout>
     </>

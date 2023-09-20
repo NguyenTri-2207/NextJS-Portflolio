@@ -1,4 +1,4 @@
-import Layout from "components/templates/Layout";
+import Layout from "components/templates/LayoutTemplate";
 import BlogTemplates from "components/templates/Blog";
 import React from "react";
 import Head from "next/head";

@@ -1,5 +1,5 @@
-import Layout from "components/templates/Layout";
-import BlogDetailComponent from "components/templates/blogDetail";
+import Layout from "components/templates/LayoutTemplate";
+import BlogDetailComponent from "components/templates/BlogDetailTemplate";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import dataStatic from "../data.json";
@@ -8,7 +8,7 @@ const Slug = ({ repo, repoPost }) => {
   const router = useRouter();
 
   return (
-    <Layout>
+    <Layout footer={true}>
       <div className="bg-white text-black min-h-screen">
         <BlogDetailComponent
           // data={repo}

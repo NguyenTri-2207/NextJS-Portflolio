@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Footer from "components/templates/Layout/Footer";
 import { ThemContext } from "common/context";
 
 import SocialShare from "./SocialShare/SocialShare";
@@ -62,8 +61,6 @@ function BlogDetailComponent({ data, repoPost }) {
         {/* Related */}
         <RelatedPost repoPost={repoPost} />
       </div>
-
-      <Footer />
     </div>
   );
 }
