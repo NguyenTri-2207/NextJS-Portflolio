@@ -16,7 +16,7 @@ const Custom404 = () => {
               <div className="mb-8 lg:mb-4">Vui lòng quay lại Trang chủ</div>
             </div>
             <Link href="/">
-              <a>Trang chủ</a>
+              Trang chủ
             </Link>
           </div>
         </div>

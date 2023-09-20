@@ -23,7 +23,6 @@ export default function Header({ socialLayoutLeft }) {
       setTokenAndUser(localStorage.getItem("login"));
     }
   }, []);
-  console.log(tokenAndUser)
   // slice '/' url
   const routerAsPath = () => {
     let result;

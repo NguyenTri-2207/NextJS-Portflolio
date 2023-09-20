@@ -13,7 +13,6 @@ export default function ProfileMenu() {
             // localStorage.setItem("login", tokenAndUser);
         }
     }, []);
-    console.log(tokenAndUser)
     return (
         <div onClick={() => setIsMenuOpen(!isMenuOpen)} placement="bottom-end" className='ml-4'>
 

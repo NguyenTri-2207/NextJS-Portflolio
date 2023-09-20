@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={canonical} />
+        <link rel="canonical" href={canonical.toString()} />
       </Head>
       <ThemContext.Provider value={{ theme, setTheme }}>
         <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>

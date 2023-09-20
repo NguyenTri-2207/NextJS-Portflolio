@@ -79,7 +79,6 @@ const Card = ({ data }) => {
 };
 export default function Comments({ data }) {
   const router = useRouter()
-  console.log(router.asPath)
   const [login, setLogin] = useState(false);
   useEffect(() => {
     setLogin(localStorage.getItem('login'))
