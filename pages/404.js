@@ -6,7 +6,7 @@ const Custom404 = () => {
   return (
     <div>
       <Head>
-        <title>Trang không tồn tại | Gleads</title>
+        <title>Trang không tồn tại </title>
       </Head>
       <div className="relative h-screen overflow-hidden">
         <div className=" container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
