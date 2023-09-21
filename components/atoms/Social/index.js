@@ -35,7 +35,7 @@ const dataSocial = [
   },
   {
     icon: <FaLinkedinIn size={16} />,
-    src: "https://github.com/NguyenTri-2207",
+    src: "https://www.linkedin.com/in/tri-nguyen",
     style: { background: "#0a66c2" },
   },
 ];
