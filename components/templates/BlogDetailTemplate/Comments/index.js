@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
+import Link from "next/link"
 /*** Vendors ***/
 
 /*** components ***/
@@ -117,15 +118,17 @@ export default function Comments({ data }) {
               </form>
             ) : (
               <div className="text-center border border-white dark:border-[#2a2d46] p-4 rounded-lg shadow">
-                <a
-                  className="text-center mb-1 cursor-pointer"
-                  href={`/auth/login?url=${router.asPath}#comment`}
-                >
-                  <div className="flex items-center hover:text-blue-500">
-                    <FaRegComments className="mr-2" />
-                    <span>Login to comment</span>
-                  </div>
-                </a>
+                <Link href={`/auth/login?url=${router.asPath}#comment`}>
+                  <a
+                    className="text-center mb-1 cursor-pointer"
+
+                  >
+                    <div className="flex items-center hover:text-blue-500">
+                      <FaRegComments className="mr-2" />
+                      <span>Login to comment</span>
+                    </div>
+                  </a>
+                </Link>
               </div>
             )}
           </div>
