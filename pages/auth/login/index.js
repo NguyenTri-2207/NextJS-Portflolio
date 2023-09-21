@@ -36,11 +36,11 @@ function Login(props) {
       });
       if (response.status === 200) {
         setResponse(response.data);
-        localStorage.setItem("login", true)
+        localStorage.setItem("login", JSON.stringify(true));
         // setLogin(true)
         const userString = JSON.stringify(response.data);
         localStorage.setItem("tokenAndUser", userString);
-        router.push(`/${router.query.url}#comment`)
+        router.push(`/${router.query.url}#comment`);
       } else {
         console.log("Error");
       }

@@ -51,9 +51,9 @@ const Breadcrumb = () => {
 };
 function Banner({ title, described }) {
   return (
-    <div className="bg-background-banner-image dark:bg-bgHome-dark mb-10 lg:mb-20 dark:text-gray-100 shadow border-b-1 border-[#5d616d]">
+    <div className="py-[72px]  bg-background-banner-image dark:bg-bgHome-dark mb-10 lg:mb-20 dark:text-gray-100 shadow border-b-1 border-[#5d616d]">
       <div className="container">
-        <div className="md:row py-10 justify-between">
+        <div className="md:row pt-10 justify-between">
           <div className="md:col-8">
             <Breadcrumb />
             <h1 className="mb-4 lg:mb-6 text-3xl font-semibold leading-none tracking-tight text-[#1d3169] md:text-4xl lg:text-5xl dark:text-gray-200">
