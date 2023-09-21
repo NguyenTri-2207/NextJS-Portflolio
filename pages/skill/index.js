@@ -7,6 +7,7 @@ function About() {
     <>
       <Head>
         <title>Skill-Nguyễn Ngọc Trí</title>
+        <meta name="description" content="Skill Page Nguyễn Ngọc Trí"></meta>
       </Head>
       <Layout >
         <section className="dark:bg-bgHome-dark   lg:pt-[150px] py-[100px] bg-bgHome-white ">
