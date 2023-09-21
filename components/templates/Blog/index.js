@@ -6,7 +6,7 @@ import Banner from "components/templates/Blog/Banner";
 function Blog({ data }) {
   const { theme } = useContext(ThemContext);
   return (
-    <section className="dark:bg-bgHome-dark bg-white pt-[80px]">
+    <section className="dark:bg-bgHome-dark bg-white pt-[72px]">
       <Banner
         title="From Concept to Code: My Web Development Odyssey"
         described="Join me on a journey into the world of web development as I share insights, tips, and techniques for creating engaging and efficient websites."
