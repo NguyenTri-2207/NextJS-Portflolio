@@ -8,7 +8,8 @@ function CardBlog({ item }) {
       <div className=" shadow-md  bg-white h-full border-gray-200 border rounded-lg  ">
         <img
           className="rounded-t-lg "
-          src="https://bbcincorp.com/wp-content/uploads/sites/2/2021/12/Guide-to-Finding-a-Sourcing-Agent.jpg.webp"
+          src="https://www.dmv.ca.gov/portal/uploads/2022/12/device_task_1.svg"
+          // src="https://bbcincorp.com/wp-content/uploads/sites/2/2021/12/Guide-to-Finding-a-Sourcing-Agent.jpg.webp"
           alt={item.title}
         />
 
