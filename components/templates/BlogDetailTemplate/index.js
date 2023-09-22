@@ -38,6 +38,7 @@ function BlogDetailComponent({ data, repoPost }) {
             {data.content.map((item, index) => {
               return <Content key={index} data={item} index={index} />;
             })}
+            {data.lastContent && <div>{data.lastContent}</div>}
           </div>
           {/* Table of Contents */}
           <TableOfContents data={data} />
