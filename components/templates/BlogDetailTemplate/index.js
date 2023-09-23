@@ -26,22 +26,22 @@ const Content = ({ data, index }) => {
     </div>
   );
 };
-function BlogDetailComponent({ data, repoPost }) {
+function BlogDetailComponent({ data, repoPost, dataStatic }) {
   const { theme } = useContext(ThemContext);
   return (
     <div className="dark:bg-gray-900 dark:text-gray-100  mt-18">
-      <Banner title={data.page.title} described={data.page.description} />
+      <Banner title={data.title} described={data.desc} />
       {/* Content */}
       <div className="mt-10 lg:mt-20 container ">
         <div className="flex justify-between mb-10 lg:mb-20">
           <div className="lg:col-8 px-4">
-            {data.content.map((item, index) => {
+            {dataStatic.content.map((item, index) => {
               return <Content key={index} data={item} index={index} />;
             })}
-            {data.lastContent && <div>{data.lastContent}</div>}
+            {data.lastContent && <div>{dataStatic.lastContent}</div>}
           </div>
           {/* Table of Contents */}
-          <TableOfContents data={data} />
+          <TableOfContents data={dataStatic} />
         </div>
         {/* Social */}
         <div className="mb-10">

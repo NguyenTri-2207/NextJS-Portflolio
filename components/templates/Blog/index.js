@@ -5,6 +5,7 @@ import Banner from "components/templates/Blog/Banner";
 
 function Blog({ data }) {
   const { theme } = useContext(ThemContext);
+
   return (
     <section className="dark:bg-bgHome-dark bg-white pt-[72px]">
       <Banner
@@ -44,7 +45,6 @@ function Blog({ data }) {
       <div className=" container  ">
         <div className="row items-stretch">
           {data
-            .filter((item) => item.title.length > 70)
             .map((content, index) => {
               return <CardBlog key={index} item={content} />;
             })}

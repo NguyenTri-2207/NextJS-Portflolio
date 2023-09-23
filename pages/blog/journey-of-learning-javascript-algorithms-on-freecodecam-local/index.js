@@ -6,7 +6,7 @@ import dataStatic from "./data.json";
 import Head from "next/head";
 const Blog = ({ repo, repoPost }) => {
   const router = useRouter();
-
+  console.log(repo)
   return (
     <>
       <Head>
@@ -25,8 +25,8 @@ const Blog = ({ repo, repoPost }) => {
       <Layout footer={true}>
         <div className="bg-white text-black min-h-screen">
           <BlogDetailComponent
-            // data={repo}
-            data={dataStatic}
+            data={repo}
+            dataStatic={dataStatic}
             repoPost={repoPost}
           />
         </div>
@@ -38,9 +38,9 @@ export default Blog;
 
 export const getServerSideProps = async ({ params }) => {
   const uri = params?.slug[0];
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${uri}`);
+  const res = await fetch(`https://crm-nodejs.vercel.app/api/post/${uri}`);
   const repo = await res.json();
-  const resPost = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const resPost = await fetch("https://crm-nodejs.vercel.app/api/post");
   const repoPost = await resPost.json();
 
   return { props: { repo, repoPost } };
