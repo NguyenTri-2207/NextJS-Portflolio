@@ -55,12 +55,12 @@
                 {
                     "startYear": "2022",
                     "src": "/assets/maxresdefault.jpg",
-                    "href": "https://tringuyen.vercel.app/",
+                    "href": "https://tringuyen.vercel.app",
                     "title": "Portfolio Website",
                     "description": [
-                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
+                        "My portfolio website serves as a comprehensive showcase of my skills and expertise, presenting a diverse range of projects I've successfully undertaken",
+                        "It also incorporates engaging features like a dynamic blog section, user registration and login capabilities for interactive feedback, as well as visually appealing effects and an optional light/dark mode.",
+                        "Technology Used : Next.js, Node.js, TailwindCSS, MongoDB"
                     ]
                 }
             ]
