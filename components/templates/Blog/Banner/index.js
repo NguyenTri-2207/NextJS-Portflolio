@@ -3,6 +3,8 @@ import Image from "next/image";
 import { FiCalendar, FiUser } from "react-icons/fi";
 import { FaRegClock, FaRegComments } from "react-icons/fa";
 import Link from "next/link";
+import lottieData from "./banner.json";
+import LottieAnimation from "components/molecules/LottieAnimation";
 const Breadcrumb = () => {
   return (
     <nav className="flex mb-6 lg:mb-20" aria-label="Breadcrumb">
@@ -57,7 +59,7 @@ function Banner({ title, described }) {
           <div className="md:col-8">
             <Breadcrumb />
             <h1 className="mb-4 lg:mb-6 text-3xl font-semibold leading-none tracking-tight text-[#1d3169] md:text-4xl lg:text-5xl dark:text-gray-200">
-              {title}
+              {title ? title : ""}
             </h1>
             <p>{described}</p>
             <div className="mt-10 text-xs">
@@ -76,13 +78,10 @@ function Banner({ title, described }) {
             </div>
           </div>
           <div className="md:col-4">
-            <Image
-              className="w-full h-full"
-              src="/assets/banner-blog-1.png"
-              alt="bg"
-              width={640}
-              height={640}
-            />
+            <div>
+              <LottieAnimation animationData={lottieData} loop={true} />
+            </div>
+
           </div>
         </div>
       </div>

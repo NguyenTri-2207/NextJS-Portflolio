@@ -80,7 +80,7 @@ function Login(props) {
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
                           type="text"
                           placeholder="User Name"
-                          variant="standard"
+
                           label="User Name"
                           {...register("username", { required: true })}
                         />
@@ -90,7 +90,7 @@ function Login(props) {
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
                           type="email"
                           placeholder="Email Address"
-                          variant="standard"
+
                           label="Email Address"
                           {...register(
                             "email",
@@ -121,7 +121,7 @@ function Login(props) {
                           type="password"
                           placeholder="Password"
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
-                          variant="standard"
+
                           label="Password"
                           {...register("password", {
                             required: true,
@@ -145,7 +145,7 @@ function Login(props) {
                           type="password"
                           placeholder="Confirm Password"
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
-                          variant="standard"
+
                           label="Confirm Password"
                           {...register("confirm_password", {
                             required: true,
