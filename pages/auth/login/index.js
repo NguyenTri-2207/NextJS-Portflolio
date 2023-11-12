@@ -171,11 +171,10 @@ function Login(props) {
 
                     <p className="text-sm font-light text-gray-500 ">
                       Don’t have an account yet?{" "}
-                      <Link href="/auth/register">
-                        <a className=" text-blue-600 hover:underline dark:text-primary-500">
-                          {" "}
-                          Sign up
-                        </a>
+                      <Link href="/auth/register" className=" text-blue-600 hover:underline dark:text-primary-500">
+
+                        Sign up
+
                       </Link>
                     </p>
                   </div>

@@ -6,7 +6,6 @@ import dataStatic from "./data.json";
 import Head from "next/head";
 const Blog = ({ repo, repoPost }) => {
   const router = useRouter();
-  console.log(repo)
   return (
     <>
       <Head>

@@ -4,7 +4,6 @@ import React from "react";
 import Head from "next/head";
 
 function Blog({ repo }) {
-  console.log(repo)
   return (
     <>
       <Head>
@@ -20,7 +19,7 @@ function Blog({ repo }) {
 
 export default Blog;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch("https://crm-nodejs.vercel.app/api/post");
   const repo = await res.json();
 

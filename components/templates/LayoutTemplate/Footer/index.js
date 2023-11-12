@@ -22,10 +22,10 @@ const Footer = () => {
             {dataMenu.map((item, index) => {
               return (
                 <div className="px-5 py-2" key={index}>
-                  <Link href={item.href}>
-                    <a className="text-base leading-2 dark:text-white  hover:text-main">
-                      {item.name}
-                    </a>
+                  <Link href={item.href} className="text-base leading-2 dark:text-white  hover:text-main">
+
+                    {item.name}
+
                   </Link>
                 </div>
               );

@@ -21,12 +21,12 @@ function CardBlog({ item }) {
         />
 
         <div className="p-5  ">
-          <Link href={`/blog/${item.url}`}>
-            <a>
-              <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 line-clamp-2">
-                {item.title}
-              </h5>
-            </a>
+          <Link href={`/blog/${item.url}`} className="text-gray-900 font-bold text-2xl tracking-tight mb-2 line-clamp-2">
+
+
+            {item.title}
+
+
           </Link>
           <p className="font-normal text-gray-700 mb-3 line-clamp-3 ">
             {item.desc}
@@ -34,10 +34,10 @@ function CardBlog({ item }) {
 
           <div className="flex flex-wrap justify-between">
             <div className="mt-6 inline-flex items-center rounded-md bg-blue-800 hover:bg-blue-500  px-2 py-0.5">
-              <Link href={`/blog/${item.url}`}>
-                <a className="text-white  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs p-2 text-center inline-flex items-center">
-                  Read more
-                </a>
+              <Link href={`/blog/${item.url}`} className="text-white  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs p-2 text-center inline-flex items-center">
+
+                Read more
+
               </Link>
 
             </div>

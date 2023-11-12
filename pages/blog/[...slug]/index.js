@@ -1,12 +1,14 @@
+// Import các dependencies và components cần thiết
 import Layout from "components/templates/LayoutTemplate";
 import BlogDetailComponent from "components/templates/BlogDetailTemplate";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import dataStatic from "../data.json";
 import Head from "next/head";
+
+// Component Slug
 const Slug = ({ repo, repoPost }) => {
   const router = useRouter();
-  console.log(repo)
 
   return (
     <>
@@ -32,8 +34,37 @@ const Slug = ({ repo, repoPost }) => {
     </>
   );
 };
-export default Slug;
 
+// Hàm getStaticPaths
+// export const getStaticPaths = async () => {
+//   try {
+//     const resPost = await fetch("https://crm-nodejs.vercel.app/api/post");
+//     const repoPost = await resPost.json();
+
+//     if (!Array.isArray(repoPost)) {
+//       throw new Error("repoPost is not an array");
+//     }
+
+//     // Lấy danh sách các slug từ repoPost
+//     const paths = repoPost.map((post) => ({
+//       params: { slug: [post.slug] },
+//     }));
+
+//     return {
+//       paths,
+//       fallback: true,
+//     };
+//   } catch (error) {
+//     console.error("Error in getStaticPaths:", error.message);
+//     return {
+//       paths: [],
+//       fallback: true,
+//     };
+//   }
+// };
+
+
+// Hàm getStaticProps
 export const getServerSideProps = async ({ params }) => {
   const uri = params?.slug[0];
   const res = await fetch(`https://crm-nodejs.vercel.app/api/post/${uri}`);
@@ -43,3 +74,6 @@ export const getServerSideProps = async ({ params }) => {
 
   return { props: { repo, repoPost } };
 };
+
+// Xuất component Slug
+export default Slug;

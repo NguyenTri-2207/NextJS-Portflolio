@@ -118,16 +118,13 @@ export default function Comments({ data }) {
               </form>
             ) : (
               <div className="text-center border border-white dark:border-[#2a2d46] p-4 rounded-lg shadow">
-                <Link href={`/auth/login?url=${router.asPath}#comment`}>
-                  <a
-                    className="text-center mb-1 cursor-pointer"
+                <Link href={`/auth/login?url=${router.asPath}#comment`} className="text-center mb-1 cursor-pointer">
 
-                  >
-                    <div className="flex items-center hover:text-blue-500">
-                      <FaRegComments className="mr-2" />
-                      <span>Login to comment</span>
-                    </div>
-                  </a>
+                  <div className="flex items-center hover:text-blue-500">
+                    <FaRegComments className="mr-2" />
+                    <span>Login to comment</span>
+                  </div>
+
                 </Link>
               </div>
             )}

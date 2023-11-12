@@ -76,20 +76,20 @@ function RelatedPost({ repoPost }) {
                       />
                     </a>
                     <div className="p-5  ">
-                      <Link href={`/blog/${item.id}`}>
-                        <a>
-                          <h5 className=" font-bold text-2xl tracking-tight mb-2 line-clamp-2">
-                            {item.title}
-                          </h5>
-                        </a>
+                      <Link href={`/blog/${item.id}`} className=" font-bold text-2xl tracking-tight mb-2 line-clamp-2">
+
+
+                        {item.title}
+
+
                       </Link>
                       <p className="font-normal  mb-3 line-clamp-3 ">
                         {item.body}
                       </p>
-                      <Link href={`/blog/${item.id}`}>
-                        <a className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                          Read more
-                        </a>
+                      <Link href={`/blog/${item.id}`} className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+
+                        Read more
+
                       </Link>
                     </div>
                   </div>
