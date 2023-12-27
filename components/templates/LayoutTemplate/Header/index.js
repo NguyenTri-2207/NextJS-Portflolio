@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useTranslation } from 'next-i18next';
+
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
@@ -10,8 +12,11 @@ import { ThemContext } from "../../../../common/context";
 import { dataMenu } from "common/data";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
+import LanguageSwitcher from "./LanguageSwitcher/index";
 
 export default function Header({ socialLayoutLeft }) {
+  const { t } = useTranslation();
+
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(true);
@@ -59,6 +64,7 @@ export default function Header({ socialLayoutLeft }) {
   const handClickMenu = () => {
     setOpen(!open);
   };
+  console.log(t())
 
   return (
     <header
@@ -78,11 +84,10 @@ export default function Header({ socialLayoutLeft }) {
                     <li key={index} className="mr-14 last:mr-0 ">
                       <Link href={item.href}>
                         <a
-                          className={` transition-all duration-300 ease-in-out ${
-                            routerAsPath() === item.href
-                              ? "dark:text-main text-blue-700 "
-                              : "dark:text-white "
-                          }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                          className={` transition-all duration-300 ease-in-out ${routerAsPath() === item.href
+                            ? "dark:text-main text-blue-700 "
+                            : "dark:text-white "
+                            }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                         >
                           {item.name}
@@ -124,22 +129,20 @@ export default function Header({ socialLayoutLeft }) {
                 {/* button menu */}
                 <button className="w-8 h-8 relative" onClick={handClickMenu}>
                   <div
-                    className={`${
-                      open ? "rotate-45 absolute top-[15px] " : "mb-2"
-                    } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                    className={`${open ? "rotate-45 absolute top-[15px] " : "mb-2"
+                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                   ></div>
                   <div
-                    className={`${
-                      open ? "hidden" : "block mb-2"
-                    } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                    className={`${open ? "hidden" : "block mb-2"
+                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                   ></div>
                   <div
-                    className={`${
-                      open ? "-rotate-45   " : ""
-                    } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                    className={`${open ? "-rotate-45   " : ""
+                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                   ></div>
                 </button>
                 {tokenAndUser === "true" ? <ProfileMenu /> : null}
+                <LanguageSwitcher />
               </div>
             </div>
           </div>
@@ -154,9 +157,8 @@ export default function Header({ socialLayoutLeft }) {
       )}
       {/* mobile */}
       <div
-        className={`${
-          open ? "right-0" : "-right-[800px]"
-        } absolute transition-all duration-200 w-[300px] dark:bg-[#272b44] bg-white  h-[calc(100vh-80px)] z-20 pr-2  `}
+        className={`${open ? "right-0" : "-right-[800px]"
+          } absolute transition-all duration-200 w-[300px] dark:bg-[#272b44] bg-white  h-[calc(100vh-80px)] z-20 pr-2  `}
       >
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  dark:text-white text-black">
           <ul className="flex-col justify-center border-b border-dashed mb-4 pb-2 lg:hidden block">
@@ -171,7 +173,7 @@ export default function Header({ socialLayoutLeft }) {
             })}
           </ul>
           <h3 className="text-3xl  text-main font-Playfair font-bold mb-6   text-center">
-            Contact
+            {t("Contact")}
           </h3>
           <p className="mb-10 ">
             Please see the information below for more details about me

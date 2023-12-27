@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { appWithTranslation } from 'next-i18next';
+import '../i18n';
 import Head from "next/head";
 import { ThemContext } from "../common/context";
 import "styles/globals.scss";
@@ -33,4 +35,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
