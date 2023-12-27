@@ -1,5 +1,5 @@
 import Layout from "components/organisms/LayoutTemplate";
-import BlogDetailComponent from "components/templates/BlogDetailTemplate";
+import BlogDetailComponent from "components/templates/Blog/blog-detail";
 import React from "react";
 import dataStatic from "../data.json";
 import Head from "next/head";
