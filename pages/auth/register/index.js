@@ -7,7 +7,8 @@ import Link from "next/link";
 import Head from "next/head";
 import axios from "axios";
 import { AiOutlineReload } from "react-icons/ai";
-import Layout from "components/templates/LayoutTemplate";
+import Layout from "components/organisms/LayoutTemplate";
+
 function Login(props) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);

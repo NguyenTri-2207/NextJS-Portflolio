@@ -8,7 +8,8 @@ import Head from "next/head";
 import axios from "axios";
 import { LiaEyeSolid, LiaEyeSlash } from "react-icons/lia";
 import { AiOutlineReload } from "react-icons/ai";
-import Layout from "components/templates/LayoutTemplate";
+import Layout from "components/organisms/LayoutTemplate";
+
 function Login(props) {
   const router = useRouter();
   const [response, setResponse] = useState();
