@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
-import Link from "next/link"
+import Link from "next/link";
 /*** Vendors ***/
 
 /*** components ***/
@@ -14,7 +14,6 @@ function formatTimestamp(timestamp) {
 
 const timestamp = 1677649428;
 const formattedDate = formatTimestamp(timestamp);
-
 
 /*** ========== ***/
 const Card = ({ data }) => {
@@ -79,11 +78,11 @@ const Card = ({ data }) => {
   );
 };
 export default function Comments({ data }) {
-  const router = useRouter()
+  const router = useRouter();
   const [login, setLogin] = useState(false);
   useEffect(() => {
-    setLogin(localStorage.getItem('login'))
-  })
+    setLogin(localStorage.getItem("login"));
+  });
   return (
     <div>
       <section className="py-8 lg:py-16 antialiased" id="comment">
@@ -118,16 +117,14 @@ export default function Comments({ data }) {
               </form>
             ) : (
               <div className="text-center border border-white dark:border-[#2a2d46] p-4 rounded-lg shadow">
-                <Link href={`/auth/login?url=${router.asPath}#comment`}>
-                  <a
-                    className="text-center mb-1 cursor-pointer"
-
-                  >
-                    <div className="flex items-center hover:text-blue-500">
-                      <FaRegComments className="mr-2" />
-                      <span>Login to comment</span>
-                    </div>
-                  </a>
+                <Link
+                  href={`/auth/login?url=${router.asPath}#comment`}
+                  className="text-center mb-1 cursor-pointer"
+                >
+                  <div className="flex items-center hover:text-blue-500">
+                    <FaRegComments className="mr-2" />
+                    <span>Login to comment</span>
+                  </div>
                 </Link>
               </div>
             )}

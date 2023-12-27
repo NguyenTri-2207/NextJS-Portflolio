@@ -6,13 +6,15 @@ import "styles/globals.scss";
 /*----------- app ----------- */
 
 function MyApp({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page);
   const [theme, setTheme] = useState(true);
   const [canonical, setCanonical] = useState(true);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setCanonical(window?.location?.href)
+      setCanonical(window?.location?.href);
     }
-  }, [])
+  }, []);
+
   return (
     <>
       <Head>
@@ -26,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <ThemContext.Provider value={{ theme, setTheme }}>
         <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>
-          <Component {...pageProps} />
+          {getLayout(<Component {...pageProps} />)}
         </div>
       </ThemContext.Provider>
     </>

@@ -1,22 +1,21 @@
 import React from "react";
-import Layout from "components/templates/LayoutTemplate";
-import ProjectTemplate from "components/templates/ProjectTemplate";
+import Layout from "components/organisms/LayoutTemplate";
+import ProjectTemplate from "components/templates/project";
 import Head from "next/head";
 import data from "./data.json";
-function Project() {
+const Project = () => {
   return (
     <>
       <Head>
         <title>Project-Nguyễn Ngọc Trí</title>
         <meta name="description" content="Project Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <Layout>
-        <section className="dark:bg-bgHome-dark h-full lg:pt-10 pt-12  bg-bgHome-white min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full ">
-          <ProjectTemplate data={data} />
-        </section>
-      </Layout>
+      <ProjectTemplate data={data} />
     </>
   );
-}
+};
 
 export default Project;
+Project.getLayout = function getLayout(page) {
+  return <Layout footer={false}>{page}</Layout>;
+};

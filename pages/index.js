@@ -1,5 +1,5 @@
-import Homepage from "components/templates/HomeTemplate";
-import Layout from "components/templates/LayoutTemplate";
+import Homepage from "components/templates/home";
+import Layout from "components/organisms/LayoutTemplate";
 import Head from "next/head";
 const Home = () => {
   return (
@@ -8,10 +8,12 @@ const Home = () => {
         <title>Nguyễn Ngọc Trí</title>
         <meta name="description" content="Home Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <Layout socialLayoutLeft={true} footer={false}>
-        <Homepage />
-      </Layout>
+      <Homepage />
     </>
   );
 };
 export default Home;
+
+Home.getLayout = function getLayout(page) {
+  return <Layout footer={false}>{page}</Layout>;
+};

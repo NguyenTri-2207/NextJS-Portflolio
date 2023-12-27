@@ -1,21 +1,21 @@
 import React from "react";
-import Layout from "components/templates/LayoutTemplate";
-import Skill from "components/organisms/Skill";
+import Layout from "components/organisms/LayoutTemplate";
 import Head from "next/head";
-function About() {
+import data from "./data.js";
+import SkillTeamplate from "components/templates/skill";
+const Skill = () => {
   return (
     <>
       <Head>
         <title>Skill-Nguyễn Ngọc Trí</title>
         <meta name="description" content="Skill Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <Layout >
-        <section className="dark:bg-bgHome-dark   lg:pt-[150px] py-[100px] bg-bgHome-white ">
-          <Skill />
-        </section>
-      </Layout>
+      <SkillTeamplate data={data} />
     </>
   );
-}
+};
 
-export default About;
+export default Skill;
+Skill.getLayout = function getLayout(page) {
+  return <Layout footer={false}>{page}</Layout>;
+};

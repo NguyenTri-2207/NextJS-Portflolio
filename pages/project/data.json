@@ -1,69 +1,69 @@
 {
-    "project": [
+  "project": [
+    {
+      "name": "company",
+      "company": [
         {
-            "name": "company",
-            "company": [
-                {
-                    "startYear": "2020 - 2021",
-                    "src": "/assets/bbc.jpg",
-                    "title": "BBCincorp",
-                    "href": "https://bbcincorp.com/hk",
-                    "description": [
-                        "Build an  company formation website with 400 pages using Nextjs and TailwindCSS",
-                        "Performance Optimization: Achieve High Performance for 100% Pages with the Pagespeed Insight Tool.",
-                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
-                    ]
-                },
-                {
-                    "startYear": "2019 - 2020",
-                    "src": "/assets/nova.png",
-                    "title": "NovaGroup",
-                    "href": "https://www.novagroup.vn/",
-                    "description": [
-                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
-                    ]
-                },
-                {
-                    "startYear": "2022 - 2023",
-                    "src": "/assets/gleads.jpg",
-                    "title": "Gleads",
-                    "href": "https://gleads.vn/vi",
-                    "description": [
-                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
-                    ]
-                }
-            ]
+          "startYear": "2020 - 2021",
+          "src": "/assets/bbc.jpg",
+          "title": "BBCincorp",
+          "href": "https://bbcincorp.com/hk",
+          "description": [
+            "Build an  company formation website with 400 pages using Nextjs and TailwindCSS",
+            "Performance Optimization: Achieve High Performance for 100% Pages with the Pagespeed Insight Tool.",
+            "Technology Used : NextJS, Atomic Design, React Bootstrap"
+          ]
         },
         {
-            "name": "personal",
-            "personal": [
-                {
-                    "startYear": "2021",
-                    "src": "/assets/images.jpg",
-                    "title": "eCommerce Website",
-                    "href": "https://triapple.vercel.app/",
-                    "description": [
-                        "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "Technology Used : NextJS, Atomic Design, React Bootstrap"
-                    ]
-                },
-                {
-                    "startYear": "2022",
-                    "src": "/assets/maxresdefault.jpg",
-                    "href": "https://tringuyen.vercel.app",
-                    "title": "Portfolio Website",
-                    "description": [
-                        "My portfolio website serves as a comprehensive showcase of my skills and expertise, presenting a diverse range of projects I've successfully undertaken",
-                        "It also incorporates engaging features like a dynamic blog section, user registration and login capabilities for interactive feedback, as well as visually appealing effects and an optional light/dark mode.",
-                        "Technology Used : Next.js, Node.js, TailwindCSS, MongoDB"
-                    ]
-                }
-            ]
+          "startYear": "2019 - 2020",
+          "src": "/assets/nova.png",
+          "title": "NovaGroup",
+          "href": "https://www.novagroup.vn/",
+          "description": [
+            "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Technology Used : NextJS, Atomic Design, React Bootstrap"
+          ]
+        },
+        {
+          "startYear": "2022 - 2023",
+          "src": "/assets/gleads.jpg",
+          "title": "Gleads",
+          "href": "https://gleads.vn/vi",
+          "description": [
+            "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Technology Used : NextJS, Atomic Design, React Bootstrap"
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "name": "personal",
+      "personal": [
+        {
+          "startYear": "2021",
+          "src": "/assets/images.jpg",
+          "title": "eCommerce Website",
+          "href": "https://triapple.vercel.app/",
+          "description": [
+            "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Technology Used : NextJS, Atomic Design, React Bootstrap"
+          ]
+        },
+        {
+          "startYear": "2022",
+          "src": "/assets/maxresdefault.jpg",
+          "href": "https://tringuyen.vercel.app",
+          "title": "Portfolio Website",
+          "description": [
+            "My portfolio website serves as a comprehensive showcase of my skills and expertise, presenting a diverse range of projects I've successfully undertaken",
+            "It also incorporates engaging features like a dynamic blog section, user registration and login capabilities for interactive feedback, as well as visually appealing effects and an optional light/dark mode.",
+            "Technology Used : Next.js, Node.js, TailwindCSS, MongoDB"
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,13 +1,9 @@
-import Layout from "components/templates/LayoutTemplate";
-import BlogDetailComponent from "components/templates/BlogDetailTemplate";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import Layout from "components/organisms/LayoutTemplate";
+import BlogDetailComponent from "components/templates/blog/blog-detail";
+import React from "react";
 import dataStatic from "../data.json";
 import Head from "next/head";
 const Slug = ({ repo, repoPost }) => {
-  const router = useRouter();
-  console.log(repo)
-
   return (
     <>
       <Head>
@@ -18,22 +14,24 @@ const Slug = ({ repo, repoPost }) => {
         <meta property="og:title" content={dataStatic.page.title} />
         <meta property="og:description" content={dataStatic.page.description} />
         <meta name="twitter:title" content={dataStatic.page.title} />
-        <meta name="twitter:description" content={dataStatic.page.description} />
+        <meta
+          name="twitter:description"
+          content={dataStatic.page.description}
+        />
       </Head>
-      <Layout footer={true}>
-        <div className="bg-white text-black min-h-screen">
-          <BlogDetailComponent
-            data={repo}
-            dataStatic={dataStatic}
-            repoPost={repoPost}
-          />
-        </div>
-      </Layout>
+
+      <BlogDetailComponent
+        data={repo}
+        dataStatic={dataStatic}
+        repoPost={repoPost}
+      />
     </>
   );
 };
 export default Slug;
-
+Slug.getLayout = function getLayout(page) {
+  return <Layout footer={true}>{page}</Layout>;
+};
 export const getServerSideProps = async ({ params }) => {
   const uri = params?.slug[0];
   const res = await fetch(`https://crm-nodejs.vercel.app/api/post/${uri}`);

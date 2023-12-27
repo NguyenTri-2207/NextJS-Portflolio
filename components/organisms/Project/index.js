@@ -10,12 +10,8 @@ export default function Experience({ data }) {
   return (
     <div className="container" id="project">
       <div className="row">
-        <div className="col-12">
-          <h2 className="text-3xl lg:text-4xl text-main font-Playfair font-bold mb-6  lg:mb-16 text-center">
-            My Projects
-          </h2>
-
-          <div className="flex justify-center mb-10">
+        <div className="col-12 ">
+          <div className="flex justify-center mb-10 mt-16 lg:mt-10">
             <div className="inline-block bg-white rounded-full">
               {data.project.map((item, index) => {
                 return (

@@ -59,7 +59,10 @@ var settings = {
 function RelatedPost({ repoPost }) {
   return (
     <section className="py-10 lg:pb-20 overflow-hidden lg:overflow-auto">
-      <Title className="text-center text-xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-10"> Related</Title>
+      <Title className="text-center text-xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-10">
+        {" "}
+        Related
+      </Title>
       <div className=" relative z-10 ">
         <Slider {...settings}>
           {repoPost
@@ -77,19 +80,18 @@ function RelatedPost({ repoPost }) {
                     </a>
                     <div className="p-5  ">
                       <Link href={`/blog/${item.id}`}>
-                        <a>
-                          <h5 className=" font-bold text-2xl tracking-tight mb-2 line-clamp-2">
-                            {item.title}
-                          </h5>
-                        </a>
+                        <h5 className=" font-bold text-2xl tracking-tight mb-2 line-clamp-2">
+                          {item.title}
+                        </h5>
                       </Link>
                       <p className="font-normal  mb-3 line-clamp-3 ">
                         {item.body}
                       </p>
-                      <Link href={`/blog/${item.id}`}>
-                        <a className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                          Read more
-                        </a>
+                      <Link
+                        href={`/blog/${item.id}`}
+                        className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                      >
+                        Read more
                       </Link>
                     </div>
                   </div>

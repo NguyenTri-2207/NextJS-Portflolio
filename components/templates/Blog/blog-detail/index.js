@@ -29,7 +29,7 @@ const Content = ({ data, index }) => {
 function BlogDetailComponent({ data, repoPost, dataStatic }) {
   const { theme } = useContext(ThemContext);
   return (
-    <div className="dark:bg-gray-900 dark:text-gray-100  mt-18">
+    <div className=" pt-16 dark:bg-gray-900 dark:text-gray-100   mt-18 bg-white text-black min-h-screen">
       <Banner title={data?.title} described={data?.desc} />
       {/* Content */}
       <div className="mt-10 lg:mt-20 container ">

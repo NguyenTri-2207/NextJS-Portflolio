@@ -52,17 +52,21 @@ function Login(props) {
   return (
     <>
       <Head>
-        <title>Register-Nguyễn Ngọc Trí</title>        <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
+        <title>Register-Nguyễn Ngọc Trí</title>{" "}
+        <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
         <meta name="description" content="Register Page Nguyễn Ngọc Trí"></meta>
-
       </Head>
-      <Layout >
+      <Layout>
         <section className="dark:bg-bgHome-dark  h-screen    bg-bgHome-white  ">
           <div className="container h-full">
             <div className="row flex-col items-center justify-center h-full ">
               <div className="lg:col-6 xl:col-5">
                 <h1 className="flex mt-5 text-2xl lg:text-3xl items-center justify-center mb-6 lg:mb-10  font-semibold dark:text-white text-gray-800">
-                  <img className="w-10 h-10 mr-2 " src="/assets/logo.png" alt="logo" />
+                  <img
+                    className="w-10 h-10 mr-2 "
+                    src="/assets/logo.png"
+                    alt="logo"
+                  />
                   NT Website
                 </h1>
                 <div className="w-full bg-white rounded-lg  shadow-xl md:mt-0 ">
@@ -80,7 +84,6 @@ function Login(props) {
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
                           type="text"
                           placeholder="User Name"
-
                           label="User Name"
                           {...register("username", { required: true })}
                         />
@@ -90,7 +93,6 @@ function Login(props) {
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
                           type="email"
                           placeholder="Email Address"
-
                           label="Email Address"
                           {...register(
                             "email",
@@ -98,7 +100,8 @@ function Login(props) {
 
                             {
                               pattern: {
-                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                value:
+                                  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                 message: "invalid email address",
                               },
                             }
@@ -121,7 +124,6 @@ function Login(props) {
                           type="password"
                           placeholder="Password"
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
-
                           label="Password"
                           {...register("password", {
                             required: true,
@@ -129,23 +131,24 @@ function Login(props) {
                           })}
                         />
 
-                        {errors.password && errors.password.type === "required" && (
-                          <p className="text-sm text-red-600 mt-2 ml-2">
-                            This field is required.
-                          </p>
-                        )}
-                        {errors.password && errors.password.type === "minLength" && (
-                          <p className="text-sm text-red-600 mt-2 ml-2">
-                            Minimum length is 6 characters.
-                          </p>
-                        )}
+                        {errors.password &&
+                          errors.password.type === "required" && (
+                            <p className="text-sm text-red-600 mt-2 ml-2">
+                              This field is required.
+                            </p>
+                          )}
+                        {errors.password &&
+                          errors.password.type === "minLength" && (
+                            <p className="text-sm text-red-600 mt-2 ml-2">
+                              Minimum length is 6 characters.
+                            </p>
+                          )}
                       </div>
                       <div>
                         <input
                           type="password"
                           placeholder="Confirm Password"
                           className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400  focus:border-blue-500"
-
                           label="Confirm Password"
                           {...register("confirm_password", {
                             required: true,
@@ -200,10 +203,11 @@ function Login(props) {
                       </button>
                       <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                         Already have an account?{" "}
-                        <Link href="/auth/login">
-                          <a className=" text-blue-600 hover:underline dark:text-primary-500">
-                            Login here
-                          </a>
+                        <Link
+                          href="/auth/login"
+                          className=" text-blue-600 hover:underline dark:text-primary-500"
+                        >
+                          Login here
                         </Link>
                       </p>
                     </form>
@@ -213,9 +217,8 @@ function Login(props) {
             </div>
           </div>
         </section>
-      </Layout >
+      </Layout>
     </>
-
   );
 }
 

@@ -56,15 +56,18 @@ function Login(props) {
       <Head>
         <title>Login-Nguyễn Ngọc Trí</title>
         <meta name="description" content="Login Page Nguyễn Ngọc Trí"></meta>
-
       </Head>
-      <Layout >
+      <Layout>
         <section className="dark:bg-bgHome-dark h-screen bg-bgHome-white  ">
           <div className="container h-full">
             <div className=" dark:text-white text-gray-800 flex flex-col h-full justify-center">
               <div className=" px-4 py-8 mx-auto lg:col-6 ">
                 <h1 className="flex mt-5 text-2xl lg:text-3xl items-center justify-center mb-6 lg:mb-10  font-semibold ">
-                  <img className="w-10 h-10 mr-4 " src="/assets/logo.png" alt="logo" />
+                  <img
+                    className="w-10 h-10 mr-4 "
+                    src="/assets/logo.png"
+                    alt="logo"
+                  />
                   NT Website
                 </h1>
                 <div className="w-full bg-white rounded-lg  shadow-xl md:mt-0  xl:p-0  ">
@@ -87,7 +90,8 @@ function Login(props) {
                             { required: true },
                             {
                               pattern: {
-                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                value:
+                                  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                 message: "invalid email address",
                               },
                             }
@@ -142,7 +146,9 @@ function Login(props) {
                             />
                           </div>
                           <div className=" text-sm">
-                            <label className="text-gray-500 ml-3  ">Remember me</label>
+                            <label className="text-gray-500 ml-3  ">
+                              Remember me
+                            </label>
                           </div>
                         </div>
                         <a
@@ -171,18 +177,19 @@ function Login(props) {
 
                     <p className="text-sm font-light text-gray-500 ">
                       Don’t have an account yet?{" "}
-                      <Link href="/auth/register">
-                        <a className=" text-blue-600 hover:underline dark:text-primary-500">
-                          {" "}
-                          Sign up
-                        </a>
+                      <Link
+                        href="/auth/register"
+                        className=" text-blue-600 hover:underline dark:text-primary-500"
+                      >
+                        Sign up
                       </Link>
                     </p>
                   </div>
                 </div>
               </div>
               {/* </section> */}
-            </div></div>
+            </div>
+          </div>
         </section>
       </Layout>
     </>

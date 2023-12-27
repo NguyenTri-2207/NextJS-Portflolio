@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import Head from "next/head";
 import Link from "next/link";
 
@@ -15,9 +14,7 @@ const Custom404 = () => {
               <h1 className={"mb-4"}>Trang không tồn tại</h1>
               <div className="mb-8 lg:mb-4">Vui lòng quay lại Trang chủ</div>
             </div>
-            <Link href="/">
-              Trang chủ
-            </Link>
+            <Link href="/">Trang chủ</Link>
           </div>
         </div>
       </div>

@@ -1,25 +1,25 @@
-import Layout from "components/templates/LayoutTemplate";
-import BlogTemplates from "components/templates/Blog";
+import Layout from "components/organisms/LayoutTemplate";
+import BlogTemplates from "components/templates/blog";
 import React from "react";
 import Head from "next/head";
 
-function Blog({ repo }) {
-  console.log(repo)
+const Blog = ({ repo }) => {
   return (
     <>
       <Head>
         <title>Blog-Nguyễn Ngọc Trí</title>
         <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <Layout footer={true}>
-        <BlogTemplates data={repo} />
-      </Layout>
+
+      <BlogTemplates data={repo} />
     </>
   );
-}
+};
 
 export default Blog;
-
+Blog.getLayout = function getLayout(page) {
+  return <Layout footer={true}>{page}</Layout>;
+};
 export const getServerSideProps = async () => {
   const res = await fetch("https://crm-nodejs.vercel.app/api/post");
   const repo = await res.json();

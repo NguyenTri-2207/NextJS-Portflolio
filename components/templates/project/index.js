@@ -1,12 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Project from "components/organisms/Project";
 
 function ProjectTemplate({ data }) {
   return (
-    <div className="lg:pl-[84px] mt-14 ">
+    <section className="section-tempale h-full  ">
       <Project data={data} />
-    </div>
+    </section>
   );
 }
 
