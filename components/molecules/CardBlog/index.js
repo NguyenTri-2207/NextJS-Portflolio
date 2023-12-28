@@ -10,14 +10,15 @@ const formatDate = (date) => {
 };
 
 function CardBlog({ item }) {
+  console.log(item.desc);
   return (
     <div className="col-12 md:col-6 lg:col-4 mb-5  ">
       <div className=" shadow-md  bg-white h-full border-gray-200 border rounded-lg  ">
         <Image
-          className="rounded-t-lg"
-          src="/assets/banner-blog.png"
-          width={400}
-          height={300}
+          className="rounded-t-lg w-full"
+          src={item.image}
+          width={300}
+          height={200}
           alt={item.title}
         />
 
