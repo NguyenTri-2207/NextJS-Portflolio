@@ -1,5 +1,5 @@
 import Layout from "components/organisms/LayoutTemplate";
-import BlogTemplates from "components/templates/Blog";
+import BlogTemplates from "components/templates/new-blog";
 import React from "react";
 import Head from "next/head";
 

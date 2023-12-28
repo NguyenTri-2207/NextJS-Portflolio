@@ -1,7 +1,7 @@
 import CardBlog from "components/molecules/CardBlog";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ThemContext } from "common/context";
-import Banner from "components/templates/Blog/Banner";
+import Banner from "components/templates/new-blog/Banner";
 
 function Blog({ data }) {
   const { theme } = useContext(ThemContext);
@@ -44,10 +44,9 @@ function Blog({ data }) {
       </div>
       <div className=" container  ">
         <div className="row items-stretch">
-          {data
-            .map((content, index) => {
-              return <CardBlog key={index} item={content} />;
-            })}
+          {data.map((content, index) => {
+            return <CardBlog key={index} item={content} />;
+          })}
         </div>
       </div>
     </section>

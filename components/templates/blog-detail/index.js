@@ -4,7 +4,7 @@ import { ThemContext } from "common/context";
 import SocialShare from "./SocialShare/SocialShare";
 import Comments from "./Comments/index";
 import dataJson from "./data?.json";
-import Banner from "components/templates/Blog/Banner";
+import Banner from "components/templates/new-blog/Banner";
 import TableOfContents from "./TableOfContents/index";
 import RelatedPost from "./RelatedPost/index";
 

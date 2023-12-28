@@ -6,7 +6,7 @@ import { FiPhone } from "react-icons/fi";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import { MdEmail } from "react-icons/md";
-import { ThemContext } from "../../../../common/context";
+import { ThemContext } from "common/context";
 import { dataMenu } from "common/data";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
@@ -35,29 +35,6 @@ export default function Header({ socialLayoutLeft }) {
   const onSwitchAction = () => {
     setTheme(!theme);
     setIsToggleOn(!isToggleOn);
-  };
-
-  const [isSticky, setSticky] = useState(false);
-  const handleScroll = () => {
-    if (window.pageYOffset > 80) {
-      if (!isSticky) {
-        setSticky(true);
-      }
-    } else {
-      if (isSticky) {
-        setSticky(!isSticky);
-      }
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", () => handleScroll);
-    };
-  }, []);
-  const handClickMenu = () => {
-    setOpen(!open);
   };
 
   return (
@@ -121,7 +98,10 @@ export default function Header({ socialLayoutLeft }) {
                   </a>
                 </div>
                 {/* button menu */}
-                <button className="w-8 h-8 relative" onClick={handClickMenu}>
+                <button
+                  className="w-8 h-8 relative"
+                  onClick={() => setOpen(!open)}
+                >
                   <div
                     className={`${
                       open ? "rotate-45 absolute top-[15px] " : "mb-2"
