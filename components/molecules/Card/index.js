@@ -12,7 +12,7 @@ const Card = ({ startYear, title, src, description, href, even, github }) => {
           even ? "lg:flex" : " lg:flex lg:flex-row-reverse "
         } group bg-gray-900 text-white shadow-lg  rounded-lg  lg:min-h-[280px] overflow-hidden relative `}
       >
-        <div className="  lg:col-5 overflow-hidden">
+        <div className=" h-[200px] lg:h-[300px]  lg:col-5 overflow-hidden">
           <Image
             alt="img"
             className="w-full h-full group-hover:scale-110 transition delay-150 duration-300 ease-in-out"
@@ -43,7 +43,7 @@ const Card = ({ startYear, title, src, description, href, even, github }) => {
           <div className="mb-4  text-sm ">
             {description.map((item, index) => (
               <li
-                className=" relative list-none before:w-1 before:h-1 before:bg-yellow before:absolute before:rounded-full pl-3 before:top-2 before:left-0 mb-1 last:mb-0"
+                className=" line-clamp-2 relative list-none before:w-1 before:h-1 before:bg-yellow before:absolute before:rounded-full pl-3 before:top-2 before:left-0 mb-1 last:mb-0"
                 key={index}
               >
                 {item}

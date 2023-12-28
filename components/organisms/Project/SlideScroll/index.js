@@ -6,6 +6,7 @@ import Card from "components/molecules/Card";
 
 var settings = {
   autoplay: true,
+  speed: 700,
   dots: true,
   dotPosition: "left",
   vertical: true,
@@ -32,7 +33,7 @@ var settings = {
 function SlideScroll({ data }) {
   return (
     <div>
-      <div className=" my-10">
+      <div>
         <Slider {...settings}>
           {data.map((item, index) => {
             return (
