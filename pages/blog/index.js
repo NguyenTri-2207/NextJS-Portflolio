@@ -20,7 +20,7 @@ export default Blog;
 Blog.getLayout = function getLayout(page) {
   return <Layout footer={true}>{page}</Layout>;
 };
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch("https://crm-nodejs.vercel.app/api/post");
   const repo = await res.json();
 
