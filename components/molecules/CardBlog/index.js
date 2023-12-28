@@ -10,7 +10,6 @@ const formatDate = (date) => {
 };
 
 function CardBlog({ item }) {
-  console.log(item.desc);
   return (
     <div className="col-12 md:col-6 lg:col-4 mb-5  ">
       <div className=" shadow-md  bg-white h-full border-gray-200 border rounded-lg  ">

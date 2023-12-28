@@ -4,8 +4,6 @@ import React from "react";
 import dataStatic from "../data.json";
 import Head from "next/head";
 const Slug = ({ repo, repoPost }) => {
-  console.log(repo);
-  console.log(repoPost);
   return (
     <>
       <Head>
