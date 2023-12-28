@@ -8,6 +8,7 @@ import Head from "next/head";
 import axios from "axios";
 import { AiOutlineReload } from "react-icons/ai";
 import Layout from "components/organisms/LayoutTemplate";
+import Image from "next/image";
 
 function Login(props) {
   const router = useRouter();
@@ -63,7 +64,9 @@ function Login(props) {
             <div className="row flex-col items-center justify-center h-full ">
               <div className="lg:col-6 xl:col-5">
                 <h1 className="flex mt-5 text-2xl lg:text-3xl items-center justify-center mb-6 lg:mb-10  font-semibold dark:text-white text-gray-800">
-                  <img
+                  <Image
+                    width={40}
+                    height={40}
                     className="w-10 h-10 mr-2 "
                     src="/assets/logo.png"
                     alt="logo"

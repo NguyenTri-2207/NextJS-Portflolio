@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Title from "components/atoms/Title";
 import Link from "next/link";
+import Image from "next/image";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -72,9 +73,11 @@ function RelatedPost({ repoPost }) {
                 <div key={index} className=" px-4 overflow-hidden ">
                   <div className=" shadow-xl bg-white dark:bg-[#272b44] h-full rounded-l g  ">
                     <a href="">
-                      <img
+                      <Image
                         className="rounded-t-lg"
-                        src="https://flowbite.com/docs/images/blog/image-1.jpg"
+                        src="/assets/banner-blog.png"
+                        width={400}
+                        height={300}
                         alt=""
                       />
                     </a>

@@ -8,11 +8,12 @@ const Card = ({ startYear, title, src, description, href, even, github }) => {
   return (
     <div className="mb-10">
       <div
-        className={`${even ? "lg:flex" : " lg:flex lg:flex-row-reverse "
-          } group bg-gray-900 text-white shadow-lg  rounded-lg  overflow-hidden relative `}
+        className={`${
+          even ? "lg:flex" : " lg:flex lg:flex-row-reverse "
+        } group bg-gray-900 text-white shadow-lg  rounded-lg  overflow-hidden relative `}
       >
         <div className="  lg:col-5 overflow-hidden">
-          <img
+          <Image
             alt="img"
             className="w-full h-full group-hover:scale-110 transition delay-150 duration-300 ease-in-out"
             src={src}
@@ -23,10 +24,11 @@ const Card = ({ startYear, title, src, description, href, even, github }) => {
         </div>
         <div className="lg:col-7 p-6 relative z-10">
           <div
-            className={`${even
+            className={`${
+              even
                 ? "top-0 -left-5 rotate-[4deg] "
                 : " top-0 -right-5 -rotate-[4deg]"
-              } w-10 h-[110%] bg-gray-900 absolute -z-10`}
+            } w-10 h-[110%] bg-gray-900 absolute -z-10`}
           ></div>
           <h5 className="text-2xl pb-2 text-yellow group-hover:text-yellow transition delay-150 duration-300 ease-in-out">
             {title}

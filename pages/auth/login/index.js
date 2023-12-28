@@ -9,6 +9,7 @@ import axios from "axios";
 import { LiaEyeSolid, LiaEyeSlash } from "react-icons/lia";
 import { AiOutlineReload } from "react-icons/ai";
 import Layout from "components/organisms/LayoutTemplate";
+import Image from "next/image";
 
 function Login(props) {
   const router = useRouter();
@@ -64,7 +65,9 @@ function Login(props) {
             <div className=" dark:text-white text-gray-800 flex flex-col h-full justify-center">
               <div className=" px-4 py-8 mx-auto lg:col-6 ">
                 <h1 className="flex mt-5 text-2xl lg:text-3xl items-center justify-center mb-6 lg:mb-10  font-semibold ">
-                  <img
+                  <Image
+                    width={40}
+                    height={40}
                     className="w-10 h-10 mr-4 "
                     src="/assets/logo.png"
                     alt="logo"

@@ -1,6 +1,7 @@
 import React from "react";
 import { FiCalendar } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 
 const formatDate = (date) => {
   const inputDate = new Date(date);
@@ -12,10 +13,11 @@ function CardBlog({ item }) {
   return (
     <div className="col-12 md:col-6 lg:col-4 mb-5  ">
       <div className=" shadow-md  bg-white h-full border-gray-200 border rounded-lg  ">
-        <img
-          className="rounded-t-lg "
-          src="https://www.dmv.ca.gov/portal/uploads/2022/12/device_task_1.svg"
-          // src="https://bbcincorp.com/wp-content/uploads/sites/2/2021/12/Guide-to-Finding-a-Sourcing-Agent.jpg.webp"
+        <Image
+          className="rounded-t-lg"
+          src="/assets/banner-blog.png"
+          width={400}
+          height={300}
           alt={item.title}
         />
 
