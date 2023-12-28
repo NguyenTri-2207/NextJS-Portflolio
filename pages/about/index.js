@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "components/organisms/LayoutTemplate";
 import AboutTempalte from "components/templates/about";
 import Head from "next/head";
-import data from "./data.js";
+import data from "../../components/templates/about/data.js";
 
 const About = () => {
   return (
