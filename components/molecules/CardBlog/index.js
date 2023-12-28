@@ -14,7 +14,7 @@ function CardBlog({ item }) {
     <div className="col-12 md:col-6 lg:col-4 mb-5  ">
       <div className=" shadow-md  bg-white h-full border-gray-200 border rounded-lg  ">
         <Image
-          className="rounded-t-lg w-full"
+          className="rounded-t-lg w-full h-[200px]"
           src={item.image}
           width={300}
           height={200}
