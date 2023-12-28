@@ -35,6 +35,17 @@
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "Technology Used : NextJS, Atomic Design, React Bootstrap"
           ]
+        },
+        {
+          "startYear": "2022 - 2023",
+          "src": "/assets/gleads.jpg",
+          "title": "Visa2asia",
+          "href": "/",
+          "description": [
+            "Build an  company formation website with 300 pages using Nextjs and TailwindCSS",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Technology Used : NextJS, Atomic Design, React Bootstrap"
+          ]
         }
       ]
     },

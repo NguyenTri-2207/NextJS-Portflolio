@@ -6,11 +6,11 @@ import { AiOutlineEye } from "react-icons/ai";
 import { FaLocationArrow, FaGithub } from "react-icons/fa";
 const Card = ({ startYear, title, src, description, href, even, github }) => {
   return (
-    <div className="mb-10">
+    <div className="mb-10 col-12 sm:col-8 lg:col-10 mx-auto">
       <div
         className={`${
           even ? "lg:flex" : " lg:flex lg:flex-row-reverse "
-        } group bg-gray-900 text-white shadow-lg  rounded-lg  overflow-hidden relative `}
+        } group bg-gray-900 text-white shadow-lg  rounded-lg  lg:min-h-[280px] overflow-hidden relative `}
       >
         <div className="  lg:col-5 overflow-hidden">
           <Image
