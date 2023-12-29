@@ -15,5 +15,9 @@ const Home = () => {
 export default Home;
 
 Home.getLayout = function getLayout(page) {
-  return <Layout footer={false}>{page}</Layout>;
+  return (
+    <Layout footer={false} socialLayoutLeft>
+      {page}
+    </Layout>
+  );
 };

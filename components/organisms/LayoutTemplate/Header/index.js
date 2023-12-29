@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
-import { FiPhone } from "react-icons/fi";
+import { useContext, useEffect, useRef, useState } from "react";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
-import { GoLocation } from "react-icons/go";
-import { MdEmail } from "react-icons/md";
 import { ThemContext } from "common/context";
 import { dataMenu } from "common/data";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
+import useOnClickOutside from "common/useOnClickOutside";
 
 export default function Header({ socialLayoutLeft }) {
   const [open, setOpen] = useState(false);
@@ -36,9 +34,11 @@ export default function Header({ socialLayoutLeft }) {
     setTheme(!theme);
     setIsToggleOn(!isToggleOn);
   };
-
+  const ref = useRef();
+  useOnClickOutside(ref, setOpen);
   return (
     <header
+      ref={ref}
       className="fixed top-0 left-0 z-50 w-full dark:bg-[#272b44] bg-white text-gleads-oxfordBlue-900 shadow-md  "
       id="header"
     >
@@ -134,40 +134,24 @@ export default function Header({ socialLayoutLeft }) {
       {/* mobile */}
       <div
         className={`${
-          open ? "right-0" : "-right-[800px]"
-        } absolute transition-all duration-200 w-[300px] dark:bg-[#272b44] bg-white  h-[calc(100vh-80px)] z-20 pr-2  `}
+          open ? "-right-2 opacity-100" : "-right-48 opacity-0"
+        } fixed transition-all duration-200 top-20  z-20  `}
       >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  dark:text-white text-black">
-          <ul className="flex-col justify-center border-b border-dashed mb-4 pb-2 lg:hidden block">
-            {dataMenu.map((item, index) => {
-              return (
-                <Link
-                  href={item.href}
-                  key={index}
-                  className="  cursor-pointer text-lg font-medium block mb-4  "
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
-          </ul>
-          <h3 className="text-3xl  text-main font-Playfair font-bold mb-6   text-center">
-            Contact
-          </h3>
-          <p className="mb-10 ">
-            Please see the information below for more details about me
-          </p>
-          <a href="tel:0337368371" className="inline-flex items-center mb-2">
-            <FiPhone className="mr-4" color="#08D565" />
-            0337368371
-          </a>
-          <a className="inline-flex items-center mb-2">
-            <MdEmail className="mr-4" color="#08D565" /> ngoctri2207@gmail.com
-          </a>
-          <a className="inline-flex items-center mb-2">
-            <GoLocation className="mr-4" color="#08D565" /> Ho Chi Minh City
-          </a>
-        </div>
+        <ul className="flex-col justify-center px-3 lg:hidden block ">
+          {dataMenu.map((item, index) => {
+            return (
+              <Link
+                className="flex items-center shadow-2xl p-4 dark:text-white text-black rounded-lg dark:bg-[#272b44] bg-white  cursor-pointer text-sm font-semibold  mb-4  "
+                key={index}
+                onClick={() => setOpen(!open)}
+                href={item.href}
+              >
+                <div className="text-green-500 mr-2">{item.icon}</div>
+                {item.name}
+              </Link>
+            );
+          })}
+        </ul>
       </div>
     </header>
   );

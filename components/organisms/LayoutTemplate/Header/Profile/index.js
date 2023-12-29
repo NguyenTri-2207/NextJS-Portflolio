@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FaUser } from "react-icons/fa";
+
 import { useRouter } from "next/router";
 import { BiSolidChevronDown } from "react-icons/bi";
 import { BsCheckLg } from "react-icons/bs";
@@ -17,15 +19,9 @@ export default function ProfileMenu() {
   return (
     <div onClick={() => setIsMenuOpen(!isMenuOpen)} className="ml-6 relative">
       <button className="flex items-center gap-1 rounded-full  lg:ml-auto">
-        <img
-          id="avatarButton"
-          type="button"
-          data-dropdown-toggle="userDropdown"
-          data-dropdown-placement="bottom-start"
-          className="w-9 border border-blue-500 p-0.5 h-9 rounded-full cursor-pointer"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-          alt="User dropdown"
-        />
+        <div className="w-9 border flex items-center justify-center dark:text-white text-gray-500 border-blue-500 p-0.5 h-9 rounded-full cursor-pointer">
+          <FaUser size={16} />
+        </div>
 
         <BiSolidChevronDown
           size={2.5}
