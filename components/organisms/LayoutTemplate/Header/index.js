@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
-import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
+import { MdOutlineLightMode, MdDarkMode, MdEmail } from "react-icons/md";
+import { GoLocation } from "react-icons/go";
 import { ThemContext } from "common/context";
 import { dataMenu } from "common/data";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
 import useOnClickOutside from "common/useOnClickOutside";
+import { FiPhone } from "react-icons/fi";
 
 export default function Header({ socialLayoutLeft }) {
   const [open, setOpen] = useState(false);
@@ -70,7 +72,7 @@ export default function Header({ socialLayoutLeft }) {
               </ul>
             </div>
             {/* <!-- dark and light mode toggle --> */}
-            <div className=" lg:col-5 h-full ">
+            <div className=" lg:col-3 h-full ">
               <div className="flex justify-between items-center h-full">
                 {/* dark mode */}
                 <button
@@ -99,7 +101,7 @@ export default function Header({ socialLayoutLeft }) {
                 </div>
                 {/* button menu */}
                 <button
-                  className="w-8 h-8 relative"
+                  className="w-8 h-8 relative block lg:hidden"
                   onClick={() => setOpen(!open)}
                 >
                   <div
@@ -152,6 +154,22 @@ export default function Header({ socialLayoutLeft }) {
             );
           })}
         </ul>
+        {/* <h3 className="text-3xl  text-main font-Playfair font-bold mb-6   text-center">
+          Contact
+        </h3>
+        <p className="mb-10 ">
+          Please see the information below for more details about me
+        </p>
+        <a href="tel:0337368371" className="inline-flex items-center mb-2">
+          <FiPhone className="mr-4" color="#08D565" />
+          0337368371
+        </a>
+        <a className="inline-flex items-center mb-2">
+          <MdEmail className="mr-4" color="#08D565" /> ngoctri2207@gmail.com
+        </a>
+        <a className="inline-flex items-center mb-2">
+          <GoLocation className="mr-4" color="#08D565" /> Ho Chi Minh City
+        </a> */}
       </div>
     </header>
   );
