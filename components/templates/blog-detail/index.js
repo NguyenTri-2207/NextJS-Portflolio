@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemContext } from "common/context";
+import Image from "next/image";
 
 import SocialShare from "./SocialShare/SocialShare";
 import Comments from "./Comments/index";
@@ -21,7 +22,13 @@ const Content = ({ data, index }) => {
       </h2>
       <p className="mb-4">{data?.content}</p>
       {data?.image && (
-        <img className=" w-full h-full" src={data?.image} alt={data?.title} />
+        <Image
+          width={600}
+          height={400}
+          className=" w-full h-full"
+          src={data?.image}
+          alt={data?.title}
+        />
       )}
     </div>
   );

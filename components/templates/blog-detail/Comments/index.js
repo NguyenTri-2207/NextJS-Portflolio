@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 /*** Vendors ***/
 
 /*** components ***/
@@ -22,7 +23,9 @@ const Card = ({ data }) => {
       <div className="flex justify-between items-center mb-2">
         <div className="flex items-center">
           <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-            <img
+            <Image
+              width={24}
+              height={24}
               className="mr-2 w-6 h-6 rounded-full"
               src={
                 data.image
@@ -82,7 +85,7 @@ export default function Comments({ data }) {
   const [login, setLogin] = useState(false);
   useEffect(() => {
     setLogin(localStorage.getItem("login"));
-  });
+  }, []);
   return (
     <div>
       <section className="py-8 lg:py-16 antialiased" id="comment">
