@@ -7,21 +7,14 @@ import { RiArrowUpSLine } from "react-icons/ri";
 import SliderSill from "./Slider/index";
 import styles from "./index.module.scss";
 
-const CardYear = ({ props, index }) => {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (index === 0) {
-      setOpen(true);
-    }
-  }, [index]);
+const CardYear = ({ props, index, open, onCardClick }) => {
   const { year, title, des, company, companyLink } = props;
 
   return (
     <div className="lg:mb-10 mb-6 overflow-hidden last:mb-0 ">
       <button
         className="flex justify-between  w-full"
-        onClick={() => setOpen(!open)}
+        onClick={() => onCardClick(index)}
       >
         <div className="flex items-center mb-2 ">
           <p className="font-bold xl:text-xl text-[#08d565] mr-4 ">{year}</p>
@@ -81,6 +74,20 @@ const CardYear = ({ props, index }) => {
 };
 
 const Skill = ({ data }) => {
+  const [openCards, setOpenCards] = useState(
+    Array(data.dataCardYear.length).fill(false)
+  );
+  useEffect(() => {
+    // Default index 0
+    setOpenCards((prev) => prev.map((_, i) => (i === 0 ? true : false)));
+  }, []);
+  const handleCardClick = (index) => {
+    const newOpenCards = openCards.map((_, i) =>
+      i === index ? !openCards[i] : false
+    );
+
+    setOpenCards(newOpenCards);
+  };
   const { theme } = useContext(ThemContext);
   return (
     <div className="flex items-center h-full">
@@ -109,7 +116,15 @@ const Skill = ({ data }) => {
           </div>
           <div className="lg:col-6">
             {data.dataCardYear.map((item, index) => {
-              return <CardYear key={index} props={item} index={index} />;
+              return (
+                <CardYear
+                  key={index}
+                  props={item}
+                  index={index}
+                  open={openCards[index]}
+                  onCardClick={handleCardClick}
+                />
+              );
             })}
           </div>
         </div>
