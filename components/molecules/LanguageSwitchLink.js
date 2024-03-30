@@ -6,7 +6,9 @@ const LanguageSwitchLink = ({ locale, ...rest }) => {
   const router = useRouter()
 
   let href = rest.href || router.asPath
+
   let pName = router.pathname
+  console.log(locale)
   Object.keys(router.query).forEach(k => {
     if (k === 'locale') {
       pName = pName.replace(`[${k}]`, locale)
@@ -20,15 +22,19 @@ const LanguageSwitchLink = ({ locale, ...rest }) => {
   if (href.indexOf(`/${locale}`) < 0) {
     href = `/${locale}${href}`
   }
-
   return (
-    <Link href={href}>
+    <Link href={href} >
       <button
-        style={{ fontSize: '20px' }}
+        className='flex'
         onClick={() => languageDetector.cache(locale)}
       >
-        {locale}
+        <div> {locale === "vi"
+          ? <div className='w-10 h-6'><img className='w-full h-full' src="https://test.bbcincorp.com/assets/flags/4x3/vn.svg" width="full" height="full" /> </div>
+          :
+          <div className='w-10 h-6'><img className='w-full h-full' src="https://test.bbcincorp.com/assets/flags/4x3/gb.svg" width="full" height="full" /></div>}
+        </div>
       </button>
+
     </Link>
   )
 }

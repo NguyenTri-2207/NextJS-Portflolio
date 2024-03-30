@@ -19,10 +19,7 @@ export const FooterTest = () => {
         <span style={{ fontSize: 'small', lineHeight: '4.65em' }}>
           {t('change-locale')}
         </span>
-        {i18nextConfig.i18n.locales.map(locale => {
-          if (locale === currentLocale) return null
-          return <LanguageSwitchLink locale={locale} key={locale} />
-        })}
+
       </p>
       <p>next-i18next v{pkg.version}</p>
       <p>next-language-detector v{pkgLD.version}</p>

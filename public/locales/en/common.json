@@ -4,5 +4,37 @@
   "error-without-status": "An error occurred on the server",
   "h1": "A simple example",
   "title": "Home | next-i18next",
-  "to-second-page": "To second page"
+  "to-second-page": "To second page",
+  "menu": [
+    {
+      "name": "Home",
+      "id": "header",
+      "href": "/",
+      "icon": "FaHome"
+    },
+    {
+      "name": "About",
+      "id": "about",
+      "href": "/about",
+      "icon": "FaUserEdit"
+    },
+    {
+      "name": "Skill",
+      "id": "skill",
+      "href": "/skill",
+      "icon": "FaSortAmountUpAlt"
+    },
+    {
+      "name": "Project",
+      "id": "project",
+      "href": "/project",
+      "icon": "FaBook"
+    },
+    {
+      "name": "Blog",
+      "id": "blog",
+      "href": "/blog",
+      "icon": "FaChartPie"
+    }
+  ]
 }

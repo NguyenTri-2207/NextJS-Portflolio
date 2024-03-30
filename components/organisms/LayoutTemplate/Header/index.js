@@ -2,16 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
-import { MdOutlineLightMode, MdDarkMode, MdEmail } from "react-icons/md";
-import { GoLocation } from "react-icons/go";
+import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { ThemContext } from "common/context";
-import { dataMenu } from "common/data";
+// import { dataMenu } from "common/data";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
 import useOnClickOutside from "common/useOnClickOutside";
-import { FiPhone } from "react-icons/fi";
+import LanguageSwitchLink from 'components/molecules/LanguageSwitchLink'
+import { FaHome, FaUserEdit, FaSortAmountUpAlt, FaBook, FaChartPie } from 'react-icons/fa';
+import { createElement } from 'react';
+import i18nextConfig from '../../../../next-i18next.config'
 
-export default function Header({ socialLayoutLeft }) {
+const mapIconToComponent = (iconName) => {
+  switch (iconName) {
+    case 'FaHome':
+      return <div className="text-green-500 mr-2"><FaHome size="18" /></div>
+    case 'FaUserEdit':
+      return <div className="text-green-500 mr-2"><FaUserEdit size="18" /></div>
+    case 'FaSortAmountUpAlt':
+      return <div className="text-green-500 mr-2"><FaSortAmountUpAlt size="18" /></div>
+    case 'FaBook':
+      return <div className="text-green-500 mr-2"><FaBook size="18" /></div>
+    case 'FaChartPie':
+      return <div className="text-green-500 mr-2"><FaChartPie size="18" /></div>
+    default:
+      return null;
+  }
+};
+
+export default function Header({ socialLayoutLeft, dataMenu }) {
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(true);
@@ -22,6 +41,7 @@ export default function Header({ socialLayoutLeft }) {
       setTokenAndUser(localStorage.getItem("login"));
     }
   }, []);
+  console.log("dataMenu", dataMenu)
   // slice '/' url
   const routerAsPath = () => {
     let result;
@@ -38,6 +58,10 @@ export default function Header({ socialLayoutLeft }) {
   };
   const ref = useRef();
   useOnClickOutside(ref, setOpen);
+
+
+  const currentLocale =
+    router.query.locale || i18nextConfig.i18n.defaultLocale
   return (
     <header
       ref={ref}
@@ -49,19 +73,18 @@ export default function Header({ socialLayoutLeft }) {
           <div className="lg:col-1 col-3 h-10">
             <Image src="/assets/logo.png" alt="logo" width={40} height={40} />
           </div>
-          <div className=" lg:col-11 col-9 flex justify-end items-center h-10">
-            <div className="lg:col-7 hidden lg:block ">
+          <div className=" lg:col-11 col-9 flex  lg:justify-start justify-end xl:justify-end items-center h-10">
+            <div className="lg:col-8 xl:col-7 hidden lg:block ">
               <ul className="flex items-center">
                 {dataMenu.map((item, index) => {
                   return (
-                    <li key={index} className="mr-14 last:mr-0 ">
+                    <li key={index} className="mr-10 lg:mr-14 last:mr-0 ">
                       <Link
                         href={item.href}
-                        className={` transition-all duration-300 ease-in-out ${
-                          routerAsPath() === item.href
-                            ? "dark:text-main text-blue-700 "
-                            : "dark:text-white "
-                        }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                        className={` transition-all duration-300 ease-in-out ${routerAsPath() === item.href
+                          ? "dark:text-main text-blue-700 "
+                          : "dark:text-white "
+                          }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                       >
                         {item.name}
@@ -87,8 +110,12 @@ export default function Header({ socialLayoutLeft }) {
                   )}
                 </button>
                 <div className="flex items-center"></div>
-                {/* list */}
-                <div
+                {/* locale */}
+                {i18nextConfig.i18n.locales.map(locale => {
+                  if (locale === currentLocale) return null
+                  return <LanguageSwitchLink locale={locale} key={locale} />
+                })}
+                {/* <div
                   className=" hidden md:block  mr-10  relative font-poppins font-semibold  before:content-[''] before:h-0.5 before:w-3
              dark:before:bg-main before:bg-blue-700 before:absolute before:bottom-[11.5px] before:-left-6"
                 >
@@ -98,26 +125,23 @@ export default function Header({ socialLayoutLeft }) {
                   >
                     0337 368 371
                   </a>
-                </div>
+                </div> */}
                 {/* button menu */}
                 <button
                   className="w-8 h-8 relative block lg:hidden"
                   onClick={() => setOpen(!open)}
                 >
                   <div
-                    className={`${
-                      open ? "rotate-45 absolute top-[15px] " : "mb-2"
-                    } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                    className={`${open ? "rotate-45 absolute top-[15px] " : "mb-2"
+                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                   ></div>
                   <div
-                    className={`${
-                      open ? "hidden" : "block mb-2"
-                    } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                    className={`${open ? "hidden" : "block mb-2"
+                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                   ></div>
                   <div
-                    className={`${
-                      open ? "-rotate-45   " : ""
-                    } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                    className={`${open ? "-rotate-45   " : ""
+                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                   ></div>
                 </button>
                 {tokenAndUser === "true" ? <ProfileMenu /> : null}
@@ -135,9 +159,8 @@ export default function Header({ socialLayoutLeft }) {
       )}
       {/* mobile */}
       <div
-        className={`${
-          open ? "-right-2 opacity-100" : "-right-48 opacity-0"
-        } fixed transition-all duration-200 top-20  z-20  `}
+        className={`${open ? "-right-2 opacity-100" : "-right-48 opacity-0"
+          } fixed transition-all duration-200 top-20  z-20  `}
       >
         <ul className="flex-col justify-center px-3 lg:hidden block ">
           {dataMenu.map((item, index) => {
@@ -148,28 +171,13 @@ export default function Header({ socialLayoutLeft }) {
                 onClick={() => setOpen(!open)}
                 href={item.href}
               >
-                <div className="text-green-500 mr-2">{item.icon}</div>
+                {mapIconToComponent(item.icon)}
                 {item.name}
               </Link>
             );
           })}
         </ul>
-        {/* <h3 className="text-3xl  text-main font-Playfair font-bold mb-6   text-center">
-          Contact
-        </h3>
-        <p className="mb-10 ">
-          Please see the information below for more details about me
-        </p>
-        <a href="tel:0337368371" className="inline-flex items-center mb-2">
-          <FiPhone className="mr-4" color="#08D565" />
-          0337368371
-        </a>
-        <a className="inline-flex items-center mb-2">
-          <MdEmail className="mr-4" color="#08D565" /> ngoctri2207@gmail.com
-        </a>
-        <a className="inline-flex items-center mb-2">
-          <GoLocation className="mr-4" color="#08D565" /> Ho Chi Minh City
-        </a> */}
+
       </div>
     </header>
   );
