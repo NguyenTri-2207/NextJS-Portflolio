@@ -1,42 +1,27 @@
-import { useTranslation } from 'next-i18next'
-import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
+import { useTranslation } from "next-i18next";
+import { getStaticPaths, makeStaticProps } from "../../lib/getStatic";
+import HomepageTempalte from "components/templates/home";
 
 // import { Header } from 'components/molecules/Header'
-import { FooterTest } from 'components/molecules/Footertest'
-
-import Link from 'components/molecules/Link'
-import Header from 'components/organisms/LayoutTemplate/Header'
+import Header from "components/organisms/LayoutTemplate/Header";
 
 const Homepage = () => {
-  const { t } = useTranslation(['common', 'footer'])
-  const menu = t('menu', { returnObjects: true });
-  console.log(menu);
-
+  const { t } = useTranslation(["common", "home", "footer"]);
+  const menu = t("menu", { returnObjects: true });
+  const home = t("banner", { returnObjects: true });
+  console.log(home);
   return (
     <>
-      <main>
-        {/* <Header heading={t('h1')} title={t('title')} /> */}
+      <main className=" mt-17">
         <Header dataMenu={menu} />
-        <div>
-          {menu.map((item, index) => (
-            <li key={index}>
-              <a href={item.href}>
-                {item.name} {/* Hiển thị tên */}
-                <span dangerouslySetInnerHTML={{ __html: item.icon }}></span> {/* Hiển thị icon */}
-              </a>
-            </li>
-          ))}
-          <Link href="/second-page">
-            <button type="button">{t('to-second-page')}</button>
-          </Link>
-        </div>
+
+        <HomepageTempalte />
       </main>
-      <FooterTest />
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
 
-const getStaticProps = makeStaticProps(['common', 'footer'])
-export { getStaticPaths, getStaticProps }
+const getStaticProps = makeStaticProps(["common", "home", "footer"]);
+export { getStaticPaths, getStaticProps };
