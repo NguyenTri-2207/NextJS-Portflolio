@@ -1,8 +1,8 @@
 import Banner from "components/organisms/Banner";
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <section className="section-tempale pb-10 md:h-screen overflow-hidden">
-      <Banner />
+      <Banner data={data} />
     </section>
   );
 };

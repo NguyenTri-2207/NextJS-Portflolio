@@ -58,7 +58,6 @@ function SelectSwitchLanguage() {
       if (href.indexOf(`/${e.value}`) < 0) {
         href = `/${e.value}${href}`;
       }
-      console.log("68", href);
 
       languageDetector.cache(e.value);
       router.push(`/${href}`);

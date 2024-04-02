@@ -46,20 +46,20 @@ const TypeWriter = (props) => {
   return <div className="animate-pulse">{text}</div>;
 };
 
-const Banner = () => {
+const Banner = ({ data }) => {
   return (
     <div className="w-screen h-screen  relative overflow-hidden ">
       <div className="container lg:h-full">
         <div className="row items-center justify-center lg:h-full">
-          <div className="lg:col-6 pl-10 lg:pl-20 mt-36 lg:mt-0 z-10 mb-10 tracking-wider">
+          <div className="lg:col-7 pl-10 lg:pl-20 mt-36 lg:mt-0 z-10 mb-10 tracking-wider">
             <p className=" text-main md:text-lg mb-4 relative font-poppins font-semibold  before:content-[''] before:h-0.5 lg:before:w-6 before:w-2 before:bg-main before:absolute before:bottom-3 before:-left-4 lg:before:-left-10">
-              HELLO DEAR
+              {data.first}
             </p>
-            <h1 className="text-gray-800 dark:text-white text-3xl  lg:text-5xl font-Playfair font-bold mb-6 ">
-              I&#39;m Tri Nguyen
+            <h1 className="text-gray-800 dark:text-white text-3xl lg:leading-[60px] lg:text-5xl font-Playfair font-bold mb-6 ">
+              {data.name}
             </h1>
             <h1 className="text-main text-3xl lg:text-4xl  font-bold">
-              <TypeWriter textName="Web Developer" />
+              <TypeWriter textName={data.position} />
             </h1>
           </div>
           <div className="lg:col-5 xl:col-4 mx-auto rounded-full  lg:m-auto text-center relative   lg:my-0 z-10 ">

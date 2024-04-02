@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { ThemContext } from "../common/context";
 import "styles/globals.scss";
-import { appWithTranslation } from 'next-i18next'
+import { appWithTranslation } from "next-i18next";
+import { Provider } from "react-redux";
+import { store, persistor } from "lib/store/index";
+import { PersistGate } from "redux-persist/integration/react";
 
 /*----------- app ----------- */
 
@@ -27,11 +30,15 @@ function MyApp({ Component, pageProps }) {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonical.toString()} />
       </Head>
-      <ThemContext.Provider value={{ theme, setTheme }}>
-        <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>
-          {getLayout(<Component {...pageProps} />)}
-        </div>
-      </ThemContext.Provider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemContext.Provider value={{ theme, setTheme }}>
+            <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>
+              {getLayout(<Component {...pageProps} />)}
+            </div>
+          </ThemContext.Provider>
+        </PersistGate>
+      </Provider>
     </>
   );
 }

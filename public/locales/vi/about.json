@@ -1,0 +1,71 @@
+{
+  "info": {
+    "who": "Tôi là ai?",
+    "im": "Tôi là Trí là một ",
+    "position": "Nhà phát triển Front-End",
+    "company": "Tôi là một Kỹ sư Phần mềm với hơn 3 năm kinh nghiệm về React và quản lý trạng thái như Redux, có chuyên môn về các công nghệ web như HTML5, CSS3, JavaScript, xây dựng ứng dụng web quy mô lớn, nền tảng tương thích với nhiều trình duyệt, và các ràng buộc thiết kế trên web, cũng như xây dựng giao diện người dùng đáp ứng.",
+    "responsibilities": [
+      "✨ Hệ thống quản lý phiên bản (GIT), Công cụ theo dõi lỗi (Jira, Clickup), nền tảng thiết kế (Figma), và framework kiểm thử như Jet.",
+      "✨ Ngôn ngữ: React, Typescript, JavaScript, NodeJS.",
+      "✨ Công nghệ web: HTML5, CSS3, SASS",
+      "✨ Bootsrap4, TailwindCSS",
+      "✨ Cơ sở dữ liệu: MongoDB",
+      "✨Công cụ khác: Công cụ tối ưu hóa hiệu suất, Kiểm thử đa trình duyệt: BrowserStack, Nền tảng Lưu trữ Web: Vercel, AWS, Hệ thống Quản lý Nội dung (CMS): WordPress."
+    ]
+  },
+  "experience": {
+    "title": "Những gì tôi làm!",
+    "list": [
+      {
+        "startYear": "06/2020",
+        "endYear": "2023",
+        "title": "Nhà phát triển Front-End",
+        "company": "Gleads - Quận 7, HCM",
+        "description": "Chuyển đổi website bbcincorp.com từ GulpJs sang NextJs, Cấu hình và xây dựng nguồn NextJS, Phân tích hình ảnh và xây dựng các thành phần giao diện người dùng bằng Atomic Design"
+      },
+      {
+        "startYear": "07/2019",
+        "endYear": "05/2020",
+        "title": "Nhà phát triển Front-End",
+        "company": "3FORCOM - Quận 10, HCM",
+        "description": "Chuyên gia trong việc tạo ra các trang web tương tác và đáp ứng tương tự như các nền tảng nổi tiếng như Novaland, Gumac và Adco. Thạo việc sử dụng các công nghệ dựa trên JavaScript, đặc biệt là React.js, để cung cấp các giải pháp web tiên tiến."
+      },
+      {
+        "startYear": "05/2019",
+        "endYear": "07/2019",
+        "title": "Thực tập sinh Nhà phát triển Front-End",
+        "company": "CÔNG TY CÔNG NGHỆ & TRUYỀN THÔNG 3I",
+        "description": "Biến đổi các tệp PSD thành HTML một cách chính xác, tôi chuyên tạo ra các thiết kế web đáp ứng sử dụng các công nghệ mới nhất, bao gồm HTML5, CSS3 và Javascript."
+      },
+      {
+        "startYear": "09/2014",
+        "endYear": "05/2019",
+        "title": "ĐH GTVT HCM",
+        "company": "450 Lê Văn Việt-Q.9, HCM",
+        "description": "Tôi đã có kiến thức toàn diện về thiết kế cơ sở dữ liệu, Node.js, HTML, CSS và lập trình di động. Hành trình học tập này đã cung cấp cho tôi một nền tảng vững chắc về khoa học máy tính, hình thành kỹ năng và hiểu biết của tôi trong những lĩnh vực quan trọng này."
+      }
+    ]
+  },
+  "dataSocial": [
+    {
+      "icon": "MdPhoneIphone",
+      "name": "Điện thoại",
+      "content": "0337368371"
+    },
+    {
+      "icon": "MdOutlineEmail",
+      "name": "Email",
+      "content": "ngoctri2207@gmail.com"
+    },
+    {
+      "icon": "MdLocationOn",
+      "name": "Địa chỉ",
+      "content": "Quận 2, Thành phố Hồ Chí Minh"
+    },
+    {
+      "icon": "MdOutlineToday",
+      "name": "Ngày sinh",
+      "content": "Ngày 22 tháng 7 năm 1996"
+    }
+  ]
+}

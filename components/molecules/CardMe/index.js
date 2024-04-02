@@ -3,8 +3,45 @@ import Social from "components/atoms/Social";
 import Image from "next/image";
 
 import { FaAngleDoubleDown } from "react-icons/fa";
+import {
+  MdLocationOn,
+  MdOutlineEmail,
+  MdOutlineToday,
+  MdPhoneIphone,
+} from "react-icons/md";
 
 const CardMe = ({ data }) => {
+  const mapIconToComponent = (iconName) => {
+    switch (iconName) {
+      case "MdPhoneIphone":
+        return (
+          <div>
+            <MdPhoneIphone size="18" className="text-[#E93B81]" />
+          </div>
+        );
+      case "MdOutlineEmail":
+        return (
+          <div>
+            <MdOutlineEmail size="18" className="text-[#6AB5B9]" />
+          </div>
+        );
+      case "MdLocationOn":
+        return (
+          <div>
+            <MdLocationOn size="18" className="text-[#FD7590]" />
+          </div>
+        );
+      case "MdOutlineToday":
+        return (
+          <div>
+            <MdOutlineToday size="18" className="text-[#C17CEB]" />
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
   return (
     <div className="col-12 md:col-8 mx-auto lg:col-4 px-10  mt-[160px] lg:mt-10 ">
       <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-8 lg:px-3 xl:px-6 rounded-[20px]  lg:mt-0">
@@ -33,7 +70,7 @@ const CardMe = ({ data }) => {
                   className="flex border-b border-gray-300 dark:border-gray-700 py-3"
                 >
                   <span className="transition-all duration-300 ease-in-out p-2 rounded-md flex justify-center items-center bg-white dark:bg-black  shadow-md">
-                    {item.icon}
+                    {mapIconToComponent(item.icon)}
                   </span>
                   <div className="text-left ml-3">
                     <p className="text-xs  dark:text-gray-400">{item.name}</p>

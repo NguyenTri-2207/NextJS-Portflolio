@@ -18,6 +18,8 @@ import {
 } from "react-icons/fa";
 import i18nextConfig from "../../../../next-i18next.config";
 import SelectSwitchLanguage from "components/molecules/SelectSwitchLanguage";
+import { useSelector } from "react-redux";
+import LinkComponent from "components/molecules/Link";
 
 const mapIconToComponent = (iconName) => {
   switch (iconName) {
@@ -56,7 +58,9 @@ const mapIconToComponent = (iconName) => {
   }
 };
 
-export default function Header({ socialLayoutLeft, dataMenu }) {
+export default function Header({ socialLayoutLeft }) {
+  const dataMenu = useSelector((state) => state.dataMenu);
+
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(true);
@@ -102,7 +106,7 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
                 {dataMenu.map((item, index) => {
                   return (
                     <li key={index} className="mr-10 lg:mr-14 last:mr-0 ">
-                      <Link
+                      <LinkComponent
                         href={item.href}
                         className={` transition-all duration-300 ease-in-out ${
                           routerAsPath() === item.href
@@ -112,7 +116,7 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                       >
                         {item.name}
-                      </Link>
+                      </LinkComponent>
                     </li>
                   );
                 })}
