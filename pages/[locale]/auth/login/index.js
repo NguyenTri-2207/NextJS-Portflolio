@@ -3,15 +3,18 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import Link from "components/molecules/Link";
 import Head from "next/head";
 import axios from "axios";
 import { LiaEyeSolid, LiaEyeSlash } from "react-icons/lia";
 import { AiOutlineReload } from "react-icons/ai";
 import Layout from "components/organisms/LayoutTemplate";
 import Image from "next/image";
-
+import { getStaticPaths, makeStaticProps } from "lib/getStatic";
+import { useTranslation } from "next-i18next";
 function Login(props) {
+  const { t } = useTranslation(["common"]);
+  const menu = t("common:menu", { returnObjects: true });
   const router = useRouter();
   const [response, setResponse] = useState();
   const [error, setError] = useState(null);
@@ -59,7 +62,7 @@ function Login(props) {
         <title>Login-Nguyễn Ngọc Trí</title>
         <meta name="description" content="Login Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <Layout>
+      <Layout dataMenu={menu} socialLayoutLeft>
         <section className="dark:bg-bgHome-dark h-screen bg-bgHome-white  ">
           <div className="container h-full">
             <div className=" dark:text-white text-gray-800 flex flex-col h-full justify-center">
@@ -203,3 +206,5 @@ function Login(props) {
 Login.propTypes = {};
 
 export default Login;
+const getStaticProps = makeStaticProps(["common"]);
+export { getStaticPaths, getStaticProps };

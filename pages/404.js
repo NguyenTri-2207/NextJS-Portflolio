@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import Link from "components/molecules/Link";
 
 const Custom404 = () => {
   return (

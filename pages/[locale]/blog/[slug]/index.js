@@ -11,7 +11,6 @@ import Head from "next/head";
 const Slug = ({ repo, posts }) => {
   const { t } = useTranslation(["common"]);
   const menu = t("common:menu", { returnObjects: true });
-  console.log(posts);
   return (
     <>
       <Head>

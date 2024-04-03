@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { FiCalendar, FiUser } from "react-icons/fi";
 import { FaRegClock, FaRegComments } from "react-icons/fa";
-import Link from "next/link";
+import Link from "components/molecules/Link";
 import lottieData from "./banner.json";
 import LottieAnimation from "components/molecules/LottieAnimation";
 const Breadcrumb = () => {

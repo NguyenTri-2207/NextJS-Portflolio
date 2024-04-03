@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import React, { useRef, useState, useContext } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import Link from "components/molecules/Link";
 import Head from "next/head";
 import axios from "axios";
 import { AiOutlineReload } from "react-icons/ai";

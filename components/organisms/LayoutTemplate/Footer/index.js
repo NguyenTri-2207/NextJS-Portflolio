@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "components/molecules/Link";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 const dataMenu = [
   { name: "Home", id: "header", href: "/" },

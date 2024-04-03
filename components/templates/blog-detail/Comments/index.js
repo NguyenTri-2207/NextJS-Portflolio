@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
-import Link from "next/link";
+import Link from "components/molecules/Link";
 import Image from "next/image";
 /*** Vendors ***/
 
