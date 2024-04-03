@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { useForm } from "react-hook-form";
-import React, { useRef, useState, useContext } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "components/molecules/Link";
 import Head from "next/head";
@@ -9,8 +9,11 @@ import axios from "axios";
 import { AiOutlineReload } from "react-icons/ai";
 import Layout from "components/organisms/LayoutTemplate";
 import Image from "next/image";
-
+import { getStaticPaths, makeStaticProps } from "lib/getStatic";
+import { useTranslation } from "next-i18next";
 function Login(props) {
+  const { t } = useTranslation(["common"]);
+  const menu = t("common:menu", { returnObjects: true });
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -58,7 +61,7 @@ function Login(props) {
         <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
         <meta name="description" content="Register Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <Layout>
+      <Layout dataMenu={menu} socialLayoutLeft>
         <section className="dark:bg-bgHome-dark  h-screen    bg-bgHome-white  ">
           <div className="container h-full">
             <div className="row flex-col items-center justify-center h-full ">
@@ -229,3 +232,5 @@ function Login(props) {
 Login.propTypes = {};
 
 export default Login;
+const getStaticProps = makeStaticProps(["common"]);
+export { getStaticPaths, getStaticProps };

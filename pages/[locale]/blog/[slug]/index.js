@@ -1,7 +1,7 @@
 import Layout from "components/organisms/LayoutTemplate";
 import BlogDetailComponent from "components/templates/blog-detail";
 import React from "react";
-import { getI18nPaths, getI18nProps } from "lib/getStatic.js";
+import { getI18nProps } from "lib/getStatic.js";
 import { useTranslation } from "next-i18next";
 import nextI18nextConfig from "next-i18next.config";
 
@@ -39,26 +39,33 @@ const Slug = ({ repo, posts }) => {
 
 export default Slug;
 
-export const getStaticPaths = async ({ locales }) => {
-  if (!locales) {
-    console.error("Locales are undefined");
-    return { paths: [], fallback: false };
-  }
+export const getStaticPaths = async () => {
+  // if (!locales) {
+  //   console.log(1);
+  //   console.error("Locales are undefined");
+  //   return { paths: [], fallback: false };
+  // }
 
   try {
+    const locales = ["en", "vi"];
     const resPost = await fetch("https://crm-nodejs.vercel.app/api/post");
     if (!resPost.ok) {
       throw new Error("Failed to fetch post slugs");
     }
     const posts = await resPost.json();
 
-    const i18nPaths = locales.flatMap((locale) => getI18nPaths(locale));
-    const paths = posts.flatMap((post) =>
-      i18nPaths.map((i18nPath) => ({
-        params: { slug: post.url.toString() },
-        locale: i18nPath.params.locale,
-      }))
-    );
+    const i18nPaths = [
+      { params: { locale: "en" } },
+      { params: { locale: "vi" } },
+    ];
+    console.log("i18nPaths", i18nPaths);
+    const paths = posts.flatMap((item) => {
+      let slug = item.url.toString();
+      return locales.map((locale) => ({
+        params: { slug, locale },
+      }));
+    });
+    console.log(paths);
 
     return { paths, fallback: false };
   } catch (error) {
