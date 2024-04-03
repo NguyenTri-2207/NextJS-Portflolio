@@ -6,9 +6,8 @@ import { ThemContext } from "common/context";
 
 const About = ({ dataExperience, dataInfo, dataSocial }) => {
   const { theme } = useContext(ThemContext);
-
   return (
-    <section className="section-tempale lg:pt-36 pt-10 2xl:h-screen overflow-hidden">
+    <section className="section-tempale lg:pt-36 pt-10  overflow-hidden min-h-screen">
       <div className="container">
         <div className="row ">
           <CardMe data={dataSocial} />

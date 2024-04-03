@@ -60,7 +60,7 @@ function SelectSwitchLanguage() {
       }
 
       languageDetector.cache(e.value);
-      router.push(`/${href}`);
+      router.push(`${href}`);
     }
   };
 

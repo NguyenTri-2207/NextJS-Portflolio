@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Title from "components/atoms/Title";
-import Link from "next/link";
+import Link from "components/molecules/Link";
 import Image from "next/image";
 
 const SampleNextArrow = (props) => {
@@ -35,13 +35,6 @@ var settings = {
   autoplaySpeed: 2000,
   responsive: [
     {
-      breakpoint: 1300,
-      settings: {
-        slidesToShow: 3,
-        arrows: true,
-      },
-    },
-    {
       breakpoint: 800,
       settings: {
         slidesToShow: 2,
@@ -59,9 +52,8 @@ var settings = {
 };
 function RelatedPost({ repoPost }) {
   return (
-    <section className="py-10 lg:pb-20 overflow-hidden lg:overflow-auto">
+    <section className="py-10  ">
       <Title className="text-center text-xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-10">
-        {" "}
         Related
       </Title>
       <div className=" relative z-10 ">
@@ -69,9 +61,10 @@ function RelatedPost({ repoPost }) {
           {repoPost
             .filter((item) => item.title.length > 60)
             .map((item, index) => {
+              console.log(item);
               return (
                 <div key={index} className=" px-4 overflow-hidden ">
-                  <div className=" shadow-xl bg-white dark:bg-[#272b44] h-full rounded-l g  ">
+                  <div className=" shadow-xl bg-white dark:bg-[#272b44] h-full rounded-lg ">
                     <a href="">
                       <Image
                         className="rounded-t-lg"
@@ -81,8 +74,8 @@ function RelatedPost({ repoPost }) {
                         alt=""
                       />
                     </a>
-                    <div className="p-5  ">
-                      <Link href={`/blog/${item.id}`}>
+                    <div className="p-5 ">
+                      <Link href={`/blog/${item.url}`}>
                         <h5 className=" font-bold text-2xl tracking-tight mb-2 line-clamp-2">
                           {item.title}
                         </h5>
@@ -91,7 +84,7 @@ function RelatedPost({ repoPost }) {
                         {item.body}
                       </p>
                       <Link
-                        href={`/blog/${item.id}`}
+                        href={`/blog/${item.url}`}
                         className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
                       >
                         Read more

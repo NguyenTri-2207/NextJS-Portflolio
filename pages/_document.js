@@ -1,13 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+import nextI18nextConfig from "../next-i18next.config";
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
   render() {
+    const currentLocale =
+      this.props.__NEXT_DATA__.query.locale ||
+      nextI18nextConfig.i18n.defaultLocale;
+
     return (
-      <Html lang="en" prefix="og: http://ogp.me/ns#">
+      <Html lang={currentLocale} prefix="og: http://ogp.me/ns#">
         <Head>
           <link rel="icon" type="image/ico" href="/favicon.ico" />
           <link

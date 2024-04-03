@@ -1,66 +1,18 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { ThemContext } from "common/context";
-// import { dataMenu } from "common/data";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
 import useOnClickOutside from "common/useOnClickOutside";
-import LanguageSwitchLink from "components/molecules/LanguageSwitchLink";
-import {
-  FaHome,
-  FaUserEdit,
-  FaSortAmountUpAlt,
-  FaBook,
-  FaChartPie,
-} from "react-icons/fa";
+
 import i18nextConfig from "../../../../next-i18next.config";
 import SelectSwitchLanguage from "components/molecules/SelectSwitchLanguage";
-import { useSelector } from "react-redux";
 import LinkComponent from "components/molecules/Link";
+import MapIconToComponent from "../Header/Icons";
 
-const mapIconToComponent = (iconName) => {
-  switch (iconName) {
-    case "FaHome":
-      return (
-        <div className="text-green-500 mr-2">
-          <FaHome size="18" />
-        </div>
-      );
-    case "FaUserEdit":
-      return (
-        <div className="text-green-500 mr-2">
-          <FaUserEdit size="18" />
-        </div>
-      );
-    case "FaSortAmountUpAlt":
-      return (
-        <div className="text-green-500 mr-2">
-          <FaSortAmountUpAlt size="18" />
-        </div>
-      );
-    case "FaBook":
-      return (
-        <div className="text-green-500 mr-2">
-          <FaBook size="18" />
-        </div>
-      );
-    case "FaChartPie":
-      return (
-        <div className="text-green-500 mr-2">
-          <FaChartPie size="18" />
-        </div>
-      );
-    default:
-      return null;
-  }
-};
-
-export default function Header({ socialLayoutLeft }) {
-  const dataMenu = useSelector((state) => state.dataMenu);
-
+export default function Header({ socialLayoutLeft, dataMenu }) {
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemContext);
   const [isToggleOn, setIsToggleOn] = useState(true);
@@ -71,16 +23,7 @@ export default function Header({ socialLayoutLeft }) {
       setTokenAndUser(localStorage.getItem("login"));
     }
   }, []);
-  // slice '/' url
-  const routerAsPath = () => {
-    let result;
-    if (router.asPath.length > 2 && router.asPath.endsWith("/")) {
-      result = router.asPath.slice(0, -1);
-    } else {
-      result = router.asPath;
-    }
-    return result;
-  };
+
   const onSwitchAction = () => {
     setTheme(!theme);
     setIsToggleOn(!isToggleOn);
@@ -88,7 +31,22 @@ export default function Header({ socialLayoutLeft }) {
   const ref = useRef();
   useOnClickOutside(ref, setOpen);
 
-  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
+  const checkLinkActive = (item) => {
+    let result;
+    if (router.asPath.length > 2 && router.asPath.endsWith("/")) {
+      result = router.asPath.slice(0, -1);
+    } else {
+      result = router.asPath;
+    }
+    const lastSegment = `/${result.split("/").pop()}`;
+
+    return (
+      lastSegment === item.href ||
+      (result === "/en" && item.href === "/") ||
+      (result === "/vi" && item.href === "/")
+    );
+  };
+
   return (
     <header
       ref={ref}
@@ -103,23 +61,24 @@ export default function Header({ socialLayoutLeft }) {
           <div className=" lg:col-11 col-10 flex  lg:justify-start justify-end xl:justify-end items-center h-10">
             <div className="lg:col-8 xl:col-7 hidden lg:block ">
               <ul className="flex items-center">
-                {dataMenu.map((item, index) => {
-                  return (
-                    <li key={index} className="mr-10 lg:mr-14 last:mr-0 ">
-                      <LinkComponent
-                        href={item.href}
-                        className={` transition-all duration-300 ease-in-out ${
-                          routerAsPath() === item.href
-                            ? "dark:text-main text-blue-700 "
-                            : "dark:text-white "
-                        }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                {Array.isArray(dataMenu) &&
+                  dataMenu?.map((item, index) => {
+                    return (
+                      <li key={index} className="mr-10 lg:mr-14 last:mr-0 ">
+                        <LinkComponent
+                          href={item.href}
+                          className={` transition-all duration-300 ease-in-out  ${
+                            checkLinkActive(item)
+                              ? "dark:text-main text-blue-700"
+                              : "dark:text-white "
+                          }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
-                      >
-                        {item.name}
-                      </LinkComponent>
-                    </li>
-                  );
-                })}
+                        >
+                          {item.name}
+                        </LinkComponent>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
             {/* <!-- dark and light mode toggle --> */}
@@ -180,19 +139,21 @@ export default function Header({ socialLayoutLeft }) {
         } fixed transition-all duration-200 top-20  z-20  `}
       >
         <ul className="flex-col justify-center px-3 lg:hidden block ">
-          {dataMenu.map((item, index) => {
-            return (
-              <Link
-                className="flex items-center shadow-2xl p-4 dark:text-white text-black rounded-lg dark:bg-[#272b44] bg-white  cursor-pointer text-sm font-semibold  mb-4  "
-                key={index}
-                onClick={() => setOpen(!open)}
-                href={item.href}
-              >
-                {mapIconToComponent(item.icon)}
-                {item.name}
-              </Link>
-            );
-          })}
+          {Array.isArray(dataMenu) &&
+            dataMenu?.map((item, index) => {
+              return (
+                <li key={index}>
+                  <LinkComponent
+                    className="flex items-center shadow-2xl p-4 dark:text-white text-black rounded-lg dark:bg-[#272b44] bg-white  cursor-pointer text-sm font-semibold  mb-4  "
+                    onClick={() => setOpen(!open)}
+                    href={item.href}
+                  >
+                    {MapIconToComponent(item.icon)}
+                    {item.name}
+                  </LinkComponent>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </header>

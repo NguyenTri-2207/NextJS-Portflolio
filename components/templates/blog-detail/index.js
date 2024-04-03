@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import SocialShare from "./SocialShare/SocialShare";
 import Comments from "./Comments/index";
-import dataJson from "./data?.json";
-import Banner from "components/templates/new-blog/Banner";
+import dataJson from "./data.json";
+import Banner from "./Banner";
 import TableOfContents from "./TableOfContents/index";
 import RelatedPost from "./RelatedPost/index";
 
@@ -66,7 +66,7 @@ function BlogDetailComponent({ data, repoPost, dataStatic }) {
           </div>
         </section>
         {/* Related */}
-        <RelatedPost repoPost={repoPost} />
+        {repoPost && <RelatedPost repoPost={repoPost} />}
       </div>
     </div>
   );

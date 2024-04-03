@@ -1,7 +1,7 @@
 import CardBlog from "components/molecules/CardBlog";
 import React, { useContext } from "react";
 import { ThemContext } from "common/context";
-import Banner from "components/templates/new-blog/Banner";
+import Banner from "components/templates/blog/Banner";
 
 function Blog({ data }) {
   const { theme } = useContext(ThemContext);
@@ -13,7 +13,6 @@ function Blog({ data }) {
         described="Join me on a journey into the world of web development as I share insights, tips, and techniques for creating engaging and efficient websites."
       />
       <div className="container">
-        {" "}
         <div className="max-w-md mb-10">
           <div className="relative flex items-center w-full h-12 rounded-lg shadow-lg focus-within:shadow-lg bg-white overflow-hidden">
             <div className="grid place-items-center h-full w-12 text-gray-300">

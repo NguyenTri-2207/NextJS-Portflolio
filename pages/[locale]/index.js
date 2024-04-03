@@ -1,29 +1,23 @@
 import { useTranslation } from "next-i18next";
-import { getStaticPaths, makeStaticProps } from "../../lib/getStatic";
+import { getStaticPaths, makeStaticProps } from "lib/getStatic";
 import HomepageTempalte from "components/templates/home";
-import Header from "components/organisms/LayoutTemplate/Header";
 import Head from "node_modules/next/head";
-import { useDispatch } from "react-redux";
-import { getdata } from "lib/slice/dataMenu";
+import Layout from "components/organisms/LayoutTemplate";
 
 const Homepage = () => {
-  const dispatch = useDispatch();
   const { t } = useTranslation(["common", "home"]);
   const home = t("home:banner", { returnObjects: true });
   const menu = t("common:menu", { returnObjects: true });
-  dispatch(getdata(menu));
-  console.log(menu);
   return (
     <>
       <Head>
         <title>Nguyễn Ngọc Trí</title>
         <meta name="description" content="Page Nguyễn Ngọc Trí"></meta>
       </Head>
-      <main className=" mt-17">
-        <Header />
 
+      <Layout dataMenu={menu} socialLayoutLeft>
         <HomepageTempalte data={home} />
-      </main>
+      </Layout>
     </>
   );
 };

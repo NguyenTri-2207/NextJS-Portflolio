@@ -1,22 +1,22 @@
 import { useTranslation } from "next-i18next";
-import { getStaticPaths, makeStaticProps } from "../../lib/getStatic";
-
-import { Header } from "components/molecules/Header";
+import { getStaticPaths, makeStaticProps } from "lib/getStatic";
 
 import Link from "components/molecules/Link";
+import Layout from "components/organisms/LayoutTemplate";
 
 const Homepage = () => {
-  const { t } = useTranslation(["404", "common", "footer"]);
-
+  const { t } = useTranslation(["common"]);
+  const menu = t("common:menu", { returnObjects: true });
   return (
     <>
       <main>
-        <Header heading={t("h1")} title={t("title")} />
-        <div>
-          <Link href="/">
-            <button type="button">{t("common:back-to-home")}</button>
-          </Link>
-        </div>
+        <Layout dataMenu={menu} socialLayoutLeft>
+          <div>
+            <Link href="/">
+              <button type="button">a</button>
+            </Link>
+          </div>
+        </Layout>
       </main>
     </>
   );
@@ -24,5 +24,5 @@ const Homepage = () => {
 
 export default Homepage;
 
-const getStaticProps = makeStaticProps(["404", "common", "footer"]);
+const getStaticProps = makeStaticProps(["common"]);
 export { getStaticPaths, getStaticProps };
