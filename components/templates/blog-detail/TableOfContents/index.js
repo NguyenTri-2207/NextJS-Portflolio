@@ -2,6 +2,30 @@ import React, { useEffect, useState } from "react";
 
 function TableOfContents({ data }) {
   const [scrollbarHeight, setScrollbarHeight] = useState(false);
+  const [dataTableOfContents, setDataTableOfContents] = useState([]);
+
+  useEffect(() => {
+    let h2Ids = [];
+    // Lấy tất cả các phần tử div có class là "mb-6"
+    let divs = document.querySelectorAll("div.content");
+    // Lặp qua mỗi phần tử div
+    divs.forEach((div) => {
+      // Lấy tất cả các thẻ h2 bên trong div hiện tại
+      let h2Elements = div.querySelectorAll("h2");
+
+      // Lặp qua mỗi thẻ h2
+      h2Elements.forEach((h2) => {
+        // Lấy ID của thẻ h2 và thêm vào mảng h2Ids
+        h2Ids.push(h2.textContent.trim());
+      });
+      setDataTableOfContents(h2Ids);
+    });
+  }, [data]);
+
+  console.log(dataTableOfContents);
+
+  // In ra mảng chứa tất cả các ID của thẻ h2
+
   useEffect(() => {
     window.onscroll = function () {
       const scrollHight = document.documentElement.scrollTop;
@@ -14,6 +38,7 @@ function TableOfContents({ data }) {
   }, []);
   const ScrollToTitles = (e, id) => {
     const scrollToTable = document.getElementById(id);
+    console.log(id);
     window.scrollTo({
       top: scrollToTable.getBoundingClientRect().top + window.pageYOffset - 100,
       behavior: "smooth",
@@ -51,8 +76,8 @@ function TableOfContents({ data }) {
               scrollbarHeight ? "h-0" : "h-full "
             } mt-2 group-hover:h-full hidden overflow-y-auto scroll-smooth pr-8 lg:block transition-all duration-300 ease-in-out overflow-hidden`}
           >
-            {data.content.map((item, index) => {
-              const slug = item.title
+            {dataTableOfContents.map((item, index) => {
+              const slug = item
                 .toLowerCase()
                 .replace(/\s+/g, "-")
                 .replace(/[^a-z0-9-]/g, "");
@@ -60,7 +85,7 @@ function TableOfContents({ data }) {
               return (
                 <div key={index} className="mb-2 hover:text-blue-500 ">
                   <a href={`#${slug}`} onClick={(e) => ScrollToTitles(e, slug)}>
-                    {item.title}
+                    {item}
                   </a>
                 </div>
               );

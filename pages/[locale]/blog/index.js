@@ -7,9 +7,10 @@ import React from "react";
 import Head from "next/head";
 
 const Blog = ({ data }) => {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["common", "blog"]);
   const menu = t("common:menu", { returnObjects: true });
-  console.log(menu);
+  const dataBanner = t("blog:banner", { returnObjects: true });
+
   return (
     <>
       <Head>
@@ -17,7 +18,7 @@ const Blog = ({ data }) => {
         <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
       </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
-        <BlogTemplates data={data} />
+        <BlogTemplates data={data} dataBanner={dataBanner} />
       </Layout>
     </>
   );
@@ -31,7 +32,7 @@ export const getStaticProps = async (ctx) => {
   const data = await res.json();
   return {
     props: {
-      ...(await getI18nProps(ctx, ["common"])),
+      ...(await getI18nProps(ctx, ["common", "blog"])),
       data,
     },
   };

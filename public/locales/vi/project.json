@@ -1,0 +1,74 @@
+{
+  "project": [
+    {
+      "name": "Công ty",
+      "company": [
+        {
+          "startYear": "2020 - 2021",
+          "src": "/assets/bbc.jpg",
+          "title": "BBCincorp",
+          "href": "https://bbcincorp.com/hk",
+          "description": [
+            "Tối ưu hiệu suất: Đạt hiệu suất cao cho 100% các trang với Công cụ Đánh giá Tốc độ Trang. Xây dựng trang web thành lập công ty với 400 trang sử dụng Nextjs và TailwindCSS",
+            "Công nghệ sử dụng: NextJS, Thiết kế Atomic, React Bootstrap"
+          ]
+        },
+        {
+          "startYear": "2019 - 2020",
+          "src": "/assets/nova.png",
+          "title": "NovaGroup",
+          "href": "https://www.novagroup.vn/",
+          "description": [
+            "Xây dựng trang web thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
+            "Công nghệ sử dụng: NextJS, Thiết kế Atomic, React Bootstrap"
+          ]
+        },
+        {
+          "startYear": "2022 - 2023",
+          "src": "/assets/gleads.jpg",
+          "title": "Gleads",
+          "href": "https://gleads.vn/vi",
+          "description": [
+            "Xây dựng trang web thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
+            "Công nghệ sử dụng: NextJS, Thiết kế Atomic, React Bootstrap"
+          ]
+        },
+        {
+          "startYear": "2022 - 2023",
+          "src": "/assets/gleads.jpg",
+          "title": "Visa2asia",
+          "href": "/",
+          "description": [
+            "Xây dựng trang web thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
+            "Công nghệ sử dụng: NextJS, Thiết kế Atomic, React Bootstrap"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cá nhân",
+      "personal": [
+        {
+          "startYear": "2021",
+          "src": "/assets/images.jpg",
+          "title": "Trang web Thương mại điện tử",
+          "href": "https://triapple.vercel.app/",
+          "description": [
+            "Xây dựng trang web thương mại điện tử với 300 trang sử dụng Nextjs và TailwindCSS",
+            "Công nghệ sử dụng: NextJS, Thiết kế Atomic, React Bootstrap"
+          ]
+        },
+        {
+          "startYear": "2022",
+          "src": "/assets/maxresdefault.jpg",
+          "href": "https://tringuyen.vercel.app",
+          "title": "Portfolio Website",
+          "description": [
+            "Bao gồm các tính năng hấp dẫn như một blog động, đăng ký người dùng để tương tác phản hồi, và hiệu ứng hấp dẫn với chế độ sáng / tối tùy chọn.",
+            "Công nghệ sử dụng: Next.js, Node.js, TailwindCSS, MongoDB"
+          ]
+        }
+      ]
+    }
+  ]
+}

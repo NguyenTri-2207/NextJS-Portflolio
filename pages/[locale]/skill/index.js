@@ -6,8 +6,10 @@ import SkillTeamplate from "components/templates/skill";
 import { getStaticPaths, makeStaticProps } from "lib/getStatic";
 import { useTranslation } from "next-i18next";
 const Skill = () => {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["common", "skill"]);
   const menu = t("common:menu", { returnObjects: true });
+  const dataCardYear = t("skill:dataCardYear", { returnObjects: true });
+  console.log(dataCardYear);
   return (
     <>
       <Head>
@@ -15,7 +17,7 @@ const Skill = () => {
         <meta name="description" content="Skill Page Nguyễn Ngọc Trí"></meta>
       </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
-        <SkillTeamplate data={data} />
+        <SkillTeamplate data={data} dataCardYear={dataCardYear} />
       </Layout>
     </>
   );
@@ -23,5 +25,5 @@ const Skill = () => {
 
 export default Skill;
 
-const getStaticProps = makeStaticProps(["common"]);
+const getStaticProps = makeStaticProps(["common", "skill"]);
 export { getStaticPaths, getStaticProps };

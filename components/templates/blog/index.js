@@ -3,15 +3,12 @@ import React, { useContext } from "react";
 import { ThemContext } from "common/context";
 import Banner from "components/templates/blog/Banner";
 
-function Blog({ data }) {
+function Blog({ data, dataBanner }) {
   const { theme } = useContext(ThemContext);
 
   return (
     <section className="dark:bg-bgHome-dark bg-white pt-[72px]">
-      <Banner
-        title="From Concept to Code: My Web Development Odyssey"
-        described="Join me on a journey into the world of web development as I share insights, tips, and techniques for creating engaging and efficient websites."
-      />
+      <Banner title={dataBanner.title} described={dataBanner.described} />
       <div className="container">
         <div className="max-w-md mb-10">
           <div className="relative flex items-center w-full h-12 rounded-lg shadow-lg focus-within:shadow-lg bg-white overflow-hidden">

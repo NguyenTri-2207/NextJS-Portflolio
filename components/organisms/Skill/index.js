@@ -73,9 +73,9 @@ const CardYear = ({ props, index, open, onCardClick }) => {
   );
 };
 
-const Skill = ({ data }) => {
+const Skill = ({ data, dataCardYear }) => {
   const [openCards, setOpenCards] = useState(
-    Array(data.dataCardYear.length).fill(false)
+    Array(dataCardYear.length).fill(false)
   );
   useEffect(() => {
     // Default index 0
@@ -115,7 +115,7 @@ const Skill = ({ data }) => {
             />
           </div>
           <div className="lg:col-6">
-            {data.dataCardYear.map((item, index) => {
+            {dataCardYear.map((item, index) => {
               return (
                 <CardYear
                   key={index}

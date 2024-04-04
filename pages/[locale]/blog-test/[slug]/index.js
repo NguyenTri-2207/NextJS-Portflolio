@@ -5,29 +5,29 @@ import { getI18nProps } from "lib/getStatic.js";
 import { useTranslation } from "next-i18next";
 import dataStatic from "../data.json";
 import Head from "next/head";
+import LinkComponent from "components/molecules/Link";
 
-const Slug = ({ repo, posts }) => {
+const Slug = ({ dataPost, dataAllPost }) => {
   const { t } = useTranslation(["common"]);
   const menu = t("common:menu", { returnObjects: true });
-  console.log(repo);
+  console.log(dataPost);
+  console.log(dataAllPost);
   return (
     <>
-      <Head>
-        <title>{repo?.title}</title>
-        <meta name="description" content={repo?.desc} />
-        <meta name="keywords" content="từ khóa1, từ khóa2, từ khóa3" />
-
-        <meta property="og:title" content={repo?.title} />
-        <meta property="og:description" content={repo?.description} />
-        <meta name="twitter:title" content={repo?.title} />
-        <meta name="twitter:description" content={repo?.description} />
-      </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
-        <BlogDetailComponent
-          data={repo}
-          dataStatic={dataStatic}
-          repoPost={posts}
-        />
+        <div className="mt-20 container ml-20"> {dataPost?.content}</div>
+        <div className="mt-20 container ml-20">
+          <div className="font-bold mt-10">All Post</div>
+          <div>
+            {dataAllPost.posts.map((item) => (
+              <div key={item._id}>
+                <LinkComponent href={`/blog-test/${item.url}`}>
+                  <h2>{item.content}</h2>
+                </LinkComponent>
+              </div>
+            ))}
+          </div>
+        </div>
       </Layout>
     </>
   );
@@ -38,12 +38,16 @@ export default Slug;
 export const getStaticPaths = async () => {
   try {
     const locales = ["en", "vi"];
-    const resPost = await fetch("https://crm-nodejs.vercel.app/api/post");
+    const resPost = await fetch("http://localhost:4000/api/post-locales/en");
     if (!resPost.ok) {
       throw new Error("Failed to fetch post slugs");
     }
     const posts = await resPost.json();
-    const paths = posts.flatMap((item) => {
+    console.log("posts", posts.posts);
+    if (!Array.isArray(posts.posts)) {
+      throw new Error("posts is not an array");
+    }
+    const paths = posts.posts.flatMap((item) => {
       let slug = item.url.toString();
       return locales.map((locale) => ({
         params: { slug, locale },
@@ -60,24 +64,29 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (ctx) => {
   const { params } = ctx;
   const uri = params?.slug;
+  const locale = params.locale;
+  console.log(params);
 
   try {
-    const [res, resPost] = await Promise.all([
-      fetch(`https://crm-nodejs.vercel.app/api/post/${uri}`),
-      fetch("https://crm-nodejs.vercel.app/api/post"),
+    const [resDataPost, resDataAllPost] = await Promise.all([
+      fetch(`http://localhost:4000/api/post-locales/${locale}/${uri}`),
+      fetch(`http://localhost:4000/api/post-locales/${locale}`),
     ]);
 
-    if (!res.ok || !resPost.ok) {
+    if (!resDataAllPost.ok && !resDataPost.ok) {
       throw new Error(`Failed to fetch data with slug ${uri}`);
     }
 
-    const [repo, posts] = await Promise.all([res.json(), resPost.json()]);
+    const [dataPost, dataAllPost] = await Promise.all([
+      resDataPost.json(),
+      resDataAllPost.json(),
+    ]);
 
     return {
       props: {
         ...(await getI18nProps(ctx, ["common"])),
-        repo,
-        posts,
+        dataPost,
+        dataAllPost,
       },
     };
   } catch (error) {
@@ -85,8 +94,8 @@ export const getStaticProps = async (ctx) => {
     return {
       props: {
         ...(await getI18nProps(ctx, ["common"])),
-        repo: null,
-        posts: [],
+        dataPost: null,
+        dataAllPost: null,
       },
     };
   }

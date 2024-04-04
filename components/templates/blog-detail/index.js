@@ -9,30 +9,30 @@ import Banner from "./Banner";
 import TableOfContents from "./TableOfContents/index";
 import RelatedPost from "./RelatedPost/index";
 
-const Content = ({ data, index }) => {
-  const slug = data?.title
-    .toLowerCase() // Chuyển thành chữ thường
-    .replace(/\s+/g, "-") // Thay khoảng trắng bằng dấu gạch ngang
-    .replace(/[^a-z0-9-]/g, ""); // Loại bỏ các ký tự không phải chữ cái, số, hoặc dấu gạch ngang
+// const Content = ({ data, index }) => {
+//   const slug = data?.title
+//     .toLowerCase() // Chuyển thành chữ thường
+//     .replace(/\s+/g, "-") // Thay khoảng trắng bằng dấu gạch ngang
+//     .replace(/[^a-z0-9-]/g, ""); // Loại bỏ các ký tự không phải chữ cái, số, hoặc dấu gạch ngang
 
-  return (
-    <div className="mb-6">
-      <h2 id={slug} className="text-xl lg:text-2xl font-medium mb-4 text-left">
-        {index + 1}. {data?.title}
-      </h2>
-      <p className="mb-4">{data?.content}</p>
-      {data?.image && (
-        <Image
-          width={600}
-          height={400}
-          className=" w-full h-full"
-          src={data?.image}
-          alt={data?.title}
-        />
-      )}
-    </div>
-  );
-};
+//   return (
+//     <div className="mb-6">
+//       <h2 id={slug} className="text-xl lg:text-2xl font-medium mb-4 text-left">
+//         {index + 1}. {data?.title}
+//       </h2>
+//       <p className="mb-4">{data?.content}</p>
+//       {data?.image && (
+//         <Image
+//           width={600}
+//           height={400}
+//           className=" w-full h-full"
+//           src={data?.image}
+//           alt={data?.title}
+//         />
+//       )}
+//     </div>
+//   );
+// };
 function BlogDetailComponent({ data, repoPost, dataStatic }) {
   const { theme } = useContext(ThemContext);
   return (
@@ -41,14 +41,12 @@ function BlogDetailComponent({ data, repoPost, dataStatic }) {
       {/* Content */}
       <div className="mt-10 lg:mt-20 container ">
         <div className="flex justify-between mb-10 lg:mb-20">
-          <div className="lg:col-8 px-4">
-            {dataStatic.content.map((item, index) => {
-              return <Content key={index} data={item} index={index} />;
-            })}
+          <div className="lg:col-8 px-4 content">
+            <div dangerouslySetInnerHTML={{ __html: data?.contents }}></div>
             {data?.lastContent && <div>{dataStatic.lastContent}</div>}
           </div>
           {/* Table of Contents */}
-          <TableOfContents data={dataStatic} />
+          <TableOfContents data={data?.contents} />
         </div>
         {/* Social */}
         <div className="mb-10">

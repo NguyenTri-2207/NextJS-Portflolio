@@ -8,10 +8,11 @@ import { getStaticPaths, makeStaticProps } from "lib/getStatic.js";
 import Head from "next/head";
 import data from "./data.json";
 const Project = () => {
-  const { t } = useTranslation(["common", "about"]);
+  const { t } = useTranslation(["common", "project"]);
 
   const menu = t("common:menu", { returnObjects: true });
-
+  const dataProject = t("project:project", { returnObjects: true });
+  console.log(dataProject);
   return (
     <>
       <Head>
@@ -19,7 +20,7 @@ const Project = () => {
         <meta name="description" content="Project Page Nguyễn Ngọc Trí"></meta>
       </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
-        <ProjectTemplate data={data} />
+        <ProjectTemplate data={dataProject} />
       </Layout>
     </>
   );
@@ -27,5 +28,5 @@ const Project = () => {
 
 export default Project;
 
-const getStaticProps = makeStaticProps(["common", "about"]);
+const getStaticProps = makeStaticProps(["common", "project"]);
 export { getStaticPaths, getStaticProps };

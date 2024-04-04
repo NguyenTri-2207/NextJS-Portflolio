@@ -91,9 +91,9 @@ export default function Comments({ data }) {
       <section className="py-8 lg:py-16 antialiased" id="comment">
         <div className=" ">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
+            <h3 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
               Discussion (20)
-            </h2>
+            </h3>
           </div>
           <div className="mb-10">
             {" "}

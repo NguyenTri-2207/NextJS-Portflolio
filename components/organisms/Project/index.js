@@ -17,7 +17,7 @@ export default function Experience({ data }) {
                   tab === 0 ? " left-0" : " left-1/2"
                 } absolute bg-main transition-all duration-200 ease-in-out top-0 z-10 w-1/2 h-full rounded-full`}
               ></div>
-              {data.project.map((item, index) => {
+              {data.map((item, index) => {
                 return (
                   <button
                     key={index}
@@ -38,7 +38,7 @@ export default function Experience({ data }) {
                 : "opacity-0 translate-x-96 pointer-events-none"
             } transition-transform duration-500 ease-in-out absolute top-32 w-[92%]  sm:w-full`}
           >
-            <SlideScroll data={data.project[0].company} />
+            <SlideScroll data={data[0].company} />
           </div>
           <div
             className={`${
@@ -47,7 +47,7 @@ export default function Experience({ data }) {
                 : "opacity-0 -translate-x-96 pointer-events-none"
             } transition-transform duration-500 ease-in-out top-32 absolute w-[92%]  sm:w-full`}
           >
-            <SlideScroll data={data.project[1].personal} />
+            <SlideScroll data={data[1].personal} />
           </div>
         </div>
       </div>
