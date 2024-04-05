@@ -22,8 +22,6 @@ function TableOfContents({ data }) {
     });
   }, [data]);
 
-  console.log(dataTableOfContents);
-
   // In ra mảng chứa tất cả các ID của thẻ h2
 
   useEffect(() => {
@@ -38,7 +36,6 @@ function TableOfContents({ data }) {
   }, []);
   const ScrollToTitles = (e, id) => {
     const scrollToTable = document.getElementById(id);
-    console.log(id);
     window.scrollTo({
       top: scrollToTable.getBoundingClientRect().top + window.pageYOffset - 100,
       behavior: "smooth",

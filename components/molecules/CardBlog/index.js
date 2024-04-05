@@ -3,13 +3,19 @@ import { FiCalendar } from "react-icons/fi";
 import Link from "components/molecules/Link";
 import Image from "next/image";
 
-const formatDate = (date) => {
-  const inputDate = new Date(date);
-  const options = { year: "numeric", month: "short", day: "numeric" };
-  return inputDate.toLocaleDateString("en-US", options);
-};
+function formatDate(inputDate) {
+  const date = new Date(inputDate); // Tạo đối tượng Date từ chuỗi đầu vào
 
-function CardBlog({ item }) {
+  // Lấy thông tin về ngày, tháng và năm từ đối tượng Date
+  const day = date.getDate().toString().padStart(2, "0"); // Lấy ngày và thêm số 0 phía trước nếu cần
+  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Lấy tháng và thêm số 0 phía trước nếu cần
+  const year = date.getFullYear();
+
+  // Trả về chuỗi ngày tháng định dạng "DD/MM/YYYY"
+  return `${day}/${month}/${year}`;
+}
+
+function CardBlog({ item, read }) {
   return (
     <div className="col-12 md:col-6 lg:col-4 mb-5  ">
       <div className=" shadow-md  bg-white h-full border-gray-200 border rounded-lg  ">
@@ -37,7 +43,7 @@ function CardBlog({ item }) {
                 href={`/blog/${item.url}`}
                 className="text-white  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs p-2 text-center inline-flex items-center"
               >
-                Read more
+                {read}
               </Link>
             </div>
             <div className="mt-6 inline-flex items-center">

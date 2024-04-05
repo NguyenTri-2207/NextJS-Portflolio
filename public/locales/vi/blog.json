@@ -1,6 +1,14 @@
 {
   "banner": {
     "title": "Từ Ý tưởng đến Mã nguồn: Hành trình Phát triển Web của Tôi",
-    "described": "Hãy cùng tham gia vào một hành trình vào thế giới của phát triển web khi tôi chia sẻ những hiểu biết, mẹo và kỹ thuật để tạo ra các trang web hấp dẫn và hiệu quả."
-  }
+    "described": "Hãy cùng tham gia vào một hành trình vào thế giới của phát triển web khi tôi chia sẻ những hiểu biết, mẹo và kỹ thuật để tạo ra các trang web hấp dẫn và hiệu quả.",
+    "minutes": "6 phút đọc",
+    "breadcrumb": [
+      { "title": "Trang chủ", "url": "/" },
+      { "title": "Bài viết" }
+    ]
+  },
+
+  "read": "Đọc thêm",
+  "search": "Nhập từ khóa của bạn"
 }

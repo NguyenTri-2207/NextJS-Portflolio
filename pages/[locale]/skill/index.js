@@ -9,7 +9,7 @@ const Skill = () => {
   const { t } = useTranslation(["common", "skill"]);
   const menu = t("common:menu", { returnObjects: true });
   const dataCardYear = t("skill:dataCardYear", { returnObjects: true });
-  console.log(dataCardYear);
+
   return (
     <>
       <Head>

@@ -1,6 +1,11 @@
 {
   "banner": {
     "title": "From Concept to Code: My Web Development Odyssey",
-    "described": "Join me on a journey into the world of web development as I share insights, tips, and techniques for creating engaging and efficient websites."
-  }
+    "described": "Join me on a journey into the world of web development as I share insights, tips, and techniques for creating engaging and efficient websites.",
+    "minutes": "6 minutes read",
+    "breadcrumb": [{ "title": "Home", "url": "/" }, { "title": "Blog" }]
+  },
+
+  "read": "Read more",
+  "search": "Enter your keyword"
 }

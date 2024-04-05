@@ -61,7 +61,6 @@ function RelatedPost({ repoPost }) {
           {repoPost
             .filter((item) => item.title.length > 60)
             .map((item, index) => {
-              // console.log(item);
               return (
                 <div key={index} className=" px-4 overflow-hidden ">
                   <div className=" shadow-xl bg-white dark:bg-[#272b44] h-full rounded-lg ">

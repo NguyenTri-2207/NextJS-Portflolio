@@ -12,7 +12,6 @@ const Project = () => {
 
   const menu = t("common:menu", { returnObjects: true });
   const dataProject = t("project:project", { returnObjects: true });
-  console.log(dataProject);
   return (
     <>
       <Head>
