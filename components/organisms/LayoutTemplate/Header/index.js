@@ -25,8 +25,10 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
   }, []);
 
   const onSwitchAction = () => {
-    setTheme(!theme);
+    const newTheme = !theme; // Đảo ngược giá trị của theme
+    setTheme(newTheme); // Thiết lập giá trị mới của theme
     setIsToggleOn(!isToggleOn);
+    localStorage.setItem("them", newTheme)
   };
   const ref = useRef();
   useOnClickOutside(ref, setOpen);
@@ -67,11 +69,10 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
                       <li key={index} className="mr-10 lg:mr-14 last:mr-0 ">
                         <LinkComponent
                           href={item.href}
-                          className={` transition-all duration-300 ease-in-out  ${
-                            checkLinkActive(item)
-                              ? "dark:text-main text-blue-700"
-                              : "dark:text-white "
-                          }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
+                          className={` transition-all duration-300 ease-in-out  ${checkLinkActive(item)
+                            ? "dark:text-main text-blue-700"
+                            : "dark:text-white "
+                            }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
                          relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
                         >
                           {item.name}
@@ -103,19 +104,16 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
                     onClick={() => setOpen(!open)}
                   >
                     <div
-                      className={`${
-                        open ? "rotate-45 absolute top-[15px] " : "mb-2"
-                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                      className={`${open ? "rotate-45 absolute top-[15px] " : "mb-2"
+                        } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                     ></div>
                     <div
-                      className={`${
-                        open ? "hidden" : "block mb-2"
-                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                      className={`${open ? "hidden" : "block mb-2"
+                        } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                     ></div>
                     <div
-                      className={`${
-                        open ? "-rotate-45   " : ""
-                      } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
+                      className={`${open ? "-rotate-45   " : ""
+                        } h-0.5 dark:bg-white bg-black w-full transition-all duration-200 ease-in-out`}
                     ></div>
                   </button>
                 </div>
@@ -134,9 +132,8 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
       )}
       {/* mobile */}
       <div
-        className={`${
-          open ? "-right-2 opacity-100" : "-right-48 opacity-0"
-        } fixed transition-all duration-200 top-20  z-20  `}
+        className={`${open ? "-right-2 opacity-100" : "-right-48 opacity-0"
+          } fixed transition-all duration-200 top-20  z-20  `}
       >
         <ul className="flex-col justify-center px-3 lg:hidden block ">
           {Array.isArray(dataMenu) &&

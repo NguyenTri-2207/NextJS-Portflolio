@@ -3,20 +3,18 @@ import Head from "next/head";
 import { ThemContext } from "../common/context";
 import "styles/globals.scss";
 import { appWithTranslation } from "next-i18next";
-// import { Provider } from "react-redux";
-// import { store, persistor } from "lib/store/index";
-// import { PersistGate } from "redux-persist/integration/react";
 
 /*----------- app ----------- */
 
 function MyApp({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page);
   const [theme, setTheme] = useState(true);
   const [canonical, setCanonical] = useState(true);
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCanonical(window?.location?.href);
     }
+    const savedTheme = localStorage.getItem("them");
+    setTheme(savedTheme !== null ? JSON.parse(savedTheme) : true);
   }, []);
 
   return (
@@ -32,8 +30,8 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <ThemContext.Provider value={{ theme, setTheme }}>
-        <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>
-          {getLayout(<Component {...pageProps} />)}
+        <div className={` font-poppins   ${theme ? "dark" : ""}`}>
+          <Component {...pageProps} />
         </div>
       </ThemContext.Provider>
     </>

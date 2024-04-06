@@ -25,7 +25,9 @@ function Login(props) {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    const endpoint = `https://crm-nodejs.vercel.app/v1/auth/register`;
+    // const endpoint = `https://crm-nodejs.vercel.app/v1/auth/register`;
+    const endpoint = `http://localhost:4000/v1/auth/register`;
+
     setError("");
     setLoading(true);
     try {
@@ -43,12 +45,16 @@ function Login(props) {
         }
       );
       if (response.status === 201) {
+
+        localStorage.setItem("token", JSON.stringify(response.data))
+
         router.push("/auth/login");
+        setLoading(false);
       } else {
         console.log("Error");
       }
     } catch (error) {
-      setError(error.response.data);
+      setError(error?.response?.data);
       console.error(error);
     }
     setLoading(false);

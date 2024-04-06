@@ -4,6 +4,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 import Link from "components/molecules/Link";
 import Image from "next/image";
+import axios from "axios";
 /*** Vendors ***/
 
 /*** components ***/
@@ -15,6 +16,17 @@ function formatTimestamp(timestamp) {
 
 const timestamp = 1677649428;
 const formattedDate = formatTimestamp(timestamp);
+function formatDate(inputDate) {
+  const date = new Date(inputDate); // Tạo đối tượng Date từ chuỗi đầu vào
+
+  // Lấy thông tin về ngày, tháng và năm từ đối tượng Date
+  const day = date.getDate().toString().padStart(2, "0"); // Lấy ngày và thêm số 0 phía trước nếu cần
+  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Lấy tháng và thêm số 0 phía trước nếu cần
+  const year = date.getFullYear();
+
+  // Trả về chuỗi ngày tháng định dạng "DD/MM/YYYY"
+  return `${day}/${month}/${year}`;
+}
 
 /*** ========== ***/
 const Card = ({ data }) => {
@@ -38,7 +50,7 @@ const Card = ({ data }) => {
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             <time dateTime="2022-02-08" title="February 8th, 2022">
-              {formatTimestamp(data.timestamp)}
+              {formatDate(data.createdAt)}
             </time>
           </p>
         </div>
@@ -80,10 +92,13 @@ const Card = ({ data }) => {
     </article>
   );
 };
-export default function Comments({ data }) {
+export default function Comments({ data, idBlog }) {
+  console.log(idBlog)
   const router = useRouter();
   const [login, setLogin] = useState(false);
+  const [dataComment, setDataComment] = useState(null)
   useEffect(() => {
+    axios.get(`http://localhost:4000/api/comments/${idBlog}`).then((res) => setDataComment(res.data))
     setLogin(localStorage.getItem("login"));
   }, []);
   return (
@@ -132,7 +147,7 @@ export default function Comments({ data }) {
               </div>
             )}
           </div>
-          {data.comments.map((item, index) => {
+          {dataComment.map((item, index) => {
             return <Card key={index} data={item} />;
           })}
         </div>

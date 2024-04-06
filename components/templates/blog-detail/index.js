@@ -8,8 +8,7 @@ import Banner from "../blog/Banner";
 import TableOfContents from "./TableOfContents/index";
 import RelatedPost from "./RelatedPost/index";
 
-function BlogDetailComponent({ data, repoPost, dataStaticBlog }) {
-  const { theme } = useContext(ThemContext);
+function BlogDetailComponent({ data, dataStaticBlog }) {
   return (
     <div className=" pt-16 dark:bg-gray-900 dark:text-gray-100   mt-18 bg-white text-black min-h-screen">
       <Banner data={dataStaticBlog?.banner} info />
@@ -34,11 +33,11 @@ function BlogDetailComponent({ data, repoPost, dataStaticBlog }) {
         {/* Comments */}
         <section>
           <div>
-            <Comments data={dataJson.dataComment} />
+            <Comments data={dataJson.dataComment} idBlog={data._id} />
           </div>
         </section>
         {/* Related */}
-        {repoPost && <RelatedPost repoPost={repoPost} />}
+        {/* {repoPost && <RelatedPost repoPost={repoPost} />} */}
       </div>
     </div>
   );
