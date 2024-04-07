@@ -1,106 +1,68 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 import Link from "components/molecules/Link";
-import Image from "next/image";
+import Card from "./Card";
 import axios from "axios";
+import { useForm } from "react-hook-form";
+
 /*** Vendors ***/
 
 /*** components ***/
-function formatTimestamp(timestamp) {
-  const date = new Date(timestamp * 1000);
-  const options = { year: "numeric", month: "short", day: "numeric" };
-  return date.toLocaleDateString("en-US", options);
-}
-
-const timestamp = 1677649428;
-const formattedDate = formatTimestamp(timestamp);
-function formatDate(inputDate) {
-  const date = new Date(inputDate); // Tạo đối tượng Date từ chuỗi đầu vào
-
-  // Lấy thông tin về ngày, tháng và năm từ đối tượng Date
-  const day = date.getDate().toString().padStart(2, "0"); // Lấy ngày và thêm số 0 phía trước nếu cần
-  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Lấy tháng và thêm số 0 phía trước nếu cần
-  const year = date.getFullYear();
-
-  // Trả về chuỗi ngày tháng định dạng "DD/MM/YYYY"
-  return `${day}/${month}/${year}`;
-}
 
 /*** ========== ***/
-const Card = ({ data }) => {
-  return (
-    <article className="p-6 text-base bg-white rounded-lg dark:bg-gray-900 ">
-      <div className="flex justify-between items-center mb-2">
-        <div className="flex items-center">
-          <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-            <Image
-              width={24}
-              height={24}
-              className="mr-2 w-6 h-6 rounded-full"
-              src={
-                data.image
-                  ? data.image
-                  : "https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-              }
-              alt="Michael Gough"
-            />
-            {data.author}
-          </p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            <time dateTime="2022-02-08" title="February 8th, 2022">
-              {formatDate(data.createdAt)}
-            </time>
-          </p>
-        </div>
-      </div>
-      <p className="text-gray-500 dark:text-gray-400">{data.content}</p>
-      <div className="flex items-center mt-4 space-x-4">
-        <button
-          type="button"
-          className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400 font-medium"
-        >
-          <BiCommentDetail className="mr-2" size={18} />
-          Reply
-        </button>
-        <div className="group">
-          <button
-            id="dropdownComment1Button"
-            data-dropdown-toggle="dropdownComment1"
-            className=" inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            type="button"
-          >
-            <svg
-              className="w-4 h-4"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 16 3"
-            >
-              <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-            </svg>
-            <span className="sr-only">Comment settings</span>
-          </button>
-          <div className="group-hover:block hidden absolute text-xs  shadow-lg ">
-            <button className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ">
-              Report
-            </button>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
-};
-export default function Comments({ data, idBlog }) {
-  console.log(idBlog)
+
+export default function Comments({ data, urlBlog }) {
+  console.log(urlBlog);
   const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm();
   const [login, setLogin] = useState(false);
-  const [dataComment, setDataComment] = useState(null)
+  const [dataComment, setDataComment] = useState(null);
+  // Get All COmment
+  console.log(dataComment);
+  const fetchData = async () => {
+    axios
+      .get(`http://localhost:4000/api/comments/${urlBlog}`)
+      .then((res) => setDataComment(res.data))
+      .catch((error) => console.log(error));
+  };
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/comments/${idBlog}`).then((res) => setDataComment(res.data))
+    fetchData();
     setLogin(localStorage.getItem("login"));
   }, []);
+
+  const onSubmit = async (data) => {
+    const author = "6602a71f6bf954fa2f98aa4a";
+    const post = urlBlog;
+    const content = data.content;
+    const abc = { author, post, content };
+    console.log(abc);
+    axios
+      .post("http://localhost:4000/api/comments", abc)
+      .then((res) => {
+        fetchData(), console.log(res), reset();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const DeleteComments = (item) => {
+    const postIdToDelete = item._id;
+    axios
+      .delete(`http://localhost:4000/api/comments/${postIdToDelete}`)
+      .then((response) => {
+        console.log(`Deleted post with ID ${postIdToDelete}`);
+        fetchData();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div>
       <section className="py-8 lg:py-16 antialiased" id="comment">
@@ -111,14 +73,14 @@ export default function Comments({ data, idBlog }) {
             </h3>
           </div>
           <div className="mb-10">
-            {" "}
             {login === "true" ? (
-              <form className="mb-6">
+              <form className="mb-6" onSubmit={handleSubmit(onSubmit)}>
                 <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                   <label htmlFor="comment" className="sr-only">
                     Your comment
                   </label>
                   <textarea
+                    {...register("content", { required: true })}
                     id="comment"
                     rows="6"
                     className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
@@ -126,12 +88,15 @@ export default function Comments({ data, idBlog }) {
                     required
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
-                >
-                  Post comment
-                </button>
+                <div className="text-right">
+                  {" "}
+                  <button
+                    type="submit"
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Comment
+                  </button>
+                </div>
               </form>
             ) : (
               <div className="text-center border border-white dark:border-[#2a2d46] p-4 rounded-lg shadow">
@@ -147,9 +112,17 @@ export default function Comments({ data, idBlog }) {
               </div>
             )}
           </div>
-          {dataComment.map((item, index) => {
-            return <Card key={index} data={item} />;
-          })}
+
+          {dataComment &&
+            [...dataComment].reverse().map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  data={item}
+                  DeleteComments={() => DeleteComments(item)}
+                />
+              );
+            })}
         </div>
       </section>
     </div>

@@ -33,7 +33,7 @@ function BlogDetailComponent({ data, dataStaticBlog }) {
         {/* Comments */}
         <section>
           <div>
-            <Comments data={dataJson.dataComment} idBlog={data._id} />
+            <Comments data={dataJson.dataComment} urlBlog={data.url} />
           </div>
         </section>
         {/* Related */}

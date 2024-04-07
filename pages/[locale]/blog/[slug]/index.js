@@ -28,7 +28,7 @@ const Slug = ({ dataPost, dataAllPost }) => {
         <BlogDetailComponent
           data={dataPost}
           dataStaticBlog={dataStaticBlog}
-          repoPost={dataAllPost.post}
+          repoPost={dataAllPost?.post}
         />
       </Layout>
     </>
