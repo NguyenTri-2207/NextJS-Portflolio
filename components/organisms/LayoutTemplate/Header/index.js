@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
-import { ThemContext } from "common/context";
+import { DarkModeContext } from "common/context";
 import Social from "components/atoms/Social";
 import ProfileMenu from "./Profile/index";
 import useOnClickOutside from "common/useOnClickOutside";
@@ -14,7 +14,7 @@ import MapIconToComponent from "../Header/Icons";
 
 export default function Header({ socialLayoutLeft, dataMenu }) {
   const [open, setOpen] = useState(false);
-  const { theme, setTheme } = useContext(ThemContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
   const [isToggleOn, setIsToggleOn] = useState(true);
   const router = useRouter();
   const [tokenAndUser, setTokenAndUser] = useState(false);
@@ -25,7 +25,7 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
   }, []);
 
   const onSwitchAction = () => {
-    setTheme(!theme);
+    setDarkMode(!darkMode);
     setIsToggleOn(!isToggleOn);
   };
   const ref = useRef();

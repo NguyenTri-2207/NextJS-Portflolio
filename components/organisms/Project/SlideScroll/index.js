@@ -11,7 +11,7 @@ var settings = {
   dotPosition: "left",
   vertical: true,
   verticalSwiping: true,
-  arrows: false,
+  arrows: true,
   slidesToShow: 2,
   slidesToScroll: 2,
   pauseOnHover: true,

@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import SlideScroll from "components/organisms/SlideScroll";
 import Image from "next/image";
 import CardMe from "components/molecules/CardMe";
-import { ThemContext } from "common/context";
+import { DarkModeContext } from "common/context";
 
 const About = ({ dataExperience, dataInfo, dataSocial }) => {
-  const { theme } = useContext(ThemContext);
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <section className="section-tempale lg:pt-36 pt-10  overflow-hidden min-h-screen">
       <div className="container">
@@ -39,7 +39,7 @@ const About = ({ dataExperience, dataInfo, dataSocial }) => {
             <SlideScroll data={dataExperience.list} />
           </div>
         </div>
-        {theme && (
+        {darkMode && (
           <>
             <Image
               className="absolute right-0 top-0 z-0 lg:block hidden  "

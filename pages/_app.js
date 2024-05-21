@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import { ThemContext } from "../common/context";
-import "styles/globals.scss";
 import { appWithTranslation } from "next-i18next";
-// import { Provider } from "react-redux";
-// import { store, persistor } from "lib/store/index";
-// import { PersistGate } from "redux-persist/integration/react";
+import { DarkModeContext } from "common/context";
+import "styles/globals.scss";
 
-/*----------- app ----------- */
-
-function MyApp({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page);
-  const [theme, setTheme] = useState(true);
+const App = ({ Component, pageProps }) => {
+  const [darkMode, setDarkMode] = useState(true);
   const [canonical, setCanonical] = useState(true);
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCanonical(window?.location?.href);
     }
   }, []);
-
+  const darkModeClass = darkMode ? "dark" : "";
   return (
     <>
       <Head>
@@ -31,13 +25,13 @@ function MyApp({ Component, pageProps }) {
         <link rel="canonical" href={canonical.toString()} />
       </Head>
 
-      <ThemContext.Provider value={{ theme, setTheme }}>
-        <div className={`"font-poppinss   ${theme ? "dark" : ""}`}>
-          {getLayout(<Component {...pageProps} />)}
+      <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+        <div className={darkModeClass}>
+          <Component {...pageProps} />
         </div>
-      </ThemContext.Provider>
+      </DarkModeContext.Provider>
     </>
   );
-}
+};
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(App);

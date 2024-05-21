@@ -1,11 +1,9 @@
 import CardBlog from "components/molecules/CardBlog";
 import React, { useState } from "react";
-// import { ThemContext } from "common/context";
 import Banner from "components/templates/blog/Banner";
 import { IoMdSearch } from "react-icons/io";
 
 function Blog({ data, dataStaticBlog }) {
-  // const { theme } = useContext(ThemContext);
   const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);

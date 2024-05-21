@@ -1,14 +1,12 @@
 import React from "react";
 import Project from "components/organisms/Project";
 
-function ProjectTemplate({ data }) {
+const ProjectTemplate = ({ data }) => {
   return (
-    <section className="section-tempale h-screen overflow-hidden  ">
+    <div className="section-tempale">
       <Project data={data} />
-    </section>
+    </div>
   );
-}
-
-ProjectTemplate.propTypes = {};
+};
 
 export default ProjectTemplate;

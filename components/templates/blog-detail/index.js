@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { ThemContext } from "common/context";
 
 import SocialShare from "./SocialShare/SocialShare";
 import Comments from "./Comments/index";
@@ -9,7 +8,6 @@ import TableOfContents from "./TableOfContents/index";
 import RelatedPost from "./RelatedPost/index";
 
 function BlogDetailComponent({ data, repoPost, dataStaticBlog }) {
-  const { theme } = useContext(ThemContext);
   return (
     <div className=" pt-16 dark:bg-gray-900 dark:text-gray-100   mt-18 bg-white text-black min-h-screen">
       <Banner data={dataStaticBlog?.banner} info />
@@ -43,7 +41,5 @@ function BlogDetailComponent({ data, repoPost, dataStaticBlog }) {
     </div>
   );
 }
-
-BlogDetailComponent.propTypes = {};
 
 export default BlogDetailComponent;

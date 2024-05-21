@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import { ThemContext } from "common/context";
+import { DarkModeContext } from "common/context";
 import { FaCss3Alt, FaHtml5, FaReact } from "react-icons/fa";
 import { DiJavascript } from "react-icons/di";
 import { RiArrowUpSLine } from "react-icons/ri";
@@ -88,7 +88,7 @@ const Skill = ({ data, dataCardYear }) => {
 
     setOpenCards(newOpenCards);
   };
-  const { theme } = useContext(ThemContext);
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <div className="flex items-center h-full">
       <div className="container ">
@@ -132,7 +132,7 @@ const Skill = ({ data, dataCardYear }) => {
           <SliderSill data={data.dataSkill} />
         </div>
 
-        {theme && (
+        {darkMode && (
           <>
             <Image
               className="absolute left-0 bottom-0 z-0 lg:block hidden "

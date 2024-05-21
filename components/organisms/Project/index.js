@@ -7,7 +7,7 @@ export default function Experience({ data }) {
     setTab(index);
   };
   return (
-    <div className="container" id="project">
+    <div className="container">
       <div className="row">
         <div className="col-12 h-screen relative overflow-hidden">
           <div className="flex justify-center mb-10 mt-16 lg:mt-10">
