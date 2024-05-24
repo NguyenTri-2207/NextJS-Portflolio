@@ -5,7 +5,7 @@ function Layout({ children, footer, socialLayoutLeft, dataMenu }) {
   return (
     <>
       <Header socialLayoutLeft={socialLayoutLeft} dataMenu={dataMenu} />
-      <main className="min-h-screen">{children}</main>
+      {children}
       {footer ? <Footer /> : ""}
     </>
   );
