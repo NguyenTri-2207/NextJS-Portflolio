@@ -43,29 +43,30 @@ const CardMe = ({ data }) => {
     }
   };
   return (
-    <div className="col-12 md:col-8 mx-auto lg:col-4 px-10  mt-[160px] lg:mt-10 ">
-      <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-8 lg:px-3 xl:px-6 rounded-[20px]  lg:mt-0">
+    <div className="col-12 md:col-8 lg:col-4 px-4 lg:px-8  mt-36 lg:mt-10 ">
+      <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-black px-8 lg:px-3 xl:px-6 rounded-lg  lg:mt-0">
         <Image
-          width={400}
-          height={400}
-          src="/assets/banner/avatar.png"
-          className="w-[150px] absolute left-[50%] transform -translate-x-[50%] h-[150px] drop-shadow-xl mx-auto rounded-[20px] -mt-24"
+          width={1228}
+          height={1228}
+          src="/assets/banner/avt3.png"
+          className="w-44 absolute left-1/2 transform -translate-x-1/2  drop-shadow-xl -mt-24   "
           alt="about avatar"
+          priority
         />
-        <div className="pt-10 pb-6">
-          <h1 className="mt-6 mb-2 text-2xl font-semibold text-gray-500">
+        <div className="pt-16 pb-6">
+          <h3 className="mt-6 mb-2 text-2xl font-semibold text-gray-500">
             Tri Nguyen
-          </h1>
-          <h3 className="mb-6 d text-gray-500 inline-block bg-slate-100 dark:bg-gray-800 px-4 py-1.5 rounded-lg dark:text-gray-400">
-            Web Developer
           </h3>
+          <div className="mb-6 d text-gray-500 inline-block bg-slate-100 dark:bg-gray-800 px-4 py-1.5 rounded-lg dark:text-gray-400">
+            Web Developer
+          </div>
 
           <Social className="flex justify-center space-x-3" />
 
-          <div className="p-4 rounded-2xl mt-4 bg-slate-100 dark:bg-gray-900">
+          <ul className="p-4 rounded-2xl mt-4 bg-slate-100 dark:bg-gray-900">
             {data.map((item, index) => {
               return (
-                <div
+                <li
                   key={index}
                   className="flex border-b border-gray-300 dark:border-gray-700 py-3"
                 >
@@ -76,17 +77,15 @@ const CardMe = ({ data }) => {
                     <p className="text-xs  dark:text-gray-400">{item.name}</p>
                     <p className="dark:text-gray-300 text-xs">{item.content}</p>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
 
-          <div className="flex justify-center items-center pb-6">
-            <button className="flex justify-center items-center text-sm text-white  py-2 px-4 rounded-3xl  bg-gradient-main mt-8">
-              <FaAngleDoubleDown className="mr-2 animate-bounce" />
-              Download CV
-            </button>
-          </div>
+          <button className="flex justify-center items-center mx-auto text-sm text-white py-2 px-4 rounded-3xl  bg-gradient-main my-6">
+            <FaAngleDoubleDown className="mr-2 animate-bounce" />
+            Download CV
+          </button>
         </div>
       </div>
     </div>

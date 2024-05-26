@@ -1,0 +1,18 @@
+.dots {
+  li {
+    button {
+      &::before {
+        font-size: 8px;
+        color: rgb(255, 208, 0) !important;
+      }
+    }
+  }
+  :global(.slick-active) {
+    button {
+      &::before {
+        font-size: 8px;
+        color: rgb(255, 208, 0) !important;
+      }
+    }
+  }
+}
