@@ -4,7 +4,7 @@ import HomepageTempalte from "components/templates/home";
 import Head from "node_modules/next/head";
 import Layout from "components/organisms/LayoutTemplate";
 
-const Homepage = () => {
+const Home = () => {
   const { t } = useTranslation(["common", "home"]);
   const home = t("home:banner", { returnObjects: true });
   const menu = t("common:menu", { returnObjects: true });
@@ -22,7 +22,7 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Home;
 
 const getStaticProps = makeStaticProps(["common", "home"]);
 export { getStaticPaths, getStaticProps };
