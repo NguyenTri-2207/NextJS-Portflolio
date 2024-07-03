@@ -6,7 +6,6 @@ import ProjectTemplate from "components/templates/project";
 import { getStaticPaths, makeStaticProps } from "lib/getStatic.js";
 
 import Head from "next/head";
-import data from "./data.json";
 const Project = () => {
   const { t } = useTranslation(["common", "project"]);
 

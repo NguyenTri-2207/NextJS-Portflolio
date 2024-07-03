@@ -4,7 +4,6 @@ import { DarkModeContext } from "common/context";
 import { FaCss3Alt, FaHtml5, FaReact } from "react-icons/fa";
 import { DiJavascript } from "react-icons/di";
 import { RiArrowUpSLine } from "react-icons/ri";
-import SliderSill from "./Slider/index";
 import styles from "./index.module.scss";
 
 const CardYear = ({ props, index, open, onCardClick }) => {
@@ -78,7 +77,6 @@ const Skill = ({ data, dataCardYear }) => {
     Array(dataCardYear.length).fill(false)
   );
   useEffect(() => {
-    // Default index 0
     setOpenCards((prev) => prev.map((_, i) => (i === 0 ? true : false)));
   }, []);
   const handleCardClick = (index) => {
@@ -128,9 +126,9 @@ const Skill = ({ data, dataCardYear }) => {
             })}
           </div>
         </div>
-        <div className="mt-10 col-8 mx-auto z-10 relative  md:block hidden mb-10">
+        {/* <div className="mt-10 col-8 mx-auto z-10 relative  md:block hidden mb-10">
           <SliderSill data={data.dataSkill} />
-        </div>
+        </div> */}
 
         {darkMode && (
           <>
