@@ -7,6 +7,8 @@ import dataJson from "./data.json";
 import Banner from "../blog/Banner";
 import TableOfContents from "./TableOfContents/index";
 import RelatedPost from "./RelatedPost/index";
+import { Provider } from "react-redux";
+import { store } from "lib/store/index";
 
 function BlogDetailComponent({ data, dataStaticBlog }) {
   return (
@@ -33,7 +35,7 @@ function BlogDetailComponent({ data, dataStaticBlog }) {
         {/* Comments */}
         <section>
           <div>
-            <Comments data={dataJson.dataComment} urlBlog={data.url} />
+            <Comments urlBlog={data.url} />
           </div>
         </section>
         {/* Related */}

@@ -5,6 +5,9 @@ import Link from "components/molecules/Link";
 import Card from "./Card";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import CardReply from "./Reply/Card/index";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchComments } from "lib/slice/comments";
 
 /*** Vendors ***/
 
@@ -12,30 +15,35 @@ import { useForm } from "react-hook-form";
 
 /*** ========== ***/
 
-export default function Comments({ data, urlBlog }) {
-  console.log(urlBlog);
+export default function Comments({ urlBlog }) {
   const router = useRouter();
+
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
   const [login, setLogin] = useState(false);
   const [dataComment, setDataComment] = useState(null);
   // Get All COmment
-  console.log(dataComment);
-  const fetchData = async () => {
-    axios
-      .get(`http://localhost:4000/api/comments/${urlBlog}`)
-      .then((res) => setDataComment(res.data))
-      .catch((error) => console.log(error));
-  };
+  // const fetchData = async () => {
+  //   axios
+  //     .get(`http://localhost:4000/api/comments/${urlBlog}`)
+  //     .then((res) => setDataComment(res.data))
+  //     .catch((error) => console.log(error));
+  // };
   useEffect(() => {
-    fetchData();
     setLogin(localStorage.getItem("login"));
   }, []);
+
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector((state) => state.dataComments);
+  console.log(data);
+
+  useEffect(() => {
+    dispatch(fetchComments(urlBlog));
+  }, [dispatch]);
 
   const onSubmit = async (data) => {
     const author = "6602a71f6bf954fa2f98aa4a";
@@ -46,23 +54,12 @@ export default function Comments({ data, urlBlog }) {
     axios
       .post("http://localhost:4000/api/comments", abc)
       .then((res) => {
-        fetchData(), console.log(res), reset();
+        dispatch(fetchComments(urlBlog));
+        console.log(res), reset();
       })
       .catch((err) => console.log(err));
   };
 
-  const DeleteComments = (item) => {
-    const postIdToDelete = item._id;
-    axios
-      .delete(`http://localhost:4000/api/comments/${postIdToDelete}`)
-      .then((response) => {
-        console.log(`Deleted post with ID ${postIdToDelete}`);
-        fetchData();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
   return (
     <div>
       <section className="py-8 lg:py-16 antialiased" id="comment">
@@ -112,17 +109,38 @@ export default function Comments({ data, urlBlog }) {
               </div>
             )}
           </div>
-
-          {dataComment &&
-            [...dataComment].reverse().map((item, index) => {
-              return (
-                <Card
-                  key={index}
-                  data={item}
-                  DeleteComments={() => DeleteComments(item)}
-                />
-              );
-            })}
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              {" "}
+              {data &&
+                [...data].reverse().map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="flex flex-col border-l border-gray-200 mb-5"
+                    >
+                      <Card urlBlog={urlBlog} data={item} login={login} />
+                      <div className=" ml-10 rounded-lg p-2">
+                        {item?.replies.map((reply, index) => {
+                          return (
+                            <div key={index}>
+                              <CardReply
+                                urlBlog={urlBlog}
+                                idCardComments={item._id}
+                                data={reply}
+                                login={login}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
       </section>
     </div>

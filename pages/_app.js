@@ -3,6 +3,8 @@ import Head from "next/head";
 import { ThemContext } from "../common/context";
 import "styles/globals.scss";
 import { appWithTranslation } from "next-i18next";
+import { Provider } from "react-redux";
+import store from "lib/store/index";
 
 /*----------- app ----------- */
 
@@ -28,12 +30,13 @@ function MyApp({ Component, pageProps }) {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonical.toString()} />
       </Head>
-
-      <ThemContext.Provider value={{ theme, setTheme }}>
-        <div className={` font-poppins   ${theme ? "dark" : ""}`}>
-          <Component {...pageProps} />
-        </div>
-      </ThemContext.Provider>
+      <Provider store={store}>
+        <ThemContext.Provider value={{ theme, setTheme }}>
+          <div className={` font-poppins   ${theme ? "dark" : ""}`}>
+            <Component {...pageProps} />
+          </div>
+        </ThemContext.Provider>
+      </Provider>
     </>
   );
 }
