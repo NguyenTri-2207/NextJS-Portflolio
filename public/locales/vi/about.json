@@ -17,25 +17,25 @@
     "title": "Những gì tôi làm!",
     "list": [
       {
-        "startYear": "06/2020",
-        "endYear": "2023",
+        "startYear": "05/2021",
+        "endYear": "Present",
         "title": "Nhà phát triển Front-End",
         "company": "Gleads - Quận 7, HCM",
         "description": "Chuyển đổi website bbcincorp.com từ GulpJs sang NextJs, Cấu hình và xây dựng nguồn NextJS, Phân tích hình ảnh và xây dựng các thành phần giao diện người dùng bằng Atomic Design"
       },
       {
-        "startYear": "07/2019",
-        "endYear": "05/2020",
+        "startYear": "12/2020",
+        "endYear": "05/2021",
         "title": "Nhà phát triển Front-End",
         "company": "3FORCOM - Quận 10, HCM",
         "description": "Chuyên gia trong việc tạo ra các trang web tương tác và đáp ứng tương tự như các nền tảng nổi tiếng như Novaland, Gumac và Adco. Thạo việc sử dụng các công nghệ dựa trên JavaScript, đặc biệt là React.js, để cung cấp các giải pháp web tiên tiến."
       },
       {
-        "startYear": "05/2019",
-        "endYear": "07/2019",
-        "title": "Thực tập sinh Nhà phát triển Front-End",
-        "company": "CÔNG TY CÔNG NGHỆ & TRUYỀN THÔNG 3I",
-        "description": "Biến đổi các tệp PSD thành HTML một cách chính xác, tôi chuyên tạo ra các thiết kế web đáp ứng sử dụng các công nghệ mới nhất, bao gồm HTML5, CSS3 và Javascript."
+        "startYear": "06/2019",
+        "endYear": "12/2020",
+        "title": "Data Warehouse Engineer ",
+        "company": "Mirae Asset Finance Vietnam ",
+        "description": "Quản lý hệ thống kho dữ liệu, đảm bảo tính ổn định và hiệu suất. Làm việc với Oracle Enterprise Manager để theo dõi và giải quyết các vấn đề."
       },
       {
         "startYear": "09/2014",

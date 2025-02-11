@@ -1,7 +1,7 @@
 {
   "dataCardYear": [
     {
-      "year": "2022",
+      "year": "2023",
       "title": "Middle Front-End Developer",
       "des": [
         "- Build source Nextjs and tailwindcss",
@@ -30,16 +30,6 @@
       ],
       "company": "3Forcom",
       "companyLink": "https://www.3forcom.com/"
-    },
-    {
-      "year": "2019",
-      "title": "Intern Front-End Developer",
-      "des": [
-        "- Cut PSD files to HTML",
-        "- Responsive web design with HTML5, CSS3 and Javascript."
-      ],
-      "company": "3i Infotech",
-      "companyLink": "https://www.3i-infotech.com/"
     }
   ]
 }

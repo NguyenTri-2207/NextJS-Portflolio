@@ -3,7 +3,7 @@
     "who": "Who am i?",
     "im": "I'm Tri and",
     "position": "Front-End Developer",
-    "company": "I'm a Software Engineer with 3+ years of experience React and state management like Redux with proficiency in web technologies like HTML5, CSS3, JavaScript, building large-scale web applications, cross-browser platforms, and design constraints on the web, and building responsive user interfaces.",
+    "company": "I'm a Software Engineer with 4+ years of experience React and state management like Redux with proficiency in web technologies like HTML5, CSS3, JavaScript, building large-scale web applications, cross-browser platforms, and design constraints on the web, and building responsive user interfaces.",
     "responsibilities": [
       "✨ Version control system (GIT), Defect Tracking tool (Jira,Clickup), design platform (Figma), and testing framework such as Jet.",
       "✨ Languages: React, Typescript, JavaScript, NodeJS.",
@@ -17,25 +17,25 @@
     "title": "What I do!",
     "list": [
       {
-        "startYear": "06/2020",
-        "endYear": "2023",
+        "startYear": "05/2021",
+        "endYear": "Present",
         "title": "Front-End Developer",
         "company": "Gleads - Quận 7, HCM",
         "description": "Convert website bbcincorp.com from GulpJs to NextJs, Configure and build source NextJS, Visually Breaking Down UI Components using Atomic Design"
       },
       {
-        "startYear": "07/2019",
-        "endYear": "05/2020",
+        "startYear": "12/2020",
+        "endYear": "05/2021",
         "title": "Front-End Developer",
         "company": "3FORCOM - Quận 10, HCM",
         "description": "Expert in crafting interactive and responsive websites akin to renowned platforms such as Novaland, Gumac, and Adco. Proficient in leveraging JavaScript-based technologies, particularly React.js, to deliver cutting-edge web solutions."
       },
       {
-        "startYear": "05/2019",
-        "endYear": "07/2019",
-        "title": "Front-End Developer Intern",
-        "company": "TECHNOLOGY & COMMUNICATION 3I COMPANY",
-        "description": "Transforming PSD files into HTML with precision, I specialize in creating responsive web designs using the latest technologies, including HTML5, CSS3, and Javascript."
+        "startYear": "06/2019",
+        "endYear": "12/2020",
+        "title": "Data Warehouse Engineer ",
+        "company": "Mirae Asset Finance Vietnam ",
+        "description": "Managed Data Warehouse systems, ensuring stability and performance.Worked with Oracle Enterprise Manager to monitor and resolve issues."
       },
       {
         "startYear": "09/2014",

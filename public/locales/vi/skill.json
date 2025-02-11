@@ -1,8 +1,8 @@
 {
   "dataCardYear": [
     {
-      "year": "2022",
-      "title": "Lập trình viên Front-End",
+      "year": "2023",
+      "title": "Middle Front-End Developer",
       "des": [
         "- Xây dựng nguồn Nextjs và tailwindcss",
         "- Làm việc với AWS CodeBuild và Amazon S3"
@@ -12,7 +12,7 @@
     },
     {
       "year": "2021",
-      "title": "Lập trình viên Front-End",
+      "title": "Junior Front-End Developer",
       "des": [
         "- Xây dựng nguồn Nextjs và bootstrap",
         "- Chuyển đổi trang web <a target='_blank' href='https://bbcincorp.com'>BBCIncorp</a> từ GulpJs sang NextJs",
@@ -23,23 +23,13 @@
     },
     {
       "year": "2020",
-      "title": "Lập trình viên Front-End",
+      "title": "Fresher Front-End Developer",
       "des": [
         "- Xây dựng các trang web tương tác và đáp ứng như các trang web Novaland, Gumac, Adco, dựa trên công nghệ kiểu Javascript, như React Js",
         "- Làm việc với Typescript, ReactJs, HTML5, SCSS..."
       ],
       "company": "3Forcom",
       "companyLink": "https://www.3forcom.com/"
-    },
-    {
-      "year": "2019",
-      "title": "Lập trình viên Front-End",
-      "des": [
-        "- Cắt các tệp PSD thành HTML",
-        "- Thiết kế web đáp ứng với HTML5, CSS3 và Javascript."
-      ],
-      "company": "3i Infotech",
-      "companyLink": "https://www.3i-infotech.com/"
     }
   ]
 }
