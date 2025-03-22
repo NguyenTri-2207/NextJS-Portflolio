@@ -9,7 +9,7 @@ const Banner = ({ data: { greeting, name, position } }) => {
           <p className=" text-main md:text-lg mb-4 lg:mb-10 relative font-semibold  before:content-[''] before:h-0.5 lg:before:w-6 before:w-2 before:bg-main before:absolute before:bottom-3 before:-left-4 lg:before:-left-10">
             {greeting}
           </p>
-          <h1 className="text-gray-800 font-Playfair dark:text-white text-3xl lg:text-5xl font-bold mb-4 lg:mb-10 ">
+          <h1 className="text-gray-800  dark:text-white text-3xl lg:text-5xl font-bold mb-4 lg:mb-10 ">
             {name}
           </h1>
           <p className="text-main text-2xl lg:text-4xl  font-bold">

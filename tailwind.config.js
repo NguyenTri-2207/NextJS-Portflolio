@@ -33,8 +33,9 @@ module.exports = {
           "linear-gradient(90deg, rgba(29,31,37,1) 0%, rgba(31,35,54,1) 52%, rgba(34,42,83,1) 100%);",
       },
       fontFamily: {
-        poppins: "'Poppins', sans-serif",
-        Playfair: "'Playfair Display', 'serif'",
+        sans: ["var(--font-roboto)", "sans-serif"], // auto
+
+        // roboto: ['var(--font-roboto)', 'sans-serif'],  // Hoặc nếu bạn muốn tạo class riêng:
       },
       variants: {
         typography: ["dark"],

@@ -208,7 +208,7 @@ function Login(props) {
                           "Sign Up"
                         )}
                       </button>
-                      <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                      <p className="text-sm  text-gray-500 dark:text-gray-400">
                         Already have an account?{" "}
                         <Link
                           href="/auth/login"
