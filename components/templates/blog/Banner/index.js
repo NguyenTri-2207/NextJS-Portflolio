@@ -3,7 +3,7 @@ import { FiCalendar, FiUser } from "react-icons/fi";
 import { FaRegClock, FaChevronRight } from "react-icons/fa";
 import Link from "components/molecules/Link";
 import lottieData from "./banner.json";
-import LottieAnimation from "components/molecules/LottieAnimation";
+// import LottieAnimation from "components/molecules/LottieAnimation";
 import { IoHome } from "react-icons/io5";
 
 const Breadcrumb = ({ data }) => {
@@ -74,7 +74,7 @@ const Banner = ({ data, info }) => {
           </div>
           <div className="md:col-4">
             <div>
-              <LottieAnimation animationData={lottieData} loop={true} />
+              {/* <LottieAnimation animationData={lottieData} loop={true} /> */}
             </div>
           </div>
         </div>
