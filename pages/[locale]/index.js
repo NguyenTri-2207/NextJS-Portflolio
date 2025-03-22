@@ -12,10 +12,12 @@ const Home = () => {
     <>
       <Head>
         {/* Meta title và description (rất quan trọng cho SEO) */}
-        <title>Trí dev - Chia sẻ về Frontend Developer, ReactJS, Next.js</title>
+        <title>
+          Nguyễn Ngọc Trí - Frontend Developer | Next.js, React.js & SEO
+        </title>
         <meta
           name="description"
-          content="Hành trình của Nguyễn Ngọc Trí trở thành một Frontend Developer, chia sẻ kiến thức ReactJS, Next.js và lập trình web."
+          content="Trang cá nhân của Nguyễn Ngọc Trí, nơi chia sẻ kinh nghiệm lập trình web với ReactJS, Next.js, tối ưu SEO website, cải thiện Core Web Vitals và tăng tốc độ tải trang."
         />
         {/* Keywords (không quá quan trọng với SEO hiện đại nhưng vẫn có lợi) */}
         <meta
