@@ -4,7 +4,7 @@
   "startYear": "2025",
   "src": "/assets/cloudhire-ui-showcase.png",
   "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
-  "href": "https://tringuyen.vercel.app/project/cloudhire",
+  "href": "https://jobs.theblogreviews.com/",
   "description": [
     "🚀 Hệ thống tuyển dụng Event-driven Serverless: Vận hành tự động, chi phí 0$ khi rảnh rỗi (Zero Idle Cost).",
     "⚡️ Tối ưu hiệu năng: API Gateway + Lambda chịu tải hàng nghìn request, kết hợp DynamoDB truy xuất mili-giây.",

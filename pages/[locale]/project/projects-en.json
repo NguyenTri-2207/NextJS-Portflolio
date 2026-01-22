@@ -6,7 +6,7 @@
       "startYear": "2025",
       "src": "/assets/cloudhire-ui-showcase.png",
       "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
-      "href": "https://tringuyen.vercel.app/project/cloudhire",
+      "href": "https://jobs.theblogreviews.com/",
       "description": [
         "🚀 Cloud-Native Architecture: Designed 100% Event-driven Serverless system on AWS, completely eliminating server management burden (NoOps) and idle costs (Zero Idle Cost).",
         "⚡️ High Availability & Scale: Built RESTful API with API Gateway & Lambda handling thousands of requests/second, combined with DynamoDB On-demand for <10ms latency.",
