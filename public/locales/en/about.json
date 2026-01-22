@@ -24,24 +24,24 @@
         "company": "GLEADS - District 7, HCM",
         "description": [
           "Cloud Engineer (04/2025 – Present):",
-          "• Designed and deployed production workloads on AWS EC2 and ECS, ensuring high availability and scalability",
-          "• Optimized infrastructure cost for EC2 and RDS through instance sizing, environment separation, and usage monitoring",
-          "• Implemented CI/CD pipelines using GitHub Actions to automate build, test, and deployment processes",
-          "• Monitored system health and performance using CloudWatch, logs, and alarms; performed root-cause analysis for incidents",
-          "• Applied AWS security best practices with IAM roles, security groups, HTTPS, and network isolation",
+          "Designed and deployed production workloads on AWS EC2 and ECS, ensuring high availability and scalability",
+          "Optimized infrastructure cost for EC2 and RDS through instance sizing, environment separation, and usage monitoring",
+          "Implemented CI/CD pipelines using GitHub Actions to automate build, test, and deployment processes",
+          "Monitored system health and performance using CloudWatch, logs, and alarms; performed root-cause analysis for incidents",
+          "Applied AWS security best practices with IAM roles, security groups, HTTPS, and network isolation",
           "",
           "Frontend Lead (07/2023 – 03/2025):",
-          "• Led a frontend team of 4 engineers; conducted code reviews and standardized coding conventions",
-          "• Designed Next.js architecture for large-scale applications with focus on SEO, Lighthouse score, and bundle optimization",
-          "• Collaborated closely with backend and cloud teams to ensure smooth CI/CD integration and stable production releases",
-          "• Actively participated in deployment planning and production issue troubleshooting",
+          "Led a frontend team of 4 engineers; conducted code reviews and standardized coding conventions",
+          "Designed Next.js architecture for large-scale applications with focus on SEO, Lighthouse score, and bundle optimization",
+          "Collaborated closely with backend and cloud teams to ensure smooth CI/CD integration and stable production releases",
+          "Actively participated in deployment planning and production issue troubleshooting",
           "",
           "Fullstack Developer (03/2021 – 06/2023):",
-          "• Led migration from SlugJS to Next.js, improving PageSpeed score from 20 → 80 and Core Web Vitals",
-          "• Deployed and operated backend services on EC2 using Nginx + PM2, connected to RDS MySQL and MongoDB",
-          "• Built and secured REST APIs with JWT authentication, refresh tokens, webhooks, cron jobs, and email services",
-          "• Managed static assets and logs using S3, configured Route53 health checks, and monitored via CloudWatch",
-          "• Integrated payment systems (Stripe, Airwallex) and analytics tools (GTM, Matomo)",
+          "Led migration from SlugJS to Next.js, improving PageSpeed score from 20 → 80 and Core Web Vitals",
+          "Deployed and operated backend services on EC2 using Nginx + PM2, connected to RDS MySQL and MongoDB",
+          "Built and secured REST APIs with JWT authentication, refresh tokens, webhooks, cron jobs, and email services",
+          "Managed static assets and logs using S3, configured Route53 health checks, and monitored via CloudWatch",
+          "Integrated payment systems (Stripe, Airwallex) and analytics tools (GTM, Matomo)",
           "",
           "Key Projects: bbcincorp.com, visa2asia.com, gleads.vn, BBCIncorp Portal"
         ]
@@ -52,9 +52,9 @@
         "title": "Frontend Developer",
         "company": "3FORCOM - District 10, HCM",
         "description": [
-          "• Developed enterprise and e-commerce websites using React.js and TypeScript",
-          "• Translated UI designs from Figma into responsive, cross-browser web applications",
-          "• Integrated APIs and optimized performance for high-traffic landing pages"
+          "Developed enterprise and e-commerce websites using React.js and TypeScript",
+          "Translated UI designs from Figma into responsive, cross-browser web applications",
+          "Integrated APIs and optimized performance for high-traffic landing pages"
         ]
       },
       {
@@ -63,9 +63,9 @@
         "title": "Data Warehouse Engineer",
         "company": "MIRAE ASSET - HCM",
         "description": [
-          "• Operated and monitored enterprise Data Warehouse systems",
-          "• Optimized SQL queries and supported BI/reporting teams",
-          "• Gained strong foundation in data systems, monitoring, and production operations"
+          "Operated and monitored enterprise Data Warehouse systems",
+          "Optimized SQL queries and supported BI/reporting teams",
+          "Gained strong foundation in data systems, monitoring, and production operations"
         ]
       },
       {
@@ -74,8 +74,8 @@
         "title": "Bachelor of Software Engineering",
         "company": "University of Transport and Communications – Ho Chi Minh City",
         "description": [
-          "• Graduated with Bachelor of Software Engineering degree",
-          "• Strong foundation in computer science, database design, and software development"
+          "Graduated with Bachelor of Software Engineering degree",
+          "Strong foundation in computer science, database design, and software development"
         ]
       }
     ]

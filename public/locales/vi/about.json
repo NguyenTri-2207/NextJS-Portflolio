@@ -24,24 +24,24 @@
         "company": "GLEADS - Quận 7, HCM",
         "description": [
           "Cloud Engineer (04/2025 – Present):",
-          "• Thiết kế và triển khai production workloads trên AWS EC2 và ECS, đảm bảo high availability và scalability",
-          "• Tối ưu chi phí infrastructure cho EC2 và RDS thông qua instance sizing, environment separation, và usage monitoring",
-          "• Xây dựng CI/CD pipelines sử dụng GitHub Actions để tự động hóa build, test, và deployment processes",
-          "• Giám sát system health và performance sử dụng CloudWatch, logs, và alarms; thực hiện root-cause analysis cho incidents",
-          "• Áp dụng AWS security best practices với IAM roles, security groups, HTTPS, và network isolation",
+          "Thiết kế và triển khai production workloads trên AWS EC2 và ECS, đảm bảo high availability và scalability",
+          "Tối ưu chi phí infrastructure cho EC2 và RDS thông qua instance sizing, environment separation, và usage monitoring",
+          "Xây dựng CI/CD pipelines sử dụng GitHub Actions để tự động hóa build, test, và deployment processes",
+          "Giám sát system health và performance sử dụng CloudWatch, logs, và alarms; thực hiện root-cause analysis cho incidents",
+          "Áp dụng AWS security best practices với IAM roles, security groups, HTTPS, và network isolation",
           "",
           "Frontend Lead (07/2023 – 03/2025):",
-          "• Dẫn dắt team frontend gồm 4 engineers; thực hiện code reviews và chuẩn hóa coding conventions",
-          "• Thiết kế Next.js architecture cho large-scale applications với focus vào SEO, Lighthouse score, và bundle optimization",
-          "• Hợp tác chặt chẽ với backend và cloud teams để đảm bảo smooth CI/CD integration và stable production releases",
-          "• Tích cực tham gia deployment planning và production issue troubleshooting",
+          "Dẫn dắt team frontend gồm 4 engineers; thực hiện code reviews và chuẩn hóa coding conventions",
+          "Thiết kế Next.js architecture cho large-scale applications với focus vào SEO, Lighthouse score, và bundle optimization",
+          "Hợp tác chặt chẽ với backend và cloud teams để đảm bảo smooth CI/CD integration và stable production releases",
+          "Tích cực tham gia deployment planning và production issue troubleshooting",
           "",
           "Fullstack Developer (03/2021 – 06/2023):",
-          "• Dẫn dắt migration từ SlugJS sang Next.js, cải thiện PageSpeed score từ 20 → 80 và Core Web Vitals",
-          "• Triển khai và vận hành backend services trên EC2 sử dụng Nginx + PM2, kết nối RDS MySQL và MongoDB",
-          "• Xây dựng và bảo mật REST APIs với JWT authentication, refresh tokens, webhooks, cron jobs, và email services",
-          "• Quản lý static assets và logs sử dụng S3, cấu hình Route53 health checks, và giám sát qua CloudWatch",
-          "• Tích hợp payment systems (Stripe, Airwallex) và analytics tools (GTM, Matomo)",
+          "Dẫn dắt migration từ SlugJS sang Next.js, cải thiện PageSpeed score từ 20 → 80 và Core Web Vitals",
+          "Triển khai và vận hành backend services trên EC2 sử dụng Nginx + PM2, kết nối RDS MySQL và MongoDB",
+          "Xây dựng và bảo mật REST APIs với JWT authentication, refresh tokens, webhooks, cron jobs, và email services",
+          "Quản lý static assets và logs sử dụng S3, cấu hình Route53 health checks, và giám sát qua CloudWatch",
+          "Tích hợp payment systems (Stripe, Airwallex) và analytics tools (GTM, Matomo)",
           "",
           "Key Projects: bbcincorp.com, visa2asia.com, gleads.vn, BBCIncorp Portal"
         ]
@@ -52,9 +52,9 @@
         "title": "Frontend Developer",
         "company": "3FORCOM - Quận 10, HCM",
         "description": [
-          "• Phát triển website enterprise và e-commerce sử dụng React.js và TypeScript",
-          "• Chuyển đổi UI designs từ Figma thành responsive, cross-browser web applications",
-          "• Tích hợp APIs và tối ưu performance cho high-traffic landing pages"
+          "Phát triển website enterprise và e-commerce sử dụng React.js và TypeScript",
+          "Chuyển đổi UI designs từ Figma thành responsive, cross-browser web applications",
+          "Tích hợp APIs và tối ưu performance cho high-traffic landing pages"
         ]
       },
       {
@@ -63,9 +63,9 @@
         "title": "Data Warehouse Engineer",
         "company": "MIRAE ASSET - HCM",
         "description": [
-          "• Vận hành và giám sát enterprise Data Warehouse systems",
-          "• Tối ưu SQL queries và hỗ trợ BI/reporting teams",
-          "• Xây dựng nền tảng vững chắc về data systems, monitoring, và production operations"
+          "Vận hành và giám sát enterprise Data Warehouse systems",
+          "Tối ưu SQL queries và hỗ trợ BI/reporting teams",
+          "Xây dựng nền tảng vững chắc về data systems, monitoring, và production operations"
         ]
       },
       {
@@ -74,8 +74,8 @@
         "title": "Cử nhân Kỹ thuật Phần mềm",
         "company": "Đại học Giao thông Vận tải TP.HCM",
         "description": [
-          "• Tốt nghiệp Cử nhân Kỹ thuật Phần mềm",
-          "• Nền tảng vững chắc về khoa học máy tính, thiết kế cơ sở dữ liệu, và phát triển phần mềm"
+          "Tốt nghiệp Cử nhân Kỹ thuật Phần mềm",
+          "Nền tảng vững chắc về khoa học máy tính, thiết kế cơ sở dữ liệu, và phát triển phần mềm"
         ]
       }
     ]
