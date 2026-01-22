@@ -1,0 +1,68 @@
+{
+  "id": 1,
+  "slug": "bbcincorp",
+  "startYear": "2020 - 2024",
+  "src": "/assets/bbc.jpg",
+  "title": "BBCincorp",
+  "href": "https://bbcincorp.com/hk",
+  "description": [
+    "Performance Optimization: Achieve High Performance for 100% Pages with the Pagespeed Insight Tool. Build a company formation website with 400 pages using Nextjs and TailwindCSS",
+    "Technology Used : NextJS, Atomic Design, React Bootstrap"
+  ],
+  "category": "company",
+  "content": [
+    {
+      "type": "section",
+      "title": "Project Information",
+      "description": "🏢 Project Name: BBCIncorp - Global Business Formation Platform",
+      "list": [
+        "Role: Frontend Leader & Cloud Engineer",
+        "Tech Stack: Next.js, TailwindCSS, AWS (Lambda, EC2, S3, CloudFront, CodeBuild), Headless WordPress"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "1. The Challenge",
+      "description": "The old system (SlugJS) was heavy with low performance scores (<40) affecting SEO. Particularly, when transitioning to Static Site architecture (S3 Hosting) to increase speed, the team faced a major challenge: Static websites on S3 cannot handle server-side logic such as complex 301/302 redirects or dynamic headers processing that the old system was doing."
+    },
+    {
+      "type": "section",
+      "title": "2. The Solution & Architecture",
+      "description": "I designed a Hybrid Cloud architecture combining the speed of Static Sites with the flexibility of Serverless:"
+    },
+    {
+      "type": "section",
+      "title": "2.1. Frontend Modernization",
+      "description": "Migrated to Next.js + TailwindCSS with Atomic Design, increasing code reusability and maintainability."
+    },
+    {
+      "type": "section",
+      "title": "2.2. Serverless Logic (AWS Lambda)",
+      "list": [
+        "Deployed AWS Lambda to handle server-side tasks that S3 cannot perform.",
+        "Processed routing logic (Dynamic Redirects) to maintain SEO rankings when changing URL structure.",
+        "Customized HTTP responses (Headers manipulation) to enhance security and caching."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "2.3. Infrastructure & Security",
+      "list": [
+        "Static Delivery: Build static files via CodeBuild -> push to S3 -> distribute through CloudFront (CDN) with load time <1s.",
+        "Private CMS: Deployed WordPress on EC2 in Private Subnet. Used NAT Gateway to block public access, only allowing Build Server to access data through network security layer (VPC Security Groups)."
+      ],
+      "image": "/assets/bbcincorp-architecture.jpg"
+    },
+    {
+      "type": "section",
+      "title": "3. Key Achievements",
+      "list": [
+        "🏆 Maximum Performance: Achieved perfect 100/100 PageSpeed Insights score (from previous 40).",
+        "🧠 Smart Routing: Completely solved static website routing issues using Lambda, ensuring SEO traffic preservation during migration.",
+        "🛡️ Enterprise Security: CMS system is absolutely protected, with zero attack surface from Internet (Zero public exposure).",
+        "👨‍💻 Leadership: Proposed technology, mentored team members and built standard CI/CD processes."
+      ]
+    }
+  ]
+}
+

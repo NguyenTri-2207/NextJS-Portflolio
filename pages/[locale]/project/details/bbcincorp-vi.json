@@ -1,0 +1,68 @@
+{
+  "id": 1,
+  "slug": "bbcincorp",
+  "startYear": "2020 - 2024",
+  "src": "/assets/bbc.jpg",
+  "title": "BBCincorp",
+  "href": "https://bbcincorp.com/hk",
+  "description": [
+    "Tối ưu hiệu suất: Đạt hiệu suất cao cho 100% trang với công cụ Pagespeed Insight. Xây dựng website thành lập công ty với 400 trang sử dụng Nextjs và TailwindCSS",
+    "Công nghệ sử dụng: NextJS, Atomic Design, React Bootstrap"
+  ],
+  "category": "company",
+  "content": [
+    {
+      "type": "section",
+      "title": "Thông tin dự án",
+      "description": "🏢 Project Name: BBCIncorp - Global Business Formation Platform",
+      "list": [
+        "Role: Frontend Leader & Cloud Engineer",
+        "Tech Stack: Next.js, TailwindCSS, AWS (Lambda, EC2, S3, CloudFront, CodeBuild), Headless WordPress"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "1. Bài toán",
+      "description": "Hệ thống cũ (SlugJS) nặng nề, điểm hiệu năng thấp (<40) ảnh hưởng SEO. Đặc biệt, khi chuyển sang kiến trúc Static Site (S3 Hosting) để tăng tốc độ, team gặp thách thức lớn: Web tĩnh trên S3 không thể tự xử lý các logic phía server như chuyển hướng 301/302 phức tạp (redirects) hoặc xử lý dynamic headers điều mà hệ thống cũ đang làm."
+    },
+    {
+      "type": "section",
+      "title": "2. Giải pháp & Kiến trúc",
+      "description": "Tôi đã thiết kế kiến trúc Hybrid Cloud kết hợp giữa độ nhanh của Static Site và sự linh hoạt của Serverless:"
+    },
+    {
+      "type": "section",
+      "title": "2.1. Frontend Modernization",
+      "description": "Chuyển đổi sang Next.js + TailwindCSS với Atomic Design, tăng khả năng tái sử dụng code và bảo trì."
+    },
+    {
+      "type": "section",
+      "title": "2.2. Serverless Logic (AWS Lambda)",
+      "list": [
+        "Triển khai AWS Lambda để đảm nhận các tác vụ server-side mà S3 không làm được.",
+        "Xử lý logic điều hướng (Dynamic Redirects) để giữ thứ hạng SEO khi thay đổi cấu trúc URL.",
+        "Tùy biến phản hồi HTTP (Headers manipulation) để tăng cường bảo mật và caching."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "2.3. Infrastructure & Security",
+      "list": [
+        "Static Delivery: Build static file qua CodeBuild -> đẩy lên S3 -> phân phối qua CloudFront (CDN) với tốc độ tải <1s.",
+        "Private CMS: Dựng WordPress trên EC2 trong Private Subnet. Sử dụng NAT Gateway để chặn truy cập public, chỉ cho phép Build Server truy xuất dữ liệu qua lớp bảo mật mạng (VPC Security Groups)."
+      ],
+      "image": "/assets/bbcincorp-architecture.jpg"
+    },
+    {
+      "type": "section",
+      "title": "3. Thành tựu",
+      "list": [
+        "🏆 Maximum Performance: Đạt điểm tuyệt đối 100/100 PageSpeed Insights (từ mức 40 cũ).",
+        "🧠 Smart Routing: Giải quyết triệt để vấn đề routing của web tĩnh bằng Lambda, đảm bảo giữ nguyên traffic SEO khi migration.",
+        "🛡️ Enterprise Security: Hệ thống CMS được bảo vệ tuyệt đối, không có bề mặt tấn công từ Internet (Zero public exposure).",
+        "👨‍💻 Leadership: Đề xuất công nghệ, mentor team member và xây dựng quy trình CI/CD chuẩn chỉnh."
+      ]
+    }
+  ]
+}
+

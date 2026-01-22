@@ -8,90 +8,38 @@
       "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
       "href": "https://tringuyen.vercel.app/project/cloudhire",
       "description": [
-        "🚀 Kiến trúc Event-driven Serverless 100% trên AWS, tối ưu chi phí vận hành xuống gần 0$ (NoOps) và tự động scale theo traffic.",
-        "⚡️ Hiệu năng cao với API Gateway & Lambda xử lý hàng nghìn request/giây, Database DynamoDB độ trễ mili-giây.",
-        "🛡️ Bảo mật Zero Trust: Xác thực Cognito, phân quyền IAM Least Privilege và bảo vệ nội dung tĩnh bằng CloudFront OAC."
+        "🚀 Cloud-Native Architecture: Thiết kế hệ thống Event-driven Serverless 100% trên AWS, loại bỏ hoàn toàn gánh nặng quản trị server (NoOps) và chi phí nhàn rỗi (Zero Idle Cost).",
+        "⚡️ High Availability & Scale: Xây dựng RESTful API với API Gateway & Lambda chịu tải hàng nghìn request/giây, kết hợp DynamoDB On-demand cho độ trễ <10ms.",
+        "🛡️ DevSecOps & Observability: Áp dụng mô hình Zero Trust (Cognito, IAM Least Privilege, CloudFront OAC) và thiết lập hệ thống giám sát tự động (CloudWatch Alarms -> SNS) để phát hiện lỗi tức thì."
       ],
       "category": "personal"
     },
     {
       "id": 1,
       "slug": "bbcincorp",
-      "startYear": "2020 - 2024",
+      "startYear": "2020 - 2026",
       "src": "/assets/bbc.jpg",
-      "title": "BBCincorp",
+      "title": "BBCIncorp & Enterprise Ecosystem (Migration & Cloud Infrastructure)",
       "href": "https://bbcincorp.com/hk",
       "description": [
-        "Tối ưu hiệu suất: Đạt hiệu suất cao cho 100% trang với công cụ Pagespeed Insight. Xây dựng website thành lập công ty với 400 trang sử dụng Nextjs và TailwindCSS",
-        "Công nghệ sử dụng: NextJS, Atomic Design, React Bootstrap"
+        "🏗️ Infrastructure Modernization: Lead quá trình Migration từ Legacy System sang kiến trúc Hybrid Cloud (Next.js + Headless CMS) cho chuỗi dự án doanh nghiệp lớn (BBCIncorp, NovaGroup, Visa2Asia).",
+        "⚙️ CI/CD & Automation: Thiết kế quy trình Build & Deploy tự động với AWS CodeBuild, đẩy Static Assets lên S3/CloudFront, giảm thời gian deployment từ 30 phút xuống 5 phút.",
+        "🔐 Security Architecture: Triển khai hạ tầng CMS trong Private Subnet (EC2), bảo mật qua NAT Gateway và giới hạn truy cập IP, đảm bảo an toàn tuyệt đối cho dữ liệu doanh nghiệp."
       ],
       "category": "company"
-    },
-    {
-      "id": 2,
-      "slug": "novagroup",
-      "startYear": "2019 - 2020",
-      "src": "/assets/nova.png",
-      "title": "NovaGroup",
-      "href": "https://www.novagroup.vn/",
+    },{
+      "id": 8,
+      "slug": "ielts-academy-ops",
+      "startYear": "2024",
+      "src": "/assets/ielts-academy-terminal.jpg", 
+      "title": "IELTS Intensive Academy - Automated VPS Infrastructure & Optimization",
+      "href": "https://ieltsintensiveacademy.com",
       "description": [
-        "Xây dựng website thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
-        "Công nghệ sử dụng: NextJS, Atomic Design, React Bootstrap"
+        "⚙️ Infrastructure Automation: Viết bộ Bash Scripts tự động hóa toàn bộ quy trình Provisioning server: Cài đặt LAMP Stack (Linux, Apache, MySQL, PHP), cấu hình VirtualHost và phân quyền hệ thống chỉ trong <5 phút.",
+        "🔐 Security Hardening: Thiết lập bảo mật mức OS và Web Server: Cấu hình SSL tự động (Certbot), tối ưu Security Headers (X-Frame, X-XSS), và phân quyền chặt chẽ cho Webroot/Storage.",
+        "📈 Performance Tuning: Tối ưu hóa cấu hình Apache (Gzip, Caching headers cho Assets), tinh chỉnh MySQL Buffer Pool giúp website chịu tải ổn định trên instance EC2 t3.medium."
       ],
       "category": "company"
-    },
-    {
-      "id": 3,
-      "slug": "gleads",
-      "startYear": "2022 - 2023",
-      "src": "/assets/gleads.jpg",
-      "title": "Gleads",
-      "href": "https://gleads.vn/vi",
-      "description": [
-        "Xây dựng website thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
-        "Công nghệ sử dụng: NextJS, Atomic Design, React Bootstrap"
-      ],
-      "category": "company"
-    },
-    {
-      "id": 4,
-      "slug": "visa2asia",
-      "startYear": "2022 - 2023",
-      "src": "/assets/gleads.jpg",
-      "title": "Visa2asia",
-      "href": "/",
-      "description": [
-        "Xây dựng website thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
-        "Công nghệ sử dụng: NextJS, Atomic Design, React Bootstrap"
-      ],
-      "category": "company"
-    },
-    {
-      "id": 5,
-      "slug": "ecommerce-website",
-      "startYear": "2021",
-      "src": "/assets/images.jpg",
-      "title": "Website Thương mại Điện tử",
-      "href": "https://triapple.vercel.app/",
-      "description": [
-        "Xây dựng website thành lập công ty với 300 trang sử dụng Nextjs và TailwindCSS",
-        "Công nghệ sử dụng: NextJS, Atomic Design, React Bootstrap"
-      ],
-      "category": "personal"
-    },
-    {
-      "id": 6,
-      "slug": "portfolio-website",
-      "startYear": "2022",
-      "src": "/assets/working-at-night.jpg",
-      "href": "https://tringuyen.vercel.app",
-      "title": "Website Portfolio",
-      "description": [
-        "Bao gồm các tính năng hấp dẫn như blog động, đăng ký người dùng để phản hồi tương tác, và hiệu ứng trực quan với chế độ sáng/tối tùy chọn.",
-        "Công nghệ sử dụng: Next.js, Node.js, TailwindCSS, MongoDB"
-      ],
-      "category": "personal"
     }
   ]
 }
-

@@ -98,10 +98,51 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                       </time>
                     </div>
                     {dataProject.content && (
-                      <div
-                        className="prose prose-lg dark:prose-invert max-w-none mb-6"
-                        dangerouslySetInnerHTML={{ __html: dataProject.content }}
-                      />
+                      <div className="mb-6 space-y-8">
+                        {Array.isArray(dataProject.content) ? (
+                          // New structure: array of content objects
+                          dataProject.content.map((section, index) => (
+                            <div key={index} className="space-y-4">
+                              {section.title && (
+                                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                                  {section.title}
+                                </h2>
+                              )}
+                              {section.image && (
+                                <div className="w-full overflow-hidden rounded-lg">
+                                  <Image
+                                    src={section.image}
+                                    alt={section.title || `Section ${index + 1}`}
+                                    width={800}
+                                    height={450}
+                                    className="w-full h-auto object-cover"
+                                  />
+                                </div>
+                              )}
+                              {section.description && (
+                                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                  {section.description}
+                                </p>
+                              )}
+                              {section.list && Array.isArray(section.list) && (
+                                <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                                  {section.list.map((item, itemIndex) => (
+                                    <li key={itemIndex} className="leading-relaxed">
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          ))
+                        ) : (
+                          // Old structure: HTML string (backward compatibility)
+                          <div
+                            className="prose prose-lg dark:prose-invert max-w-none"
+                            dangerouslySetInnerHTML={{ __html: dataProject.content }}
+                          />
+                        )}
+                      </div>
                     )}
                     {dataProject.href && dataProject.href !== "/" && (
                       <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
@@ -185,31 +226,48 @@ export const getStaticPaths = async () => {
   }
 };
 
+// Helper function to load project detail file
+const loadProjectDetail = (slug, locale) => {
+  const detailFiles = {
+    "bbcincorp": {
+      en: () => require("../details/bbcincorp-en.json"),
+      vi: () => require("../details/bbcincorp-vi.json"),
+    },
+    "cloudhire": {
+      en: () => require("../details/cloudhire-en.json"),
+      vi: () => require("../details/cloudhire-vi.json"),
+    },
+    "ielts-academy-ops": {
+      en: () => require("../details/ielts-academy-ops-en.json"),
+      vi: () => require("../details/ielts-academy-ops-vi.json"),
+    },
+  };
+
+  if (detailFiles[slug] && detailFiles[slug][locale]) {
+    return detailFiles[slug][locale]();
+  }
+  return null;
+};
+
 export const getStaticProps = async (ctx) => {
   const { params } = ctx;
   const uri = params?.slug;
   const locale = params?.locale || "en";
 
   try {
-    // Import static data based on locale
-    const projectsDetail = locale === "vi"
-      ? require("../projects-detail-vi.json")
-      : require("../projects-detail-en.json");
+    // Load project detail from individual file
+    const dataProject = loadProjectDetail(uri, locale);
 
+    // Load projects list for sidebar
     const projectsList = locale === "vi"
       ? require("../projects-vi.json")
       : require("../projects-en.json");
 
     // Validate data structure
-    if (!projectsDetail?.projects || !Array.isArray(projectsDetail.projects)) {
-      throw new Error("Invalid projects detail data structure");
-    }
     if (!projectsList?.projects || !Array.isArray(projectsList.projects)) {
       throw new Error("Invalid projects list data structure");
     }
 
-    // Find the project by slug
-    const dataProject = projectsDetail.projects.find((project) => project.slug === uri) || null;
     const dataAllProjects = { projects: projectsList.projects };
 
     return {

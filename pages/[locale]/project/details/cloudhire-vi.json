@@ -1,0 +1,94 @@
+{
+  "id": 7,
+  "slug": "cloudhire",
+  "startYear": "2025",
+  "src": "/assets/cloudhire-ui-showcase.jpg",
+  "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
+  "href": "https://tringuyen.vercel.app/project/cloudhire",
+  "description": [
+    "🚀 Hệ thống tuyển dụng Event-driven Serverless: Vận hành tự động, chi phí 0$ khi rảnh rỗi (Zero Idle Cost).",
+    "⚡️ Tối ưu hiệu năng: API Gateway + Lambda chịu tải hàng nghìn request, kết hợp DynamoDB truy xuất mili-giây.",
+    "🛡️ Bảo mật đa lớp: Xác thực Cognito, phân quyền IAM chặt chẽ và bảo vệ dữ liệu tĩnh bằng CloudFront OAC."
+  ],
+  "category": "personal",
+  "content": [
+    {
+      "type": "section",
+      "title": "Thông tin dự án",
+      "description": "Author: Trí Nguyen (Front-end Developer & Cloud Aspirant)",
+      "list": [
+        "Tech Stack: Next.js, AWS Serverless (Lambda, DynamoDB, Cognito, S3, SES, CloudFront)",
+        "Mục tiêu: Áp dụng kiến thức AWS SAA-C03 vào xây dựng sản phẩm thực tế."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "1. Tại sao mình làm dự án này?",
+      "description": "Là một Frontend Developer muốn chinh phục Cloud, mình không muốn chỉ học lý thuyết. CloudHire là dự án 'Hands-on' để mình giải quyết bài toán thực tế: Làm sao để một hệ thống tuyển dụng vừa chịu được tải cao, vừa bảo mật, nhưng chi phí vận hành phải rẻ nhất có thể.",
+      "list": [
+        "NoOps: Tập trung viết code, không tốn thời gian quản lý server (No EC2).",
+        "Security First: Bảo mật từ Identity (Cognito) đến Network (OAC) và Data (IAM).",
+        "Cost Efficiency: Chỉ trả tiền khi có người dùng (Pay-as-you-go).",
+        "Global Performance: Tăng tốc độ truy cập toàn cầu bằng CDN."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "2. Thách thức & Giải pháp",
+      "description": "Các hệ thống truyền thống thường 'đốt tiền' cho server nhàn rỗi và dễ sập khi lượng truy cập tăng đột biến. Để khắc phục, mình chọn kiến trúc Serverless:",
+      "list": [
+        "Authentication: Dùng Amazon Cognito thay vì tự build auth server, an toàn và đỡ tốn công bảo trì.",
+        "Compute: Thay vì thuê VPS cố định, mình dùng AWS Lambda & API Gateway để hệ thống tự động scale theo traffic.",
+        "Storage: File CV được lưu trên S3 (Standard Class) với độ bền dữ liệu gần như tuyệt đối.",
+        "Database: Chuyển từ SQL sang DynamoDB (NoSQL) để đảm bảo tốc độ đọc/ghi cực nhanh bất chấp quy mô dữ liệu."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "3. Kiến trúc hệ thống (Architecture Flow)",
+      "description": "Luồng dữ liệu được thiết kế tối ưu cho hiệu năng và bảo mật:",
+      "list": [
+        "Frontend: Next.js App được host trên AWS Amplify, tích hợp CI/CD tự động.",
+        "Secure API: Mọi request đều phải kèm Token và được xác thực qua Cognito Authorizer tại API Gateway.",
+        "Logic xử lý: AWS Lambda (Node.js) đảm nhận business logic, kết nối với DynamoDB.",
+        "Direct Upload: Client upload CV trực tiếp lên S3 qua Amplify Storage (giảm tải cho Lambda, tránh lỗi timeout).",
+        "Content Delivery: Admin xem CV qua CloudFront (CDN) với cơ chế bảo mật OAC (S3 không public trực tiếp).",
+        "Notification: Hệ thống tự động gửi email xác nhận (SES) và cảnh báo lỗi server cho Admin (CloudWatch -> SNS)."
+      ],
+      "image": "/assets/cloudhire-architecture.jpg"
+    },
+    {
+      "type": "section",
+      "title": "4. Điểm nhấn kỹ thuật (Technical Highlights)",
+      "description": "Những kỹ thuật khó mà mình đã xử lý được trong dự án:",
+      "list": [
+        "Microservices Pattern: Tách nhỏ API (Apply, Create Job, Get Job) để dễ maintenance và debug.",
+        "Direct S3 Upload: Giải quyết bài toán upload file lớn mà không bị giới hạn payload của API Gateway.",
+        "Security Hardening: Cấu hình IAM Role theo nguyên tắc quyền tối thiểu (Least Privilege).",
+        "DevOps Monitoring: Thiết lập CloudWatch Alarm để 'bắt bệnh' hệ thống ngay khi có lỗi phát sinh."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "5. Bài toán chi phí (Cost Estimation)",
+      "description": "Với kiến trúc này, chi phí duy trì cho 1,000 người dùng/tháng cực kỳ tối ưu (~$32.94), rẻ hơn nhiều so với việc thuê cụm EC2 + RDS truyền thống.",
+      "list": [
+        "Compute (Lambda + API Gateway): ~$18.60 (Chỉ tính khi code chạy).",
+        "Database (DynamoDB): ~$1.70 (On-demand).",
+        "Storage & CDN (S3 + CloudFront): ~$9.64.",
+        "Hosting & Build (Amplify): ~$3.00.",
+        "Auth & Email (Cognito + SES): $0.00 (Free Tier)."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "6. Hướng phát triển (Next Steps)",
+      "description": "Để nâng cấp hệ thống lên chuẩn Enterprise, mình đang nghiên cứu tích hợp thêm:",
+      "list": [
+        "Infrastructure as Code (IaC): Chuyển từ cấu hình tay sang Terraform/CDK.",
+        "Security Advanced: Tích hợp AWS WAF để chống tấn công DDoS và SQL Injection.",
+        "Traceability: Dùng AWS X-Ray để đo đạc độ trễ chi tiết của từng request."
+      ]
+    }
+  ]
+}

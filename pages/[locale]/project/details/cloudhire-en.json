@@ -1,0 +1,178 @@
+{
+  "id": 7,
+  "slug": "cloudhire",
+  "startYear": "2025",
+  "src": "/assets/cloudhire-ui-showcase.jpg",
+  "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
+  "href": "https://tringuyen.vercel.app/project/cloudhire",
+  "description": [
+    "🚀 100% Event-driven Serverless Architecture on AWS, optimizing operational costs to near $0 (NoOps) and auto-scaling with traffic.",
+    "⚡️ High Performance: API Gateway & Lambda handling thousands of requests/second, DynamoDB database with millisecond latency.",
+    "🛡️ Zero Trust Security: Cognito authentication, IAM Least Privilege authorization, and static content protection with CloudFront OAC."
+  ],
+  "category": "personal",
+  "content": [
+    {
+      "type": "section",
+      "title": "Project Information",
+      "description": "Author: Trí Nguyen (Front-end Developer & Cloud Aspirant)",
+      "list": [
+        "Tech Stack: Next.js, AWS Serverless (Lambda, DynamoDB, Cognito, S3, SES, CloudFront)",
+        "Target Certification: AWS Certified Solutions Architect – Associate (SAA-C03)"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "1. Project Overview",
+      "description": "CloudHire is a high-performance online recruitment platform built entirely on AWS Serverless (Cloud-Native) architecture. The project is designed to solve recruitment system operations with optimal costs, automatic scalability, and high security. This project is an intensive hands-on lab to apply core services commonly found in the AWS SAA-C03 exam, transforming theoretical knowledge into practical experience.",
+      "list": [
+        "Zero Server Management: Completely eliminate server management (No EC2).",
+        "Security First: Apply multi-layer security model (Cognito, IAM Least Privilege, OAC).",
+        "Cost Optimization: Operational costs near $0 when there's no traffic.",
+        "Global Scale: Optimize global access through CDN."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "2. Business Problem & Solution",
+      "description": "🔴 The Pain Points: Traditional recruitment systems often face high fixed infrastructure costs, scaling difficulties, operational burden, and poor file security.",
+      "list": [
+        "High fixed infrastructure costs: Must maintain servers 24/7 even with low traffic at night.",
+        "Scaling difficulties: System bottlenecks when large numbers of candidates apply simultaneously.",
+        "Operational burden: Requires staff to patch OS, manage database, handle backups.",
+        "Poor file security: Candidate CVs are easily exposed without strict permissions."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "🟢 CloudHire Solution (The Serverless Approach)",
+      "description": "CloudHire solves this by using fully managed services from AWS:",
+      "list": [
+        "Authentication: Delegate user management to Amazon Cognito.",
+        "Backend: Use AWS Lambda and API Gateway to pay only when there are requests.",
+        "Storage: Store CVs on Amazon S3 with 99.999999999% (11 nines) durability.",
+        "Database: Use DynamoDB to ensure millisecond latency at any scale."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "3. System Architecture",
+      "description": "Description of actual deployed data flow:",
+      "list": [
+        "Frontend: Users access Web App (Next.js) hosted on AWS Amplify.",
+        "Auth: Users log in via Amazon Cognito (User Pool) to get JWT Token.",
+        "API Requests: Client sends request with Token to Amazon API Gateway.",
+        "Security Layer: API Gateway uses Cognito Authorizer to authenticate Token.",
+        "Compute: API Gateway triggers AWS Lambda (Node.js) to process logic.",
+        "Database: Lambda reads/writes recruitment data to Amazon DynamoDB.",
+        "File Upload (Direct): Client uploads CV directly to Amazon S3 via Amplify Storage (reduces Lambda load).",
+        "File Delivery: Admin views CVs through Amazon CloudFront (configured with OAC to secure S3).",
+        "Notifications: Lambda calls Amazon SES to send confirmation email to candidates.",
+        "Monitoring: Lambda error -> CloudWatch -> SNS -> Email alert to Admin."
+      ],
+      "image": "/assets/cloudhire-architecture.jpg"
+    },
+    {
+      "type": "section",
+      "title": "3.2. Users & Roles",
+      "list": [
+        "Guest: View job listings (Public API).",
+        "Candidate (User): Register/Login, Upload CV, Apply (Authenticated API).",
+        "Admin: Manage job posts (CRUD Jobs), View candidate CVs."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "4. Key Implementation Details",
+      "description": "4.1. Frontend & Hosting:",
+      "list": [
+        "Framework: Next.js (React).",
+        "Library: AWS Amplify Gen 2 (Auth, Storage).",
+        "Hosting: AWS Amplify Hosting (Automatic CI/CD from Git)."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "4.2. Backend & API (Microservices Pattern)",
+      "description": "API system is divided into smaller parts for easier maintenance:",
+      "list": [
+        "GET /jobs: Lambda retrieves job listings (Public).",
+        "POST /jobs: Lambda creates new job (Admin only).",
+        "POST /apply: Lambda processes application + Sends SES email (Authenticated).",
+        "Logic: Validate input -> Check duplicate application -> Save to DynamoDB -> Trigger SES Email."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "4.3. Database Design (DynamoDB)",
+      "description": "Using NoSQL model with On-demand Capacity:",
+      "list": [
+        "Table Name: DynamoDBCloudJobs.",
+        "Partition Key: id (Job ID or Application ID).",
+        "Attributes: title, description, cvFileKey, cvUrl, userEmail, status."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "4.4. Storage & Content Delivery (S3 + CloudFront)",
+      "list": [
+        "Upload: Use Amplify Storage with Cognito Identity Pool to upload directly from browser (Bypass server limitations).",
+        "Security: S3 Bucket blocks all Public Access.",
+        "Access: Use CloudFront Origin Access Control (OAC). Only CloudFront has permission to read files from S3. CV links are served via CloudFront for speed and security."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "4.5. Monitoring & Alerting (DevOps)",
+      "list": [
+        "Logging: CloudWatch Logs records all Lambda activities.",
+        "Alarm: CloudWatch Alarm monitors Errors metric. If Errors >= 1 in 5 minutes -> Triggers SNS Topic.",
+        "Notification: SNS sends immediate email alert to Admin for incident handling."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "5. Cost Estimation",
+      "description": "Assumption: Production system with 1,000 Active Users/month, 3 million API requests.",
+      "list": [
+        "Amplify Hosting: Build minutes + Data transfer ~$3.00",
+        "AWS Lambda: 3M requests + Compute time (128MB) ~$8.10",
+        "API Gateway: $3.50/1M requests ~$10.50",
+        "DynamoDB: On-demand R/W units (Very cheap with text data) ~$1.70",
+        "Amazon S3: Storage + Requests (PUT/GET) ~$1.54",
+        "CloudFront: Data transfer out (CV download) ~$8.10",
+        "Cognito: 50,000 MAU Free Tier (Almost free) $0.00",
+        "Amazon SES: 62,000 emails Free Tier (Almost free) $0.00",
+        "TOTAL: ~$32.94 / month"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Cost Note",
+      "description": "This cost is much cheaper than renting a traditional EC2 t2.medium ($30) + RDS ($15) + ELB ($18), and requires no maintenance effort."
+    },
+    {
+      "type": "section",
+      "title": "6. AWS SAA-C03 Alignment",
+      "description": "This project directly applies the 4 pillars of AWS Well-Architected Framework:",
+      "list": [
+        "Security: Identity & Access Management (Cognito, IAM Roles), Data Protection (S3 Private, CloudFront OAC), Infrastructure Protection (API Gateway Throttling).",
+        "Reliability: Decoupled system between Upload and Logic processing. DynamoDB and S3 have high availability by default.",
+        "Performance Efficiency: Serverless (Lambda) auto-scales with traffic. CloudFront caches static content at Edge locations.",
+        "Cost Optimization: Pay only when used (Pay-as-you-go). S3 Lifecycle (planned) to delete old CVs after 30 days."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "7. Future Roadmap",
+      "description": "To upgrade the system to Enterprise level, the following features will be implemented:",
+      "list": [
+        "AWS WAF: Protect API Gateway from SQL Injection and DDoS attacks.",
+        "AWS X-Ray: Trace requests to debug latency between services.",
+        "DynamoDB Streams: Trigger Lambda for post-processing (e.g., AI CV analysis) when new records are created.",
+        "IaC (Terraform/CDK): Convert manual configuration (ClickOps) to Code for automated infrastructure deployment."
+      ]
+    }
+  ]
+}
+

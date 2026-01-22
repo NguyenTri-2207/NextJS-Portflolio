@@ -1,0 +1,94 @@
+{
+  "id": 8,
+  "slug": "ielts-academy-ops",
+  "startYear": "2024",
+  "src": "/assets/ielts-academy-terminal.jpg",
+  "title": "IELTS Intensive Academy - Automated Infrastructure & Linux Hardening",
+  "href": "https://ieltsintensiveacademy.com",
+  "description": [
+    "⚙️ Infrastructure Automation: Built Bash Scripts to automate entire server provisioning process: Install LAMP Stack (Linux, Apache, MySQL, PHP), configure VirtualHost and system permissions in <5 minutes.",
+    "🔐 Security Hardening: Established OS and Web Server level security: Auto SSL configuration (Certbot), optimized Security Headers (X-Frame, X-XSS), and strict permissions for Webroot/Storage.",
+    "📈 Performance Tuning: Optimized Apache configuration (Gzip, Caching headers for Assets), fine-tuned MySQL Buffer Pool enabling website to handle stable load on EC2 t3.medium instance."
+  ],
+  "category": "company",
+  "content": [
+    {
+      "type": "section",
+      "title": "Project Information",
+      "description": "🏢 Project Name: IELTS Intensive Academy - Automated Infrastructure & Linux Hardening",
+      "list": [
+        "Role: DevOps Engineer & System Administrator",
+        "Tech Stack: AWS EC2 (Ubuntu), Bash Scripting, LAMP Stack (Linux, Apache, MySQL, PHP), Let's Encrypt (Certbot), Git"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "1. The Challenge",
+      "description": "The client needed to deploy an online course sales website system (PHP/MySQL) on AWS. The requirements were:",
+      "list": [
+        "Cost Optimization: Must run stably on a small instance (t3.medium) to save budget.",
+        "Rapid Deployment: The old manual server setup process took 2-3 hours and frequently encountered permission errors (Permission denied) when the application wrote log/cache files.",
+        "Security: Need to ensure HTTPS and protect against basic web vulnerabilities."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "2. The Solution (Automation)",
+      "description": "Instead of manual setup, I built a set of Bash Scripts (Infrastructure as Code - Lite) to automate the entire Provisioning and Deployment process:"
+    },
+    {
+      "type": "section",
+      "title": "2.1. Automated Provisioning",
+      "description": "The setup-server.sh script automatically installs and configures standard LAMP Stack (Apache, PHP 8.1, MySQL) in a single run, ensuring consistent environment (Consistency)."
+    },
+    {
+      "type": "section",
+      "title": "2.2. Security Automation",
+      "description": "Integrated script for automatic SSL installation via Certbot (Let's Encrypt), automatically handling common Redirect Loop errors between Cloudflare/ALB and Apache."
+    },
+    {
+      "type": "section",
+      "title": "2.3. Database Management",
+      "description": "The setup-database.sh script automatically creates User, Database and imports initial data, eliminating risks of incorrect operations on Production."
+    },
+    {
+      "type": "section",
+      "title": "3. Key Technical Highlights",
+      "description": "3.1. Web Server Hardening (Apache):"
+    },
+    {
+      "type": "section",
+      "title": "3.1.1. VirtualHost Optimization",
+      "list": [
+        "Enabled deflate module (Gzip compression) and configured ExpiresByType to cache static resources (Images, CSS, JS) in user's browser for 1 month, significantly reducing server load."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "3.1.2. Security Headers",
+      "list": [
+        "Directly injected security headers (X-Frame-Options, X-XSS-Protection, X-Content-Type-Options) into Apache configuration to protect against XSS and Clickjacking attacks."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "3.2. Linux Permission Management",
+      "description": "Built strict permission mechanism: Code owned by ubuntu, but Apache (www-data) is only allowed to write to necessary directories (upload, caches). This prevents hackers from taking control of the server if web source code has vulnerabilities."
+    },
+    {
+      "type": "section",
+      "title": "3.3. Operational Scripts",
+      "description": "Wrote update-code.sh script to standardize the git pull -> fix permission process. Developers only need to run 1 command for new code to go live safely, without worrying about website crashes due to wrong permissions."
+    },
+    {
+      "type": "section",
+      "title": "4. Results",
+      "list": [
+        "⏱ Time Savings: Reduced new server setup time from 3 hours to < 10 minutes.",
+        "🔒 Security: Achieved A+ SSL score on SSL Labs thanks to standard Hardening configuration.",
+        "💰 Cost: System runs smoothly on AWS EC2 t3.medium (~$30/month), handling stable load for thousands of students accessing."
+      ]
+    }
+  ]
+}
+
