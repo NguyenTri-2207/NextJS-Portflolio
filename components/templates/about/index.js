@@ -2,15 +2,17 @@ import React from "react";
 import CardMe from "components/molecules/CardMe";
 import Skill from "components/organisms/Skill";
 import SlideScroll from "components/organisms/SlideScroll";
+import Banner from "./Banner";
 
-const About = ({ dataInfo, dataSocial, dataSkill, dataExperience }) => {
+const About = ({ dataInfo, dataSocial, dataSkill, dataExperience, dataBanner }) => {
   return (
     <>
+      {dataBanner && <Banner data={dataBanner} />}
       <section className="section-template min-h-screen">
         <div className="container">
           <div className="row justify-center">
             <CardMe data={dataSocial} />
-            <div className="about-text lg:col-8 col-12 lg:pl-8 pt-24 lg:pt-24">
+            <div className="about-text lg:col-8 col-12 ">
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                 {dataInfo.who}
               </h2>

@@ -11,6 +11,7 @@ const Homepage = () => {
   const dataExperience = t("about:experience", { returnObjects: true });
   const dataSocial = t("about:dataSocial", { returnObjects: true });
   const dataSkill = t("skill:dataSkills", { returnObjects: true });
+  const dataBanner = t("about:banner", { returnObjects: true });
   const menu = t("common:menu", { returnObjects: true });
 
   return (
@@ -26,6 +27,7 @@ const Homepage = () => {
           dataExperience={dataExperience}
           dataSocial={dataSocial}
           dataSkill={dataSkill}
+          dataBanner={dataBanner}
         />
       </Layout>
     </>

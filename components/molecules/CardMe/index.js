@@ -25,7 +25,7 @@ const CardMe = ({ data }) => {
   };
 
   return (
-    <div className="col-12 md:col-8 lg:col-4 px-4 lg:px-8 mt-8 lg:mt-10">
+    <div className="col-12 md:col-8 lg:col-4 ">
       <div className="w-full mb-6 lg:mb-0 mx-auto bg-white dark:bg-gray-800 text-center px-6 py-8 rounded-lg border border-gray-200 dark:border-gray-700 lg:sticky lg:top-24">
         <Image
           width={200}

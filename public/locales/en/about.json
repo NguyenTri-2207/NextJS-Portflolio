@@ -1,4 +1,7 @@
 {
+  "banner": {
+    "breadcrumb": [{ "title": "Home", "url": "/" }, { "title": "About" }]
+  },
   "info": {
     "who": "Who am i?",
     "im": "I'm Tri, a ",

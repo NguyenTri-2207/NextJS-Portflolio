@@ -1,4 +1,7 @@
 {
+  "banner": {
+    "breadcrumb": [{ "title": "Trang chủ", "url": "/" }, { "title": "Giới thiệu" }]
+  },
   "info": {
     "who": "Tôi là ai?",
     "im": "Tôi là Trí, một ",

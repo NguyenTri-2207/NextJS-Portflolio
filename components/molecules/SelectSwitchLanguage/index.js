@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import languageDetector from "../../../lib/languageDetector";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Select from "react-select";
@@ -75,12 +75,12 @@ function SelectSwitchLanguage() {
             className="flex p-2  items-center cursor-pointer select-none  "
           >
             <div className="block">
-              <img
-                width={10}
-                height={10}
+              <Image
+                width={28}
+                height={28}
                 src={locale?.image}
                 alt={" flag"}
-                className=" h-7 w-7 rounded-full object-cover "
+                className="h-7 w-7 rounded-full object-cover"
               />
             </div>
 
