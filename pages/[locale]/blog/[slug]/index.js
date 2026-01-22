@@ -3,7 +3,6 @@ import BlogDetailComponent from "components/templates/blog-detail";
 import React from "react";
 import { getI18nProps } from "lib/getStatic.js";
 import { useTranslation } from "next-i18next";
-import dataStatic from "../data.json";
 import Head from "next/head";
 
 const Slug = ({ dataPost, dataAllPost }) => {
@@ -38,30 +37,21 @@ const Slug = ({ dataPost, dataAllPost }) => {
 export default Slug;
 
 export const getStaticPaths = async () => {
-  try {
-    const locales = ["en", "vi"];
-    const resPost = await fetch(
-      `${process.env.NEXT_API_URL}/api/post-locales/en`
-    );
-    if (!resPost.ok) {
-      throw new Error("Failed to fetch post slugs");
-    }
-    const posts = await resPost.json();
-    if (!Array.isArray(posts.posts)) {
-      throw new Error("posts is not an array");
-    }
-    const paths = posts.posts.flatMap((item) => {
-      let slug = item.url.toString();
-      return locales.map((locale) => ({
-        params: { slug, locale },
-      }));
-    });
+  const locales = ["en", "vi"];
+  
+  // Import static data to get all posts
+  const postsEn = require('../posts-en.json');
+  const postsVi = require('../posts-vi.json');
+  
+  // Use English posts to generate paths (both locales will have same slugs)
+  const paths = postsEn.posts.flatMap((item) => {
+    let slug = item.url.toString();
+    return locales.map((locale) => ({
+      params: { slug, locale },
+    }));
+  });
 
-    return { paths, fallback: false };
-  } catch (error) {
-    console.error("Error fetching post slugs:", error);
-    return { paths: [], fallback: false };
-  }
+  return { paths, fallback: false };
 };
 
 export const getStaticProps = async (ctx) => {
@@ -69,36 +59,24 @@ export const getStaticProps = async (ctx) => {
   const uri = params?.slug;
   const locale = params.locale;
 
-  try {
-    const [resDataPost, resDataAllPost] = await Promise.all([
-      fetch(`${process.env.NEXT_API_URL}/api/post-locales/${locale}/${uri}`),
-      fetch(`${process.env.NEXT_API_URL}/api/post-locales/${locale}`),
-    ]);
+  // Import static data based on locale
+  const postsDetail = locale === 'vi' 
+    ? require('../posts-detail-vi.json')
+    : require('../posts-detail-en.json');
+  
+  const postsList = locale === 'vi' 
+    ? require('../posts-vi.json')
+    : require('../posts-en.json');
 
-    if (!resDataAllPost.ok && !resDataPost.ok) {
-      throw new Error(`Failed to fetch data with slug ${uri}`);
-    }
+  // Find the post by slug
+  const dataPost = postsDetail.posts.find(post => post.url === uri) || null;
+  const dataAllPost = { post: postsList.posts };
 
-    const [dataPost, dataAllPost] = await Promise.all([
-      resDataPost.json(),
-      resDataAllPost.json(),
-    ]);
-
-    return {
-      props: {
-        ...(await getI18nProps(ctx, ["common", "blog"])),
-        dataPost,
-        dataAllPost,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        ...(await getI18nProps(ctx, ["common"])),
-        dataPost: null,
-        dataAllPost: null,
-      },
-    };
-  }
+  return {
+    props: {
+      ...(await getI18nProps(ctx, ["common", "blog"])),
+      dataPost,
+      dataAllPost,
+    },
+  };
 };

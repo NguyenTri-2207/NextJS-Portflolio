@@ -33,46 +33,16 @@ export default Blog;
 export { getStaticPaths };
 export const getStaticProps = async (ctx) => {
   const locale = ctx.params.locale;
-  try {
-    // Fetch data from the first API endpoint for English posts
-    const res = await fetch(
-      `${process.env.NEXT_API_URL}/api/post-locales/${locale}`
-    );
-    const data = await res.json();
+  
+  // Import static data based on locale
+  const postsData = locale === 'vi' 
+    ? require('./posts-vi.json')
+    : require('./posts-en.json');
 
-    // Pass fetched data to serverSideTranslations
-    // // const translations = await serverSideTranslations(
-    // //   locale,
-    // //   ["common", "blog"],
-    // //   {
-    // //     i18n: {
-    // //       defaultLocale: "en",
-    // //       locales: ["en", "vi"],
-    // //     },
-    // //     resources: {
-    // //       en: {
-    // //         posts: data, // Dữ liệu tiếng Anh
-    // //       },
-    // //       vi: {
-    // //         posts: data, // Dữ liệu tiếng Việt
-    // //       },
-    // //     },
-    // //   }
-    // );
-
-    return {
-      props: {
-        ...(await getI18nProps(ctx, ["common", "blog"])),
-        data,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        ...(await getI18nProps(ctx, ["common", "blog"])),
-        data: null,
-      },
-    };
-  }
+  return {
+    props: {
+      ...(await getI18nProps(ctx, ["common", "blog"])),
+      data: postsData,
+    },
+  };
 };
