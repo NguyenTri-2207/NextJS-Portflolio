@@ -12,9 +12,7 @@ const Home = () => {
     <>
       <Head>
         {/* Meta title và description (rất quan trọng cho SEO) */}
-        <title>
-          Nguyễn Ngọc Trí - Cloud / DevOps Engineer (AWS) | Software Engineer
-        </title>
+        <title>Nguyễn Ngọc Trí - Cloud / DevOps Engineer (AWS) | Software Engineer</title>
         <meta
           name="description"
           content="Cloud / DevOps Engineer với 1+ năm kinh nghiệm vận hành hệ thống production trên AWS và 4+ năm làm Software Engineer (Frontend & Fullstack). Chuyên về AWS, CI/CD, và automation."

@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "id": 7,
+      "slug": "cloudhire",
+      "startYear": "2025",
+      "src": "/assets/cloudhire-ui-showcase.jpg",
+      "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
+      "href": "https://tringuyen.vercel.app/project/cloudhire",
+      "description": [
+        "🚀 100% Event-driven Serverless Architecture on AWS, optimizing operational costs to near $0 (NoOps) and auto-scaling with traffic.",
+        "⚡️ High Performance: API Gateway & Lambda handling thousands of requests/second, DynamoDB database with millisecond latency.",
+        "🛡️ Zero Trust Security: Cognito authentication, IAM Least Privilege authorization, and static content protection with CloudFront OAC."
+      ],
+      "category": "personal"
+    },
+    {
       "id": 1,
       "slug": "bbcincorp",
       "startYear": "2020 - 2024",

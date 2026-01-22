@@ -75,7 +75,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
-    require("@tailwindcss/line-clamp"),
     require("tailwind-bootstrap-grid")({
       containerMaxWidths: {
         sm: "540px",

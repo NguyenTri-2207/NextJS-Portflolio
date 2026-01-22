@@ -14,7 +14,7 @@ const Project = ({ data }) => {
   return (
     <>
       <Head>
-        <title>{String(t("project:banner.title") || "Projects")} - Nguyễn Ngọc Trí</title>
+        <title>{String(t("project:banner.title") || dataBanner?.title || "Projects")} - Nguyễn Ngọc Trí</title>
         <meta 
           name="description" 
           content={dataBanner?.described || "Explore my portfolio of web development and cloud infrastructure projects."} 
