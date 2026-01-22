@@ -1,4 +1,9 @@
 {
+  "banner": {
+    "title": "Dự án của Tôi",
+    "described": "Khám phá portfolio các dự án phát triển web và hạ tầng cloud của tôi. Từ ứng dụng full-stack đến triển khai AWS, khám phá các công nghệ và giải pháp tôi đã xây dựng.",
+    "breadcrumb": [{ "title": "Trang chủ", "url": "/" }, { "title": "Dự án" }]
+  },
   "project": [
     {
       "name": "Công ty",

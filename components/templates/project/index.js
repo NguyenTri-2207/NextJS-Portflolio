@@ -1,11 +1,15 @@
 import React from "react";
 import Project from "components/organisms/Project";
+import Banner from "./Banner";
 
-const ProjectTemplate = ({ data }) => {
+const ProjectTemplate = ({ data, dataBanner }) => {
   return (
-    <div className="section-template">
-      <Project data={data} />
-    </div>
+    <>
+      <Banner data={dataBanner} />
+      <div className="section-template">
+        <Project data={data} />
+      </div>
+    </>
   );
 };
 

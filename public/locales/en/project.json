@@ -1,4 +1,9 @@
 {
+  "banner": {
+    "title": "My Projects",
+    "described": "Explore my portfolio of web development and cloud infrastructure projects. From full-stack applications to AWS deployments, discover the technologies and solutions I've built.",
+    "breadcrumb": [{ "title": "Home", "url": "/" }, { "title": "Project" }]
+  },
   "project": [
     {
       "name": "company",
