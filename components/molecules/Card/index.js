@@ -22,8 +22,8 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
                 alt={title || "Project image"}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
                 src={src}
-                width={500}
-                height={300}
+                width={800}
+                height={450}
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 loading="lazy"
               />
@@ -33,8 +33,8 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
               alt={title || "Project image"}
               className="w-full h-full object-cover"
               src={src}
-              width={500}
-              height={300}
+              width={800}
+              height={450}
               sizes="(max-width: 1024px) 100vw, 40vw"
               loading="lazy"
             />

@@ -4,7 +4,7 @@
       "id": 7,
       "slug": "cloudhire",
       "startYear": "2025",
-      "src": "/assets/cloudhire-ui-showcase.jpg",
+      "src": "/assets/cloudhire-ui-showcase.png",
       "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
       "href": "https://tringuyen.vercel.app/project/cloudhire",
       "description": [
@@ -32,7 +32,7 @@
       "id": 8,
       "slug": "ielts-academy-ops",
       "startYear": "2024",
-      "src": "/assets/ielts-academy-terminal.jpg", 
+      "src": "/assets/ielts-academy-terminal.png", 
       "title": "IELTS Intensive Academy - Automated VPS Infrastructure & Optimization",
       "href": "https://ieltsintensiveacademy.vn",
       "description": [

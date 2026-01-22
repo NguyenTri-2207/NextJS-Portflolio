@@ -8,6 +8,7 @@ const Banner = ({ data: { greeting, name, position, description, buttons } }) =>
     <div className="container">
       <div className="row items-center justify-center">
         <div className="lg:col-6 lg:pr-12 mt-12 lg:mt-0 mb-10 lg:mb-0">
+          
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 uppercase tracking-wider">
             {greeting}
           </p>
@@ -23,11 +24,11 @@ const Banner = ({ data: { greeting, name, position, description, buttons } }) =>
             </p>
           )}
           {buttons && (
-            <div className="flex flex-wrap gap-3 mt-8">
+            <div className="flex flex-wrap items-center gap-3 mt-8">
               {buttons.map((button, index) => {
                 const iconMap = {
-                  about: <FaUser size={14} />,
-                  project: <FaFolder size={14} />,
+                  about: <FaUser size={12} />,
+                  project: <FaFolder size={12} />,
                 };
                 const iconKey = button.href?.replace("/", "") || button.icon;
                 const icon = iconMap[iconKey] || null;
@@ -36,10 +37,10 @@ const Banner = ({ data: { greeting, name, position, description, buttons } }) =>
                   <LinkComponent
                     key={index}
                     href={button.href}
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full hover:border-main dark:hover:border-main transition-colors"
+                    className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 shadow-sm backdrop-blur dark:bg-white/10 transition-all hover:bg-white/90 dark:hover:bg-white/20 hover:shadow-md hover:scale-105"
                   >
                     {icon && (
-                      <span className="mr-2 text-main">{icon}</span>
+                      <span className="text-main">{icon}</span>
                     )}
                     {button.label}
                   </LinkComponent>

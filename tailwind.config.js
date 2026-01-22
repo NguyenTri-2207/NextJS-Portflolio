@@ -63,6 +63,25 @@ module.exports = {
       fontFamily: {
         sans: ["Manrope", "sans-serif"],
       },
+      keyframes: {
+        "pulse-slow": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.6" },
+        },
+        "pulse-slower": {
+          "0%, 100%": { opacity: "0.3" },
+          "50%": { opacity: "0.5" },
+        },
+        "pulse-slowest": {
+          "0%, 100%": { opacity: "0.25" },
+          "50%": { opacity: "0.4" },
+        },
+      },
+      animation: {
+        "pulse-slow": "pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-slower": "pulse-slower 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-slowest": "pulse-slowest 8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
       variants: {
         typography: ["dark"],
       },

@@ -4,7 +4,7 @@
       "id": 7,
       "slug": "cloudhire",
       "startYear": "2025",
-      "src": "/assets/cloudhire-ui-showcase.jpg",
+      "src": "/assets/cloudhire-ui-showcase.png",
       "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
       "href": "https://tringuyen.vercel.app/project/cloudhire",
       "description": [
@@ -18,7 +18,7 @@
       "id": 1,
       "slug": "bbcincorp",
       "startYear": "2020 - 2026",
-      "src": "/assets/bbc.jpg",
+      "src": "/assets/bbc.png",
       "title": "BBCIncorp & Enterprise Ecosystem (Migration & Cloud Infrastructure)",
       "href": "https://bbcincorp.com/hk",
       "description": [
@@ -32,7 +32,7 @@
       "id": 8,
       "slug": "ielts-academy-ops",
       "startYear": "2024",
-      "src": "/assets/ielts-academy-terminal.jpg",
+      "src": "/assets/ielts-academy-terminal.png",
       "title": "IELTS Intensive Academy - Automated VPS Infrastructure & Optimization",
       "href": "https://ieltsintensiveacademy.vn",
       "description": [
