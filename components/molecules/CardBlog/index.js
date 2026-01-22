@@ -1,7 +1,7 @@
 import React from "react";
 import { FiCalendar } from "react-icons/fi";
 import Link from "components/molecules/Link";
-import Image from "next/image";
+import OptimizedImage from "components/molecules/OptimizedImage";
 
 function formatDate(inputDate) {
   const date = new Date(inputDate); // Tạo đối tượng Date từ chuỗi đầu vào
@@ -21,7 +21,7 @@ function CardBlog({ item, read }) {
       <div className="bg-white dark:bg-gray-800 h-full border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
         <Link href={`/blog/${item.url}`}>
           <div className="relative w-full h-48 overflow-hidden">
-            <Image
+            <OptimizedImage
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               src={item.image}
               width={400}

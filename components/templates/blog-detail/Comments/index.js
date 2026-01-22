@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { BiCommentDetail } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 import Link from "components/molecules/Link";
-import Image from "next/image";
+import OptimizedImage from "components/molecules/OptimizedImage";
 /*** Vendors ***/
 
 /*** components ***/
@@ -23,7 +23,7 @@ const Card = ({ data }) => {
       <div className="flex justify-between items-center mb-2">
         <div className="flex items-center">
           <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-            <Image
+            <OptimizedImage
               width={24}
               height={24}
               className="mr-2 w-6 h-6 rounded-full"

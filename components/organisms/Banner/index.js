@@ -50,14 +50,31 @@ const Banner = ({ data: { greeting, name, position, description, buttons } }) =>
           )}
         </div>
         <div className="lg:col-6 text-center">
-          <Image
-            src="/assets/banner/avatar.png"
-            className="rounded-full mx-auto"
-            width={350}
-            height={350}
-            alt="avatar"
-            priority
-          />
+          <picture>
+            {/* WebP format for modern browsers - better compression (~70% smaller than PNG) */}
+            <source
+              srcSet="/assets/banner/avatar-175w.webp 175w, /assets/banner/avatar-350w.webp 350w, /assets/banner/avatar-700w.webp 700w"
+              sizes="(max-width: 640px) 175px, 350px"
+              type="image/webp"
+            />
+            {/* Fallback PNG for older browsers */}
+            <source
+              srcSet="/assets/banner/avatar-175w.png 175w, /assets/banner/avatar-optimized.png 350w, /assets/banner/avatar-700w.png 700w"
+              sizes="(max-width: 640px) 175px, 350px"
+              type="image/png"
+            />
+            <img
+              src="/assets/banner/avatar-optimized.png"
+              srcSet="/assets/banner/avatar-175w.png 175w, /assets/banner/avatar-optimized.png 350w, /assets/banner/avatar-700w.png 700w"
+              sizes="(max-width: 640px) 175px, 350px"
+              className="rounded-full mx-auto"
+              width={350}
+              height={350}
+              alt="avatar"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
         </div>
       </div>
     </div>

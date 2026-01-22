@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Title from "components/atoms/Title";
 import Link from "components/molecules/Link";
-import Image from "next/image";
+import OptimizedImage from "components/molecules/OptimizedImage";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -65,7 +65,7 @@ function RelatedPost({ repoPost }) {
                 <div key={index} className=" px-4 overflow-hidden ">
                   <div className=" shadow-xl bg-white dark:bg-[#272b44] h-full rounded-lg ">
                     <a href="">
-                      <Image
+                      <OptimizedImage
                         className="rounded-t-lg"
                         src="/assets/banner-blog.png"
                         width={400}

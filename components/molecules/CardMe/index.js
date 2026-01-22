@@ -1,6 +1,6 @@
 import React from "react";
 import Social from "components/atoms/Social";
-import Image from "next/image";
+import OptimizedImage from "components/molecules/OptimizedImage";
 import {
   MdLocationOn,
   MdOutlineEmail,
@@ -27,7 +27,7 @@ const CardMe = ({ data }) => {
   return (
     <div className="col-12 md:col-8 lg:col-4 ">
       <div className="w-full mb-6 lg:mb-0 mx-auto bg-white dark:bg-gray-800 text-center px-6 py-8 rounded-lg border border-gray-200 dark:border-gray-700 lg:sticky lg:top-24">
-        <Image
+        <OptimizedImage
           width={200}
           height={200}
           src="/assets/banner/avt3.png"

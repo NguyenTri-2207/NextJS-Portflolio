@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import OptimizedImage from "components/molecules/OptimizedImage";
 import { FaLocationArrow } from "react-icons/fa";
 import Link from "components/molecules/Link";
 import { useTranslation } from "next-i18next";
@@ -18,7 +18,7 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
         <div className="lg:w-2/5 h-48 lg:h-auto overflow-hidden">
           {slug ? (
             <Link href={`/project/${slug}`}>
-              <Image
+              <OptimizedImage
                 alt={title || "Project image"}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
                 src={src}
@@ -29,7 +29,7 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
               />
             </Link>
           ) : (
-            <Image
+            <OptimizedImage
               alt={title || "Project image"}
               className="w-full h-full object-cover"
               src={src}

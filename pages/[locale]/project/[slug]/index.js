@@ -3,7 +3,7 @@ import React from "react";
 import { getI18nProps } from "lib/getStatic.js";
 import { useTranslation } from "next-i18next";
 import Head from "next/head";
-import Image from "next/image";
+import OptimizedImage from "components/molecules/OptimizedImage";
 import Link from "components/molecules/Link";
 import { FaLocationArrow } from "react-icons/fa";
 import Banner from "components/templates/project/Banner";
@@ -81,7 +81,7 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-700">
                   {dataProject.src && (
                     <div className="w-full h-64 lg:h-96 overflow-hidden">
-                      <Image
+                      <OptimizedImage
                         alt={dataProject.title || "Project image"}
                         className="w-full h-full object-cover"
                         src={dataProject.src}
@@ -111,7 +111,7 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                               )}
                               {section.image && (
                                 <div className="w-full overflow-hidden rounded-lg">
-                                  <Image
+                                  <OptimizedImage
                                     src={section.image}
                                     alt={section.title || `Section ${index + 1}`}
                                     width={800}
