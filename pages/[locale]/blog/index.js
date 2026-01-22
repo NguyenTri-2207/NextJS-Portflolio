@@ -16,9 +16,12 @@ const Blog = ({ data }) => {
     read: t("blog:read"),
     search: t("blog:search"),
   };
+  const canonicalUrl = "https://tringuyen.vercel.app/blog";
+  
   return (
     <>
       <Head>
+        <link rel="canonical" href={canonicalUrl} />
         <title>Blog-Nguyễn Ngọc Trí</title>
         <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
       </Head>

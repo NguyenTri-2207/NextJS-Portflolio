@@ -11,9 +11,12 @@ const Slug = ({ dataPost, dataAllPost }) => {
   const dataStaticBlog = {
     banner: t("blog:banner", { returnObjects: true }),
   };
+  const canonicalUrl = `https://tringuyen.vercel.app/blog/${dataPost?.url || ""}`;
+  
   return (
     <>
       <Head>
+        <link rel="canonical" href={canonicalUrl} />
         <title>{String(dataPost?.title || "Blog Post")}</title>
         <meta name="description" content={dataPost?.desc} />
         <meta name="keywords" content="từ khóa1, từ khóa2, từ khóa3" />

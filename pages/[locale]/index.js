@@ -8,9 +8,14 @@ const Home = () => {
   const { t } = useTranslation(["common", "home"]);
   const home = t("home:banner", { returnObjects: true });
   const menu = t("common:menu", { returnObjects: true });
+  
+  // Canonical URL: use default locale (en) to avoid duplicate content
+  const canonicalUrl = "https://tringuyen.vercel.app";
+  
   return (
     <>
       <Head>
+        <link rel="canonical" href={canonicalUrl} />
         {/* Meta title và description (rất quan trọng cho SEO) */}
         <title>Nguyễn Ngọc Trí - Cloud / DevOps Engineer (AWS) | Software Engineer</title>
         <meta

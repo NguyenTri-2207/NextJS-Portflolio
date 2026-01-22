@@ -11,9 +11,12 @@ const Project = ({ data }) => {
   const dataBanner = t("project:banner", { returnObjects: true });
   const projects = data?.projects || [];
   
+  const canonicalUrl = "https://tringuyen.vercel.app/project";
+  
   return (
     <>
       <Head>
+        <link rel="canonical" href={canonicalUrl} />
         <title>{String(t("project:banner.title") || dataBanner?.title || "Projects")} - Nguyễn Ngọc Trí</title>
         <meta 
           name="description" 
