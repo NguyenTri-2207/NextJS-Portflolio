@@ -8,7 +8,7 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
   const { t } = useTranslation(["project"]);
   const detailTexts = t("project:detail", { returnObjects: true });
   
-  if (!title || !description || !Array.isArray(description)) {
+  if (!title || !description || !Array.isArray(description) || description.length === 0) {
     return null;
   }
   
@@ -57,16 +57,18 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
               {title}
             </h3>
           )}
-          <div className="mb-4 space-y-2">
-            {description.map((item, index) => (
-              <p
-                key={index}
-                className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
-              >
-                {item}
-              </p>
-            ))}
-          </div>
+          {description && description.length > 0 && (
+            <div className="mb-4 space-y-2">
+              {description.map((item, index) => (
+                <p
+                  key={`desc-${index}-${item.substring(0, 20)}`}
+                  className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
+          )}
           <div className="flex items-center gap-4 flex-wrap">
             {slug && (
               <Link

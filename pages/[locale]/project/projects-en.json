@@ -34,7 +34,7 @@
       "startYear": "2024",
       "src": "/assets/ielts-academy-terminal.jpg",
       "title": "IELTS Intensive Academy - Automated VPS Infrastructure & Optimization",
-      "href": "https://ieltsintensiveacademy.com",
+      "href": "https://ieltsintensiveacademy.vn",
       "description": [
         "⚙️ Infrastructure Automation: Built Bash Scripts to automate entire server Provisioning process: Install LAMP Stack (Linux, Apache, MySQL, PHP), configure VirtualHost and system permissions in <5 minutes.",
         "🔐 Security Hardening: Established OS and Web Server level security: Auto SSL configuration (Certbot), optimized Security Headers (X-Frame, X-XSS), and strict permissions for Webroot/Storage.",

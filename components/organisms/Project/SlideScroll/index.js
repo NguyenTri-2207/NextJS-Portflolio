@@ -12,9 +12,9 @@ function SlideScroll({ data }) {
 
   return (
     <div className="space-y-8">
-      {data.map((item) => (
+      {data.map((item, index) => (
         <Card
-          key={item.id || `${item.slug}-${item.title}`}
+          key={item.id || item.slug || `project-${index}`}
           startYear={item.startYear}
           src={item.src}
           title={item.title}

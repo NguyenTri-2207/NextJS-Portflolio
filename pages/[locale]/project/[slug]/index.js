@@ -38,6 +38,10 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
   const homeMenu = menuItems.find(m => m.href === "/");
   const projectMenu = menuItems.find(m => m.href === "/project");
   
+  const description = Array.isArray(dataProject.description) 
+    ? dataProject.description.join(" ") 
+    : dataProject.description || "";
+
   const dataBanner = {
     breadcrumb: [
       { title: homeMenu?.name || "Home", url: "/" },
@@ -45,14 +49,8 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
       { title: dataProject.title }
     ],
     title: dataProject.title,
-    described: Array.isArray(dataProject.description) 
-      ? dataProject.description.join(" ") 
-      : dataProject.description || ""
+    described: description
   };
-
-  const description = Array.isArray(dataProject.description) 
-    ? dataProject.description.join(" ") 
-    : dataProject.description || "";
 
   const otherProjects = dataAllProjects?.projects
     ?.filter((p) => p.id !== dataProject.id)
@@ -72,6 +70,7 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
         {dataProject.src && (
           <meta property="og:image" content={`https://tringuyen.vercel.app${dataProject.src}`} />
         )}
+        <meta property="og:image:alt" content={dataProject.title} />
       </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
         <Banner data={dataBanner} />
@@ -80,17 +79,19 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
             <div className="row">
               <div className="col-12 lg:col-8">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-700">
-                  <div className="w-full h-64 lg:h-96 overflow-hidden">
-                    <Image
-                      alt={dataProject.title}
-                      className="w-full h-full object-cover"
-                      src={dataProject.src}
-                      width={1200}
-                      height={600}
-                      sizes="(max-width: 1024px) 100vw, 66vw"
-                      priority
-                    />
-                  </div>
+                  {dataProject.src && (
+                    <div className="w-full h-64 lg:h-96 overflow-hidden">
+                      <Image
+                        alt={dataProject.title || "Project image"}
+                        className="w-full h-full object-cover"
+                        src={dataProject.src}
+                        width={1200}
+                        height={600}
+                        sizes="(max-width: 1024px) 100vw, 66vw"
+                        priority
+                      />
+                    </div>
+                  )}
                   <div className="p-6 lg:p-8">
                     <div className="mb-4">
                       <time className="text-sm text-gray-500 dark:text-gray-400 italic">
@@ -102,7 +103,7 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                         {Array.isArray(dataProject.content) ? (
                           // New structure: array of content objects
                           dataProject.content.map((section, index) => (
-                            <div key={index} className="space-y-4">
+                            <div key={`section-${index}-${section.title || index}`} className="space-y-4">
                               {section.title && (
                                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
                                   {section.title}
@@ -124,10 +125,10 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                                   {section.description}
                                 </p>
                               )}
-                              {section.list && Array.isArray(section.list) && (
+                              {section.list && Array.isArray(section.list) && section.list.length > 0 && (
                                 <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                                   {section.list.map((item, itemIndex) => (
-                                    <li key={itemIndex} className="leading-relaxed">
+                                    <li key={`item-${index}-${itemIndex}`} className="leading-relaxed">
                                       {item}
                                     </li>
                                   ))}
@@ -170,7 +171,7 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                     <div className="space-y-4">
                       {otherProjects.map((project) => (
                         <Link
-                          key={project.id}
+                          key={project.id || project.slug}
                           href={`/project/${project.slug}`}
                           className="block p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-main dark:hover:border-main transition-colors"
                         >
