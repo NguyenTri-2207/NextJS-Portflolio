@@ -14,7 +14,7 @@ const Slug = ({ dataPost, dataAllPost }) => {
   return (
     <>
       <Head>
-        <title>{dataPost?.title}</title>
+        <title>{String(dataPost?.title || "Blog Post")}</title>
         <meta name="description" content={dataPost?.desc} />
         <meta name="keywords" content="từ khóa1, từ khóa2, từ khóa3" />
 

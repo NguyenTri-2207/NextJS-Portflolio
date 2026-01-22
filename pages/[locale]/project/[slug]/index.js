@@ -61,7 +61,7 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
   return (
     <>
       <Head>
-        <title>{dataProject.title} - Nguyễn Ngọc Trí</title>
+        <title>{String(dataProject.title || "Project")} - Nguyễn Ngọc Trí</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={`${dataProject.title}, project, portfolio, ${dataProject.category || ""}`} />
         <link rel="canonical" href={`https://tringuyen.vercel.app/project/${dataProject.slug}`} />

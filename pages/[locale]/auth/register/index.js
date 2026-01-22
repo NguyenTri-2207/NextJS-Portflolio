@@ -57,9 +57,8 @@ function Login(props) {
   return (
     <>
       <Head>
-        <title>Register-Nguyễn Ngọc Trí</title>{" "}
-        <meta name="description" content="Blog Page Nguyễn Ngọc Trí"></meta>
-        <meta name="description" content="Register Page Nguyễn Ngọc Trí"></meta>
+        <title>Register - Nguyễn Ngọc Trí</title>
+        <meta name="description" content="Register Page Nguyễn Ngọc Trí" />
       </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
         <section className="dark:bg-bgHome-dark  h-screen    bg-bgHome-white  ">

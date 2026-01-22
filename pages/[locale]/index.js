@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import { getStaticPaths, makeStaticProps } from "lib/getStatic";
 import HomepageTempalte from "components/templates/home";
-import Head from "node_modules/next/head";
+import Head from "next/head";
 import Layout from "components/organisms/LayoutTemplate";
 
 const Home = () => {
