@@ -3,7 +3,7 @@ import Project from "components/organisms/Project";
 
 const ProjectTemplate = ({ data }) => {
   return (
-    <div className="section-tempale">
+    <div className="section-template">
       <Project data={data} />
     </div>
   );

@@ -43,12 +43,10 @@ const App = ({ Component, pageProps }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        {/* <meta name="robots" content="index, follow" /> */}
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         ></meta>
-        {/* chỉnh lại url cho khớp từng page */}
         <link rel="canonical" href="https://tringuyen.vercel.app" />
       </Head>
       <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>

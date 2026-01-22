@@ -13,14 +13,14 @@
   
   body {
     @apply relative min-h-screen;
-    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 50%, #f5f6f7 100%);
   }
   
   html.dark body {
-    background: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
+    background: linear-gradient(to bottom, #1a1d24 0%, #1f2329 50%, #252932 100%);
   }
 }
 
-.section-tempale {
+.section-template {
   @apply pt-10 lg:pt-16 relative;
 }

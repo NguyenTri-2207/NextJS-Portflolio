@@ -1,7 +1,7 @@
 {
   "banner": {
-    "title": "Từ Ý tưởng đến Mã nguồn: Hành trình Phát triển Web của Tôi",
-    "described": "Hãy cùng tham gia vào một hành trình vào thế giới của phát triển web khi tôi chia sẻ những hiểu biết, mẹo và kỹ thuật để tạo ra các trang web hấp dẫn và hiệu quả.",
+    "title": "Từ Mã nguồn đến Cloud: Hành trình DevOps & Phát triển Web của Tôi",
+    "described": "Hãy cùng tôi chia sẻ những hiểu biết về Cloud/DevOps engineering, hạ tầng AWS, CI/CD pipelines, và phát triển full-stack. Học hỏi từ những kinh nghiệm thực tế trong việc xây dựng các hệ thống có khả năng mở rộng, bảo mật và tối ưu chi phí.",
     "minutes": "6 phút đọc",
     "breadcrumb": [
       { "title": "Trang chủ", "url": "/" },

@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Bắt đầu với AWS EC2: Hướng dẫn cho người mới",
+      "desc": "Tìm hiểu những kiến thức cơ bản về AWS EC2 và cách khởi chạy máy chủ ảo đầu tiên của bạn trên cloud.",
+      "image": "/assets/blog/aws-ec2.jpg",
+      "url": "getting-started-with-aws-ec2",
+      "updatedAt": "2024-01-15T00:00:00Z",
+      "createdAt": "2024-01-15T00:00:00Z",
+      "contents": "<h2>Giới thiệu về AWS EC2</h2><p>Amazon Elastic Compute Cloud (EC2) là một dịch vụ web cung cấp khả năng tính toán có thể thay đổi kích thước trên cloud. Nó được thiết kế để làm cho điện toán đám mây quy mô web dễ dàng hơn cho các nhà phát triển.</p><h2>Tính năng chính</h2><ul><li>Điện toán web quy mô linh hoạt</li><li>Kiểm soát hoàn toàn tài nguyên tính toán của bạn</li><li>Dịch vụ lưu trữ cloud linh hoạt</li></ul>"
+    },
+    {
+      "id": 2,
+      "title": "Xây dựng CI/CD Pipelines với GitHub Actions",
+      "desc": "Khám phá cách tự động hóa quy trình build, test và deployment bằng GitHub Actions.",
+      "image": "/assets/blog/github-actions.jpg",
+      "url": "building-cicd-pipelines-with-github-actions",
+      "updatedAt": "2024-02-10T00:00:00Z",
+      "createdAt": "2024-02-10T00:00:00Z",
+      "contents": "<h2>CI/CD là gì?</h2><p>CI/CD là viết tắt của Continuous Integration và Continuous Deployment. Nó tự động hóa quy trình build, test và triển khai ứng dụng.</p><h2>GitHub Actions Workflow</h2><p>GitHub Actions cho phép bạn tự động hóa các workflow trực tiếp trong repository GitHub của bạn. Bạn có thể tạo các workflow tùy chỉnh cho build, test và deployment.</p>"
+    },
+    {
+      "id": 3,
+      "title": "Docker Containerization: Từ Development đến Production",
+      "desc": "Hướng dẫn toàn diện về container hóa ứng dụng với Docker và triển khai chúng hiệu quả.",
+      "image": "/assets/blog/docker.jpg",
+      "url": "docker-containerization-guide",
+      "updatedAt": "2024-03-05T00:00:00Z",
+      "createdAt": "2024-03-05T00:00:00Z",
+      "contents": "<h2>Docker là gì?</h2><p>Docker là một nền tảng để phát triển, vận chuyển và chạy ứng dụng trong containers. Containers cho phép bạn đóng gói một ứng dụng với tất cả các dependencies của nó.</p><h2>Lợi ích của Containerization</h2><ul><li>Tính nhất quán giữa các môi trường</li><li>Cô lập và bảo mật</li><li>Khả năng mở rộng</li></ul>"
+    }
+  ]
+}
+

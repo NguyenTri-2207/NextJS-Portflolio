@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Getting Started with AWS EC2: A Beginner's Guide",
+      "desc": "Learn the fundamentals of AWS EC2 and how to launch your first virtual server in the cloud.",
+      "image": "/assets/blog/aws-ec2.jpg",
+      "url": "getting-started-with-aws-ec2",
+      "updatedAt": "2024-01-15T00:00:00Z",
+      "createdAt": "2024-01-15T00:00:00Z",
+      "contents": "<h2>Introduction to AWS EC2</h2><p>Amazon Elastic Compute Cloud (EC2) is a web service that provides resizable compute capacity in the cloud. It's designed to make web-scale cloud computing easier for developers.</p><h2>Key Features</h2><ul><li>Elastic web-scale computing</li><li>Complete control of your computing resources</li><li>Flexible cloud hosting services</li></ul>"
+    },
+    {
+      "id": 2,
+      "title": "Building CI/CD Pipelines with GitHub Actions",
+      "desc": "Discover how to automate your build, test, and deployment processes using GitHub Actions.",
+      "image": "/assets/blog/github-actions.jpg",
+      "url": "building-cicd-pipelines-with-github-actions",
+      "updatedAt": "2024-02-10T00:00:00Z",
+      "createdAt": "2024-02-10T00:00:00Z",
+      "contents": "<h2>What is CI/CD?</h2><p>CI/CD stands for Continuous Integration and Continuous Deployment. It automates the process of building, testing, and deploying applications.</p><h2>GitHub Actions Workflow</h2><p>GitHub Actions allows you to automate workflows directly in your GitHub repository. You can create custom workflows for build, test, and deployment.</p>"
+    },
+    {
+      "id": 3,
+      "title": "Docker Containerization: From Development to Production",
+      "desc": "A comprehensive guide to containerizing applications with Docker and deploying them efficiently.",
+      "image": "/assets/blog/docker.jpg",
+      "url": "docker-containerization-guide",
+      "updatedAt": "2024-03-05T00:00:00Z",
+      "createdAt": "2024-03-05T00:00:00Z",
+      "contents": "<h2>What is Docker?</h2><p>Docker is a platform for developing, shipping, and running applications in containers. Containers allow you to package an application with all its dependencies.</p><h2>Benefits of Containerization</h2><ul><li>Consistency across environments</li><li>Isolation and security</li><li>Scalability</li></ul>"
+    }
+  ]
+}
+

@@ -6,7 +6,7 @@ import SlideScroll from "components/organisms/SlideScroll";
 const About = ({ dataInfo, dataSocial, dataSkill, dataExperience }) => {
   return (
     <>
-      <section className="section-tempale min-h-screen">
+      <section className="section-template min-h-screen">
         <div className="container">
           <div className="row justify-center">
             <CardMe data={dataSocial} />
@@ -44,7 +44,7 @@ const About = ({ dataInfo, dataSocial, dataSkill, dataExperience }) => {
           </div>
         </div>
       </section>
-      <section className="section-tempale">
+      <section className="section-template">
         <Skill dataSkills={dataSkill} />
       </section>
     </>

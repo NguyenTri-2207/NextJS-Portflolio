@@ -1,7 +1,7 @@
 {
   "banner": {
-    "title": "From Concept to Code: My Web Development Odyssey",
-    "described": "Join me on a journey into the world of web development as I share insights, tips, and techniques for creating engaging and efficient websites.",
+    "title": "From Code to Cloud: My DevOps & Web Development Journey",
+    "described": "Join me as I share insights on Cloud/DevOps engineering, AWS infrastructure, CI/CD pipelines, and full-stack development. Learn from real-world experiences in building scalable, secure, and cost-optimized systems.",
     "minutes": "6 minutes read",
     "breadcrumb": [{ "title": "Home", "url": "/" }, { "title": "Blog" }]
   },
