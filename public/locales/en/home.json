@@ -1,7 +1,18 @@
 {
   "banner": {
-    "greeting": "HELLO DEAR",
-    "name": "I'm Tri Nguyen",
-    "position": "Web Developer"
+    "greeting": "Hello, I'm",
+    "name": "Nguyen Ngoc Tri",
+    "position": "Cloud / DevOps Engineer (AWS)",
+    "description": "With 1+ year of hands-on experience operating production systems on AWS and 4+ years as a Software Engineer (Frontend & Fullstack). Specialized in designing, deploying, and operating scalable, secure, and cost-optimized AWS architectures.",
+    "buttons": [
+      {
+        "label": "About Me",
+        "href": "/about"
+      },
+      {
+        "label": "Projects",
+        "href": "/project"
+      }
+    ]
   }
 }

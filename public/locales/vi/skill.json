@@ -1,35 +1,54 @@
 {
-  "dataCardYear": [
+  "dataSkills": [
     {
-      "year": "2023",
-      "title": "Middle Front-End Developer",
-      "des": [
-        "- Xây dựng nguồn Nextjs và tailwindcss",
-        "- Làm việc với AWS CodeBuild và Amazon S3"
-      ],
-      "company": "Gleads Việt Nam",
-      "companyLink": "https://gleads.vn"
+      "category": "Cloud & DevOps",
+      "items": [
+        {
+          "title": "AWS",
+          "description": "EC2, ECS, RDS, S3, CloudFront, IAM, CloudWatch, Route53, SNS/SQS (basic)"
+        },
+        {
+          "title": "CI/CD",
+          "description": "GitHub Actions (build → test → deploy automation)"
+        },
+        {
+          "title": "Containerization",
+          "description": "Docker, Docker Compose"
+        },
+        {
+          "title": "IaC / Configuration",
+          "description": "Terraform (learning & hands-on labs), Ansible (basic)"
+        },
+        {
+          "title": "Monitoring & Logging",
+          "description": "CloudWatch, Nginx logs, PM2 logs"
+        },
+        {
+          "title": "Security",
+          "description": "IAM best practices, SSL/TLS, WAF (basic), API security"
+        },
+        {
+          "title": "System",
+          "description": "Linux (Ubuntu), Nginx, PM2, Bash scripting"
+        }
+      ]
     },
     {
-      "year": "2021",
-      "title": "Junior Front-End Developer",
-      "des": [
-        "- Xây dựng nguồn Nextjs và bootstrap",
-        "- Chuyển đổi trang web <a target='_blank' href='https://bbcincorp.com'>BBCIncorp</a> từ GulpJs sang NextJs",
-        "- Phân rã giao diện người dùng thành các thành phần Atomic Design"
-      ],
-      "company": "Gleads Việt Nam",
-      "companyLink": "https://bbcincorp.com"
-    },
-    {
-      "year": "2020",
-      "title": "Fresher Front-End Developer",
-      "des": [
-        "- Xây dựng các trang web tương tác và đáp ứng như các trang web Novaland, Gumac, Adco, dựa trên công nghệ kiểu Javascript, như React Js",
-        "- Làm việc với Typescript, ReactJs, HTML5, SCSS..."
-      ],
-      "company": "3Forcom",
-      "companyLink": "https://www.3forcom.com/"
+      "category": "Application Development",
+      "items": [
+        {
+          "title": "Frontend",
+          "description": "React.js, Next.js, TypeScript, Redux Toolkit, Zustand, TailwindCSS, Ant Design, SEO, CSR/SSR/SSG/ISR"
+        },
+        {
+          "title": "Backend",
+          "description": "Node.js, Express.js, REST APIs, JWT authentication, MongoDB, MySQL, AWS RDS"
+        },
+        {
+          "title": "Others",
+          "description": "WordPress"
+        }
+      ]
     }
   ]
 }

@@ -1,48 +1,79 @@
 {
   "info": {
     "who": "Tôi là ai?",
-    "im": "Tôi là Trí là một ",
-    "position": "Nhà phát triển Front-End",
-    "company": "Tôi là một Kỹ sư Phần mềm với hơn 3 năm kinh nghiệm về React và quản lý trạng thái như Redux, có chuyên môn về các công nghệ web như HTML5, CSS3, JavaScript, xây dựng ứng dụng web quy mô lớn, nền tảng tương thích với nhiều trình duyệt, và các ràng buộc thiết kế trên web, cũng như xây dựng giao diện người dùng đáp ứng.",
+    "im": "Tôi là Trí, một ",
+    "position": "Cloud / DevOps Engineer (AWS) – Software Engineer Background",
+    "company": "Cloud / DevOps Engineer với hơn 1 năm kinh nghiệm vận hành hệ thống production trên AWS và 4+ năm làm Software Engineer (Frontend & Fullstack). Có kinh nghiệm trong việc thiết kế, triển khai và vận hành kiến trúc AWS có khả năng mở rộng, bảo mật và tối ưu chi phí, xây dựng CI/CD pipelines, và tự động hóa infrastructure và deployments. Nền tảng kỹ thuật phần mềm vững chắc giúp hiểu sâu về application lifecycle, hành vi hệ thống trong production, và hợp tác hiệu quả với development teams, hỗ trợ shift-left DevOps mindset.",
     "responsibilities": [
-      "✨ Hệ thống quản lý phiên bản (GIT), Công cụ theo dõi lỗi (Jira, Clickup), nền tảng thiết kế (Figma), và framework kiểm thử như Jet.",
-      "✨ Ngôn ngữ: React, Typescript, JavaScript, NodeJS.",
-      "✨ Công nghệ web: HTML5, CSS3, SASS",
-      "✨ Bootsrap4, TailwindCSS",
-      "✨ Cơ sở dữ liệu: MongoDB",
-      "✨Công cụ khác: Công cụ tối ưu hóa hiệu suất, Kiểm thử đa trình duyệt: BrowserStack, Nền tảng Lưu trữ Web: Vercel, AWS, Hệ thống Quản lý Nội dung (CMS): WordPress."
+      "☁️ Cloud & DevOps: AWS (EC2, ECS, RDS, S3, CloudFront, IAM, CloudWatch, Route53), CI/CD (GitHub Actions), Docker, Terraform, Ansible, Monitoring (CloudWatch, Nginx logs, PM2 logs)",
+      "💻 Frontend: React.js, Next.js, TypeScript, Redux Toolkit, Zustand, TailwindCSS, Ant Design, SEO, CSR/SSR/SSG/ISR",
+      "⚙️ Backend: Node.js, Express.js, REST APIs, JWT authentication, MongoDB, MySQL, AWS RDS",
+      "🛠️ Khác: WordPress, Linux (Ubuntu), Nginx, PM2, Bash scripting, Security (IAM, SSL/TLS, WAF)"
     ]
   },
   "experience": {
-    "title": "Những gì tôi làm!",
+    "title": "EXPERIENCE",
     "list": [
       {
-        "startYear": "05/2021",
+        "startYear": "04/2021",
         "endYear": "Present",
-        "title": "Nhà phát triển Front-End",
-        "company": "Gleads - Quận 7, HCM",
-        "description": "Chuyển đổi website bbcincorp.com từ GulpJs sang NextJs, Cấu hình và xây dựng nguồn NextJS, Phân tích hình ảnh và xây dựng các thành phần giao diện người dùng bằng Atomic Design"
+        "title": "Cloud Engineer / Frontend Lead / Fullstack Developer",
+        "company": "GLEADS - Quận 7, HCM",
+        "description": [
+          "Cloud Engineer (04/2025 – Present):",
+          "• Thiết kế và triển khai production workloads trên AWS EC2 và ECS, đảm bảo high availability và scalability",
+          "• Tối ưu chi phí infrastructure cho EC2 và RDS thông qua instance sizing, environment separation, và usage monitoring",
+          "• Xây dựng CI/CD pipelines sử dụng GitHub Actions để tự động hóa build, test, và deployment processes",
+          "• Giám sát system health và performance sử dụng CloudWatch, logs, và alarms; thực hiện root-cause analysis cho incidents",
+          "• Áp dụng AWS security best practices với IAM roles, security groups, HTTPS, và network isolation",
+          "",
+          "Frontend Lead (07/2023 – 03/2025):",
+          "• Dẫn dắt team frontend gồm 4 engineers; thực hiện code reviews và chuẩn hóa coding conventions",
+          "• Thiết kế Next.js architecture cho large-scale applications với focus vào SEO, Lighthouse score, và bundle optimization",
+          "• Hợp tác chặt chẽ với backend và cloud teams để đảm bảo smooth CI/CD integration và stable production releases",
+          "• Tích cực tham gia deployment planning và production issue troubleshooting",
+          "",
+          "Fullstack Developer (03/2021 – 06/2023):",
+          "• Dẫn dắt migration từ SlugJS sang Next.js, cải thiện PageSpeed score từ 20 → 80 và Core Web Vitals",
+          "• Triển khai và vận hành backend services trên EC2 sử dụng Nginx + PM2, kết nối RDS MySQL và MongoDB",
+          "• Xây dựng và bảo mật REST APIs với JWT authentication, refresh tokens, webhooks, cron jobs, và email services",
+          "• Quản lý static assets và logs sử dụng S3, cấu hình Route53 health checks, và giám sát qua CloudWatch",
+          "• Tích hợp payment systems (Stripe, Airwallex) và analytics tools (GTM, Matomo)",
+          "",
+          "Key Projects: bbcincorp.com, visa2asia.com, gleads.vn, BBCIncorp Portal"
+        ]
       },
       {
         "startYear": "12/2020",
         "endYear": "05/2021",
-        "title": "Nhà phát triển Front-End",
+        "title": "Frontend Developer",
         "company": "3FORCOM - Quận 10, HCM",
-        "description": "Chuyên gia trong việc tạo ra các trang web tương tác và đáp ứng tương tự như các nền tảng nổi tiếng như Novaland, Gumac và Adco. Thạo việc sử dụng các công nghệ dựa trên JavaScript, đặc biệt là React.js, để cung cấp các giải pháp web tiên tiến."
+        "description": [
+          "• Phát triển website enterprise và e-commerce sử dụng React.js và TypeScript",
+          "• Chuyển đổi UI designs từ Figma thành responsive, cross-browser web applications",
+          "• Tích hợp APIs và tối ưu performance cho high-traffic landing pages"
+        ]
       },
       {
         "startYear": "06/2019",
         "endYear": "12/2020",
-        "title": "Data Warehouse Engineer ",
-        "company": "Mirae Asset Finance Vietnam ",
-        "description": "Quản lý hệ thống kho dữ liệu, đảm bảo tính ổn định và hiệu suất. Làm việc với Oracle Enterprise Manager để theo dõi và giải quyết các vấn đề."
+        "title": "Data Warehouse Engineer",
+        "company": "MIRAE ASSET - HCM",
+        "description": [
+          "• Vận hành và giám sát enterprise Data Warehouse systems",
+          "• Tối ưu SQL queries và hỗ trợ BI/reporting teams",
+          "• Xây dựng nền tảng vững chắc về data systems, monitoring, và production operations"
+        ]
       },
       {
         "startYear": "09/2014",
         "endYear": "05/2019",
-        "title": "ĐH GTVT HCM",
-        "company": "450 Lê Văn Việt-Q.9, HCM",
-        "description": "Tôi đã có kiến thức toàn diện về thiết kế cơ sở dữ liệu, Node.js, HTML, CSS và lập trình di động. Hành trình học tập này đã cung cấp cho tôi một nền tảng vững chắc về khoa học máy tính, hình thành kỹ năng và hiểu biết của tôi trong những lĩnh vực quan trọng này."
+        "title": "Cử nhân Kỹ thuật Phần mềm",
+        "company": "Đại học Giao thông Vận tải TP.HCM",
+        "description": [
+          "• Tốt nghiệp Cử nhân Kỹ thuật Phần mềm",
+          "• Nền tảng vững chắc về khoa học máy tính, thiết kế cơ sở dữ liệu, và phát triển phần mềm"
+        ]
       }
     ]
   },

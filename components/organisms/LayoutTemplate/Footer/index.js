@@ -16,15 +16,15 @@ const Footer = () => {
   };
   return (
     <footer id="dk-footer" className="relative">
-      <section className="dark:bg-[#272b44] bg-white">
-        <div className="max-w-screen-xl px-4 py-8 mx-auto overflow-hidden sm:px-6 lg:px-8">
+      <section className="dark:bg-gray-900 bg-white border-t border-gray-200 dark:border-gray-800">
+        <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8">
           <nav className="flex flex-wrap justify-center -mx-5 -my-2">
             {dataMenu.map((item, index) => {
               return (
                 <div className="px-5 py-2" key={index}>
                   <Link
                     href={item.href}
-                    className="text-base leading-2 dark:text-white  hover:text-main"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -32,12 +32,15 @@ const Footer = () => {
               );
             })}
           </nav>
-          <p className="mt-6 text-base leading-2 text-center dark:text-gray-400 text-gray-600">
-            © 2021 SomeCompany, Inc. All rights reserved.
+          <p className="mt-6 text-sm text-center text-gray-500 dark:text-gray-500">
+            © {new Date().getFullYear()} Nguyễn Ngọc Trí. All rights reserved.
           </p>
-          <div className="flex justify-end">
-            <button onClick={() => goToTop()}>
-              <BsFillArrowUpCircleFill size={26} className="dark:text-white " />
+          <div className="flex justify-end mt-4">
+            <button
+              onClick={() => goToTop()}
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              <BsFillArrowUpCircleFill size={24} />
             </button>
           </div>
         </div>

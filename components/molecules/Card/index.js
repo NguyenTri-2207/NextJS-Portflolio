@@ -1,93 +1,56 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
-import { AiOutlineEye } from "react-icons/ai";
-import { FaLocationArrow, FaGithub } from "react-icons/fa";
-const Card = ({ startYear, title, src, description, href, even, github }) => {
+import { FaLocationArrow } from "react-icons/fa";
+
+const Card = ({ startYear, title, src, description, href }) => {
   return (
-    <div className="mb-10 col-12 sm:col-8 lg:col-10 mx-auto">
-      <div
-        className={`${
-          even ? "lg:flex" : " lg:flex lg:flex-row-reverse "
-        } group bg-gray-900 text-white shadow-lg  rounded-lg  lg:min-h-[280px] overflow-hidden relative `}
-      >
-        <div className=" h-[200px] lg:h-[300px]  lg:col-5 overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-700">
+      <div className="lg:flex">
+        <div className="lg:w-2/5 h-48 lg:h-auto overflow-hidden">
           <Image
-            alt="img"
-            className="w-full h-full group-hover:scale-110 transition delay-150 duration-300 ease-in-out"
+            alt={title}
+            className="w-full h-full object-cover"
             src={src}
-            width={420}
-            sizes="100vw"
+            width={500}
             height={300}
+            sizes="(max-width: 1024px) 100vw, 40vw"
           />
         </div>
-        <div className="lg:col-7 p-6 relative z-10">
-          <div
-            className={`${
-              even
-                ? "top-0 -left-5 rotate-[4deg] "
-                : " top-0 -right-5 -rotate-[4deg]"
-            } w-10 h-[110%] bg-gray-900 absolute -z-10`}
-          ></div>
-          <h5 className="text-2xl pb-2 text-yellow group-hover:text-yellow transition delay-150 duration-300 ease-in-out">
-            {title}
-          </h5>
-          <div className=" text-sm mb-4">
-            <time className=" pb-0.5 italic" dateTime="2020-05-25 12:00:00">
+        <div className="lg:w-3/5 p-6">
+          <div className="mb-3">
+            <time className="text-sm text-gray-500 dark:text-gray-400 italic">
               {startYear}
             </time>
-            <div className="border-b border-yellow w-10 group-hover:w-[100px] transition delay-300 duration-300 ease-in-out"></div>
           </div>
-          <div className="" />
-          <div className="mb-4  text-sm ">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            {title}
+          </h3>
+          <div className="mb-4 space-y-2">
             {description.map((item, index) => (
-              <li
-                className=" line-clamp-2 relative list-none before:w-1 before:h-1 before:bg-yellow before:absolute before:rounded-full pl-3 before:top-2 before:left-0 mb-1 last:mb-0"
+              <p
                 key={index}
+                className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
               >
                 {item}
-              </li>
+              </p>
             ))}
           </div>
-          <ul className="flex text-sm ">
-            <li className=" mr-4">
-              <a
-                className=" mr-2 cursor-pointer flex items-center hover:text-yellow"
-                target="_blank"
-                href={href.toString()}
-                rel="noreferrer"
-              >
-                <FaLocationArrow
-                  size={10}
-                  className="mr-2 lg:mr-4 text-yellow"
-                />
-                Website
-              </a>
-            </li>
-            <li className=" mr-4">
-              <a
-                className=" cursor-pointer flex items-center hover:text-yellow"
-                target="_blank"
-                href={href.toString()}
-                rel="noreferrer"
-              >
-                <FaGithub size={16} className="mr-2 text-yellow" /> Github
-              </a>
-            </li>
-            <li>
-              <button className="flex items-center hover:text-yellow">
-                <AiOutlineEye size={18} className="mr-1  text-yellow" /> Read
-                more
-              </button>
-            </li>
-          </ul>
+          {href && href !== "/" && (
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              <FaLocationArrow size={12} className="mr-2" />
+              Xem website
+            </a>
+          )}
         </div>
       </div>
     </div>
   );
 };
-
-Card.propTypes = {};
 
 export default Card;

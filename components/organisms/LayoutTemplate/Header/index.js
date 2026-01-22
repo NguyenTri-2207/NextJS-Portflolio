@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
@@ -50,31 +49,39 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
   return (
     <header
       ref={ref}
-      className="fixed top-0 left-0 z-50 w-full dark:bg-[#272b44] bg-white text-gleads-oxfordBlue-900 shadow-md  "
+      className="fixed top-0 left-0 z-50 w-full dark:bg-gray-900 bg-white border-b border-gray-200 dark:border-gray-800"
       id="header"
     >
       <nav className="container">
         <div className="row py-4 items-center">
-          <div className="lg:col-1 col-2 h-10">
-            <Image src="/assets/logo.png" alt="logo" width={40} height={40} />
+          <div className="lg:col-1 col-2 h-8 flex items-center">
+            <LinkComponent 
+              href="/"
+              className="text-lg lg:text-xl font-bold text-gray-900 dark:text-white hover:opacity-80 transition-opacity tracking-wider"
+            >
+              TRI<span className="text-main">NG</span>UYEN
+            </LinkComponent>
           </div>
-          <div className=" lg:col-11 col-10 flex  lg:justify-start justify-end xl:justify-end items-center h-10">
-            <div className="lg:col-8 xl:col-7 hidden lg:block ">
+          <div className="lg:col-11 col-10 flex lg:justify-start justify-end xl:justify-end items-center h-10">
+            <div className="lg:col-8 xl:col-7 hidden lg:block">
               <ul className="flex items-center">
                 {Array.isArray(dataMenu) &&
                   dataMenu?.map((item, index) => {
+                    const isActive = checkLinkActive(item);
                     return (
-                      <li key={index} className="mr-10 lg:mr-14 last:mr-0 ">
+                      <li key={index} className="mr-8 lg:mr-10 last:mr-0">
                         <LinkComponent
                           href={item.href}
-                          className={` transition-all duration-300 ease-in-out  ${
-                            checkLinkActive(item)
-                              ? "dark:text-main text-blue-700"
-                              : "dark:text-white "
-                          }  "  block cursor-pointer font-semibold hover:text-main  before:transition-all before:delay-150 before:duration-150 before:ease-in-out 
-                         relative before:absolute before:left-0 before:-bottom-1 before:w-0 hover:before:w-full before:h-0.5  before:bg-main`}
+                          className={`block cursor-pointer font-semibold transition-all duration-200 relative ${
+                            isActive
+                              ? "text-main dark:text-main"
+                              : "text-gray-700 dark:text-gray-300 hover:text-main dark:hover:text-main"
+                          }`}
                         >
                           {item.name}
+                          {isActive && (
+                            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-main"></span>
+                          )}
                         </LinkComponent>
                       </li>
                     );
@@ -88,12 +95,12 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
                 <button
                   onClick={() => onSwitchAction()}
                   type="button"
-                  className=" dark:bg-white  bg-slate-200 rounded-full p-1.5 mr-4 shadow-xl text-black hover:bg-main  transition-all hover:duration-150 delay-200 ease-in-out"
+                  className="p-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mr-3"
                 >
                   {isToggleOn ? (
-                    <MdDarkMode className=" transition ease-in-out" />
+                    <MdDarkMode size={20} />
                   ) : (
-                    <MdOutlineLightMode className=" transition ease-in-out" />
+                    <MdOutlineLightMode size={20} />
                   )}
                 </button>
                 <SelectSwitchLanguage />
@@ -128,7 +135,7 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
 
       {/* nav left */}
       {socialLayoutLeft && (
-        <div className="absolute w-[84px] bark:bg-[#272b44] dark:shadow bg-transparent  h-[calc(100vh-80px)] z-20  hidden lg:block">
+        <div className="absolute w-16 bg-transparent h-[calc(100vh-80px)] z-20 hidden lg:block">
           <Social className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
         </div>
       )}
@@ -141,10 +148,15 @@ export default function Header({ socialLayoutLeft, dataMenu }) {
         <ul className="flex-col justify-center px-3 lg:hidden block ">
           {Array.isArray(dataMenu) &&
             dataMenu?.map((item, index) => {
+              const isActive = checkLinkActive(item);
               return (
                 <li key={index}>
                   <LinkComponent
-                    className="flex items-center shadow-2xl p-4 dark:text-white text-black rounded-lg dark:bg-[#272b44] bg-white  cursor-pointer text-sm font-semibold  mb-4  "
+                    className={`flex items-center p-4 rounded-lg border cursor-pointer text-sm font-semibold mb-3 transition-all ${
+                      isActive
+                        ? "text-main dark:text-main bg-main/10 dark:bg-main/10 border-main dark:border-main"
+                        : "dark:text-white text-black dark:bg-gray-800 bg-gray-50 border-gray-200 dark:border-gray-700 hover:bg-main/10 dark:hover:bg-main/10 hover:border-main dark:hover:border-main"
+                    }`}
                     onClick={() => setOpen(!open)}
                     href={item.href}
                   >

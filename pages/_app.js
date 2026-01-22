@@ -35,7 +35,7 @@ const roboto = localFont({
 
 const App = ({ Component, pageProps }) => {
   const [darkMode, setDarkMode] = useState(true);
-  const darkModeClass = darkMode ? "dark" : "";
+  const darkModeClass = darkMode ? "dark bg-bgHome-dark" : "bg-bgHome-white";
   return (
     <>
       <Head>
@@ -52,7 +52,7 @@ const App = ({ Component, pageProps }) => {
         <link rel="canonical" href="https://tringuyen.vercel.app" />
       </Head>
       <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-        <main className={`${roboto.className} ${darkModeClass}`}>
+        <main className={`${roboto.className} ${darkModeClass} min-h-screen`}>
           <Component {...pageProps} />
         </main>
       </DarkModeContext.Provider>

@@ -1,7 +1,18 @@
 {
   "banner": {
-    "greeting": "Xin chào",
-    "name": "Tôi là Trí Nguyễn",
-    "position": "Nhà phát triển web"
+    "greeting": "Xin chào, tôi là",
+    "name": "Nguyễn Ngọc Trí",
+    "position": "Cloud / DevOps Engineer (AWS)",
+    "description": "Với hơn 1 năm kinh nghiệm vận hành hệ thống production trên AWS và 4+ năm làm Software Engineer (Frontend & Fullstack). Chuyên về thiết kế, triển khai và vận hành kiến trúc AWS có khả năng mở rộng, bảo mật và tối ưu chi phí.",
+    "buttons": [
+      {
+        "label": "Về tôi",
+        "href": "/about"
+      },
+      {
+        "label": "Dự án",
+        "href": "/project"
+      }
+    ]
   }
 }

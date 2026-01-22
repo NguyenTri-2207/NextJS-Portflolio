@@ -1,48 +1,79 @@
 {
   "info": {
     "who": "Who am i?",
-    "im": "I'm Tri and",
-    "position": "Front-End Developer",
-    "company": "I'm a Software Engineer with 4+ years of experience React and state management like Redux with proficiency in web technologies like HTML5, CSS3, JavaScript, building large-scale web applications, cross-browser platforms, and design constraints on the web, and building responsive user interfaces.",
+    "im": "I'm Tri, a ",
+    "position": "Cloud / DevOps Engineer (AWS) – Software Engineer Background",
+    "company": "Cloud / DevOps Engineer with 1+ year of hands-on experience operating production systems on AWS and 4+ years as a Software Engineer (Frontend & Fullstack). Experienced in designing, deploying, and operating scalable, secure, and cost-optimized AWS architectures, building CI/CD pipelines, and automating infrastructure and deployments. Strong software engineering background enables deep understanding of application lifecycle, system behavior in production, and effective collaboration with development teams, supporting a shift-left DevOps mindset.",
     "responsibilities": [
-      "✨ Version control system (GIT), Defect Tracking tool (Jira,Clickup), design platform (Figma), and testing framework such as Jet.",
-      "✨ Languages: React, Typescript, JavaScript, NodeJS.",
-      "✨ Web technology : HTML5, CSS3, SASS",
-      "✨ Bootsrap4, TailwindCSS",
-      "✨ Databases: MongoDB",
-      "✨Other Tools: Performance Optimization Tools, Cross-Browser Testing: BrowserStack, Web Hosting Platforms: Vercel, AWS, Content Management Systems (CMS):WordPress."
+      "☁️ Cloud & DevOps: AWS (EC2, ECS, RDS, S3, CloudFront, IAM, CloudWatch, Route53), CI/CD (GitHub Actions), Docker, Terraform, Ansible, Monitoring (CloudWatch, Nginx logs, PM2 logs)",
+      "💻 Frontend: React.js, Next.js, TypeScript, Redux Toolkit, Zustand, TailwindCSS, Ant Design, SEO, CSR/SSR/SSG/ISR",
+      "⚙️ Backend: Node.js, Express.js, REST APIs, JWT authentication, MongoDB, MySQL, AWS RDS",
+      "🛠️ Others: WordPress, Linux (Ubuntu), Nginx, PM2, Bash scripting, Security (IAM, SSL/TLS, WAF)"
     ]
   },
   "experience": {
-    "title": "What I do!",
+    "title": "EXPERIENCE",
     "list": [
       {
-        "startYear": "05/2021",
+        "startYear": "04/2021",
         "endYear": "Present",
-        "title": "Front-End Developer",
-        "company": "Gleads - Quận 7, HCM",
-        "description": "Convert website bbcincorp.com from GulpJs to NextJs, Configure and build source NextJS, Visually Breaking Down UI Components using Atomic Design"
+        "title": "Cloud Engineer / Frontend Lead / Fullstack Developer",
+        "company": "GLEADS - District 7, HCM",
+        "description": [
+          "Cloud Engineer (04/2025 – Present):",
+          "• Designed and deployed production workloads on AWS EC2 and ECS, ensuring high availability and scalability",
+          "• Optimized infrastructure cost for EC2 and RDS through instance sizing, environment separation, and usage monitoring",
+          "• Implemented CI/CD pipelines using GitHub Actions to automate build, test, and deployment processes",
+          "• Monitored system health and performance using CloudWatch, logs, and alarms; performed root-cause analysis for incidents",
+          "• Applied AWS security best practices with IAM roles, security groups, HTTPS, and network isolation",
+          "",
+          "Frontend Lead (07/2023 – 03/2025):",
+          "• Led a frontend team of 4 engineers; conducted code reviews and standardized coding conventions",
+          "• Designed Next.js architecture for large-scale applications with focus on SEO, Lighthouse score, and bundle optimization",
+          "• Collaborated closely with backend and cloud teams to ensure smooth CI/CD integration and stable production releases",
+          "• Actively participated in deployment planning and production issue troubleshooting",
+          "",
+          "Fullstack Developer (03/2021 – 06/2023):",
+          "• Led migration from SlugJS to Next.js, improving PageSpeed score from 20 → 80 and Core Web Vitals",
+          "• Deployed and operated backend services on EC2 using Nginx + PM2, connected to RDS MySQL and MongoDB",
+          "• Built and secured REST APIs with JWT authentication, refresh tokens, webhooks, cron jobs, and email services",
+          "• Managed static assets and logs using S3, configured Route53 health checks, and monitored via CloudWatch",
+          "• Integrated payment systems (Stripe, Airwallex) and analytics tools (GTM, Matomo)",
+          "",
+          "Key Projects: bbcincorp.com, visa2asia.com, gleads.vn, BBCIncorp Portal"
+        ]
       },
       {
         "startYear": "12/2020",
         "endYear": "05/2021",
-        "title": "Front-End Developer",
-        "company": "3FORCOM - Quận 10, HCM",
-        "description": "Expert in crafting interactive and responsive websites akin to renowned platforms such as Novaland, Gumac, and Adco. Proficient in leveraging JavaScript-based technologies, particularly React.js, to deliver cutting-edge web solutions."
+        "title": "Frontend Developer",
+        "company": "3FORCOM - District 10, HCM",
+        "description": [
+          "• Developed enterprise and e-commerce websites using React.js and TypeScript",
+          "• Translated UI designs from Figma into responsive, cross-browser web applications",
+          "• Integrated APIs and optimized performance for high-traffic landing pages"
+        ]
       },
       {
         "startYear": "06/2019",
         "endYear": "12/2020",
-        "title": "Data Warehouse Engineer ",
-        "company": "Mirae Asset Finance Vietnam ",
-        "description": "Managed Data Warehouse systems, ensuring stability and performance.Worked with Oracle Enterprise Manager to monitor and resolve issues."
+        "title": "Data Warehouse Engineer",
+        "company": "MIRAE ASSET - HCM",
+        "description": [
+          "• Operated and monitored enterprise Data Warehouse systems",
+          "• Optimized SQL queries and supported BI/reporting teams",
+          "• Gained strong foundation in data systems, monitoring, and production operations"
+        ]
       },
       {
         "startYear": "09/2014",
         "endYear": "05/2019",
-        "title": "ĐH GTVT HCM",
-        "company": "450 Lê Văn Việt-Q.9, HCM",
-        "description": "I acquired comprehensive knowledge in database design, Node.js, HTML, CSS, and mobile programming. This educational journey provided me with a solid foundation in computer science, shaping my skills and understanding in these key areas."
+        "title": "Bachelor of Software Engineering",
+        "company": "University of Transport and Communications – Ho Chi Minh City",
+        "description": [
+          "• Graduated with Bachelor of Software Engineering degree",
+          "• Strong foundation in computer science, database design, and software development"
+        ]
       }
     ]
   },

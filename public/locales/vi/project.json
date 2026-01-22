@@ -49,6 +49,17 @@
       "name": "Cá nhân",
       "personal": [
         {
+          "startYear": "2025",
+          "src": "/assets/architecture-diagram-thumb.jpg", 
+          "href": "https://tringuyen.vercel.app/project/cloudhire",
+          "title": "CloudHire: Serverless Job Board Platform (Next.js + AWS)",
+          "description": [
+            "🚀 Kiến trúc Event-driven Serverless 100% trên AWS, tối ưu chi phí vận hành xuống gần 0$ (NoOps) và tự động scale theo traffic.",
+            "⚡️ Hiệu năng cao với API Gateway & Lambda xử lý hàng nghìn request/giây, Database DynamoDB độ trễ mili-giây.",
+            "🛡️ Bảo mật Zero Trust: Xác thực Cognito, phân quyền IAM Least Privilege và bảo vệ nội dung tĩnh bằng CloudFront OAC."
+          ]
+        },
+        {
           "startYear": "2021",
           "src": "/assets/images.jpg",
           "title": "Trang web Thương mại điện tử",

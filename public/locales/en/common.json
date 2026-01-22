@@ -13,12 +13,6 @@
       "icon": "FaUserEdit"
     },
     {
-      "name": "Skill",
-      "id": "skill",
-      "href": "/skill",
-      "icon": "FaSortAmountUpAlt"
-    },
-    {
       "name": "Project",
       "id": "project",
       "href": "/project",

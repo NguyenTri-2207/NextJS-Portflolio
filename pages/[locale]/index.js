@@ -13,25 +13,23 @@ const Home = () => {
       <Head>
         {/* Meta title và description (rất quan trọng cho SEO) */}
         <title>
-          Nguyễn Ngọc Trí - Frontend Developer | Next.js, React.js & SEO
+          Nguyễn Ngọc Trí - Cloud / DevOps Engineer (AWS) | Software Engineer
         </title>
         <meta
           name="description"
-          content="Trang cá nhân của Nguyễn Ngọc Trí, nơi chia sẻ kinh nghiệm lập trình web với ReactJS, Next.js, tối ưu SEO website, cải thiện Core Web Vitals và tăng tốc độ tải trang."
+          content="Cloud / DevOps Engineer với 1+ năm kinh nghiệm vận hành hệ thống production trên AWS và 4+ năm làm Software Engineer (Frontend & Fullstack). Chuyên về AWS, CI/CD, và automation."
         />
-        {/* Keywords (không quá quan trọng với SEO hiện đại nhưng vẫn có lợi) */}
         <meta
           name="keywords"
-          content="Frontend Developer, ReactJS, Next.js, lập trình web"
+          content="Cloud Engineer, DevOps Engineer, AWS, Software Engineer, Frontend Developer, Next.js, React.js"
         />
-        {/* Open Graph (OG) dành riêng cho từng page */}
         <meta
           property="og:title"
-          content="Nguyễn Ngọc Trí - Frontend Developer"
+          content="Nguyễn Ngọc Trí - Cloud / DevOps Engineer (AWS)"
         />
         <meta
           property="og:description"
-          content="Hành trình của Trí trở thành một Frontend Developer, chia sẻ kinh nghiệm về ReactJS và Next.js."
+          content="Cloud / DevOps Engineer với kinh nghiệm vận hành hệ thống production trên AWS và phát triển phần mềm."
         />
         <meta
           property="og:image"
@@ -41,11 +39,11 @@ const Home = () => {
         {/* Twitter Card (giống OG nhưng dành riêng cho Twitter) */}
         <meta
           name="twitter:title"
-          content="Nguyễn Ngọc Trí - Frontend Developer"
+          content="Nguyễn Ngọc Trí - Cloud / DevOps Engineer (AWS)"
         />
         <meta
           name="twitter:description"
-          content="Hành trình của Trí trở thành một Frontend Developer, chia sẻ kiến thức về ReactJS và Next.js."
+          content="Cloud / DevOps Engineer với kinh nghiệm vận hành hệ thống production trên AWS và phát triển phần mềm."
         />
         <meta
           name="twitter:image"
@@ -60,8 +58,8 @@ const Home = () => {
                 "@context": "https://schema.org",
                 "@type": "WebPage",
                 "name": "Nguyễn Ngọc Trí",
-                "url": "https://yourwebsite.com/home",
-                "description": "Hành trình của Trí trở thành 1 frontend developer"
+                "url": "https://tringuyen.vercel.app",
+                "description": "Cloud / DevOps Engineer (AWS) – Software Engineer Background"
               }`,
           }}
         />

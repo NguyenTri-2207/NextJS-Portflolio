@@ -7,11 +7,20 @@
 }
 
 @layer base {
+  html {
+    @apply min-h-screen;
+  }
+  
   body {
-    @apply dark:bg-gray-800 bg-white relative;
+    @apply relative min-h-screen;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+  }
+  
+  html.dark body {
+    background: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
   }
 }
 
 .section-tempale {
-  @apply pt-10 lg:pt-16 dark:bg-bgHome-dark bg-bgHome-white bg-white relative;
+  @apply pt-10 lg:pt-16 relative;
 }

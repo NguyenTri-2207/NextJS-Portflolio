@@ -13,12 +13,6 @@
       "icon": "FaUserEdit"
     },
     {
-      "name": "Kỹ năng",
-      "id": "skill",
-      "href": "/skill",
-      "icon": "FaSortAmountUpAlt"
-    },
-    {
       "name": "Dự án",
       "id": "project",
       "href": "/project",
