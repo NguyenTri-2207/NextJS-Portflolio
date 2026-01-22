@@ -20,6 +20,11 @@ class MyDocument extends Document {
     return (
       <Html lang={currentLocale} prefix="og: http://ogp.me/ns#">
         <Head>
+          {/* Font Preconnect */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+          
           {/* Favicon */}
           <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
           <link rel="apple-touch-icon" href="/favicon.png" />

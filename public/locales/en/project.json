@@ -4,6 +4,14 @@
     "described": "Explore my portfolio of web development and cloud infrastructure projects. From full-stack applications to AWS deployments, discover the technologies and solutions I've built.",
     "breadcrumb": [{ "title": "Home", "url": "/" }, { "title": "Project" }]
   },
+  "detail": {
+    "notFound": "Project not found",
+    "backToProjects": "Back to Projects",
+    "visitWebsite": "Visit Website",
+    "otherProjects": "Other Projects",
+    "viewDetails": "View Details",
+    "viewWebsite": "View Website"
+  },
   "project": [
     {
       "name": "company",

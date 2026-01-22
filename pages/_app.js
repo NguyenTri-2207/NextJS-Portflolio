@@ -1,37 +1,8 @@
 import { useState } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
-import localFont from "next/font/local";
 import { DarkModeContext } from "common/context";
 import "styles/globals.scss";
-
-const roboto = localFont({
-  src: [
-    {
-      path: "../public/fonts/Roboto-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Roboto-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Roboto-RegularItalic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Roboto-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-roboto",
-  preload: true,
-  display: "swap",
-});
 
 const App = ({ Component, pageProps }) => {
   const [darkMode, setDarkMode] = useState(true);
@@ -50,7 +21,7 @@ const App = ({ Component, pageProps }) => {
         <link rel="canonical" href="https://tringuyen.vercel.app" />
       </Head>
       <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-        <main className={`${roboto.className} ${darkModeClass} min-h-screen`}>
+        <main className={`font-sans ${darkModeClass} min-h-screen`}>
           <Component {...pageProps} />
         </main>
       </DarkModeContext.Provider>

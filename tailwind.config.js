@@ -61,9 +61,7 @@ module.exports = {
           "linear-gradient(to bottom, #1f2937 0%, #111827 100%);",
       },
       fontFamily: {
-        sans: ["var(--font-roboto)", "sans-serif"], // auto
-
-        // roboto: ['var(--font-roboto)', 'sans-serif'],  // Hoặc nếu bạn muốn tạo class riêng:
+        sans: ["Manrope", "sans-serif"],
       },
       variants: {
         typography: ["dark"],

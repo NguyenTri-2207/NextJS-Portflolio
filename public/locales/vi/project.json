@@ -4,6 +4,14 @@
     "described": "Khám phá portfolio các dự án phát triển web và hạ tầng cloud của tôi. Từ ứng dụng full-stack đến triển khai AWS, khám phá các công nghệ và giải pháp tôi đã xây dựng.",
     "breadcrumb": [{ "title": "Trang chủ", "url": "/" }, { "title": "Dự án" }]
   },
+  "detail": {
+    "notFound": "Không tìm thấy dự án",
+    "backToProjects": "Quay lại Dự án",
+    "visitWebsite": "Truy cập Website",
+    "otherProjects": "Dự án khác",
+    "viewDetails": "Xem chi tiết",
+    "viewWebsite": "Xem website"
+  },
   "project": [
     {
       "name": "Công ty",

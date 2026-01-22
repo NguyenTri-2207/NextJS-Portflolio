@@ -11,6 +11,7 @@ import Banner from "components/templates/project/Banner";
 const ProjectDetail = ({ dataProject, dataAllProjects }) => {
   const { t } = useTranslation(["common", "project"]);
   const menu = t("common:menu", { returnObjects: true });
+  const detailTexts = t("project:detail", { returnObjects: true });
 
   if (!dataProject) {
     return (
@@ -20,10 +21,10 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
             <div className="row">
               <div className="col-12 text-center py-20">
                 <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Project not found
+                  {detailTexts?.notFound || "Project not found"}
                 </h1>
-                <Link href="/project" className="text-main hover:text-main/80">
-                  Back to Projects
+                <Link href="/project" className="text-main hover:text-main/80 transition-colors">
+                  {detailTexts?.backToProjects || "Back to Projects"}
                 </Link>
               </div>
             </div>
@@ -33,21 +34,44 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
     );
   }
 
+  const menuItems = t("common:menu", { returnObjects: true });
+  const homeMenu = menuItems.find(m => m.href === "/");
+  const projectMenu = menuItems.find(m => m.href === "/project");
+  
   const dataBanner = {
     breadcrumb: [
-      { title: t("common:menu", { returnObjects: true }).find(m => m.href === "/")?.name || "Home", url: "/" },
-      { title: t("common:menu", { returnObjects: true }).find(m => m.href === "/project")?.name || "Project", url: "/project" },
+      { title: homeMenu?.name || "Home", url: "/" },
+      { title: projectMenu?.name || "Project", url: "/project" },
       { title: dataProject.title }
     ],
     title: dataProject.title,
-    described: dataProject.description?.join(" ") || ""
+    described: Array.isArray(dataProject.description) 
+      ? dataProject.description.join(" ") 
+      : dataProject.description || ""
   };
+
+  const description = Array.isArray(dataProject.description) 
+    ? dataProject.description.join(" ") 
+    : dataProject.description || "";
+
+  const otherProjects = dataAllProjects?.projects
+    ?.filter((p) => p.id !== dataProject.id)
+    .slice(0, 3) || [];
 
   return (
     <>
       <Head>
         <title>{dataProject.title} - Nguyễn Ngọc Trí</title>
-        <meta name="description" content={dataProject.description?.join(" ")} />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={`${dataProject.title}, project, portfolio, ${dataProject.category || ""}`} />
+        <link rel="canonical" href={`https://tringuyen.vercel.app/project/${dataProject.slug}`} />
+        <meta property="og:title" content={dataProject.title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://tringuyen.vercel.app/project/${dataProject.slug}`} />
+        {dataProject.src && (
+          <meta property="og:image" content={`https://tringuyen.vercel.app${dataProject.src}`} />
+        )}
       </Head>
       <Layout dataMenu={menu} socialLayoutLeft>
         <Banner data={dataBanner} />
@@ -63,7 +87,8 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                       src={dataProject.src}
                       width={1200}
                       height={600}
-                      sizes="100vw"
+                      sizes="(max-width: 1024px) 100vw, 66vw"
+                      priority
                     />
                   </div>
                   <div className="p-6 lg:p-8">
@@ -83,27 +108,26 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                         <a
                           href={dataProject.href}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noreferrer noopener"
                           className="inline-flex items-center px-6 py-3 bg-main text-white rounded-lg hover:bg-main/90 transition-colors font-medium"
+                          aria-label={`${detailTexts?.visitWebsite || "Visit Website"}: ${dataProject.title}`}
                         >
-                          <FaLocationArrow size={16} className="mr-2" />
-                          Visit Website
+                          <FaLocationArrow size={16} className="mr-2" aria-hidden="true" />
+                          {detailTexts?.visitWebsite || "Visit Website"}
                         </a>
                       </div>
                     )}
                   </div>
                 </div>
               </div>
-              <div className="col-12 lg:col-4 mt-8 lg:mt-0">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6 sticky top-24">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Other Projects
-                  </h3>
-                  <div className="space-y-4">
-                    {dataAllProjects?.projects
-                      ?.filter((p) => p.id !== dataProject.id)
-                      .slice(0, 3)
-                      .map((project) => (
+              {otherProjects.length > 0 && (
+                <div className="col-12 lg:col-4 mt-8 lg:mt-0">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6 sticky top-24">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                      {detailTexts?.otherProjects || "Other Projects"}
+                    </h3>
+                    <div className="space-y-4">
+                      {otherProjects.map((project) => (
                         <Link
                           key={project.id}
                           href={`/project/${project.slug}`}
@@ -112,14 +136,17 @@ const ProjectDetail = ({ dataProject, dataAllProjects }) => {
                           <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
                             {project.title}
                           </h4>
-                          <time className="text-xs text-gray-500 dark:text-gray-400">
-                            {project.startYear}
-                          </time>
+                          {project.startYear && (
+                            <time className="text-xs text-gray-500 dark:text-gray-400">
+                              {project.startYear}
+                            </time>
+                          )}
                         </Link>
                       ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -133,44 +160,74 @@ export default ProjectDetail;
 export const getStaticPaths = async () => {
   const locales = ["en", "vi"];
 
-  // Import static data to get all projects
-  const projectsEn = require("../projects-en.json");
+  try {
+    // Import static data to get all projects
+    const projectsEn = require("../projects-en.json");
 
-  // Use English projects to generate paths (both locales will have same slugs)
-  const paths = projectsEn.projects.flatMap((item) => {
-    let slug = item.slug.toString();
-    return locales.map((locale) => ({
-      params: { slug, locale },
-    }));
-  });
+    if (!projectsEn?.projects || !Array.isArray(projectsEn.projects)) {
+      return { paths: [], fallback: false };
+    }
 
-  return { paths, fallback: false };
+    // Use English projects to generate paths (both locales will have same slugs)
+    const paths = projectsEn.projects
+      .filter((item) => item.slug) // Only include items with slug
+      .flatMap((item) => {
+        const slug = String(item.slug);
+        return locales.map((locale) => ({
+          params: { slug, locale },
+        }));
+      });
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.error("Error generating static paths:", error);
+    return { paths: [], fallback: false };
+  }
 };
 
 export const getStaticProps = async (ctx) => {
   const { params } = ctx;
   const uri = params?.slug;
-  const locale = params.locale;
+  const locale = params?.locale || "en";
 
-  // Import static data based on locale
-  const projectsDetail = locale === "vi"
-    ? require("../projects-detail-vi.json")
-    : require("../projects-detail-en.json");
+  try {
+    // Import static data based on locale
+    const projectsDetail = locale === "vi"
+      ? require("../projects-detail-vi.json")
+      : require("../projects-detail-en.json");
 
-  const projectsList = locale === "vi"
-    ? require("../projects-vi.json")
-    : require("../projects-en.json");
+    const projectsList = locale === "vi"
+      ? require("../projects-vi.json")
+      : require("../projects-en.json");
 
-  // Find the project by slug
-  const dataProject = projectsDetail.projects.find((project) => project.slug === uri) || null;
-  const dataAllProjects = { projects: projectsList.projects };
+    // Validate data structure
+    if (!projectsDetail?.projects || !Array.isArray(projectsDetail.projects)) {
+      throw new Error("Invalid projects detail data structure");
+    }
+    if (!projectsList?.projects || !Array.isArray(projectsList.projects)) {
+      throw new Error("Invalid projects list data structure");
+    }
 
-  return {
-    props: {
-      ...(await getI18nProps(ctx, ["common", "project"])),
-      dataProject,
-      dataAllProjects,
-    },
-  };
+    // Find the project by slug
+    const dataProject = projectsDetail.projects.find((project) => project.slug === uri) || null;
+    const dataAllProjects = { projects: projectsList.projects };
+
+    return {
+      props: {
+        ...(await getI18nProps(ctx, ["common", "project"])),
+        dataProject,
+        dataAllProjects,
+      },
+    };
+  } catch (error) {
+    console.error("Error loading project detail:", error);
+    return {
+      props: {
+        ...(await getI18nProps(ctx, ["common", "project"])),
+        dataProject: null,
+        dataAllProjects: { projects: [] },
+      },
+    };
+  }
 };
 

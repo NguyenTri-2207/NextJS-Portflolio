@@ -1,13 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 import { FaLocationArrow } from "react-icons/fa";
 import Link from "components/molecules/Link";
-import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 const Card = ({ startYear, title, src, description, href, slug }) => {
-  const router = useRouter();
-  const locale = router.locale || 'en';
+  const { t } = useTranslation(["project"]);
+  const detailTexts = t("project:detail", { returnObjects: true });
+  
+  if (!title || !description || !Array.isArray(description)) {
+    return null;
+  }
   
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
@@ -16,22 +19,24 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
           {slug ? (
             <Link href={`/project/${slug}`}>
               <Image
-                alt={title}
+                alt={title || "Project image"}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
                 src={src}
                 width={500}
                 height={300}
                 sizes="(max-width: 1024px) 100vw, 40vw"
+                loading="lazy"
               />
             </Link>
           ) : (
             <Image
-              alt={title}
+              alt={title || "Project image"}
               className="w-full h-full object-cover"
               src={src}
               width={500}
               height={300}
               sizes="(max-width: 1024px) 100vw, 40vw"
+              loading="lazy"
             />
           )}
         </div>
@@ -62,14 +67,15 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
               </p>
             ))}
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
             {slug && (
               <Link
                 href={`/project/${slug}`}
                 className="inline-flex items-center text-sm font-medium text-main hover:text-main/80 dark:text-main dark:hover:text-main/80 transition-colors"
+                aria-label={`${detailTexts?.viewDetails || "View Details"}: ${title}`}
               >
-                Xem chi tiết
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {detailTexts?.viewDetails || "View Details"}
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
@@ -78,11 +84,12 @@ const Card = ({ startYear, title, src, description, href, slug }) => {
               <a
                 href={href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-main dark:hover:text-main transition-colors"
+                aria-label={`${detailTexts?.viewWebsite || "View Website"}: ${title}`}
               >
-                <FaLocationArrow size={12} className="mr-2" />
-                Xem website
+                <FaLocationArrow size={12} className="mr-2" aria-hidden="true" />
+                {detailTexts?.viewWebsite || "View Website"}
               </a>
             )}
           </div>
